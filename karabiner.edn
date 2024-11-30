@@ -1,1 +1,356 @@
-/Users/river/.config/karabiner.edn
+;; ============================
+;;
+;; RIVER CONFIG
+;; Created on 2023-10-25
+;;
+;; ============================
+
+;; LOCATION: ~/.config/karabiner.edn
+;; COMMAND TO ACTIVATE: goku
+
+;; ============== LINKS ==============
+
+;; all keys list: https://github.com/JoshuaManuel/Karabiner-Elements-Key-List
+
+;; goku: https://github.com/yqrashawn/GokuRakuJoudo
+;; karabiner: https://karabiner-elements.pqrs.org/docs
+
+;; article
+;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
+;; https://github.com/nikitavoloboev/config/blob/master/karabiner/karabiner.edn
+
+;; good configs
+;; https://gist.github.com/nikolai-cc/02f6b070972840323ae355ef847e91a6
+;; https://github.com/kaushikgopal/dotfiles/blob/master/.karabiner.edn
+;; https://johnlindquist.com/customize-karabiner-with-goku/
+;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
+
+;; ============== PARAMS ==============
+
+{
+    :profiles {
+        :RiverGoku {
+            :default true
+            :sim     100 ;; simultaneous key press threshold
+            :delay   500 ;; to_delayed_action_delay_milliseconds
+            :alone   1000 ;; to_if_alone_timeout_milliseconds
+            :held    500 ;; to_if_held_down_threshold_milliseconds
+        }
+        
+        :RiverStarcraft {
+            :default false
+            :sim     100 ;; simultaneous key press threshold
+            :delay   500 ;; to_delayed_action_delay_milliseconds
+            :alone   1000 ;; to_if_alone_timeout_milliseconds
+            :held    500 ;; to_if_held_down_threshold_milliseconds
+        }
+    }
+
+ ;; ============== NAMED KEYS ==============
+
+;;  :tos {:prev_lang {:key :f15}
+;;        :next_lang {:key :f16}}
+
+;;  :applications {:chrome ["^com\\.google\\.Chrome$"]
+;;                 :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
+;;                 :safari ["^com\\.apple\\.Safari$"]}
+;;
+;;  {:des "a to 1 only in chrome and safari"
+;;   :rules [[:a :1 [:chrome]]
+;;           [:a :1 [:safari]]]}
+
+    :applications {
+        :chrome ["^com\\.google\\.Chrome$"]
+        :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
+        :safari ["^com\\.apple\\.Safari$"]
+        :dota ["^com\\.valvesoftware\\.dota2$"]
+        :krita ["^org\\.krita$"]
+    }
+
+    :main [
+
+        ;; ============== FUNCTION ROW ==============
+
+        {:des "F1 —> Decrease brightness"
+         :rules [[:f1 :display_brightness_decrement [:!krita]]]}
+
+        {:des "F2 —> Increase brightness"
+         :rules [[:f2 :display_brightness_increment [:!krita]]]}
+
+        {:des "F3 —> F15 (en)"
+         :rules [[:f3 :f15 [:!dota :!krita]]]}
+
+        {:des "F4 —> F16 (ru)"
+         :rules [[:f4 :f16 [:!dota :!krita]]]}
+
+        {:des "F5 —> F17 (jp)"
+         :rules [[:f5 :f17 [:!dota :!krita]]]}
+
+        {:des "F6 —> F13 (do not disturb)"
+         :rules [[:f6 :f13 [:!dota :!krita]]]}
+
+        {:des "F7 —> Rewind"
+         :rules [[:f7 :rewind]]}
+
+        {:des "F8 —> Play/Pause"
+         :rules [[:f8 :play_or_pause]]}
+
+        {:des "F9 —> Fast forward"
+         :rules [[:f9 :fastforward]]}
+
+        {:des "F10 —> Mute"
+         :rules [[:f10 :mute]]}
+
+        {:des "F11 —> Decrease volume"
+         :rules [[:f11 :volume_decrement]]}
+
+        {:des "F12 —> Increase volume"
+         :rules [[:f12 :volume_increment]]}
+
+        ;; ============== CAPS LOCK AND SHIFT ==============
+
+        {:des "Caps Lock + Shift —> Play/Pause" ;; order matters: 0
+         :rules [[:!S#Pcaps_lock :play_or_pause [:!dota]]]}
+
+        {:des "Caps Lock —> Hyper Key (but not in Dota)" ;; order matters: 1
+         :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
+
+        {:des "Caps Lock + Q —> Placeholder + F19 (chrome)" ;; needed for no annoying hyper + q sound
+         :rules [[:!QWERq :!QEf19]]}
+
+        {:des "Caps Lock + Escape —> Placeholder + F18 (open recents folder)"
+         :rules [[:!QWERescape :!QEf18]]}
+
+        {:des "Hyper Key + Z —> Cmd + H (hide)"
+         :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
+
+        ;; ============== HYPER FUNCTION ROW ==============
+
+        {:des "Make work: Hyper Key + Hyphen"
+         :rules [[:!QWERhyphen :!QWERhyphen]]}
+
+        {:des "Make work: Hyper Key + Equals"
+         :rules [[:!QWERequal_sign :!QWERequal_sign]]}
+
+        ;; ============== FN KEY ==============
+
+        {:des "FN Key -> Semihyper Key" ;; Semihyper -> Ctrl + Opt + Shift (but not cmd)
+         :rules [[:##fn :!WEright_shift [:!dota]]]}
+
+        {:des "Right Option -> FN Key"
+         :rules [[:##right_option :fn]]}
+
+        {:des "Semihyper Key + E —> FN Key + E (emoji)"
+         :rules [[:!WERr :!Fe]]}
+
+        {:des "Semihyper Key + F —> FN Key + F (fullscreen)"
+         :rules [[:!WERf :!Ff]]}
+
+        {:des "Semihyper Key + Shift —> Placeholder + F20 (anki inbox)"
+         :rules [[:!WERleft_shift :!QEf20]]}
+
+        ;; ============== MISC ==============
+
+        {:des "Equals + Delete —> Forward Delete"
+         :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
+
+        ;; ============== KRITA ==============
+
+        {
+            :des "Krita"
+            :rules [
+                :krita
+                [:##left_control :left_option]
+                ;; [:f1 :f1]
+                ;; [:f2 :f2]
+                ;; [:f3 :f3]
+                ;; [:f4 :f4]
+                ;; [:f5 :f5]
+                ;; [:f6 :f6]
+                ;; [:!Cf1 :!Cf1]
+                ;; [:!Cf2 :!Cf2]
+                ;; [:!Cf3 :!Cf3]
+            ]
+        }
+
+        ;; ============== GAMES ==============
+
+        {
+            :des "Dota"
+            :rules [
+                :dota
+                [:!Fgrave_accent_and_tilde :!Oi]
+                [:!F1 :!Oo]
+                [:!F2 :!Op]
+                [:!F3 :!Oopen_bracket]
+                [:!F4 :!Oclose_bracket]
+                [:f1 :f1]
+                [:f2 :f2]
+                [:f3 :f3]
+                [:f4 :f4]
+                [:f5 :f5]
+                [:f6 :f6]
+                [:f7 :f7]
+                [:f8 :f8]
+                [:f9 :f9]
+                [:##caps_lock :left_control]
+                [:##left_command :left_option]
+                [:!Of1 :j]
+                [:!Of2 :k]
+                [:!Of3 :l]
+                [:!Of4 :semicolon]
+            ]
+        }
+
+        ;; ============== HISTORY ==============
+
+        ;; {
+        ;;     :des "Starcraft"
+        ;;     :rules [
+        ;;         :RiverStarcraft
+        ;;         [:##f1 :f1]
+        ;;         [:##f2 :f2]
+        ;;         [:##f3 :f3]
+        ;;         [:##f4 :f4]
+        ;;         [:##f5 :f5]
+        ;;         [:##f6 :f6]
+        ;;         [:##f7 :f7]
+        ;;         [:##f8 :f8]
+        ;;         [:##f9 :f9]
+        ;;         [:##f10 :f10]
+        ;;         [:##f11 :f11]
+        ;;         [:##f12 :f12]
+        ;;         [:##left_command :left_control]
+        ;;     ]
+        ;; }
+
+        ;; {:des "Make work: Hyper Key + F1"
+        ;;  :rules [[:!QWERf1 :!QWERf1]]}
+
+        ;; {:des "Make work: Hyper Key + F2"
+        ;;  :rules [[:!QWERf2 :!QWERf2]]}
+
+        ;; {:des "Make work: Hyper Key + F3"
+        ;;  :rules [[:!QWERf3 :!QWERf3]]}
+
+        ;; {:des "Make work: Hyper Key + F4"
+        ;;  :rules [[:!QWERf4 :!QWERf4]]}
+
+        ;; {:des "Make work: Hyper Key + F5"
+        ;;  :rules [[:!QWERf5 :!QWERf5]]}
+
+        ;; {:des "Make work: Hyper Key + F6"
+        ;;  :rules [[:!QWERf6 :!QWERf6]]}
+
+        ;; {:des "Make work: Hyper Key + F7"
+        ;;  :rules [[:!QWERf7 :!QWERf7]]}
+
+        ;; {:des "Make work: Hyper Key + F8"
+        ;;  :rules [[:!QWERf8 :!QWERf8]]}
+
+        ;; {:des "Right Option -> FN Key (Caps Lock when pressed alone)"
+        ;;  :rules [[:##right_option :fn nil {:alone :caps_lock}]]}
+
+        ;; {:des "F5 —> Dictation"
+        ;;  :rules [[:f5 :dictation]]}
+
+        ;;  {:des "Shift + Delete —> Forward Delete"
+        ;;   :rules [[:!Sdelete_or_backspace :delete_forward]]}
+
+        ;;  {:des "Tap Shift —> F15 (prev lang)"
+        ;;   :rules [[:left_shift :left_shift nil {:alone :prev_lang}]
+        ;;           [:##left_shift :left_shift]]}
+
+        ;; {:des "Caps Lock + Q —> F14 (mission control)"
+        ;;  :rules [[:!QWERq :f14]]}
+
+        ;; {:des "Caps Lock + G —> FN Key + E (emoji)"
+        ;;  :rules [[:!QWERg :!Fe]]}
+
+        ;; {:des "Caps Lock —> Hyper Key (Escape when pressed alone)" ;; order matters: 1
+        ;;  :rules [[:##caps_lock :!QWEright_shift nil {:alone :escape}]]}
+
+        ;; {:des "Right Option -> FN Key (Caps Lock when pressed alone)"
+        ;;  :rules [[:##right_option :fn nil {:alone :caps_lock}]]}
+
+        ;; {:des "Opt + Space —> Cmd + H (hide)"
+        ;;  :rules [[:!Ospacebar :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
+
+;;
+    ]
+}
+
+;; {:profiles
+;;  {:RiverStarcraft {:default false
+;;               :sim     100 ;; simultaneous key press threshold
+;;               :delay   500 ;; to_delayed_action_delay_milliseconds
+;;               :alone   1000 ;; to_if_alone_timeout_milliseconds
+;;               :held    500 ;; to_if_held_down_threshold_milliseconds
+;;               }}
+
+;;  ;; ============== NAMED KEYS ==============
+
+;;  :applications {:chrome ["^com\\.google\\.Chrome$"]
+;;                 :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
+;;                 :safari ["^com\\.apple\\.Safari$"]
+;;                 :dota ["^com\\.valvesoftware\\.dota2$"]
+;;                 }
+
+;;  :main [;;
+;;  ;; ============== STARCRAFT ==============
+
+;;          {:des "Starcraft"
+;;          :rules [
+;;                 [:f1 :f1]
+;;                 [:f2 :f2]
+;;                 [:f3 :f3]
+;;                 [:f4 :f4]
+;;                 [:f5 :f5]
+;;                 [:f6 :f6]
+;;                 [:f7 :f7]
+;;                 [:f8 :f8]
+;;         ]}
+
+;; ]}
+
+;; C T O S stands for left_command left_control left_option left_shift
+    ;; Q W E R stands for right_command right_control right_option right_shift
+
+    ;;;; hyper
+    ;; !! stands for left_command + left_control + left_option + left_shift
+    ;; :!!1 left_command + left_control + left_option + left_shift + 1
+
+    ;; this is a little bit weird, but it's convenient
+    ;; the rule [:!Ca :!T1]
+    ;; means from command a to control 1
+    ;; :!Ca is keycode :a and prefix a with !C
+
+    ;; here's the definition
+
+    ;; !  | means mandatory
+    ;; #  | means optional
+    ;; C  | left_command
+    ;; T  | left_control
+    ;; O  | left_option
+    ;; S  | left_shift
+    ;; F  | fn
+    ;; Q  | right_command
+    ;; W  | right_control
+    ;; E  | right_option
+    ;; R  | right_shift
+    ;; P  | caps_lock
+    ;; !! | mandatory command + control + optional + shift (hyper)
+    ;; ## | optional any
+
+    ;; examples
+
+    ;; !CTSequal_sign  | mandatory command control shift =
+    ;;                 | which is command control +
+    ;; !O#Sright_arrow | mandatory option optional any right_arrow
+
+    ;; karabiner definition of mandatory and optional
+    ;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
+
+    ;; rule [<from> <to>]
+    ;; if simplified modifier is used in <to>, optional(#) definition will be
+    ;; ignored.
