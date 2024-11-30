@@ -154,6 +154,12 @@
         {:des "Equals + Delete —> Forward Delete"
          :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
 
+        {:des "Cmd + Shift + 1 -> Cmd + Shift + 2" ;; DeepL redirect
+         :rules [[:!CS1 :!CS2]]}
+
+        {:des "Cmd + Shift + 2 -> Cmd + Shift + 0" ;; Screenshot redirect
+         :rules [[:!CS2 :!CS0]]}
+
         ;; ============== KRITA ==============
 
         {
