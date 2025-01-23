@@ -109,8 +109,8 @@
 
         ;; ============== CAPS LOCK AND SHIFT ==============
 
-        {:des "Caps Lock + Shift —> Play/Pause" ;; order matters: 0
-         :rules [[:!S#Pcaps_lock :play_or_pause [:!dota]]]}
+        ;; {:des "Caps Lock + Shift —> Play/Pause" ;; order matters: 0
+        ;;  :rules [[:!S#Pcaps_lock :play_or_pause [:!dota]]]}
 
         {:des "Caps Lock —> Hyper Key (but not in Dota)" ;; order matters: 1
          :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
@@ -153,12 +153,6 @@
 
         {:des "Equals + Delete —> Forward Delete"
          :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
-
-        {:des "Cmd + Shift + 1 -> Cmd + Shift + 2" ;; DeepL redirect
-         :rules [[:!CS1 :!CS2]]}
-
-        {:des "Cmd + Shift + 2 -> Cmd + Shift + 0" ;; Screenshot redirect
-         :rules [[:!CS2 :!CS0]]}
 
         ;; ============== KRITA ==============
 
