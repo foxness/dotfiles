@@ -72,10 +72,10 @@
         ;; ============== FUNCTION ROW ==============
 
         {:des "F1 —> Decrease brightness"
-         :rules [[:f1 :display_brightness_decrement [:!krita]]]}
+         :rules [[:f1 :display_brightness_decrement [:!krita :!dota]]]}
 
         {:des "F2 —> Increase brightness"
-         :rules [[:f2 :display_brightness_increment [:!krita]]]}
+         :rules [[:f2 :display_brightness_increment [:!krita :!dota]]]}
 
         {:des "F3 —> F15 (en)"
          :rules [[:f3 :f15 [:!dota :!krita]]]}
@@ -184,15 +184,15 @@
                 [:!F2 :!Op]
                 [:!F3 :!Oopen_bracket]
                 [:!F4 :!Oclose_bracket]
-                [:f1 :f1]
-                [:f2 :f2]
-                [:f3 :f3]
-                [:f4 :f4]
-                [:f5 :f5]
-                [:f6 :f6]
-                [:f7 :f7]
-                [:f8 :f8]
-                [:f9 :f9]
+                ;; [:f1 :f1]
+                ;; [:f2 :f2]
+                ;; [:f3 :f3]
+                ;; [:f4 :f4]
+                ;; [:f5 :f5]
+                ;; [:f6 :f6]
+                ;; [:f7 :f7]
+                ;; [:f8 :f8]
+                ;; [:f9 :f9]
                 [:##caps_lock :left_control]
                 [:##left_command :left_option]
                 [:!Of1 :j]
