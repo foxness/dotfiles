@@ -107,52 +107,41 @@
         {:des "F12 —> Increase volume"
          :rules [[:f12 :volume_increment]]}
 
-        ;; ============== CAPS LOCK AND SHIFT ==============
+        ;; ============== CAPS LOCK IS HYPER ==============
 
         ;; {:des "Caps Lock + Shift —> Play/Pause" ;; order matters: 0
         ;;  :rules [[:!S#Pcaps_lock :play_or_pause [:!dota]]]}
 
-        {:des "Caps Lock —> Hyper Key (but not in Dota)" ;; order matters: 1
+        {:des "Caps Lock —> Hyper (but not in Dota)" ;; order matters: 1
          :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
 
-        {:des "Caps Lock + Q —> Placeholder + F19 (chrome)" ;; needed for no annoying hyper + q sound
-         :rules [[:!QWERq :!QEf19]]}
+        ;; ============== FN IS SEMIHYPER ==============
 
-        {:des "Caps Lock + Escape —> Placeholder + F18 (open recents folder)"
-         :rules [[:!QWERescape :!QEf18]]}
-
-        {:des "Hyper Key + Z —> Cmd + H (hide)"
-         :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
-
-        ;; ============== HYPER FUNCTION ROW ==============
-
-        {:des "Make work: Hyper Key + Hyphen"
-         :rules [[:!QWERhyphen :!QWERhyphen]]}
-
-        {:des "Make work: Hyper Key + Equals"
-         :rules [[:!QWERequal_sign :!QWERequal_sign]]}
-
-        ;; ============== FN KEY ==============
-
-        {:des "FN Key -> Semihyper Key" ;; Semihyper -> Ctrl + Opt + Shift (but not cmd)
+        {:des "FN -> Semihyper" ;; Semihyper -> Ctrl + Opt + Shift (but not cmd)
          :rules [[:##fn :!WEright_shift [:!dota]]]}
 
-        {:des "Right Option -> FN Key"
+        {:des "Right Option -> FN"
          :rules [[:##right_option :fn]]}
 
-        {:des "Semihyper Key + E —> FN Key + E (emoji)"
-         :rules [[:!WERr :!Fe]]}
-
-        {:des "Semihyper Key + F —> FN Key + F (fullscreen)"
-         :rules [[:!WERf :!Ff]]}
-
-        {:des "Semihyper Key + Shift —> Placeholder + F20 (anki inbox)"
-         :rules [[:!WERleft_shift :!QEf20]]}
-
-        ;; ============== MISC ==============
+        ;; ============== BINDINGS ==============
 
         {:des "Equals + Delete —> Forward Delete"
          :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
+
+        {:des "Semihyper + Shift —> Placeholder + F20 (anki inbox)"
+         :rules [[:!WERleft_shift :!QEf20]]}
+
+        {:des "Hyper + Q —> Placeholder + F19 (chrome)" ;; needed for no annoying hyper + q sound
+         :rules [[:!QWERq :!QEf19]]}
+
+        {:des "Hyper + Escape —> Placeholder + F18 (open recents folder)"
+         :rules [[:!QWERescape :!QEf18]]}
+
+        {:des "Hyper + Z —> Cmd + H (hide)"
+         :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
+
+        {:des "Semihyper + F —> FN + F (fullscreen)"
+         :rules [[:!WERf :!Ff]]}
 
         ;; ============== KRITA ==============
 
@@ -161,15 +150,6 @@
             :rules [
                 :krita
                 [:##left_control :left_option]
-                ;; [:f1 :f1]
-                ;; [:f2 :f2]
-                ;; [:f3 :f3]
-                ;; [:f4 :f4]
-                ;; [:f5 :f5]
-                ;; [:f6 :f6]
-                ;; [:!Cf1 :!Cf1]
-                ;; [:!Cf2 :!Cf2]
-                ;; [:!Cf3 :!Cf3]
             ]
         }
 
@@ -179,22 +159,17 @@
             :des "Dota"
             :rules [
                 :dota
+
+                [:##caps_lock :left_control]
+                [:##left_command :left_option]
+
                 [:!Fgrave_accent_and_tilde :!Oi]
+
                 [:!F1 :!Oo]
                 [:!F2 :!Op]
                 [:!F3 :!Oopen_bracket]
                 [:!F4 :!Oclose_bracket]
-                ;; [:f1 :f1]
-                ;; [:f2 :f2]
-                ;; [:f3 :f3]
-                ;; [:f4 :f4]
-                ;; [:f5 :f5]
-                ;; [:f6 :f6]
-                ;; [:f7 :f7]
-                ;; [:f8 :f8]
-                ;; [:f9 :f9]
-                [:##caps_lock :left_control]
-                [:##left_command :left_option]
+
                 [:!Of1 :j]
                 [:!Of2 :k]
                 [:!Of3 :l]
@@ -203,6 +178,15 @@
         }
 
         ;; ============== HISTORY ==============
+
+        ;; {:des "Semihyper + E —> FN + E (emoji)"
+        ;;  :rules [[:!WERr :!Fe]]}
+
+        ;; {:des "Make work: Hyper Key + Hyphen"
+        ;;  :rules [[:!QWERhyphen :!QWERhyphen]]}
+
+        ;; {:des "Make work: Hyper Key + Equals"
+        ;;  :rules [[:!QWERequal_sign :!QWERequal_sign]]}
 
         ;; {
         ;;     :des "Starcraft"
