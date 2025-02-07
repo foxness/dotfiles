@@ -51,10 +51,6 @@
 ;;  :tos {:prev_lang {:key :f15}
 ;;        :next_lang {:key :f16}}
 
-;;  :applications {:chrome ["^com\\.google\\.Chrome$"]
-;;                 :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
-;;                 :safari ["^com\\.apple\\.Safari$"]}
-;;
 ;;  {:des "a to 1 only in chrome and safari"
 ;;   :rules [[:a :1 [:chrome]]
 ;;           [:a :1 [:safari]]]}
@@ -114,6 +110,9 @@
 
         {:des "Caps Lock —> Hyper (but not in Dota)" ;; order matters: 1
          :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
+
+        {:des "Right Option + / —> Caps Lock"
+         :rules [[:##Eslash :caps_lock]]}
 
         ;; ============== FN IS SEMIHYPER ==============
 
