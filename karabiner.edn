@@ -36,14 +36,6 @@
             :alone   1000 ;; to_if_alone_timeout_milliseconds
             :held    500 ;; to_if_held_down_threshold_milliseconds
         }
-        
-        :RiverStarcraft {
-            :default false
-            :sim     100 ;; simultaneous key press threshold
-            :delay   500 ;; to_delayed_action_delay_milliseconds
-            :alone   1000 ;; to_if_alone_timeout_milliseconds
-            :held    500 ;; to_if_held_down_threshold_milliseconds
-        }
     }
 
  ;; ============== NAMED KEYS ==============
@@ -137,8 +129,11 @@
         {:des "Hyper + Q —> Placeholder + F19 (chrome)" ;; needed for no annoying hyper + q sound
          :rules [[:!QWERq :!QEf19]]}
 
-        {:des "Hyper + Escape —> Placeholder + F18 (open recents folder)"
+        {:des "Hyper + Escape —> Placeholder + F18"
          :rules [[:!QWERescape :!QEf18]]}
+
+        {:des "Hyper + Left Command —> Placeholder + F17 (open finder)"
+         :rules [[:!QWERleft_command :!QEf17]]}
 
         {:des "Hyper + Z —> Cmd + H (hide)"
          :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
