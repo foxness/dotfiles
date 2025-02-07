@@ -111,8 +111,12 @@
         {:des "Caps Lock —> Hyper (but not in Dota)" ;; order matters: 1
          :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
 
-        {:des "Right Option + / —> Caps Lock"
-         :rules [[:##Eslash :caps_lock]]}
+        ;; dont do :##Eslash, cant type a question mark
+        ;; dont do [:right_option :slash] either, cuz caps lock changes slash to question mark
+        ;; dont do :!Qf12 bc caps lock messes up that too
+        ;; TLDR: DONT TRY TO MAKE A CAPSLOCK KEYBINDING
+        ;; {:des "Right Command + F12 —> Caps Lock"
+        ;;  :rules [[:!Qf12 :caps_lock]]}
 
         ;; ============== FN IS SEMIHYPER ==============
 
@@ -138,6 +142,9 @@
 
         {:des "Hyper + Z —> Cmd + H (hide)"
          :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
+
+        {:des "Hyper + C —> FN + S (type to siri)"
+         :rules [[:!QWERc :!Fs]]}
 
         {:des "Semihyper + F —> FN + F (fullscreen)"
          :rules [[:!WERf :!Ff]]}
