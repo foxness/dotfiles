@@ -143,9 +143,6 @@
         {:des "Hyper + Z —> Cmd + H (hide)"
          :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
 
-        {:des "Hyper + C —> FN + S (type to siri)"
-         :rules [[:!QWERc :!Fs]]}
-
         {:des "Semihyper + F —> FN + F (fullscreen)"
          :rules [[:!WERf :!Ff]]}
 
