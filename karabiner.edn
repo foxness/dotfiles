@@ -96,7 +96,7 @@
          :rules [[:f8 :play_or_pause]]}
 
         {:des "F9 —> Fast forward"
-         :rules [[:f9 :fastforward]]}
+         :rules [[:f9 :fast_forward]]}
 
         {:des "F10 —> Mute"
          :rules [[:f10 :mute]]}
