@@ -110,9 +110,6 @@
         {:des "Capslock —> Hyper (but not in Dota)" ;; order matters: 1
          :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
 
-        {:des "Right Option -> FN"
-         :rules [[:##right_option :fn]]}
-
         ;; ============== FN IS SEMIHYPER & LEADER ==============
 
         {:des "FN -> Semihyper (Leader when alone)"
@@ -123,6 +120,9 @@
 
         {:des "Both Commands -> F13 (leader)"
          :rules [[[:left_command :right_command] :f13]]}
+
+        {:des "Right Option -> FN"
+         :rules [[:##right_option :fn]]}
 
         ;; ============== BINDINGS ==============
 
