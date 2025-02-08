@@ -75,7 +75,7 @@
          :rules [[:f5 :f17 [:!dota :!krita]]]}
 
         {:des "F6 —> F13 (do not disturb)"
-         :rules [[:f6 :f13 [:!dota :!krita]]]}
+         :rules [[:f6 :f14 [:!dota :!krita]]]}
 
         {:des "F7 —> Rewind"
          :rules [[:f7 :rewind]]}
@@ -113,7 +113,13 @@
         ;; ============== FN IS SEMIHYPER ==============
 
         {:des "FN -> Semihyper" ;; Semihyper -> Ctrl + Opt + Shift (but not cmd)
-         :rules [[:##fn :!WEright_shift [:!dota]]]}
+         :rules [[:##fn :!WEright_shift [:!dota] { :alone :f13 }]]}
+
+        ;; {:des "FN -> F13 (leader key)"
+        ;;  :rules [[:fn :f13]]}
+
+        {:des "Both Commands -> F13 (leader key)"
+         :rules [[[:left_command :right_command] :f13]]}
 
         {:des "Right Option -> FN"
          :rules [[:##right_option :fn]]}
