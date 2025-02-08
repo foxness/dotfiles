@@ -95,34 +95,33 @@
         {:des "F12 —> Increase volume"
          :rules [[:f12 :volume_increment]]}
 
-        ;; ============== CAPS LOCK IS HYPER ==============
+        ;; ============== CAPSLOCK IS HYPER ==============
 
-        ;; {:des "Caps Lock + Shift —> Play/Pause" ;; order matters: 0
+        ;; {:des "Capslock + Shift —> Play/Pause" ;; order matters: 0
         ;;  :rules [[:!S#Pcaps_lock :play_or_pause [:!dota]]]}
 
-        {:des "Caps Lock —> Hyper (but not in Dota)" ;; order matters: 1
+        {:des "Capslock —> Hyper (but not in Dota)" ;; order matters: 1
          :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
 
         ;; dont do :##Eslash, cant type a question mark
-        ;; dont do [:right_option :slash] either, cuz caps lock changes slash to question mark
-        ;; dont do :!Qf12 bc caps lock messes up that too
-        ;; TLDR: DONT TRY TO MAKE A CAPSLOCK KEYBINDING
-        ;; {:des "Right Command + F12 —> Caps Lock"
-        ;;  :rules [[:!Qf12 :caps_lock]]}
+        ;; dont do [:right_option :slash] either, cuz capslock changes slash to question mark
+        ;; dont do :!Qf12 bc capslock messes up that too
+        {:des "RightOption + RightCommand —> Capslock" ; INTERCONNECTED WITH Right Option -> FN
+         :rules [[:##Fright_command :caps_lock]]}
 
-        ;; ============== FN IS SEMIHYPER ==============
+        {:des "Right Option -> FN" ; INTERCONNECTED WITH RightOption + RightCommand —> Capslock
+         :rules [[:##right_option :fn]]}
 
-        {:des "FN -> Semihyper" ;; Semihyper -> Ctrl + Opt + Shift (but not cmd)
+        ;; ============== FN IS SEMIHYPER & LEADER ==============
+
+        {:des "FN -> Semihyper (Leader when alone)"
          :rules [[:##fn :!WEright_shift [:!dota] { :alone :f13 }]]}
 
-        ;; {:des "FN -> F13 (leader key)"
+        ;; {:des "FN -> F13 (leader)"
         ;;  :rules [[:fn :f13]]}
 
-        {:des "Both Commands -> F13 (leader key)"
+        {:des "Both Commands -> F13 (leader)"
          :rules [[[:left_command :right_command] :f13]]}
-
-        {:des "Right Option -> FN"
-         :rules [[:##right_option :fn]]}
 
         ;; ============== BINDINGS ==============
 
@@ -142,7 +141,7 @@
          :rules [[:!QWERleft_command :!QEf17]]}
 
         {:des "Hyper + Z —> Cmd + H (hide)"
-         :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
+         :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if capslock isn't hyper
 
         {:des "Semihyper + F —> FN + F (fullscreen)"
          :rules [[:!WERf :!Ff]]}
@@ -236,7 +235,7 @@
         ;; {:des "Make work: Hyper Key + F8"
         ;;  :rules [[:!QWERf8 :!QWERf8]]}
 
-        ;; {:des "Right Option -> FN Key (Caps Lock when pressed alone)"
+        ;; {:des "Right Option -> FN Key (Capslock when pressed alone)"
         ;;  :rules [[:##right_option :fn nil {:alone :caps_lock}]]}
 
         ;; {:des "F5 —> Dictation"
@@ -249,20 +248,20 @@
         ;;   :rules [[:left_shift :left_shift nil {:alone :prev_lang}]
         ;;           [:##left_shift :left_shift]]}
 
-        ;; {:des "Caps Lock + Q —> F14 (mission control)"
+        ;; {:des "Capslock + Q —> F14 (mission control)"
         ;;  :rules [[:!QWERq :f14]]}
 
-        ;; {:des "Caps Lock + G —> FN Key + E (emoji)"
+        ;; {:des "Capslock + G —> FN Key + E (emoji)"
         ;;  :rules [[:!QWERg :!Fe]]}
 
-        ;; {:des "Caps Lock —> Hyper Key (Escape when pressed alone)" ;; order matters: 1
+        ;; {:des "Capslock —> Hyper Key (Escape when pressed alone)" ;; order matters: 1
         ;;  :rules [[:##caps_lock :!QWEright_shift nil {:alone :escape}]]}
 
-        ;; {:des "Right Option -> FN Key (Caps Lock when pressed alone)"
+        ;; {:des "Right Option -> FN Key (Capslock when pressed alone)"
         ;;  :rules [[:##right_option :fn nil {:alone :caps_lock}]]}
 
         ;; {:des "Opt + Space —> Cmd + H (hide)"
-        ;;  :rules [[:!Ospacebar :!Ch]]} ;; replace with [:!Pz :!Ch] if caps lock isn't hyper
+        ;;  :rules [[:!Ospacebar :!Ch]]} ;; replace with [:!Pz :!Ch] if capslock isn't hyper
 
 ;;
     ]
