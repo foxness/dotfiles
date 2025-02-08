@@ -106,10 +106,10 @@
         ;; dont do :##Eslash, cant type a question mark
         ;; dont do [:right_option :slash] either, cuz capslock changes slash to question mark
         ;; dont do :!Qf12 bc capslock messes up that too
-        {:des "RightOption + RightCommand —> Capslock" ; INTERCONNECTED WITH Right Option -> FN
-         :rules [[:##Fright_command :caps_lock]]}
+        {:des "RightOption + RightShift —> Capslock" ; INTERCONNECTED WITH Right Option -> FN
+         :rules [[:##Fright_shift :caps_lock]]}
 
-        {:des "Right Option -> FN" ; INTERCONNECTED WITH RightOption + RightCommand —> Capslock
+        {:des "Right Option -> FN" ; INTERCONNECTED WITH RightOption + RightShift —> Capslock
          :rules [[:##right_option :fn]]}
 
         ;; ============== FN IS SEMIHYPER & LEADER ==============
