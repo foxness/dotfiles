@@ -24,6 +24,7 @@
 ;; https://github.com/kaushikgopal/dotfiles/blob/master/.karabiner.edn
 ;; https://johnlindquist.com/customize-karabiner-with-goku/
 ;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
+;; https://github.com/kiinoda/goku/blob/main/karabiner.edn
 
 ;; ============== PARAMS ==============
 
@@ -31,7 +32,7 @@
     :profiles {
         :RiverGoku {
             :default true
-            :sim     100 ;; simultaneous key press threshold
+            :sim     150 ;; simultaneous key press threshold
             :delay   500 ;; to_delayed_action_delay_milliseconds
             :alone   1000 ;; to_if_alone_timeout_milliseconds
             :held    500 ;; to_if_held_down_threshold_milliseconds
@@ -80,8 +81,8 @@
         ;; dont do :!Qf12 bc capslock messes up that too
         ;; dont do :##Fright_shift, nope
         ;; the only thing that works is choosing one key like this
-        {:des "F6 —> Capslock"
-         :rules [[:##f6 :caps_lock]]}
+        {:des "F6 —> F14 (do not disturb) [capslock when held]"
+         :rules [[:##f6 :f14 nil { :held :caps_lock }]]}
 
         {:des "F7 —> Rewind"
          :rules [[:f7 :rewind]]}
@@ -128,10 +129,10 @@
         {:des "Equals + Delete —> Forward Delete"
          :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
 
-        {:des "Semihyper + Shift —> Placeholder + F20 (anki inbox)"
+        {:des "Semihyper + Shift —> Placeholder + F20"
          :rules [[:!WERleft_shift :!QEf20]]}
 
-        {:des "Hyper + Q —> Placeholder + F19 (chrome)" ;; needed for no annoying hyper + q sound
+        {:des "Hyper + Q —> Placeholder + F19" ;; needed for no annoying hyper + q sound
          :rules [[:!QWERq :!QEf19]]}
 
         {:des "Hyper + Escape —> Placeholder + F18"
