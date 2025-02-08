@@ -74,8 +74,14 @@
         {:des "F5 —> F17 (jp)"
          :rules [[:f5 :f17 [:!dota :!krita]]]}
 
-        {:des "F6 —> F13 (do not disturb)"
-         :rules [[:f6 :f14 [:!dota :!krita]]]}
+        ;; HOW TO NOT DO CAPSLOCK:
+        ;; dont do :##Eslash, cant type a question mark
+        ;; dont do [:right_option :slash] either, cuz capslock changes slash to question mark
+        ;; dont do :!Qf12 bc capslock messes up that too
+        ;; dont do :##Fright_shift, nope
+        ;; the only thing that works is choosing one key like this
+        {:des "F6 —> Capslock"
+         :rules [[:##f6 :caps_lock]]}
 
         {:des "F7 —> Rewind"
          :rules [[:f7 :rewind]]}
@@ -103,13 +109,7 @@
         {:des "Capslock —> Hyper (but not in Dota)" ;; order matters: 1
          :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
 
-        ;; dont do :##Eslash, cant type a question mark
-        ;; dont do [:right_option :slash] either, cuz capslock changes slash to question mark
-        ;; dont do :!Qf12 bc capslock messes up that too
-        {:des "RightOption + RightShift —> Capslock" ; INTERCONNECTED WITH Right Option -> FN
-         :rules [[:##Fright_shift :caps_lock]]}
-
-        {:des "Right Option -> FN" ; INTERCONNECTED WITH RightOption + RightShift —> Capslock
+        {:des "Right Option -> FN"
          :rules [[:##right_option :fn]]}
 
         ;; ============== FN IS SEMIHYPER & LEADER ==============
