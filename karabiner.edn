@@ -118,8 +118,8 @@
         ;; {:des "FN -> F13 (leader)"
         ;;  :rules [[:fn :f13]]}
 
-        {:des "Both Commands -> F13 (leader)"
-         :rules [[[:left_command :right_command] :f13]]}
+        ;; {:des "Both Commands -> F13 (leader)" ;; dont do this because it makes cmd slow
+        ;;  :rules [[[:left_command :right_command] :f13]]}
 
         {:des "Right Option -> FN"
          :rules [[:##right_option :fn]]}
