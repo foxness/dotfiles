@@ -149,13 +149,13 @@
 
         ;; ============== KRITA ==============
 
-        {
-            :des "Krita"
-            :rules [
-                :krita
-                [:##left_control :left_option]
-            ]
-        }
+        ;; {
+        ;;     :des "Krita"
+        ;;     :rules [
+        ;;         :krita
+        ;;         [:##left_control :left_option]
+        ;;     ]
+        ;; }
 
         ;; ============== GAMES ==============
 
