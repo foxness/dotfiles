@@ -138,8 +138,8 @@
         {:des "Hyper + Escape —> Placeholder + F18"
          :rules [[:!QWERescape :!QEf18]]}
 
-        {:des "Hyper + Left Command —> Placeholder + F17 (open finder)"
-         :rules [[:!QWERleft_command :!QEf17]]}
+        {:des "Hyper + Left Command —> Placeholder + F17"
+         :rules [[:!QWERleft_command :!QEf17 [:!dota]]]}
 
         {:des "Hyper + Z —> Cmd + H (hide)"
          :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if capslock isn't hyper
