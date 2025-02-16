@@ -26,6 +26,9 @@
 ;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
 ;; https://github.com/kiinoda/goku/blob/main/karabiner.edn
 
+;; bundle id command:
+;; osascript -e 'id of app "SomeApp"'
+
 ;; ============== PARAMS ==============
 
 {
@@ -52,8 +55,10 @@
         :chrome ["^com\\.google\\.Chrome$"]
         :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
         :safari ["^com\\.apple\\.Safari$"]
-        :dota ["^com\\.valvesoftware\\.dota2$"]
         :krita ["^org\\.krita$"]
+
+        :dota ["^com\\.valvesoftware\\.dota2$"]
+        :starcraft ["^com\\.blizzard\\.starcraft2$"]
     }
 
     :main [
@@ -61,19 +66,19 @@
         ;; ============== FUNCTION ROW ==============
 
         {:des "F1 —> Decrease brightness"
-         :rules [[:f1 :display_brightness_decrement [:!krita :!dota]]]}
+         :rules [[:f1 :display_brightness_decrement [:!krita :!dota :!starcraft]]]}
 
         {:des "F2 —> Increase brightness"
-         :rules [[:f2 :display_brightness_increment [:!krita :!dota]]]}
+         :rules [[:f2 :display_brightness_increment [:!krita :!dota :!starcraft]]]}
 
         {:des "F3 —> F15 (en)"
-         :rules [[:f3 :f15 [:!dota :!krita]]]}
+         :rules [[:f3 :f15 [:!dota :!krita :!starcraft]]]}
 
         {:des "F4 —> F16 (ru)"
-         :rules [[:f4 :f16 [:!dota :!krita]]]}
+         :rules [[:f4 :f16 [:!dota :!krita :!starcraft]]]}
 
         {:des "F5 —> F17 (jp)"
-         :rules [[:f5 :f17 [:!dota :!krita]]]}
+         :rules [[:f5 :f17 [:!dota :!krita :!starcraft]]]}
 
         ;; HOW TO NOT DO CAPSLOCK:
         ;; dont do :##Eslash, cant type a question mark
