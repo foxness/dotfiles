@@ -113,7 +113,7 @@
         ;;  :rules [[:!S#Pcaps_lock :play_or_pause [:!dota]]]}
 
         {:des "Capslock —> Hyper (but not in Dota)" ;; order matters: 1
-         :rules [[:##caps_lock :!QWEright_shift [:!dota]]]}
+         :rules [[:##caps_lock :!QWEright_shift [:!dota :!starcraft]]]}
 
         ;; ============== FN IS SEMIHYPER & LEADER ==============
 
@@ -183,6 +183,16 @@
                 [:!Of2 :k]
                 [:!Of3 :l]
                 [:!Of4 :semicolon]
+            ]
+        }
+
+        {
+            :des "Starcraft 2"
+            :rules [
+                :starcraft
+
+                [:##caps_lock :!Tleft_option]
+                [:##left_command :left_control]
             ]
         }
 
