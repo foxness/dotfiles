@@ -87,7 +87,7 @@
         ;; dont do :##Fright_shift, nope
         ;; the only thing that works is choosing one key like this
         {:des "F6 —> F14 (do not disturb) [capslock when held]"
-         :rules [[:##f6 :f14 nil { :held :caps_lock }]]}
+         :rules [[:##f6 :f14 [:!dota :!krita :!starcraft] { :held :caps_lock }]]}
 
         {:des "F7 —> Rewind"
          :rules [[:f7 :rewind]]}
