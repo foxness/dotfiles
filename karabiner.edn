@@ -131,8 +131,8 @@
 
         ;; ============== BINDINGS ==============
 
-        {:des "Equals + Delete —> Forward Delete"
-         :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
+        ;; {:des "Equals + Delete —> Forward Delete" ; commented because simultaneous = delayed normal press
+        ;;  :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
 
         {:des "Semihyper + Shift —> Placeholder + F20"
          :rules [[:!WERleft_shift :!QEf20]]}
@@ -151,6 +151,12 @@
 
         {:des "Semihyper + F —> FN + F (fullscreen)"
          :rules [[:!WERf :!Ff]]}
+
+        {:des "Make work: Shift + Option + F11 -> Fine Volume Down"
+         :rules [[:!SOf11 :!SOvolume_down]]}
+
+        {:des "Make work: Shift + Option + F12 -> Fine Volume Up"
+         :rules [[:!SOf12 :!SOvolume_up]]}
 
         ;; ============== KRITA ==============
 
