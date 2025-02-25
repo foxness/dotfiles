@@ -118,15 +118,15 @@
         ;; ============== FN IS SEMIHYPER & LEADER ==============
 
         {:des "FN -> Semihyper (Leader when alone)"
-         :rules [[:##fn :!WEright_shift [:!dota] { :alone :f13 }]]}
+         :rules [[:##fn :!Wright_shift [:!dota] { :alone :f13 }]]}
 
         {:des "Right Option -> FN"
          :rules [[:##right_option :fn]]}
 
-        ;; ============== BINDINGS ==============
+        ;; ============== PLACEHOLDER BINDINGS ==============
 
         {:des "Semihyper + Shift —> Placeholder + F20"
-         :rules [[:!WERleft_shift :!QEf20]]}
+         :rules [[:!WRleft_shift :!QEf20]]}
 
         {:des "Hyper + Q —> Placeholder + F19" ;; needed for no annoying hyper + q sound
          :rules [[:!QWERq :!QEf19]]}
@@ -137,11 +137,13 @@
         {:des "Hyper + Left Command —> Placeholder + F17"
          :rules [[:!QWERleft_command :!QEf17 [:!dota]]]}
 
+         ;; ============== HELPER BINDINGS ==============
+
         {:des "Hyper + Z —> Cmd + H (hide)"
          :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if capslock isn't hyper
 
         {:des "Semihyper + F —> FN + F (fullscreen)"
-         :rules [[:!WERf :!Ff]]}
+         :rules [[:!WRf :!Ff]]}
 
         {:des "Make work: Shift + Option + F11 -> Fine Volume Down"
          :rules [[:!SOf11 :!SOvolume_down]]}
