@@ -35,7 +35,7 @@
     :profiles {
         :RiverGoku {
             :default true
-            :sim     150 ;; simultaneous key press threshold
+            :sim     100 ;; simultaneous key press threshold
             :delay   500 ;; to_delayed_action_delay_milliseconds
             :alone   1000 ;; to_if_alone_timeout_milliseconds
             :held    500 ;; to_if_held_down_threshold_milliseconds
