@@ -59,6 +59,7 @@
 
         :dota ["^com\\.valvesoftware\\.dota2$"]
         :starcraft ["^com\\.blizzard\\.starcraft2$"]
+        :terraria ["^org\\.Terraria$"]
     }
 
     :main [
@@ -192,6 +193,16 @@
 
                 [:##caps_lock :!Tleft_option]
                 [:##left_command :left_control]
+            ]
+        }
+
+        {
+            :des "Terraria"
+            :rules [
+                :terraria
+
+                [:##Cq :o] ; prevent from quitting
+                [:##Cw :p]
             ]
         }
 
