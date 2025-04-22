@@ -60,7 +60,7 @@
         :dota ["^com\\.valvesoftware\\.dota2$"]
         :starcraft ["^com\\.blizzard\\.starcraft2$"]
         :terraria ["^org\\.Terraria$"]
-        :minecraft [:paths "*\\/ModrinthApp\\/meta\\/java_versions\\/*\\/Contents\\/Home\\/bin\\/java"]
+        :minecraft [:paths "\\/Contents\\/Home\\/bin\\/java$"]
     }
 
     :main [
@@ -92,22 +92,22 @@
          :rules [[:##f6 :f14 [:!dota :!krita :!starcraft :!minecraft] { :held :caps_lock }]]}
 
         {:des "F7 —> Rewind"
-         :rules [[:f7 :rewind [:!minecraft]]]}
+         :rules [[:f7 :rewind [:!starcraft :!minecraft]]]}
 
         {:des "F8 —> Play/Pause"
-         :rules [[:f8 :play_or_pause [:!minecraft]]]}
+         :rules [[:f8 :play_or_pause [:!starcraft :!minecraft]]]}
 
         {:des "F9 —> Fast forward"
-         :rules [[:f9 :fast_forward [:!minecraft]]]}
+         :rules [[:f9 :fast_forward [:!starcraft :!minecraft]]]}
 
         {:des "F10 —> Mute"
-         :rules [[:f10 :mute [:!minecraft]]]}
+         :rules [[:f10 :mute [:!starcraft :!minecraft]]]}
 
         {:des "F11 —> Decrease volume"
-         :rules [[:f11 :volume_decrement [:!minecraft]]]}
+         :rules [[:f11 :volume_decrement [:!starcraft :!minecraft]]]}
 
         {:des "F12 —> Increase volume"
-         :rules [[:f12 :volume_increment [:!minecraft]]]}
+         :rules [[:f12 :volume_increment [:!starcraft :!minecraft]]]}
 
         ;; ============== CAPSLOCK IS HYPER ==============
 
