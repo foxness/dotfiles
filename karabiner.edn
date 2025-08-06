@@ -74,13 +74,13 @@
          :rules [[:f2 :display_brightness_increment [:!krita :!dota :!starcraft :!minecraft]]]}
 
         {:des "F3 —> F15 (en)"
-         :rules [[:f3 :f15 [:!dota :!krita :!starcraft :!minecraft]]]}
+         :rules [[:f3 :f14 [:!dota :!krita :!starcraft :!minecraft]]]}
 
         {:des "F4 —> F16 (ru)"
-         :rules [[:f4 :f16 [:!dota :!krita :!starcraft :!minecraft]]]}
+         :rules [[:f4 :f15 [:!dota :!krita :!starcraft :!minecraft]]]}
 
         {:des "F5 —> F17 (jp)"
-         :rules [[:f5 :f17 [:!dota :!krita :!starcraft :!minecraft]]]}
+         :rules [[:f5 :f16 [:!dota :!krita :!starcraft :!minecraft]]]}
 
         ;; HOW TO NOT DO CAPSLOCK:
         ;; dont do :##Eslash, cant type a question mark
@@ -89,7 +89,7 @@
         ;; dont do :##Fright_shift, nope
         ;; the only thing that works is choosing one key like this
         {:des "F6 —> F14 (do not disturb) [capslock when held]"
-         :rules [[:##f6 :f14 [:!dota :!krita :!starcraft :!minecraft] { :held :caps_lock }]]}
+         :rules [[:##f6 :f17 [:!dota :!krita :!starcraft :!minecraft] { :held :caps_lock }]]}
 
         {:des "F7 —> Rewind"
          :rules [[:f7 :rewind [:!starcraft :!minecraft]]]}
@@ -127,7 +127,7 @@
 
         ;; ============== PLACEHOLDER BINDINGS ==============
 
-        {:des "Semihyper + Shift —> Placeholder + F20"
+        {:des "Semihyper + Shift —> Placeholder + F20" ;; maccy
          :rules [[:!WRleft_shift :!QEf20]]}
 
         {:des "Hyper + Q —> Placeholder + F19" ;; needed for no annoying hyper + q sound
