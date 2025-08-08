@@ -51,6 +51,11 @@
 ;;   :rules [[:a :1 [:chrome]]
 ;;           [:a :1 [:safari]]]}
 
+    :input-sources {
+        :abc { :input_source_id "com.apple.keylayout.ABC" }
+        :graphite { :input_source_id "org.sil.ukelele.keyboardlayout.graphite.graphite" }
+    }
+
     :applications {
         :chrome ["^com\\.google\\.Chrome$"]
         :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
@@ -139,7 +144,7 @@
         {:des "Hyper + Left Command —> Placeholder + F17"
          :rules [[:!QWERleft_command :!QEf17 [:!dota]]]}
 
-         ;; ============== HELPER BINDINGS ==============
+        ;; ============== HELPER BINDINGS ==============
 
         {:des "Hyper + Z —> Cmd + H (hide)"
          :rules [[:!QWERz :!Ch]]} ;; replace with [:!Pz :!Ch] if capslock isn't hyper
@@ -152,6 +157,24 @@
 
         {:des "Make work: Shift + Option + F12 -> Fine Volume Up"
          :rules [[:!SOf12 :!SOvolume_up]]}
+
+        ;; ============== GRAPHITE ==============
+
+        {:des "ABC: Desktop Navigation"
+         :rules [
+                :abc
+                [:!QWERa :!Oopen_bracket]
+                [:!QWERs :!Oclose_bracket]
+            ]
+        }
+
+        {:des "Graphite: Desktop Navigation"
+         :rules [
+                :graphite
+                [:!QWERa :!Ohyphen]
+                [:!QWERs :!Oequal_sign]
+            ]
+        }
 
         ;; ============== KRITA ==============
 
