@@ -176,6 +176,15 @@
             ]
         }
 
+        {:des "Graphite: some QWERTY shortcuts"
+         :rules [
+                :graphite
+                [:#Cz :!Ct] ;; cmd-Z
+                [:#Cq :!Cz] ;; cmd-Q
+                [:#Cw :!Cr] ;; cmd-W
+            ]
+        }
+
         ;; ============== KRITA ==============
 
         ;; {
