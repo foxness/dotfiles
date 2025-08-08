@@ -52,7 +52,7 @@
 ;;           [:a :1 [:safari]]]}
 
     :input-sources {
-        :abc { :input_source_id "com.apple.keylayout.ABC" }
+        ;; :abc { :input_source_id "com.apple.keylayout.ABC" }
         :graphite { :input_source_id "org.sil.ukelele.keyboardlayout.graphite.graphite" }
     }
 
@@ -132,9 +132,6 @@
 
         ;; ============== PLACEHOLDER BINDINGS ==============
 
-        {:des "Semihyper + Shift —> Placeholder + F20" ;; maccy
-         :rules [[:!WRleft_shift :!QEf20]]}
-
         {:des "Hyper + Q —> Placeholder + F19" ;; needed for no annoying hyper + q sound
          :rules [[:!QWERq :!QEf19]]}
 
@@ -160,9 +157,9 @@
 
         ;; ============== GRAPHITE ==============
 
-        {:des "ABC: Desktop Navigation"
+        {:des "Qwerty: Desktop Navigation"
          :rules [
-                :abc
+                :!graphite
                 [:!QWERa :!Oopen_bracket]
                 [:!QWERs :!Oclose_bracket]
             ]
@@ -179,9 +176,9 @@
         {:des "Graphite: some QWERTY shortcuts"
          :rules [
                 :graphite
-                [:#Cz :!Ct] ;; cmd-Z
-                [:#Cq :!Cz] ;; cmd-Q
-                [:#Cw :!Cr] ;; cmd-W
+                [:!C#TOSz :!C#TOSt] ;; cmd-Z
+                [:!C#TOSq :!C#TOSz] ;; cmd-Q
+                [:!C#TOSw :!C#TOSr] ;; cmd-W
             ]
         }
 
@@ -242,6 +239,9 @@
         }
 
         ;; ============== HISTORY ==============
+
+        ;; {:des "Semihyper + Shift —> Placeholder + F20" ;; maccy
+        ;;  :rules [[:!WRleft_shift :!QEf20]]}
 
         ;; {:des "Equals + Delete —> Forward Delete" ; commented because simultaneous = delayed normal press
         ;;  :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
