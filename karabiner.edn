@@ -72,20 +72,20 @@
 
         ;; ============== FUNCTION ROW ==============
 
-        {:des "F1 —> Decrease brightness"
-         :rules [[:f1 :display_brightness_decrement [:!krita :!dota :!starcraft :!minecraft]]]}
+        {:des "F1 —> Play/Pause"
+         :rules [[:f1 :play_or_pause [:!krita :!dota :!starcraft :!minecraft]]]}
 
-        {:des "F2 —> Increase brightness"
-         :rules [[:f2 :display_brightness_increment [:!krita :!dota :!starcraft :!minecraft]]]}
+        {:des "F2 —> Rewind"
+         :rules [[:f2 :rewind [:!krita :!dota :!starcraft :!minecraft]]]}
 
-        {:des "F3 —> F15 (en)"
-         :rules [[:f3 :f14 [:!dota :!krita :!starcraft :!minecraft]]]}
+        {:des "F3 —> Fast forward"
+         :rules [[:f3 :fast_forward [:!dota :!krita :!starcraft :!minecraft]]]}
 
-        {:des "F4 —> F16 (ru)"
-         :rules [[:f4 :f15 [:!dota :!krita :!starcraft :!minecraft]]]}
+        {:des "F4 —> F14"
+         :rules [[:f4 :f14 [:!dota :!krita :!starcraft :!minecraft]]]}
 
-        {:des "F5 —> F17 (jp)"
-         :rules [[:f5 :f16 [:!dota :!krita :!starcraft :!minecraft]]]}
+        {:des "F5 —> F15"
+         :rules [[:f5 :f15 [:!dota :!krita :!starcraft :!minecraft]]]}
 
         ;; HOW TO NOT DO CAPSLOCK:
         ;; dont do :##Eslash, cant type a question mark
@@ -93,17 +93,17 @@
         ;; dont do :!Qf12 bc capslock messes up that too
         ;; dont do :##Fright_shift, nope
         ;; the only thing that works is choosing one key like this
-        {:des "F6 —> F14 (do not disturb) [capslock when held]"
-         :rules [[:##f6 :f17 [:!dota :!krita :!starcraft :!minecraft] { :held :caps_lock }]]}
+        {:des "F6 —> F16 [capslock when held]"
+         :rules [[:##f6 :f16 [:!dota :!krita :!starcraft :!minecraft] { :held :caps_lock }]]}
 
-        {:des "F7 —> Rewind"
-         :rules [[:f7 :rewind [:!starcraft :!minecraft]]]}
+        {:des "F7 —> F17"
+         :rules [[:f7 :f17 [:!starcraft :!minecraft]]]}
 
-        {:des "F8 —> Play/Pause"
-         :rules [[:f8 :play_or_pause [:!starcraft :!minecraft]]]}
+        {:des "F8 —> Decrease brightness"
+         :rules [[:f8 :display_brightness_decrement [:!starcraft :!minecraft]]]}
 
-        {:des "F9 —> Fast forward"
-         :rules [[:f9 :fast_forward [:!starcraft :!minecraft]]]}
+        {:des "F9 —> Increase brightness"
+         :rules [[:f9 :display_brightness_increment [:!starcraft :!minecraft]]]}
 
         {:des "F10 —> Mute"
          :rules [[:f10 :mute [:!starcraft :!minecraft]]]}
