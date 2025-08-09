@@ -52,8 +52,10 @@
 ;;           [:a :1 [:safari]]]}
 
     :input-sources {
-        ;; :abc { :input_source_id "com.apple.keylayout.ABC" }
-        :graphite { :input_source_id "org.sil.ukelele.keyboardlayout.graphite.graphite" }
+        :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
+        :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphite\\.graphite$" }
+        :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" }　;; { :language "ru" }
+        :japanese { :input_mode_id "^com\\.apple\\.inputmethod\\.Japanese$" } ;; { :language "ja" }
     }
 
     :applications {
@@ -179,6 +181,19 @@
                 [:!C#TOSz :!C#TOSt] ;; cmd-Z
                 [:!C#TOSq :!C#TOSz] ;; cmd-Q
                 [:!C#TOSw :!C#TOSr] ;; cmd-W
+            ]
+        }
+
+        ;; ============== GENERAL ==============
+
+        {:des "General"
+         :rules [
+                ;; --- Keyboard layout switching ---
+
+                [:!QWERj { :input :abc }]
+                [:!QWERk { :input :graphite }]
+                [:!QWERl { :input :russian }]
+                [:!QWERsemicolon { :input :japanese }]
             ]
         }
 
