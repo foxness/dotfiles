@@ -53,7 +53,7 @@
 
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
-        :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphite\\.graphite$" }
+        :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphiteangle\\.graphiteangle$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" }　;; { :language "ru" }
         :japanese { :input_mode_id "^com\\.apple\\.inputmethod\\.Japanese$" } ;; { :language "ja" }
     }
@@ -179,7 +179,7 @@
          :rules [
                 :graphite
                 [:!C#TOSz :!C#TOSt] ;; cmd-Z
-                [:!C#TOSq :!C#TOSz] ;; cmd-Q
+                [:!C#TOSq :!C#TOSb] ;; cmd-Q
                 [:!C#TOSw :!C#TOSr] ;; cmd-W
             ]
         }
