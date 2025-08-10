@@ -100,7 +100,7 @@
 
                 ;; order matters for these two
                 ;; [:!S#Pcaps_lock :play_or_pause [:!dota]] ;; Capslock + Shift —> Play/Pause
-                [:##caps_lock :!QWEright_shift [:!dota :!starcraft]] ;; Capslock —> Hyper
+                [:##caps_lock :!QWEright_shift [:!extend-hold :!dota :!starcraft]] ;; Capslock —> Hyper
 
                 [:##fn :!Wright_shift [:!dota] { :alone :f13 }] ;; FN -> Semihyper (Leader when alone)
                 [:##right_option :fn] ;; Right Option -> FN
@@ -114,7 +114,6 @@
                 ;; --- Helper bindings ---
 
                 [:!QWERz :!Ch] ;; Hyper + Z —> Cmd + H (hide), replace with [:!Pz :!Ch] if capslock isn't hyper
-                [:!WRf :!Ff] ;; Semihyper + F —> FN + F (fullscreen)
 
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :!SOvolume_down] ;; Shift + Option + F11 -> Fine Volume Down
@@ -133,21 +132,44 @@
 
         {
             :des "Extend layer activation"
-            :rules [[:##right_command ["extend-hold" 1] nil {:afterup ["extend-hold" 0]}]]
+            :rules [[:##right_command ["extend-hold" 1] nil { :afterup ["extend-hold" 0] }]]
         }
 
         {
             :des "Extend layer"
             :rules [
                 :extend-hold
+
+                ;; arrow navigation
                 [:##k :left_arrow]
                 [:##semicolon :right_arrow]
                 [:##o :up_arrow]
                 [:##l :down_arrow]
+                [:##i :!Oleft_arrow] ;; word
+                [:##p :!Oright_arrow]
+                [:##m :!Cleft_arrow] ;; line
+                [:##period :!Cright_arrow]
 
-                [:##i :home]
-                [:##p :end]
+                [:##9 :home]
+                [:##0 :end]
 
+                [:##y :page_up]
+                [:##h :page_down]
+                
+                [:##j :escape]
+                [:caps_lock :escape]
+                [:##g :!Ff] ;; fullscreen
+                [:##a :!Ca]
+
+                [:##f :delete_or_backspace] ;; delete character
+                [:##d :!Odelete_or_backspace] ;; delete word
+                [:##s :!Cdelete_or_backspace] ;; delete line
+
+                [:##r :!Fdelete_or_backspace] ;; forward delete character
+                ;; [:##e :!FOdelete_or_backspace] ;; forward delete word (doesnt work)
+                [:##e :!FCdelete_or_backspace] ;; forward delete line
+
+                [:##delete_or_backspace :!Odelete_or_backspace]
 
                 ;; [:left_control :delete_or_backspace]
                 ;; [:tab :!Odelete_or_backspace]
