@@ -183,9 +183,8 @@
 
         ;; ============== GAMES ==============
 
-        {
-            :des "Dota"
-            :rules [
+        {:des "Dota"
+         :rules [
                 :dota
 
                 [:##caps_lock :left_control]
@@ -207,9 +206,8 @@
             ]
         }
 
-        {
-            :des "Starcraft 2"
-            :rules [
+        {:des "Starcraft 2"
+         :rules [
                 :starcraft
 
                 [:##caps_lock :!Tleft_option]
@@ -217,186 +215,13 @@
             ]
         }
 
-        {
-            :des "Terraria"
-            :rules [
+        {:des "Terraria"
+         :rules [
                 :terraria
 
                 [:##Cq :o] ; prevent from quitting
                 [:##Cw :p]
             ]
         }
-
-        ;; ============== HISTORY ==============
-
-        ;; {:des "Semihyper + Shift —> Placeholder + F20" ;; maccy
-        ;;  :rules [[:!WRleft_shift :!QEf20]]}
-
-        ;; {:des "Equals + Delete —> Forward Delete" ; commented because simultaneous = delayed normal press
-        ;;  :rules [[[:equal_sign :delete_or_backspace] :delete_forward]]}
-
-        ;; {:des "FN -> F13 (leader)"
-        ;;  :rules [[:fn :f13]]}
-
-        ;; {:des "Both Commands -> F13 (leader)" ;; dont do this because it makes cmd slow
-        ;;  :rules [[[:left_command :right_command] :f13]]}
-
-        ;; {:des "Semihyper + E —> FN + E (emoji)"
-        ;;  :rules [[:!WERr :!Fe]]}
-
-        ;; {:des "Make work: Hyper Key + Hyphen"
-        ;;  :rules [[:!QWERhyphen :!QWERhyphen]]}
-
-        ;; {:des "Make work: Hyper Key + Equals"
-        ;;  :rules [[:!QWERequal_sign :!QWERequal_sign]]}
-
-        ;; {
-        ;;     :des "Starcraft"
-        ;;     :rules [
-        ;;         :RiverStarcraft
-        ;;         [:##f1 :f1]
-        ;;         [:##f2 :f2]
-        ;;         [:##f3 :f3]
-        ;;         [:##f4 :f4]
-        ;;         [:##f5 :f5]
-        ;;         [:##f6 :f6]
-        ;;         [:##f7 :f7]
-        ;;         [:##f8 :f8]
-        ;;         [:##f9 :f9]
-        ;;         [:##f10 :f10]
-        ;;         [:##f11 :f11]
-        ;;         [:##f12 :f12]
-        ;;         [:##left_command :left_control]
-        ;;     ]
-        ;; }
-
-        ;; {:des "Make work: Hyper Key + F1"
-        ;;  :rules [[:!QWERf1 :!QWERf1]]}
-
-        ;; {:des "Make work: Hyper Key + F2"
-        ;;  :rules [[:!QWERf2 :!QWERf2]]}
-
-        ;; {:des "Make work: Hyper Key + F3"
-        ;;  :rules [[:!QWERf3 :!QWERf3]]}
-
-        ;; {:des "Make work: Hyper Key + F4"
-        ;;  :rules [[:!QWERf4 :!QWERf4]]}
-
-        ;; {:des "Make work: Hyper Key + F5"
-        ;;  :rules [[:!QWERf5 :!QWERf5]]}
-
-        ;; {:des "Make work: Hyper Key + F6"
-        ;;  :rules [[:!QWERf6 :!QWERf6]]}
-
-        ;; {:des "Make work: Hyper Key + F7"
-        ;;  :rules [[:!QWERf7 :!QWERf7]]}
-
-        ;; {:des "Make work: Hyper Key + F8"
-        ;;  :rules [[:!QWERf8 :!QWERf8]]}
-
-        ;; {:des "Right Option -> FN Key (Capslock when pressed alone)"
-        ;;  :rules [[:##right_option :fn nil {:alone :caps_lock}]]}
-
-        ;; {:des "F5 —> Dictation"
-        ;;  :rules [[:f5 :dictation]]}
-
-        ;;  {:des "Shift + Delete —> Forward Delete"
-        ;;   :rules [[:!Sdelete_or_backspace :delete_forward]]}
-
-        ;;  {:des "Tap Shift —> F15 (prev lang)"
-        ;;   :rules [[:left_shift :left_shift nil {:alone :prev_lang}]
-        ;;           [:##left_shift :left_shift]]}
-
-        ;; {:des "Capslock + Q —> F14 (mission control)"
-        ;;  :rules [[:!QWERq :f14]]}
-
-        ;; {:des "Capslock + G —> FN Key + E (emoji)"
-        ;;  :rules [[:!QWERg :!Fe]]}
-
-        ;; {:des "Capslock —> Hyper Key (Escape when pressed alone)" ;; order matters: 1
-        ;;  :rules [[:##caps_lock :!QWEright_shift nil {:alone :escape}]]}
-
-        ;; {:des "Right Option -> FN Key (Capslock when pressed alone)"
-        ;;  :rules [[:##right_option :fn nil {:alone :caps_lock}]]}
-
-        ;; {:des "Opt + Space —> Cmd + H (hide)"
-        ;;  :rules [[:!Ospacebar :!Ch]]} ;; replace with [:!Pz :!Ch] if capslock isn't hyper
-
-;;
     ]
 }
-
-;; {:profiles
-;;  {:RiverStarcraft {:default false
-;;               :sim     100 ;; simultaneous key press threshold
-;;               :delay   500 ;; to_delayed_action_delay_milliseconds
-;;               :alone   1000 ;; to_if_alone_timeout_milliseconds
-;;               :held    500 ;; to_if_held_down_threshold_milliseconds
-;;               }}
-
-;;  ;; ============== NAMED KEYS ==============
-
-;;  :applications {:chrome ["^com\\.google\\.Chrome$"]
-;;                 :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
-;;                 :safari ["^com\\.apple\\.Safari$"]
-;;                 :dota ["^com\\.valvesoftware\\.dota2$"]
-;;                 }
-
-;;  :main [;;
-;;  ;; ============== STARCRAFT ==============
-
-;;          {:des "Starcraft"
-;;          :rules [
-;;                 [:f1 :f1]
-;;                 [:f2 :f2]
-;;                 [:f3 :f3]
-;;                 [:f4 :f4]
-;;                 [:f5 :f5]
-;;                 [:f6 :f6]
-;;                 [:f7 :f7]
-;;                 [:f8 :f8]
-;;         ]}
-
-;; ]}
-
-;; C T O S stands for left_command left_control left_option left_shift
-    ;; Q W E R stands for right_command right_control right_option right_shift
-
-    ;;;; hyper
-    ;; !! stands for left_command + left_control + left_option + left_shift
-    ;; :!!1 left_command + left_control + left_option + left_shift + 1
-
-    ;; this is a little bit weird, but it's convenient
-    ;; the rule [:!Ca :!T1]
-    ;; means from command a to control 1
-    ;; :!Ca is keycode :a and prefix a with !C
-
-    ;; here's the definition
-
-    ;; !  | means mandatory
-    ;; #  | means optional
-    ;; C  | left_command
-    ;; T  | left_control
-    ;; O  | left_option
-    ;; S  | left_shift
-    ;; F  | fn
-    ;; Q  | right_command
-    ;; W  | right_control
-    ;; E  | right_option
-    ;; R  | right_shift
-    ;; P  | caps_lock
-    ;; !! | mandatory command + control + optional + shift (hyper)
-    ;; ## | optional any
-
-    ;; examples
-
-    ;; !CTSequal_sign  | mandatory command control shift =
-    ;;                 | which is command control +
-    ;; !O#Sright_arrow | mandatory option optional any right_arrow
-
-    ;; karabiner definition of mandatory and optional
-    ;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
-
-    ;; rule [<from> <to>]
-    ;; if simplified modifier is used in <to>, optional(#) definition will be
-    ;; ignored.
