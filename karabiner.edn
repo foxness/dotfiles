@@ -42,19 +42,10 @@
         }
     }
 
- ;; ============== NAMED KEYS ==============
-
-;;  :tos {:prev_lang {:key :f15}
-;;        :next_lang {:key :f16}}
-
-;;  {:des "a to 1 only in chrome and safari"
-;;   :rules [[:a :1 [:chrome]]
-;;           [:a :1 [:safari]]]}
-
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphiteangle\\.graphiteangle$" }
-        :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" }　;; { :language "ru" }
+        :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; { :language "ru" }
         :japanese { :input_mode_id "^com\\.apple\\.inputmethod\\.Japanese$" } ;; { :language "ja" }
     }
 
@@ -99,45 +90,40 @@
             ]
         }
 
-        ;; ============== CAPSLOCK IS HYPER ==============
+        ;; ============== GENERAL ==============
 
-        {:des "Capslock is Hyper"
+        {:des "General"
          :rules [
+                ;; --- Hyper & Semihyper ---
+
                 ;; order matters for these two
                 ;; [:!S#Pcaps_lock :play_or_pause [:!dota]] ;; Capslock + Shift —> Play/Pause
                 [:##caps_lock :!QWEright_shift [:!dota :!starcraft]] ;; Capslock —> Hyper
-            ]
-        }
 
-        ;; ============== FN IS SEMIHYPER & LEADER ==============
-
-        {:des "FN is Semihyper & Leader"
-         :rules [
                 [:##fn :!Wright_shift [:!dota] { :alone :f13 }] ;; FN -> Semihyper (Leader when alone)
                 [:##right_option :fn] ;; Right Option -> FN
-            ]
-        }
 
-        ;; ============== PLACEHOLDER BINDINGS ==============
+                ;; --- Placeholder bindings ---
 
-        {:des "Placeholder bindings"
-         :rules [
                 [:!QWERq :!QEf19] ;; Hyper + Q —> Placeholder + F19 (needed for no annoying hyper + q sound)
                 [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18
                 [:!QWERleft_command :!QEf17 [:!dota]] ;; Hyper + Left Command —> Placeholder + F17
-            ]
-        }
 
-        ;; ============== HELPER BINDINGS ==============
+                ;; --- Helper bindings ---
 
-        {:des "Helper bindings"
-         :rules [
                 [:!QWERz :!Ch] ;; Hyper + Z —> Cmd + H (hide), replace with [:!Pz :!Ch] if capslock isn't hyper
                 [:!WRf :!Ff] ;; Semihyper + F —> FN + F (fullscreen)
 
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :!SOvolume_down] ;; Shift + Option + F11 -> Fine Volume Down
                 [:!SOf12 :!SOvolume_up] ;; Shift + Option + F12 -> Fine Volume Up
+
+                ;; --- Keyboard layout switching ---
+
+                [:!QWERj { :input :abc }]
+                [:!QWERk { :input :graphite }]
+                [:!QWERl { :input :russian }]
+                [:!QWERsemicolon { :input :japanese }]
             ]
         }
 
@@ -165,19 +151,6 @@
                 ;; Desktop Navigation
                 [:!QWERa :!Oopen_bracket]
                 [:!QWERs :!Oclose_bracket]
-            ]
-        }
-
-        ;; ============== GENERAL ==============
-
-        {:des "General"
-         :rules [
-                ;; --- Keyboard layout switching ---
-
-                [:!QWERj { :input :abc }]
-                [:!QWERk { :input :graphite }]
-                [:!QWERl { :input :russian }]
-                [:!QWERsemicolon { :input :japanese }]
             ]
         }
 
