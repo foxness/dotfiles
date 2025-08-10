@@ -25,6 +25,7 @@
 ;; https://johnlindquist.com/customize-karabiner-with-goku/
 ;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
 ;; https://github.com/kiinoda/goku/blob/main/karabiner.edn
+;; https://gist.github.com/rdavison/290abc3f5fe5db4a81f8f3e7164ac7a5
 
 ;; bundle id command:
 ;; osascript -e 'id of app "SomeApp"'
