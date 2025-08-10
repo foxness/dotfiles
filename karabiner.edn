@@ -63,16 +63,110 @@
 
     :main [
 
+        ;; ============== APPS AND GAMES ==============
+        ;; these rules go first because of F keys
+
+        {
+            :des "Krita"
+            :rules [
+                :krita
+                
+                [:f1 :f1]
+                [:f2 :f2]
+                [:f3 :f3]
+                [:f4 :f4]
+                [:f5 :f5]
+                [:f6 :f6]
+            ]
+        }
+
+        {
+            :des "Dota"
+            :rules [
+                :dota
+
+                [:##caps_lock :left_control]
+                [:##left_command :left_option]
+
+                [:fn :m]
+
+                [:!Fgrave_accent_and_tilde :!Oi]
+
+                [:!F1 :!Oo]
+                [:!F2 :!Op]
+                [:!F3 :!Oopen_bracket]
+                [:!F4 :!Oclose_bracket]
+
+                [:!Of1 :j]
+                [:!Of2 :k]
+                [:!Of3 :l]
+                [:!Of4 :semicolon]
+            ]
+        }
+
+        {
+            :des "Starcraft 2"
+            :rules [
+                :starcraft
+
+                [:##caps_lock :!Tleft_option]
+                [:##left_command :left_control]
+
+                [:f1 :f1]
+                [:f2 :f2]
+                [:f3 :f3]
+                [:f4 :f4]
+                [:f5 :f5]
+                [:f6 :f6]
+                [:f7 :f7]
+                [:f8 :f8]
+                [:f9 :f9]
+                [:f10 :f10]
+                [:f11 :f11]
+                [:f12 :f12]
+            ]
+        }
+
+        {
+            :des "Minecraft"
+            :rules [
+                :minecraft
+
+                [:f1 :f1]
+                [:f2 :f2]
+                [:f3 :f3]
+                [:f4 :f4]
+                [:f5 :f5]
+                [:f6 :f6]
+                [:f7 :f7]
+                [:f8 :f8]
+                [:f9 :f9]
+                [:f10 :f10]
+                [:f11 :f11]
+                [:f12 :f12]
+            ]
+        }
+
+        {
+            :des "Terraria"
+            :rules [
+                :terraria
+
+                [:##Cq :o] ; prevent from quitting
+                [:##Cw :p]
+            ]
+        }
+
         ;; ============== FUNCTION ROW ==============
 
         {
             :des "Function row"
             :rules [
-                [:f1 :play_or_pause [:!krita :!dota :!starcraft :!minecraft]] ;; F1 —> Play/Pause
-                [:f2 :rewind [:!krita :!dota :!starcraft :!minecraft]] ;; F2 —> Rewind
-                [:f3 :fast_forward [:!dota :!krita :!starcraft :!minecraft]] ;; F3 —> Fast forward
-                [:f4 :f14 [:!dota :!krita :!starcraft :!minecraft]] ;; F4 —> F14
-                [:f5 :f15 [:!dota :!krita :!starcraft :!minecraft]] ;; F5 —> F15
+                [:f1 :play_or_pause [:!dota]] ;; F1 —> Play/Pause
+                [:f2 :rewind [:!dota]] ;; F2 —> Rewind
+                [:f3 :fast_forward [:!dota]] ;; F3 —> Fast forward
+                [:f4 :f14 [:!dota]] ;; F4 —> F14
+                [:f5 :f15 [:!dota]] ;; F5 —> F15
 
                 ;; HOW TO NOT DO CAPSLOCK:
                 ;; dont do :##Eslash, cant type a question mark
@@ -80,14 +174,14 @@
                 ;; dont do :!Qf12 bc capslock messes up that too
                 ;; dont do :##Fright_shift, nope
                 ;; the only thing that works is choosing one key like this
-                [:##f6 :f16 [:!dota :!krita :!starcraft :!minecraft] { :held :caps_lock }] ;; F6 —> F16 [capslock when held]
+                [:##f6 :f16 [:!dota] { :held :caps_lock }] ;; F6 —> F16 [capslock when held]
 
-                [:f7 :f17 [:!starcraft :!minecraft]] ;; F7 —> F17
-                [:f8 :display_brightness_decrement [:!starcraft :!minecraft]] ;; F8 —> Decrease brightness
-                [:f9 :display_brightness_increment [:!starcraft :!minecraft]] ;; F9 —> Increase brightness
-                [:f10 :mute [:!starcraft :!minecraft]] ;; F10 —> Mute
-                [:f11 :volume_decrement [:!starcraft :!minecraft]] ;; F11 —> Decrease volume
-                [:f12 :volume_increment [:!starcraft :!minecraft]] ;; F12 —> Increase volume
+                [:f7 :f17] ;; F7 —> F17
+                [:f8 :display_brightness_decrement] ;; F8 —> Decrease brightness
+                [:f9 :display_brightness_increment] ;; F9 —> Increase brightness
+                [:f10 :mute] ;; F10 —> Mute
+                [:f11 :volume_decrement] ;; F11 —> Decrease volume
+                [:f12 :volume_increment] ;; F12 —> Increase volume
             ]
         }
 
@@ -218,52 +312,6 @@
                 ;; Desktop Navigation
                 [:!QWERa :!Oopen_bracket]
                 [:!QWERs :!Oclose_bracket]
-            ]
-        }
-
-        ;; ============== GAMES ==============
-
-        {
-            :des "Dota"
-            :rules [
-                :dota
-
-                [:##caps_lock :left_control]
-                [:##left_command :left_option]
-
-                [:fn :m]
-
-                [:!Fgrave_accent_and_tilde :!Oi]
-
-                [:!F1 :!Oo]
-                [:!F2 :!Op]
-                [:!F3 :!Oopen_bracket]
-                [:!F4 :!Oclose_bracket]
-
-                [:!Of1 :j]
-                [:!Of2 :k]
-                [:!Of3 :l]
-                [:!Of4 :semicolon]
-            ]
-        }
-
-        {
-            :des "Starcraft 2"
-            :rules [
-                :starcraft
-
-                [:##caps_lock :!Tleft_option]
-                [:##left_command :left_control]
-            ]
-        }
-
-        {
-            :des "Terraria"
-            :rules [
-                :terraria
-
-                [:##Cq :o] ; prevent from quitting
-                [:##Cw :p]
             ]
         }
     ]
