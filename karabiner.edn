@@ -38,7 +38,7 @@
             :sim     100 ;; simultaneous key press threshold
             :delay   500 ;; to_delayed_action_delay_milliseconds
             :alone   1000 ;; to_if_alone_timeout_milliseconds
-            :held    500 ;; to_if_held_down_threshold_milliseconds
+            :held    250 ;; to_if_held_down_threshold_milliseconds
         }
     }
 
@@ -65,8 +65,9 @@
 
         ;; ============== FUNCTION ROW ==============
 
-        {:des "Function row"
-         :rules [
+        {
+            :des "Function row"
+            :rules [
                 [:f1 :play_or_pause [:!krita :!dota :!starcraft :!minecraft]] ;; F1 —> Play/Pause
                 [:f2 :rewind [:!krita :!dota :!starcraft :!minecraft]] ;; F2 —> Rewind
                 [:f3 :fast_forward [:!dota :!krita :!starcraft :!minecraft]] ;; F3 —> Fast forward
@@ -92,8 +93,9 @@
 
         ;; ============== GENERAL ==============
 
-        {:des "General"
-         :rules [
+        {
+            :des "General"
+            :rules [
                 ;; --- Hyper & Semihyper ---
 
                 ;; order matters for these two
@@ -129,8 +131,9 @@
 
         ;; ============== GRAPHITE ==============
 
-        {:des "Graphite bindings"
-         :rules [
+        {
+            :des "Graphite bindings"
+            :rules [
                 :graphite
 
                 ;; Desktop Navigation
@@ -144,8 +147,9 @@
             ]
         }
 
-        {:des "Qwerty + Graphite"
-         :rules [
+        {
+            :des "Qwerty + Graphite"
+            :rules [
                 :!graphite
 
                 ;; Desktop Navigation
@@ -156,8 +160,9 @@
 
         ;; ============== GAMES ==============
 
-        {:des "Dota"
-         :rules [
+        {
+            :des "Dota"
+            :rules [
                 :dota
 
                 [:##caps_lock :left_control]
@@ -179,8 +184,9 @@
             ]
         }
 
-        {:des "Starcraft 2"
-         :rules [
+        {
+            :des "Starcraft 2"
+            :rules [
                 :starcraft
 
                 [:##caps_lock :!Tleft_option]
@@ -188,8 +194,9 @@
             ]
         }
 
-        {:des "Terraria"
-         :rules [
+        {
+            :des "Terraria"
+            :rules [
                 :terraria
 
                 [:##Cq :o] ; prevent from quitting
