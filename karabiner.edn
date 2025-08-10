@@ -46,8 +46,8 @@
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphiteangle\\.graphiteangle$" }
-        :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; { :language "ru" }
-        :japanese { :input_mode_id "^com\\.apple\\.inputmethod\\.Japanese$" } ;; { :language "ja" }
+        :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
+        :japanese { :input_mode_id "^com\\.apple\\.inputmethod\\.Japanese$" } ;; replaceable with { :language "ja" }
     }
 
     :applications {
@@ -233,22 +233,22 @@
 
         ;; ============== Homerow modifiers ==============
 
-        {
-            :des "Homerow modifiers"
-            :rules [
-                ;; the downside is these keys are now typed on KEY UP not DOWN
+        ;; {
+        ;;     :des "Homerow modifiers"
+        ;;     :rules [
+        ;;         ;; the downside is these keys are now typed on KEY UP not DOWN
 
-                [:a nil nil { :held :left_control :alone :a }]
-                [:s nil nil { :held :left_option  :alone :s }]
-                [:d nil nil { :held :left_shift   :alone :d }]
-                [:f nil nil { :held :left_command :alone :f }]
+        ;;         [:a nil nil { :held :left_control :alone :a :params { :alone 100 :held 200 } }]
+        ;;         [:s nil nil { :held :left_option  :alone :s :params { :alone 100 :held 200 } }]
+        ;;         [:d nil nil { :held :left_shift   :alone :d :params { :alone 100 :held 200 } }]
+        ;;         [:f nil nil { :held :left_command :alone :f :params { :alone 100 :held 200 } }]
 
-                [:j nil nil { :held :right_command :alone :j }]
-                [:k nil nil { :held :right_shift   :alone :k }]
-                [:l nil nil { :held :right_option  :alone :l }]
-                [:semicolon nil nil { :held :right_control :alone :semicolon }]
-            ]
-        }
+        ;;         [:j nil nil { :held :right_command :alone :j :params { :alone 100 :held 200 } }]
+        ;;         [:k nil nil { :held :right_shift   :alone :k :params { :alone 100 :held 200 } }]
+        ;;         [:l nil nil { :held :right_option  :alone :l :params { :alone 100 :held 200 } }]
+        ;;         [:semicolon nil nil { :held :right_control :alone :semicolon :params { :alone 100 :held 200 } }]
+        ;;     ]
+        ;; }
 
         ;; ============== Extend layer ==============
 
