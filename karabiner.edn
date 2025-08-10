@@ -101,6 +101,16 @@
                 [:!Of2 :k]
                 [:!Of3 :l]
                 [:!Of4 :semicolon]
+
+                [:f1 :f1]
+                [:f2 :f2]
+                [:f3 :f3]
+                [:f4 :f4]
+                [:f5 :f5]
+                [:f6 :f6]
+                [:f7 :f7]
+                [:f8 :f8]
+                [:f9 :f9]
             ]
         }
 
@@ -162,11 +172,11 @@
         {
             :des "Function row"
             :rules [
-                [:f1 :play_or_pause [:!dota]] ;; F1 —> Play/Pause
-                [:f2 :rewind [:!dota]] ;; F2 —> Rewind
-                [:f3 :fast_forward [:!dota]] ;; F3 —> Fast forward
-                [:f4 :f14 [:!dota]] ;; F4 —> F14
-                [:f5 :f15 [:!dota]] ;; F5 —> F15
+                [:f1 :play_or_pause] ;; F1 —> Play/Pause
+                [:f2 :rewind] ;; F2 —> Rewind
+                [:f3 :fast_forward] ;; F3 —> Fast forward
+                [:f4 :f14] ;; F4 —> F14
+                [:f5 :f15] ;; F5 —> F15
 
                 ;; HOW TO NOT DO CAPSLOCK:
                 ;; dont do :##Eslash, cant type a question mark
@@ -174,7 +184,7 @@
                 ;; dont do :!Qf12 bc capslock messes up that too
                 ;; dont do :##Fright_shift, nope
                 ;; the only thing that works is choosing one key like this
-                [:##f6 :f16 [:!dota] { :held :caps_lock }] ;; F6 —> F16 [capslock when held]
+                [:##f6 :f16 nil { :held :caps_lock }] ;; F6 —> F16 [capslock when held]
 
                 [:f7 :f17] ;; F7 —> F17
                 [:f8 :display_brightness_decrement] ;; F8 —> Decrease brightness
@@ -192,18 +202,16 @@
             :rules [
                 ;; --- Hyper & Semihyper ---
 
-                ;; order matters for these two
-                ;; [:!S#Pcaps_lock :play_or_pause [:!dota]] ;; Capslock + Shift —> Play/Pause
-                [:##caps_lock :!QWEright_shift [:!extend-hold :!dota :!starcraft]] ;; Capslock —> Hyper
+                [:##caps_lock :!QWEright_shift [:!extend-hold]] ;; Capslock —> Hyper
 
-                [:##fn :!Wright_shift [:!dota] { :alone :f13 }] ;; FN -> Semihyper (Leader when alone)
+                [:##fn :!Wright_shift nil { :alone :f13 }] ;; FN -> Semihyper (Leader when alone)
                 [:##right_option :fn] ;; Right Option -> FN
 
                 ;; --- Placeholder bindings ---
 
                 [:!QWERq :!QEf19] ;; Hyper + Q —> Placeholder + F19 (needed for no annoying hyper + q sound)
                 [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18
-                [:!QWERleft_command :!QEf17 [:!dota]] ;; Hyper + Left Command —> Placeholder + F17
+                [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17
 
                 ;; --- Helper bindings ---
 
