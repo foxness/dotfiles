@@ -231,6 +231,25 @@
             ]
         }
 
+        ;; ============== Homerow modifiers ==============
+
+        {
+            :des "Homerow modifiers"
+            :rules [
+                ;; the downside is these keys are now typed on KEY UP not DOWN
+
+                [:a nil nil { :held :left_control :alone :a }]
+                [:s nil nil { :held :left_option  :alone :s }]
+                [:d nil nil { :held :left_shift   :alone :d }]
+                [:f nil nil { :held :left_command :alone :f }]
+
+                [:j nil nil { :held :right_command :alone :j }]
+                [:k nil nil { :held :right_shift   :alone :k }]
+                [:l nil nil { :held :right_option  :alone :l }]
+                [:semicolon nil nil { :held :right_control :alone :semicolon }]
+            ]
+        }
+
         ;; ============== Extend layer ==============
 
         {
