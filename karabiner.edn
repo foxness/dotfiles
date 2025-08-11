@@ -288,29 +288,11 @@
                 [:##s :!Cdelete_or_backspace] ;; delete line
 
                 [:##r :!Fdelete_or_backspace] ;; forward delete character
-                ;; [:##e :!FOdelete_or_backspace] ;; forward delete word (doesnt work)
-                [:##e :!FCdelete_or_backspace] ;; forward delete line
+                [:##e :!FOdelete_or_backspace] ;; forward delete word
+                [:##w :!FCdelete_or_backspace] ;; forward delete line
+                ;; [:##e [:!Send :delete_or_backspace]] ;; forward delete line
 
                 [:##delete_or_backspace :!Odelete_or_backspace]
-
-                ;; [:left_control :delete_or_backspace]
-                ;; [:tab :!Odelete_or_backspace]
-                ;; [:escape :escape]
-                ;; [:##semicolon :!Fdelete_or_backspace]
-                ;; [:##h :delete_or_backspace]
-                ;; [:##j :left_arrow]
-                ;; [:##l :right_arrow]
-                ;; [:##n :!Odelete_or_backspace]
-                ;; [:##m :!Oleft_arrow]
-                ;; [:##period :!Oright_arrow]
-                ;; [:##slash :!FOdelete_or_backspace]
-                ;; [:##comma :##down_arrow]
-                ;; [:##i :##up_arrow]
-                ;; [:##o :!Cright_arrow]
-                ;; [:##u :!Cleft_arrow]
-                ;; [:##y :!Cdelete_or_backspace]
-                ;; [:##p :!FCdelete_or_backspace]
-                ;; [:##k :escape]
             ]
         }
 
