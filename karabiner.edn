@@ -183,8 +183,8 @@
                 [:f1 :play_or_pause] ;; F1 —> Play/Pause
                 [:f2 :rewind] ;; F2 —> Rewind
                 [:f3 :fast_forward] ;; F3 —> Fast forward
-                [:f4 :f14] ;; F4 —> F14
-                [:f5 :f15] ;; F5 —> F15
+                [:f4 :!Tup_arrow] ;; F4 —> Mission Control
+                [:f5 :!Tdown_arrow] ;; F5 —> Application Windows
 
                 ;; HOW TO NOT DO CAPSLOCK:
                 ;; dont do :##Eslash, cant type a question mark
