@@ -207,6 +207,8 @@
                 [:##fn :!Wright_shift nil { :alone :f13 }] ;; FN -> Semihyper (Leader when alone)
                 [:##right_option :fn] ;; Right Option -> FN
 
+                [:!QWERleft_command :delete_or_backspace] ;; todo: another extend layer?
+
                 ;; --- Window management ---
 
                 [:!QWERz :!Ch] ;; Hyper + Z —> Cmd + H
@@ -224,7 +226,7 @@
 
                 [:!QWERq :!QEf19] ;; Hyper + Q —> Placeholder + F19 (needed for no annoying hyper + q sound)
                 [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18
-                [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 ;; todo: another extend layer
+                ;; [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17
 
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :!SOvolume_down] ;; Shift + Option + F11 -> Fine Volume Down
