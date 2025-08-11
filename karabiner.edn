@@ -209,11 +209,10 @@
 
                 [:!QWERleft_command :delete_or_backspace] ;; todo: another extend layer?
 
-                ;; --- Window management ---
+                ;; --- Navigation ---
 
-                [:!QWERz :!Ch] ;; Hyper + Z —> Cmd + H
-                [:!QWERx :!Cq] ;; Hyper + X -> Cmd + Q
-                [:!QWERc :!Cw] ;; Hyper + C -> Cmd + W
+                [:!QWERa :!Tleft_arrow] ;; Hyper + A -> Control + Left Arrow
+                [:!QWERs :!Tright_arrow] ;; Hyper + S -> Control + Right Arrow
 
                 ;; --- Keyboard layout switching ---
 
@@ -299,33 +298,61 @@
             ]
         }
 
+        {
+            :des "Graphite: Extend layer"
+            :rules [
+                [:condi :extend-hold :graphite]
+
+                [:##g :!Fu] ;; fullscreen
+                [:##q :!Ck] ;; for some reason it doesnt work on Extend-A
+            ]
+        }
+
+        {
+            :des "Qwerty: Extend layer"
+            :rules [
+                [:condi :extend-hold :!graphite]
+
+                [:##g :!Ff] ;; fullscreen
+                [:##q :!Ca]
+            ]
+        }
+
         ;; ============== GRAPHITE ==============
 
         {
-            :des "Graphite bindings"
+            :des "Graphite: bindings"
             :rules [
                 :graphite
-
-                ;; Desktop Navigation
-                [:!QWERa :!Ohyphen]
-                [:!QWERs :!Oequal_sign]
 
                 ;; bring some QWERTY shortcuts back
                 ;; [:!C#TOSq :!C#TOSb] ;; cmd-Q
                 ;; [:!C#TOSw :!C#TOSr] ;; cmd-W
                 [:!C#TOSz :!C#TOSt] ;; cmd-Z
                 [:!C#TOSx :!C#TOSz] ;; cmd-X
+
+                ;; --- Window management ---
+
+                [:!QWERz :!Cj] ;; Hyper + Z —> Cmd + H
+                [:!QWERx :!Cb] ;; Hyper + X -> Cmd + Q
+                [:!QWERc :!Cr] ;; Hyper + C -> Cmd + W
             ]
         }
 
         {
-            :des "Qwerty bindings"
+            :des "Qwerty: bindings"
             :rules [
                 :!graphite
 
-                ;; Desktop Navigation
-                [:!QWERa :!Oopen_bracket]
-                [:!QWERs :!Oclose_bracket]
+                ;; --- Window management ---
+
+                [:!QWERz :!Ch] ;; Hyper + Z —> Cmd + H
+                [:!QWERx :!Cq] ;; Hyper + X -> Cmd + Q
+                [:!QWERc :!Cw] ;; Hyper + C -> Cmd + W
+
+                ;; temporarily make cmd-q and cmd-w unusable to break muscle memory
+                [:!C#TOSq "echo"]
+                [:!C#TOSw "echo"]
             ]
         }
     ]
