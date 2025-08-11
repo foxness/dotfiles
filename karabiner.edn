@@ -326,14 +326,15 @@
                 [:!QWERs :!Oequal_sign]
 
                 ;; bring some QWERTY shortcuts back
-                [:!C#TOSz :!C#TOSt] ;; cmd-Z
                 [:!C#TOSq :!C#TOSb] ;; cmd-Q
                 [:!C#TOSw :!C#TOSr] ;; cmd-W
+                [:!C#TOSz :!C#TOSt] ;; cmd-Z
+                [:!C#TOSx :!C#TOSz] ;; cmd-X
             ]
         }
 
         {
-            :des "Qwerty + Graphite"
+            :des "Qwerty bindings"
             :rules [
                 :!graphite
 
