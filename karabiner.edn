@@ -63,6 +63,12 @@
         :minecraft [:paths "\\/Contents\\/Home\\/bin\\/java$"]
     }
 
+    :templates {
+        ;; :open "open -a \"%s\""
+        ;; :link "open \"%s\""
+        :sigkill-frontmost "killall -9 \"$(osascript -e 'tell application \"System Events\" to (name of (first process whose frontmost is true))')\""
+    }
+
     :main [
 
         ;; ============== APPS AND GAMES ==============
@@ -228,9 +234,13 @@
                 [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18
                 ;; [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17
 
+                ;; --- Other ---
+
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :!SOvolume_down] ;; Shift + Option + F11 -> Fine Volume Down
                 [:!SOf12 :!SOvolume_up] ;; Shift + Option + F12 -> Fine Volume Up
+
+                [:!QWERf12 [:sigkill-frontmost]]
             ]
         }
 
