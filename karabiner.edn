@@ -69,6 +69,118 @@
         :sigkill-frontmost "killall -9 \"$(osascript -e 'tell application \"System Events\" to (name of (first process whose frontmost is true))')\""
     }
 
+    :froms {
+        ;; :any_key { :any :key_code }
+        ;; :any_consumer { :any :consumer_key_code }
+        ;; :any_button { :any :pointing_button }
+
+        ;alias
+        ;; :delete { :key :delete_or_backspace }
+        ;; :return { :key :return_or_enter }
+        ;; :btick { :key :grave_accent_and_tilde }
+        ;; :tilde { :key :grave_accent_and_tilde }
+        ;; :bslash { :key :backslash }
+        ;; :ls { :key :left_shift }
+        ;; :rs { :key :right_shift }
+
+        ;; graphite froms (for easier mnemonics)
+        ;; :-b { :key :q }
+        ;; :-l { :key :w }
+        ;; :-d { key :e }
+        ;; :-w { :key :r }
+        ;; :-z { :key :t }
+        ;; :-quote { :key :y }
+        ;; :-f { :key :u }
+        ;; :-o { :key :i }
+        ;; :-u { :key :o }
+        ;; :-j { :key :p }
+        ;; :-semicolon { :key :open_bracket }
+        ;; :-equal_sign { :key :close_bracket }
+        ;; :-backslash { :key :backslash }
+
+        ;; :-n { :key :a }
+        ;; :-r { :key :s }
+        ;; :-t { :key :d }
+        ;; :-s { :key :f }
+        ;; :-g { :key :g }
+        ;; :-y { :key :h }
+        ;; :-h { :key :j }
+        ;; :-a { :key :k }
+        ;; :-e { :key :l }
+        ;; :-i { :key :semicolon }
+        ;; :-comma { :key :quote }
+
+        ;; :-x { :key :z }
+        ;; :-m { :key :x }
+        ;; :-c { :key :c }
+        ;; :-v { :key :v }
+        ;; :-q { :key :b }
+        ;; :-k { :key :n }
+        ;; :-p { :key :m }
+        ;; :-period { :key :comma }
+        ;; :-hyphen { :key :period }
+        ;; :-slash { :key :slash }
+    }
+
+    :tos {
+        ;alias
+        ;; :delete { :key :delete_or_backspace }
+        ;; :return { :key :return_or_enter }
+        ;; :btick { :key :grave_accent_and_tilde }
+        ;; :tilde { :key :grave_accent_and_tilde }
+        ;; :bslash { :key :backslash }
+        ;; :ls { :key :left_shift }
+        ;; :rs { :key :right_shift }
+
+        ;; graphite tos (for easier string sending)
+        ;; :-q { :key :b }
+        ;; :-w { :key :l }
+        ;; :-e { key :d }
+        ;; :-r { :key :w }
+        ;; :-t { :key :z }
+        ;; :-y { :key :quote }
+        ;; :-u { :key :f }
+        ;; :-i { :key :o }
+        ;; :-o { :key :u }
+        ;; :-p { :key :j }
+        ;; :-open_bracket { :key :semicolon }
+        ;; :-close_bracket { :key :equal_sign }
+        ;; :-backslash { :key :backslash }
+
+        ;; :-a { :key :n }
+        ;; :-s { :key :r }
+        ;; :-d { :key :t }
+        ;; :-f { :key :s }
+        ;; :-g { :key :g }
+        ;; :-h { :key :y }
+        ;; :-j { :key :h }
+        ;; :-k { :key :a }
+        ;; :-l { :key :e }
+        ;; :-semicolon { :key :i }
+        ;; :-quote { :key :comma }
+
+        ;; :-z { :key :x }
+        ;; :-x { :key :m }
+        ;; :-c { :key :c }
+        ;; :-v { :key :v }
+        ;; :-b { :key :q }
+        ;; :-n { :key :k }
+        ;; :-m { :key :p }
+        ;; :-comma { :key :period }
+        ;; :-period { :key :hyphen }
+        ;; :-slash { :key :slash }
+
+        :left-desktop { :key :!Tleft_arrow }
+        :right-desktop { :key :!Tright_arrow }
+        :mission-control { :key :!Tup_arrow }
+        :app-windows { :key :!Tdown_arrow }
+        :open-siri { :key :!QEf18 }
+        :open-brave { :key :!QEf19 }
+
+        :fine-vol-down { :key :!SOvolume_down }
+        :fine-vol-up { :key :!SOvolume_up }
+    }
+
     :main [
 
         ;; ============== APPS AND GAMES ==============
@@ -180,11 +292,11 @@
         {
             :des "Function row"
             :rules [
-                [:f1 :play_or_pause] ;; F1 —> Play/Pause
-                [:f2 :rewind] ;; F2 —> Rewind
-                [:f3 :fast_forward] ;; F3 —> Fast forward
-                [:f4 :!Tup_arrow] ;; F4 —> Mission Control
-                [:f5 :!Tdown_arrow] ;; F5 —> Application Windows
+                [:f1 :play_or_pause]
+                [:f2 :rewind]
+                [:f3 :fast_forward]
+                [:f4 :mission-control]
+                [:f5 :app-windows]
 
                 ;; HOW TO NOT DO CAPSLOCK:
                 ;; dont do :##Eslash, cant type a question mark
@@ -194,12 +306,12 @@
                 ;; the only thing that works is choosing one key like this
                 [:##f6 :f16 nil { :held :caps_lock }] ;; F6 —> F16 [capslock when held]
 
-                [:f7 :f17] ;; F7 —> F17
-                [:f8 :display_brightness_decrement] ;; F8 —> Decrease brightness
-                [:f9 :display_brightness_increment] ;; F9 —> Increase brightness
-                [:f10 :mute] ;; F10 —> Mute
-                [:f11 :volume_decrement] ;; F11 —> Decrease volume
-                [:f12 :volume_increment] ;; F12 —> Increase volume
+                [:f7 :f17]
+                [:f8 :display_brightness_decrement]
+                [:f9 :display_brightness_increment]
+                [:f10 :mute]
+                [:f11 :volume_decrement]
+                [:f12 :volume_increment]
             ]
         }
 
@@ -218,8 +330,8 @@
 
                 ;; --- Navigation ---
 
-                [:!QWERa :!Tleft_arrow] ;; Hyper + A -> Desktop Left
-                [:!QWERs :!Tright_arrow] ;; Hyper + S -> Desktop Right
+                [:!QWERa :left-desktop]
+                [:!QWERs :right-desktop]
 
                 ;; --- Keyboard layout switching ---
 
@@ -230,21 +342,24 @@
 
                 ;; --- Placeholder bindings ---
 
-                [:!QWERq :!QEf19] ;; Hyper + Q —> Placeholder + F19 (Brave, needed for no annoying hyper + q sound)
-                [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18 (Siri)
+                [:!QWERq :open-brave] ;; needed for no annoying hyper + q sound
+                [:!QWERescape :open-siri]
                 ;; [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
 
                 ;; --- Other ---
 
                 ;; makes Fine Volume Adjustment work
-                [:!SOf11 :!SOvolume_down] ;; Shift + Option + F11 -> Fine Volume Down
-                [:!SOf12 :!SOvolume_up] ;; Shift + Option + F12 -> Fine Volume Up
+                [:!SOf11 :fine-vol-down]
+                [:!SOf12 :fine-vol-up]
 
                 [:!QWERf12 [:sigkill-frontmost]]
             ]
         }
 
         ;; ============== Homerow modifiers ==============
+
+        ;; this implementation should be better:
+        ;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
 
         ;; {
         ;;     :des "Homerow modifiers"
@@ -293,8 +408,6 @@
                 
                 [:##j :escape]
                 [:caps_lock :escape]
-                [:##g :!Ff] ;; fullscreen
-                [:##a :!Ca]
 
                 [:##f :delete_or_backspace] ;; delete character
                 [:##d :!Odelete_or_backspace] ;; delete word
@@ -315,7 +428,7 @@
                 [:condi :extend-hold :graphite]
 
                 [:##g :!Fu] ;; fullscreen
-                [:##q :!Ck] ;; for some reason it doesnt work on Extend-A
+                [:##a :!Ck]
             ]
         }
 
@@ -325,7 +438,7 @@
                 [:condi :extend-hold :!graphite]
 
                 [:##g :!Ff] ;; fullscreen
-                [:##q :!Ca]
+                [:##a :!Ca]
             ]
         }
 
