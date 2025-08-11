@@ -204,23 +204,14 @@
                 ;; --- Hyper & Semihyper ---
 
                 [:##caps_lock :!QWEright_shift [:!extend-hold]] ;; Capslock —> Hyper
-
                 [:##fn :!Wright_shift nil { :alone :f13 }] ;; FN -> Semihyper (Leader when alone)
                 [:##right_option :fn] ;; Right Option -> FN
 
-                ;; --- Placeholder bindings ---
+                ;; --- Window management ---
 
-                [:!QWERq :!QEf19] ;; Hyper + Q —> Placeholder + F19 (needed for no annoying hyper + q sound)
-                [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18
-                [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17
-
-                ;; --- Helper bindings ---
-
-                [:!QWERz :!Ch] ;; Hyper + Z —> Cmd + H (hide), replace with [:!Pz :!Ch] if capslock isn't hyper
-
-                ;; makes Fine Volume Adjustment work
-                [:!SOf11 :!SOvolume_down] ;; Shift + Option + F11 -> Fine Volume Down
-                [:!SOf12 :!SOvolume_up] ;; Shift + Option + F12 -> Fine Volume Up
+                [:!QWERz :!Ch] ;; Hyper + Z —> Cmd + H
+                [:!QWERx :!Cq] ;; Hyper + X -> Cmd + Q
+                [:!QWERc :!Cw] ;; Hyper + C -> Cmd + W
 
                 ;; --- Keyboard layout switching ---
 
@@ -228,6 +219,16 @@
                 [:!QWERk { :input :graphite }]
                 [:!QWERl { :input :russian }]
                 [:!QWERsemicolon { :input :japanese }]
+
+                ;; --- Placeholder bindings ---
+
+                [:!QWERq :!QEf19] ;; Hyper + Q —> Placeholder + F19 (needed for no annoying hyper + q sound)
+                [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18
+                [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 ;; todo: another extend layer
+
+                ;; makes Fine Volume Adjustment work
+                [:!SOf11 :!SOvolume_down] ;; Shift + Option + F11 -> Fine Volume Down
+                [:!SOf12 :!SOvolume_up] ;; Shift + Option + F12 -> Fine Volume Up
             ]
         }
 
@@ -308,8 +309,8 @@
                 [:!QWERs :!Oequal_sign]
 
                 ;; bring some QWERTY shortcuts back
-                [:!C#TOSq :!C#TOSb] ;; cmd-Q
-                [:!C#TOSw :!C#TOSr] ;; cmd-W
+                ;; [:!C#TOSq :!C#TOSb] ;; cmd-Q
+                ;; [:!C#TOSw :!C#TOSr] ;; cmd-W
                 [:!C#TOSz :!C#TOSt] ;; cmd-Z
                 [:!C#TOSx :!C#TOSz] ;; cmd-X
             ]
