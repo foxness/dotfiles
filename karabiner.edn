@@ -37,10 +37,10 @@
     :profiles {
         :RiverGoku {
             :default true
-            :sim     100 ;; simultaneous key press threshold
-            :delay   500 ;; to_delayed_action_delay_milliseconds
-            :alone   1000 ;; to_if_alone_timeout_milliseconds
-            :held    250 ;; to_if_held_down_threshold_milliseconds
+            :sim     50 ;; simultaneous key press threshold
+            :delay   200 ;; to_delayed_action_delay_milliseconds
+            :alone   200 ;; to_if_alone_timeout_milliseconds
+            :held    200 ;; to_if_held_down_threshold_milliseconds
         }
     }
 
@@ -218,8 +218,8 @@
 
                 ;; --- Navigation ---
 
-                [:!QWERa :!Tleft_arrow] ;; Hyper + A -> Control + Left Arrow
-                [:!QWERs :!Tright_arrow] ;; Hyper + S -> Control + Right Arrow
+                [:!QWERa :!Tleft_arrow] ;; Hyper + A -> Desktop Left
+                [:!QWERs :!Tright_arrow] ;; Hyper + S -> Desktop Right
 
                 ;; --- Keyboard layout switching ---
 
@@ -230,9 +230,9 @@
 
                 ;; --- Placeholder bindings ---
 
-                [:!QWERq :!QEf19] ;; Hyper + Q —> Placeholder + F19 (needed for no annoying hyper + q sound)
-                [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18
-                ;; [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17
+                [:!QWERq :!QEf19] ;; Hyper + Q —> Placeholder + F19 (Brave, needed for no annoying hyper + q sound)
+                [:!QWERescape :!QEf18] ;; Hyper + Escape —> Placeholder + F18 (Siri)
+                ;; [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
 
                 ;; --- Other ---
 
