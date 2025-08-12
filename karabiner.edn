@@ -473,10 +473,27 @@
                 [:!QWERz :!Ch] ;; Hyper + Z —> Cmd + H
                 [:!QWERx :!Cq] ;; Hyper + X -> Cmd + Q
                 [:!QWERc :!Cw] ;; Hyper + C -> Cmd + W
+            ]
+        }
+
+        ;; ============== TEMPORARY ==============
+
+        {
+            :des "Temporary"
+            :rules [
+                ;; we have delete on hyper-cmd
+                [:delete_or_backspace :vk_none]
+            ]
+        }
+
+        {
+            :des "Qwerty: Temporary"
+            :rules [
+                :!graphite
 
                 ;; temporarily make cmd-q and cmd-w unusable to break muscle memory
-                [:!C#TOSq "echo"]
-                [:!C#TOSw "echo"]
+                [:!C#TOSq :vk_none]
+                [:!C#TOSw :vk_none]
             ]
         }
     ]
