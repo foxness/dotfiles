@@ -28,8 +28,7 @@
 ;; https://github.com/kiinoda/goku/blob/main/karabiner.edn
 ;; https://gist.github.com/rdavison/290abc3f5fe5db4a81f8f3e7164ac7a5
 
-;; bundle id command:
-;; osascript -e 'id of app "SomeApp"'
+;; find bundleid and other stuff in karabiner-eventviewer
 
 ;; ============== PARAMS ==============
 
@@ -52,9 +51,9 @@
     }
 
     :applications {
-        :chrome ["^com\\.google\\.Chrome$"]
-        :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
-        :safari ["^com\\.apple\\.Safari$"]
+        ;; :chrome ["^com\\.google\\.Chrome$"]
+        ;; :alttab ["^com\\.lwouis\\.alt-tab-macos$"]
+        ;; :safari ["^com\\.apple\\.Safari$"]
         :krita ["^org\\.krita$"]
 
         :dota ["^com\\.valvesoftware\\.dota2$"]
@@ -478,13 +477,13 @@
 
         ;; ============== TEMPORARY ==============
 
-        {
-            :des "Temporary"
-            :rules [
-                ;; we have delete on hyper-cmd
-                [:delete_or_backspace :vk_none]
-            ]
-        }
+        ;; {
+        ;;     :des "Temporary"
+        ;;     :rules [
+        ;;         ;; we have delete on hyper-cmd
+        ;;         [:delete_or_backspace :vk_none]
+        ;;     ]
+        ;; }
 
         {
             :des "Qwerty: Temporary"
