@@ -1,0 +1,178 @@
+{
+  "actions" : [
+    {
+      "actions" : [
+        {
+          "key" : "z",
+          "type" : "folder",
+          "value" : "/Users/river/my"
+        },
+        {
+          "key" : "x",
+          "type" : "folder",
+          "value" : "/Users/river"
+        },
+        {
+          "key" : "c",
+          "type" : "folder",
+          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
+        },
+        {
+          "key" : "a",
+          "type" : "folder",
+          "value" : "/Users/river/my/art"
+        },
+        {
+          "key" : "s",
+          "type" : "folder",
+          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
+        },
+        {
+          "key" : "d",
+          "type" : "folder",
+          "value" : "/Users/river/Downloads"
+        },
+        {
+          "key" : "q",
+          "type" : "folder",
+          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
+        },
+        {
+          "key" : "w",
+          "type" : "folder",
+          "value" : "/Applications"
+        },
+        {
+          "key" : "e",
+          "type" : "folder",
+          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/art-reference"
+        },
+        {
+          "key" : "r",
+          "label" : "Recents",
+          "type" : "command",
+          "value" : "/usr/local/bin/keyboardmaestro River_OpenRecents"
+        },
+        {
+          "key" : "f",
+          "type" : "folder",
+          "value" : "/Users/river/my/tmp"
+        },
+        {
+          "key" : "v",
+          "type" : "folder",
+          "value" : "/Users/river/my/music"
+        }
+      ],
+      "key" : "z",
+      "label" : "Open Folder",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "i",
+          "type" : "application",
+          "value" : "/System/Applications/iPhone Mirroring.app"
+        },
+        {
+          "key" : "k",
+          "type" : "application",
+          "value" : "/Applications/krita.app"
+        },
+        {
+          "key" : "p",
+          "type" : "application",
+          "value" : "/Applications/PureRef.app"
+        },
+        {
+          "key" : "c",
+          "type" : "application",
+          "value" : "/Applications/Sourcetree.app"
+        },
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Steam.app"
+        },
+        {
+          "key" : "h",
+          "type" : "application",
+          "value" : "/Applications/Horo.app"
+        },
+        {
+          "key" : "a",
+          "type" : "application",
+          "value" : "/System/Applications/Utilities/Activity Monitor.app"
+        },
+        {
+          "key" : "v",
+          "type" : "application",
+          "value" : "/Applications/Visual Studio Code.app"
+        },
+        {
+          "key" : "z",
+          "type" : "application",
+          "value" : "/Applications/Zed.app"
+        },
+        {
+          "key" : "d",
+          "type" : "application",
+          "value" : "/Applications/Discord.app"
+        },
+        {
+          "key" : "q",
+          "type" : "application",
+          "value" : "/Applications/Allusion.app"
+        }
+      ],
+      "key" : "x",
+      "label" : "Run App",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "z",
+          "label" : "Return Window",
+          "type" : "command",
+          "value" : "/usr/local/bin/keyboardmaestro River_WindowReturn"
+        },
+        {
+          "key" : "x",
+          "label" : "Center Window",
+          "type" : "command",
+          "value" : "/usr/local/bin/keyboardmaestro River_WindowCenter"
+        },
+        {
+          "key" : "c",
+          "label" : "Maximize Window",
+          "type" : "command",
+          "value" : "/usr/local/bin/keyboardmaestro River_WindowMaximize"
+        },
+        {
+          "key" : "a",
+          "label" : "Left Window",
+          "type" : "command",
+          "value" : "/usr/local/bin/keyboardmaestro River_WindowLeft"
+        },
+        {
+          "key" : "s",
+          "label" : "Right Window",
+          "type" : "command",
+          "value" : "/usr/local/bin/keyboardmaestro River_WindowRight"
+        }
+      ],
+      "key" : "c",
+      "label" : "Manage Window",
+      "type" : "group"
+    },
+    {
+      "key" : ",",
+      "label" : "LeaderKey Settings",
+      "type" : "command",
+      "value" : "/usr/local/bin/keyboardmaestro River_OpenLeaderKeySettings"
+    }
+  ],
+  "type" : "group"
+}
