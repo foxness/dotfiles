@@ -390,34 +390,34 @@
                 :extend-hold
 
                 ;; arrow navigation
-                [:##k :left_arrow]
-                [:##semicolon :right_arrow]
-                [:##o :up_arrow]
-                [:##l :down_arrow]
-                [:##i :!Oleft_arrow] ;; word
-                [:##p :!Oright_arrow]
-                [:##m :!Cleft_arrow] ;; line
-                [:##period :!Cright_arrow]
+                [:##a :left_arrow]
+                [:##d :right_arrow]
+                [:##w :up_arrow]
+                [:##s :down_arrow]
 
-                [:##9 :home]
-                [:##0 :end]
+                [:##q :!Oleft_arrow] ;; word
+                [:##e :!Oright_arrow]
+                [:##z :!Cleft_arrow] ;; line
+                [:##c :!Cright_arrow]
 
-                [:##y :page_up]
-                [:##h :page_down]
+                [:##1 :home]
+                [:##2 :end]
+                [:##3 :page_up]
+                [:##4 :page_down]
                 
                 [:##j :escape]
                 [:caps_lock :escape]
 
-                [:##f :delete_or_backspace] ;; delete character
-                [:##d :!Odelete_or_backspace] ;; delete word
-                [:##s :!Cdelete_or_backspace] ;; delete line
+                [:##k :delete_or_backspace] ;; delete character
+                [:##l :!Odelete_or_backspace] ;; delete word
+                [:##semicolon :!Cdelete_or_backspace] ;; delete line
 
-                [:##r :!Fdelete_or_backspace] ;; forward delete character
-                [:##e :!FOdelete_or_backspace] ;; forward delete word
-                [:##w :!FCdelete_or_backspace] ;; forward delete line
+                [:##i :!Fdelete_or_backspace] ;; forward delete character
+                [:##o :!FOdelete_or_backspace] ;; forward delete word
+                [:##p :!FCdelete_or_backspace] ;; forward delete line
                 ;; [:##e [:!Send :delete_or_backspace]] ;; forward delete line
 
-                [:##delete_or_backspace :!Odelete_or_backspace]
+                [:##delete_or_backspace :!Odelete_or_backspace] ;; delete word
             ]
         }
 
