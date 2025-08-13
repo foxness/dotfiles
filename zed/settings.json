@@ -1,0 +1,38 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+//
+// River Zed Config
+// Created on 2025-08-13
+//
+
+{
+    // "vim_mode": false,
+    "soft_wrap": "preferred_line_length",
+    "preferred_line_length": 128,
+    "telemetry": {
+        "metrics": false,
+        "diagnostics": false
+    },
+    "minimap": {
+        "show": "auto"
+    },
+    "drag_and_drop_selection": {
+        "enabled": false
+    },
+    "ui_font_size": 18,
+    "format_on_save": "off",
+    "theme": {
+        "mode": "system",
+        "light": "One Light",
+        "dark": "Ayu Mirage"
+    },
+    "buffer_font_family": "JetBrains Mono", // default: Zed Plex Mono
+    "buffer_font_size": 16,
+    "cursor_shape": "block"
+}
