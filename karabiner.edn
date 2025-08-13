@@ -218,10 +218,11 @@
                 ;; --- Hyper & Semihyper ---
 
                 [:##caps_lock :!QWEright_shift [:!extend-hold]] ;; Capslock —> Hyper
-                [:##fn :!Wright_shift nil { :alone :f13 }] ;; FN -> Semihyper (Leader when alone)
+                [:##fn :!Wright_shift] ;; FN -> Semihyper
                 [:##right_option :fn] ;; Right Option -> FN
+                [:!QWERleft_command :f13] ;; Hyper + Command -> Leader key
 
-                [:!QWERleft_command :delete_or_backspace] ;; todo: another extend layer?
+                ;; idea: another extend layer on Hyper + Tab?
 
                 ;; --- Navigation ---
 
