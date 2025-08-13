@@ -12,27 +12,27 @@
 //
 
 {
-    // "vim_mode": false,
-    "soft_wrap": "preferred_line_length",
-    "preferred_line_length": 128,
-    "telemetry": {
-        "metrics": false,
-        "diagnostics": false
-    },
-    "minimap": {
-        "show": "auto"
-    },
-    "drag_and_drop_selection": {
-        "enabled": false
-    },
-    "ui_font_size": 18,
-    "format_on_save": "off",
-    "theme": {
-        "mode": "system",
-        "light": "One Light",
-        "dark": "Ayu Mirage"
-    },
-    "buffer_font_family": "JetBrains Mono", // default: Zed Plex Mono
-    "buffer_font_size": 16,
-    "cursor_shape": "block"
+  // "vim_mode": false,
+  "soft_wrap": "preferred_line_length",
+  "preferred_line_length": 128,
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "drag_and_drop_selection": {
+    "enabled": false
+  },
+  "ui_font_size": 18,
+  "format_on_save": "off",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha (Blur)"
+  },
+  "buffer_font_family": "JetBrains Mono", // default: Zed Plex Mono
+  "buffer_font_size": 16,
+  "cursor_shape": "block"
 }
