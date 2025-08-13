@@ -12,17 +12,36 @@ typeset -a files=(
     ~/.zshrc:zshrc
 )
 
+mode="$1"
+
+if [[ $mode == "pull" ]]; then
+    echo "Pulling..."
+elif [[ $mode == "push" ]]; then
+    echo "Pushing..."
+else
+    echo "Incorrect command argument. Valid commands: pull, push"
+    exit 1
+fi
+
 for pair in "${files[@]}"; do
     src="${pair%%:*}"   # part before :
     dst="${pair##*:}"   # part after :
 
-    if [[ ! -f "$src" ]]; then
-        echo "WARNING: source file missing: $src"
-        continue
+    if [[ $mode == "push" ]]; then
+        tmp=$src
+        src=$dst
+        dst=$tmp
     fi
 
-    # make sure destination folder exists
-    mkdir -p -- "${dst:h}"
+    if [[ ! -f "$src" ]]; then
+        echo "WARNING: source file missing: $src"
+        exit 1
+    fi
+
+    if [[ $mode == "pull" ]]; then
+        # make sure destination folder exists
+        mkdir -p -- "${dst:h}"
+    fi
 
     echo "Copying: $src → $dst"
     cp -- "$src" "$dst"
