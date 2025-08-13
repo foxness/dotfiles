@@ -1,0 +1,21 @@
+{
+    "editor.fontFamily": "'Jetbrains Mono', 'Fira Code', 'Iosevka', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontLigatures.enabled": true,
+
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.enabled": false,
+
+    "workbench.colorTheme": "FireFly Pro",
+    "git.openRepositoryInParentFolders": "never",
+
+    "editor.minimap.showSlider": "always",
+    "editor.autoIndentOnPaste": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.cursorStyle": "block",
+    "editor.minimap.renderCharacters": false
+}
