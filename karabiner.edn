@@ -361,12 +361,6 @@
                 [:!QWERescape :open-siri]
                 ;; [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
 
-                ;; --- Spotify + Spotmenu ---
-
-                [:!QWERf1 :!TSf1] ;; spotify pause
-                [:!QWERf2 :!TSf2] ;; spotify prev track
-                [:!QWERf3 :!TSf3] ;; spotify next track
-
                 ;; --- Other ---
 
                 ;; makes Fine Volume Adjustment work
