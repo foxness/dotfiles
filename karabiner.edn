@@ -120,13 +120,7 @@
             :des "Krita"
             :rules [
                 :krita
-                
-                [:f1 :f1]
-                [:f2 :f2]
-                [:f3 :f3]
-                [:f4 :f4]
-                [:f5 :f5]
-                [:f6 :f6]
+                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
             ]
         }
 
@@ -152,15 +146,8 @@
                 [:!Of3 :l]
                 [:!Of4 :semicolon]
 
-                [:f1 :f1]
-                [:f2 :f2]
-                [:f3 :f3]
-                [:f4 :f4]
-                [:f5 :f5]
-                [:f6 :f6]
-                [:f7 :f7]
-                [:f8 :f8]
-                [:f9 :f9]
+                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
+                [:f7 :f7] [:f8 :f8] [:f9 :f9]
             ]
         }
 
@@ -172,18 +159,8 @@
                 [:##caps_lock :!Tleft_option]
                 [:##left_command :left_control]
 
-                [:f1 :f1]
-                [:f2 :f2]
-                [:f3 :f3]
-                [:f4 :f4]
-                [:f5 :f5]
-                [:f6 :f6]
-                [:f7 :f7]
-                [:f8 :f8]
-                [:f9 :f9]
-                [:f10 :f10]
-                [:f11 :f11]
-                [:f12 :f12]
+                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
+                [:f7 :f7] [:f8 :f8] [:f9 :f9] [:f10 :f10] [:f11 :f11] [:f12 :f12]
             ]
         }
 
@@ -191,19 +168,8 @@
             :des "Minecraft"
             :rules [
                 :minecraft
-
-                [:f1 :f1]
-                [:f2 :f2]
-                [:f3 :f3]
-                [:f4 :f4]
-                [:f5 :f5]
-                [:f6 :f6]
-                [:f7 :f7]
-                [:f8 :f8]
-                [:f9 :f9]
-                [:f10 :f10]
-                [:f11 :f11]
-                [:f12 :f12]
+                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
+                [:f7 :f7] [:f8 :f8] [:f9 :f9] [:f10 :f10] [:f11 :f11] [:f12 :f12]
             ]
         }
 
@@ -211,9 +177,8 @@
             :des "Terraria"
             :rules [
                 :terraria
-
-                [:##Cq :o] ; prevent from quitting
-                [:##Cw :p]
+                [:##Cq :vk_none] ;; prevent from quitting
+                [:##Cw :w]
             ]
         }
 
