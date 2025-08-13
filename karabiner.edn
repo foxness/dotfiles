@@ -97,94 +97,9 @@
         ;; :bslash { :key :backslash }
         ;; :ls { :key :left_shift }
         ;; :rs { :key :right_shift }
-
-        ;; graphite froms (for easier mnemonics)
-        ;; :-b { :key :q }
-        ;; :-l { :key :w }
-        ;; :-d { key :e }
-        ;; :-w { :key :r }
-        ;; :-z { :key :t }
-        ;; :-quote { :key :y }
-        ;; :-f { :key :u }
-        ;; :-o { :key :i }
-        ;; :-u { :key :o }
-        ;; :-j { :key :p }
-        ;; :-semicolon { :key :open_bracket }
-        ;; :-equal_sign { :key :close_bracket }
-        ;; :-backslash { :key :backslash }
-
-        ;; :-n { :key :a }
-        ;; :-r { :key :s }
-        ;; :-t { :key :d }
-        ;; :-s { :key :f }
-        ;; :-g { :key :g }
-        ;; :-y { :key :h }
-        ;; :-h { :key :j }
-        ;; :-a { :key :k }
-        ;; :-e { :key :l }
-        ;; :-i { :key :semicolon }
-        ;; :-comma { :key :quote }
-
-        ;; :-x { :key :z }
-        ;; :-m { :key :x }
-        ;; :-c { :key :c }
-        ;; :-v { :key :v }
-        ;; :-q { :key :b }
-        ;; :-k { :key :n }
-        ;; :-p { :key :m }
-        ;; :-period { :key :comma }
-        ;; :-hyphen { :key :period }
-        ;; :-slash { :key :slash }
     }
 
     :tos {
-        ;alias
-        ;; :delete { :key :delete_or_backspace }
-        ;; :return { :key :return_or_enter }
-        ;; :btick { :key :grave_accent_and_tilde }
-        ;; :tilde { :key :grave_accent_and_tilde }
-        ;; :bslash { :key :backslash }
-        ;; :ls { :key :left_shift }
-        ;; :rs { :key :right_shift }
-
-        ;; graphite tos (for easier string sending)
-        ;; :-q { :key :b }
-        ;; :-w { :key :l }
-        ;; :-e { key :d }
-        ;; :-r { :key :w }
-        ;; :-t { :key :z }
-        ;; :-y { :key :quote }
-        ;; :-u { :key :f }
-        ;; :-i { :key :o }
-        ;; :-o { :key :u }
-        ;; :-p { :key :j }
-        ;; :-open_bracket { :key :semicolon }
-        ;; :-close_bracket { :key :equal_sign }
-        ;; :-backslash { :key :backslash }
-
-        ;; :-a { :key :n }
-        ;; :-s { :key :r }
-        ;; :-d { :key :t }
-        ;; :-f { :key :s }
-        ;; :-g { :key :g }
-        ;; :-h { :key :y }
-        ;; :-j { :key :h }
-        ;; :-k { :key :a }
-        ;; :-l { :key :e }
-        ;; :-semicolon { :key :i }
-        ;; :-quote { :key :comma }
-
-        ;; :-z { :key :x }
-        ;; :-x { :key :m }
-        ;; :-c { :key :c }
-        ;; :-v { :key :v }
-        ;; :-b { :key :q }
-        ;; :-n { :key :k }
-        ;; :-m { :key :p }
-        ;; :-comma { :key :period }
-        ;; :-period { :key :hyphen }
-        ;; :-slash { :key :slash }
-
         :left-desktop { :key :!Tleft_arrow }
         :right-desktop { :key :!Tright_arrow }
         :mission-control { :key :!Tup_arrow }
