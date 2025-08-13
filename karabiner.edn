@@ -13,7 +13,23 @@
 ;; all keys list: https://github.com/JoshuaManuel/Karabiner-Elements-Key-List
 
 ;; goku: https://github.com/yqrashawn/GokuRakuJoudo
+;; goku tutorial: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
 ;; karabiner: https://karabiner-elements.pqrs.org/docs
+
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
 
 ;; article
 ;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
@@ -344,6 +360,12 @@
                 [:!QWERq :open-brave] ;; needed for no annoying hyper + q sound
                 [:!QWERescape :open-siri]
                 ;; [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
+
+                ;; --- Spotify + Spotmenu ---
+
+                [:!QWERf1 :!TSf1] ;; spotify pause
+                [:!QWERf2 :!TSf2] ;; spotify prev track
+                [:!QWERf3 :!TSf3] ;; spotify next track
 
                 ;; --- Other ---
 
