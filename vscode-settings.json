@@ -17,5 +17,5 @@
     "editor.autoIndentOnPaste": true,
     "editor.copyWithSyntaxHighlighting": false,
     "editor.cursorStyle": "block",
-    "editor.minimap.renderCharacters": false
+    "editor.minimap.renderCharacters": true
 }

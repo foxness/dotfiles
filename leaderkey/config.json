@@ -3,17 +3,17 @@
     {
       "actions" : [
         {
-          "key" : "z",
+          "key" : "f",
           "type" : "folder",
           "value" : "/Users/river/my"
         },
         {
-          "key" : "x",
+          "key" : "r",
           "type" : "folder",
           "value" : "/Users/river"
         },
         {
-          "key" : "c",
+          "key" : "e",
           "type" : "folder",
           "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
         },
@@ -33,28 +33,28 @@
           "value" : "/Users/river/Downloads"
         },
         {
-          "key" : "q",
+          "key" : "w",
           "type" : "folder",
           "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
         },
         {
-          "key" : "w",
+          "key" : "q",
           "type" : "folder",
           "value" : "/Applications"
         },
         {
-          "key" : "e",
+          "key" : "z",
           "type" : "folder",
           "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/art-reference"
         },
         {
-          "key" : "r",
+          "key" : "g",
           "label" : "Recents",
           "type" : "command",
           "value" : "/usr/local/bin/keyboardmaestro River_OpenRecents"
         },
         {
-          "key" : "f",
+          "key" : "t",
           "type" : "folder",
           "value" : "/Users/river/my/tmp"
         },
@@ -64,7 +64,7 @@
           "value" : "/Users/river/my/music"
         }
       ],
-      "key" : "z",
+      "key" : "f",
       "label" : "Open Folder",
       "type" : "group"
     },
@@ -77,6 +77,7 @@
         },
         {
           "key" : "k",
+          "label" : "Krita",
           "type" : "application",
           "value" : "/Applications/krita.app"
         },
@@ -86,7 +87,7 @@
           "value" : "/Applications/PureRef.app"
         },
         {
-          "key" : "c",
+          "key" : "f",
           "type" : "application",
           "value" : "/Applications/Sourcetree.app"
         },
@@ -101,7 +102,7 @@
           "value" : "/Applications/Horo.app"
         },
         {
-          "key" : "a",
+          "key" : "r",
           "type" : "application",
           "value" : "/System/Applications/Utilities/Activity Monitor.app"
         },
@@ -116,36 +117,36 @@
           "value" : "/Applications/Zed.app"
         },
         {
-          "key" : "d",
-          "type" : "application",
-          "value" : "/Applications/Discord.app"
-        },
-        {
           "key" : "q",
           "type" : "application",
           "value" : "/Applications/Allusion.app"
+        },
+        {
+          "key" : "e",
+          "type" : "application",
+          "value" : "/Applications/ProtonVPN.app"
         }
       ],
-      "key" : "x",
+      "key" : "r",
       "label" : "Run App",
       "type" : "group"
     },
     {
       "actions" : [
         {
-          "key" : "z",
+          "key" : "q",
           "label" : "Return Window",
           "type" : "command",
           "value" : "/usr/local/bin/keyboardmaestro River_WindowReturn"
         },
         {
-          "key" : "x",
+          "key" : "e",
           "label" : "Center Window",
           "type" : "command",
           "value" : "/usr/local/bin/keyboardmaestro River_WindowCenter"
         },
         {
-          "key" : "c",
+          "key" : "w",
           "label" : "Maximize Window",
           "type" : "command",
           "value" : "/usr/local/bin/keyboardmaestro River_WindowMaximize"
@@ -157,21 +158,15 @@
           "value" : "/usr/local/bin/keyboardmaestro River_WindowLeft"
         },
         {
-          "key" : "s",
+          "key" : "d",
           "label" : "Right Window",
           "type" : "command",
           "value" : "/usr/local/bin/keyboardmaestro River_WindowRight"
         }
       ],
-      "key" : "c",
+      "key" : "w",
       "label" : "Manage Window",
       "type" : "group"
-    },
-    {
-      "key" : ",",
-      "label" : "LeaderKey Settings",
-      "type" : "command",
-      "value" : "/usr/local/bin/keyboardmaestro River_OpenLeaderKeySettings"
     }
   ],
   "type" : "group"
