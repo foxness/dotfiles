@@ -14,6 +14,10 @@ typeset -a files=(
 
 mode="$1"
 
+if [[ $mode == "" ]]; then
+    mode="pull"
+fi
+
 if [[ $mode == "pull" ]]; then
     echo "Pulling..."
 elif [[ $mode == "push" ]]; then
