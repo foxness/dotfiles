@@ -134,7 +134,7 @@
     {
       "actions" : [
         {
-          "key" : "q",
+          "key" : "r",
           "label" : "Return Window",
           "type" : "command",
           "value" : "/usr/local/bin/keyboardmaestro River_WindowReturn"

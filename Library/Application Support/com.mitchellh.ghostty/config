@@ -64,7 +64,7 @@ shell-integration-features = no-cursor
 # AtelierSulphurpool
 theme = duskfox
 
-background-opacity = 0.7
+background-opacity = 0.8
 background-blur-radius = 20
 
 keybind = global:cmd+opt+ctrl+shift+`=toggle_quick_terminal

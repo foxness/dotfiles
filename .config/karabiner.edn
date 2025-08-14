@@ -353,8 +353,8 @@
 
                 ;; --- Window management ---
 
-                [:!QWERz :!Cb] ;; Hyper + Z -> Cmd + Q
-                [:!QWERx :!Cr] ;; Hyper + X -> Cmd + W
+                [:!QWERz :!Cr] ;; Hyper + Z -> Cmd + W
+                [:!QWERx :!Cb] ;; Hyper + X -> Cmd + Q
                 [:!QWERc :!Cj] ;; Hyper + C -> Cmd + H
             ]
         }
@@ -366,8 +366,8 @@
 
                 ;; --- Window management ---
 
-                [:!QWERz :!Cq] ;; Hyper + Z -> Cmd + Q
-                [:!QWERx :!Cw] ;; Hyper + X -> Cmd + W
+                [:!QWERz :!Cw] ;; Hyper + Z -> Cmd + W
+                [:!QWERx :!Cq] ;; Hyper + X -> Cmd + Q
                 [:!QWERc :!Ch] ;; Hyper + C -> Cmd + H
             ]
         }
