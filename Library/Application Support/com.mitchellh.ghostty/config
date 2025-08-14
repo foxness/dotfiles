@@ -62,9 +62,11 @@ shell-integration-features = no-cursor
 # catppuccin-mocha
 # Aura
 # AtelierSulphurpool
-theme = duskfox
+# duskfox
+# FrontEndDelight
+theme = tokyonight
 
 background-opacity = 0.8
-background-blur-radius = 20
+background-blur-radius = 30
 
 keybind = global:cmd+opt+ctrl+shift+`=toggle_quick_terminal
