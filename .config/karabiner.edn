@@ -63,7 +63,7 @@
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphiteangle\\.graphiteangle$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
-        :japanese { :input_mode_id "^com\\.apple\\.inputmethod\\.Japanese$" } ;; replaceable with { :language "ja" }
+        :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
     }
 
     :applications {
@@ -234,7 +234,7 @@
                 [:!QWERj { :input :abc }]
                 [:!QWERk { :input :graphite }]
                 [:!QWERl { :input :russian }]
-                [:!QWERsemicolon { :input :japanese }]
+                ;; [:!QWERsemicolon { :input :japanese }]
 
                 ;; --- Placeholder bindings ---
 
