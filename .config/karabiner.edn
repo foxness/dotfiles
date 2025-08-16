@@ -178,7 +178,7 @@
             :rules [
                 :terraria
                 [:##Cq :vk_none] ;; prevent from quitting
-                [:##Cw :w]
+                [:##Cp :p]
             ]
         }
 
