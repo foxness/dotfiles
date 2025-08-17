@@ -257,20 +257,20 @@
             :des "Option layer"
             :rules [
                 ;; arrow navigation
-                [:!Oa :left_arrow]
-                [:!Od :right_arrow]
-                [:!Ow :up_arrow]
-                [:!Os :down_arrow]
+                [:!O#Sa :left_arrow]
+                [:!O#Sd :right_arrow]
+                [:!O#Sw :up_arrow]
+                [:!O#Ss :down_arrow]
 
-                [:!Oq :!Oleft_arrow] ;; word
-                [:!Oe :!Oright_arrow]
-                [:!Oz :!Cleft_arrow] ;; line
-                [:!Oc :!Cright_arrow]
+                [:!O#Sq :!Oleft_arrow] ;; word
+                [:!O#Se :!Oright_arrow]
+                [:!O#Sz :!Cleft_arrow] ;; line ;; kinda redundant because of home/end
+                [:!O#Sc :!Cright_arrow]
 
-                [:!O1 :home]
-                [:!O2 :end]
-                [:!O3 :page_up]
-                [:!O4 :page_down]
+                [:!O#S1 :home]
+                [:!O#S2 :end]
+                [:!O#S3 :page_up]
+                [:!O#S4 :page_down]
 
                 [:!Oright_command :0]
                 [:!Om :1]
