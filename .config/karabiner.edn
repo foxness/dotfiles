@@ -271,6 +271,17 @@
                 [:!O2 :end]
                 [:!O3 :page_up]
                 [:!O4 :page_down]
+
+                [:!Oright_command :0]
+                [:!Om :1]
+                [:!Ocomma :2]
+                [:!Operiod :3]
+                [:!Oj :4]
+                [:!Ok :5]
+                [:!Ol :6]
+                [:!Ou :7]
+                [:!Oi :8]
+                [:!Oo :9]
             ]
         }
 
