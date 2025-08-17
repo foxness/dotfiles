@@ -251,29 +251,30 @@
             ]
         }
 
-        ;; ============== Homerow modifiers ==============
+        ;; ============== OPTION LAYER ==============
 
-        ;; this implementation should be better:
-        ;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
+        {
+            :des "Option layer"
+            :rules [
+                ;; arrow navigation
+                [:!Oa :left_arrow]
+                [:!Od :right_arrow]
+                [:!Ow :up_arrow]
+                [:!Os :down_arrow]
 
-        ;; {
-        ;;     :des "Homerow modifiers"
-        ;;     :rules [
-        ;;         ;; the downside is these keys are now typed on KEY UP not DOWN
+                [:!Oq :!Oleft_arrow] ;; word
+                [:!Oe :!Oright_arrow]
+                [:!Oz :!Cleft_arrow] ;; line
+                [:!Oc :!Cright_arrow]
 
-        ;;         [:a nil nil { :held :left_control :alone :a :params { :alone 100 :held 200 } }]
-        ;;         [:s nil nil { :held :left_option  :alone :s :params { :alone 100 :held 200 } }]
-        ;;         [:d nil nil { :held :left_shift   :alone :d :params { :alone 100 :held 200 } }]
-        ;;         [:f nil nil { :held :left_command :alone :f :params { :alone 100 :held 200 } }]
+                [:!O1 :home]
+                [:!O2 :end]
+                [:!O3 :page_up]
+                [:!O4 :page_down]
+            ]
+        }
 
-        ;;         [:j nil nil { :held :right_command :alone :j :params { :alone 100 :held 200 } }]
-        ;;         [:k nil nil { :held :right_shift   :alone :k :params { :alone 100 :held 200 } }]
-        ;;         [:l nil nil { :held :right_option  :alone :l :params { :alone 100 :held 200 } }]
-        ;;         [:semicolon nil nil { :held :right_control :alone :semicolon :params { :alone 100 :held 200 } }]
-        ;;     ]
-        ;; }
-
-        ;; ============== Extend layer ==============
+        ;; ============== EXTEND LAYER ==============
 
         {
             :des "Extend layer activation"
@@ -391,5 +392,27 @@
                 [:!C#TOSw :vk_none]
             ]
         }
+
+        ;; ============== Homerow modifiers ==============
+
+        ;; this implementation should be better:
+        ;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
+
+        ;; {
+        ;;     :des "Homerow modifiers"
+        ;;     :rules [
+        ;;         ;; the downside is these keys are now typed on KEY UP not DOWN
+
+        ;;         [:a nil nil { :held :left_control :alone :a :params { :alone 100 :held 200 } }]
+        ;;         [:s nil nil { :held :left_option  :alone :s :params { :alone 100 :held 200 } }]
+        ;;         [:d nil nil { :held :left_shift   :alone :d :params { :alone 100 :held 200 } }]
+        ;;         [:f nil nil { :held :left_command :alone :f :params { :alone 100 :held 200 } }]
+
+        ;;         [:j nil nil { :held :right_command :alone :j :params { :alone 100 :held 200 } }]
+        ;;         [:k nil nil { :held :right_shift   :alone :k :params { :alone 100 :held 200 } }]
+        ;;         [:l nil nil { :held :right_option  :alone :l :params { :alone 100 :held 200 } }]
+        ;;         [:semicolon nil nil { :held :right_control :alone :semicolon :params { :alone 100 :held 200 } }]
+        ;;     ]
+        ;; }
     ]
 }
