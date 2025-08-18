@@ -216,7 +216,7 @@
             :rules [
                 ;; --- Hyper & Semihyper ---
 
-                [:##caps_lock :!QWEright_shift [:!extend-hold]] ;; Capslock —> Hyper
+                [:##caps_lock :!QWEright_shift [:!extend-hold] { :alone :delete_or_backspace }] ;; Capslock —> Hyper
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
                 [:##right_option :fn] ;; Right Option -> FN
                 [:!QWERleft_command :f13] ;; Hyper + Command -> Leader key
