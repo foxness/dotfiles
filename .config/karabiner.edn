@@ -232,7 +232,7 @@
 
                 [:!QWERj { :input :abc }]
                 [:!QWERk { :input :graphite }]
-                [:!QWERl { :input :russian }]
+                ;; [:!QWERl { :input :russian }]
                 ;; [:!QWERsemicolon { :input :japanese }]
 
                 ;; --- Placeholder bindings ---
