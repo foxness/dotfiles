@@ -50,12 +50,20 @@
 
 {
     :profiles {
-        :RiverGoku {
+        :River {
             :default true
             :sim     50 ;; simultaneous key press threshold
             :delay   200 ;; to_delayed_action_delay_milliseconds
             :alone   200 ;; to_if_alone_timeout_milliseconds
             :held    200 ;; to_if_held_down_threshold_milliseconds
+        }
+
+        :RiverGaming {
+            :default false
+            :sim     50
+            :delay   200
+            :alone   200
+            :held    200
         }
     }
 
@@ -75,7 +83,7 @@
         :dota ["^com\\.valvesoftware\\.dota2$"]
         :starcraft ["^com\\.blizzard\\.starcraft2$"]
         :terraria ["^org\\.Terraria$"]
-        :minecraft [:paths "\\/Contents\\/Home\\/bin\\/java$"]
+        ;; :minecraft [:paths "\\/Contents\\/Home\\/bin\\/java$"]
     }
 
     :templates {
@@ -113,21 +121,13 @@
 
     :main [
 
-        ;; ============== APPS AND GAMES ==============
-        ;; these rules go first because of F keys
-
-        {
-            :des "Krita"
-            :rules [
-                :krita
-                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
-            ]
-        }
+        ;; ============== RIVERGAMING ==============
 
         {
             :des "Dota"
             :rules [
-                :dota
+                :RiverGaming
+                [:condi :dota]
 
                 [:##caps_lock :left_control]
                 [:##left_command :left_option]
@@ -146,38 +146,52 @@
                 [:!Of3 :l]
                 [:!Of4 :semicolon]
 
-                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
-                [:f7 :f7] [:f8 :f8] [:f9 :f9]
+                ;; [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
+                ;; [:f7 :f7] [:f8 :f8] [:f9 :f9]
             ]
         }
 
         {
             :des "Starcraft 2"
             :rules [
-                :starcraft
+                :RiverGaming
+                [:condi :starcraft]
 
                 [:##caps_lock :!Tleft_option]
                 [:##left_command :left_control]
 
-                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
-                [:f7 :f7] [:f8 :f8] [:f9 :f9] [:f10 :f10] [:f11 :f11] [:f12 :f12]
+                ;; [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
+                ;; [:f7 :f7] [:f8 :f8] [:f9 :f9] [:f10 :f10] [:f11 :f11] [:f12 :f12]
             ]
         }
 
-        {
-            :des "Minecraft"
-            :rules [
-                :minecraft
-                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
-                [:f7 :f7] [:f8 :f8] [:f9 :f9] [:f10 :f10] [:f11 :f11] [:f12 :f12]
-            ]
-        }
+        ;; {
+        ;;     :des "Minecraft"
+        ;;     :rules [
+        ;;         [:condi :RiverGaming :minecraft]
+        ;;         [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
+        ;;         [:f7 :f7] [:f8 :f8] [:f9 :f9] [:f10 :f10] [:f11 :f11] [:f12 :f12]
+        ;;     ]
+        ;; }
 
         {
             :des "Terraria"
             :rules [
-                :terraria
+                :RiverGaming
+                [:condi :terraria]
+
                 [:##Cq :vk_none] ;; prevent from quitting
+            ]
+        }
+
+        ;; ============== APPS ==============
+        ;; these rules go first because of F keys
+
+        {
+            :des "Krita"
+            :rules [
+                :krita
+                [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
             ]
         }
 
