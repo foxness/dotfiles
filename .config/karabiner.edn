@@ -110,9 +110,6 @@
         :app-windows { :key :!Tdown_arrow }
         :open-siri { :key :!QEf18 }
         :open-brave { :key :!QEf19 }
-
-        :fine-vol-down { :key :!SOvolume_down }
-        :fine-vol-up { :key :!SOvolume_up }
     }
 
     :main [
@@ -218,6 +215,17 @@
 
                 ;; idea: another extend layer on Hyper + Tab?
 
+                ;; makes Fine Volume Adjustment work
+                [:!SOf11 :!SOvolume_down]
+                [:!SOf12 :!SOvolume_up]
+            ]
+        }
+
+        ;; ============== HYPER LAYER ==============
+
+        {
+            :des "Hyper layer"
+            :rules [
                 ;; --- Navigation ---
 
                 [:!WERa :left-desktop]
@@ -237,10 +245,6 @@
                 ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
 
                 ;; --- Other ---
-
-                ;; makes Fine Volume Adjustment work
-                [:!SOf11 :fine-vol-down]
-                [:!SOf12 :fine-vol-up]
 
                 [:!WERf12 [:sigkill-frontmost]]
             ]
