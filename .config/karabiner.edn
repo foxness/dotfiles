@@ -211,30 +211,30 @@
             :rules [
                 ;; --- Hyper & Semihyper ---
 
-                [:##caps_lock :!QWEright_shift [:!extend-hold] { :alone :delete_or_backspace }] ;; Capslock —> Hyper
+                [:##caps_lock :!WEright_shift [:!extend-hold] { :alone :delete_or_backspace }] ;; Capslock —> Hyper
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
                 [:##right_option :fn] ;; Right Option -> FN
-                [:!QWERleft_command :f13] ;; Hyper + Command -> Leader key
+                ;; [:!QWERleft_command :f13] ;; Hyper + Command -> Leader key
 
                 ;; idea: another extend layer on Hyper + Tab?
 
                 ;; --- Navigation ---
 
-                [:!QWERa :left-desktop]
-                [:!QWERs :right-desktop]
+                [:!WERa :left-desktop]
+                [:!WERs :right-desktop]
 
                 ;; --- Keyboard layout switching ---
 
-                [:!QWERj { :input :abc }]
-                [:!QWERk { :input :graphite }]
-                ;; [:!QWERl { :input :russian }]
-                ;; [:!QWERsemicolon { :input :japanese }]
+                [:!WERj { :input :abc }]
+                [:!WERk { :input :graphite }]
+                ;; [:!WERl { :input :russian }]
+                ;; [:!WERsemicolon { :input :japanese }]
 
                 ;; --- Placeholder bindings ---
 
-                [:!QWERq :open-brave] ;; needed for no annoying hyper + q sound
-                [:!QWERescape :open-siri]
-                ;; [:!QWERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
+                [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
+                [:!WERescape :open-siri]
+                ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
 
                 ;; --- Other ---
 
@@ -242,9 +242,22 @@
                 [:!SOf11 :fine-vol-down]
                 [:!SOf12 :fine-vol-up]
 
-                [:!QWERf12 [:sigkill-frontmost]]
+                [:!WERf12 [:sigkill-frontmost]]
             ]
         }
+
+        ;; ============== HYPER + COMMAND LAYER ==============
+
+        ;; {
+        ;;     :des "Hyper + Command layer"
+        ;;     :rules [
+        ;;         ;; arrow navigation
+        ;;         [:!CWERa :left_arrow]
+        ;;         [:!CWERd :right_arrow]
+        ;;         [:!CWERw :up_arrow]
+        ;;         [:!CWERs :down_arrow
+        ;;     ]
+        ;; }
 
         ;; ============== OPTION LAYER ==============
 
@@ -359,9 +372,9 @@
 
                 ;; --- Window management ---
 
-                [:!QWERz :!Cr] ;; Hyper + Z -> Cmd + W
-                [:!QWERx :!Cb] ;; Hyper + X -> Cmd + Q
-                [:!QWERc :!Cj] ;; Hyper + C -> Cmd + H
+                [:!WERz :!Cr] ;; Hyper + Z -> Cmd + W
+                [:!WERx :!Cb] ;; Hyper + X -> Cmd + Q
+                [:!WERc :!Cj] ;; Hyper + C -> Cmd + H
             ]
         }
 
@@ -372,21 +385,13 @@
 
                 ;; --- Window management ---
 
-                [:!QWERz :!Cw] ;; Hyper + Z -> Cmd + W
-                [:!QWERx :!Cq] ;; Hyper + X -> Cmd + Q
-                [:!QWERc :!Ch] ;; Hyper + C -> Cmd + H
+                [:!WERz :!Cw] ;; Hyper + Z -> Cmd + W
+                [:!WERx :!Cq] ;; Hyper + X -> Cmd + Q
+                [:!WERc :!Ch] ;; Hyper + C -> Cmd + H
             ]
         }
 
         ;; ============== TEMPORARY ==============
-
-        ;; {
-        ;;     :des "Temporary"
-        ;;     :rules [
-        ;;         ;; we have delete on hyper-cmd
-        ;;         [:delete_or_backspace :vk_none]
-        ;;     ]
-        ;; }
 
         {
             :des "Qwerty: Temporary"
