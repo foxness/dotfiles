@@ -8,36 +8,6 @@
           "value" : "/Users/river/my"
         },
         {
-          "key" : "r",
-          "type" : "folder",
-          "value" : "/Users/river"
-        },
-        {
-          "key" : "e",
-          "type" : "folder",
-          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
-        },
-        {
-          "key" : "a",
-          "type" : "folder",
-          "value" : "/Users/river/my/art"
-        },
-        {
-          "key" : "s",
-          "type" : "folder",
-          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
-        },
-        {
-          "key" : "d",
-          "type" : "folder",
-          "value" : "/Users/river/Downloads"
-        },
-        {
-          "key" : "w",
-          "type" : "folder",
-          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
-        },
-        {
           "key" : "q",
           "type" : "folder",
           "value" : "/Applications"
@@ -52,11 +22,6 @@
           "label" : "Recents",
           "type" : "command",
           "value" : "/usr/local/bin/keyboardmaestro River_OpenRecents"
-        },
-        {
-          "key" : "t",
-          "type" : "folder",
-          "value" : "/Users/river/my/tmp"
         },
         {
           "key" : "v",
@@ -97,19 +62,9 @@
           "value" : "/Applications/Steam.app"
         },
         {
-          "key" : "h",
-          "type" : "application",
-          "value" : "/Applications/Horo.app"
-        },
-        {
-          "key" : "r",
+          "key" : "d",
           "type" : "application",
           "value" : "/System/Applications/Utilities/Activity Monitor.app"
-        },
-        {
-          "key" : "v",
-          "type" : "application",
-          "value" : "/Applications/Visual Studio Code.app"
         },
         {
           "key" : "z",
@@ -120,14 +75,9 @@
           "key" : "q",
           "type" : "application",
           "value" : "/Applications/Allusion.app"
-        },
-        {
-          "key" : "e",
-          "type" : "application",
-          "value" : "/Applications/ProtonVPN.app"
         }
       ],
-      "key" : "r",
+      "key" : "d",
       "label" : "Run App",
       "type" : "group"
     },
@@ -167,6 +117,46 @@
       "key" : "w",
       "label" : "Manage Window",
       "type" : "group"
+    },
+    {
+      "key" : "g",
+      "type" : "application",
+      "value" : "/Applications/ProtonVPN.app"
+    },
+    {
+      "key" : "r",
+      "type" : "folder",
+      "value" : "/Users/river"
+    },
+    {
+      "key" : "a",
+      "type" : "folder",
+      "value" : "/Users/river/my/art"
+    },
+    {
+      "key" : "s",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
+    },
+    {
+      "key" : "e",
+      "type" : "folder",
+      "value" : "/Users/river/Downloads"
+    },
+    {
+      "key" : "q",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
+    },
+    {
+      "key" : "t",
+      "type" : "folder",
+      "value" : "/Users/river/my/tmp"
+    },
+    {
+      "key" : "c",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
     }
   ],
   "type" : "group"
