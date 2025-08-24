@@ -233,10 +233,10 @@
 
                 ;; --- Keyboard layout switching ---
 
-                [:!WERj { :input :abc }]
-                [:!WERk { :input :graphite }]
-                ;; [:!WERl { :input :russian }]
-                ;; [:!WERsemicolon { :input :japanese }]
+                [:!WERj { :input :graphite }]
+                ;; [:!WERk { :input :russian }]
+                ;; [:!WERl { :input :japanese }]
+                [:!WERsemicolon { :input :abc }]
 
                 ;; --- Placeholder bindings ---
 
