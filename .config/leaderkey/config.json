@@ -20,8 +20,8 @@
         {
           "key" : "g",
           "label" : "Recents",
-          "type" : "command",
-          "value" : "/usr/local/bin/keyboardmaestro River_OpenRecents"
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_OpenRecents"
         },
         {
           "key" : "v",
@@ -86,32 +86,32 @@
         {
           "key" : "r",
           "label" : "Return Window",
-          "type" : "command",
-          "value" : "/usr/local/bin/keyboardmaestro River_WindowReturn"
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowReturn"
         },
         {
           "key" : "e",
           "label" : "Center Window",
-          "type" : "command",
-          "value" : "/usr/local/bin/keyboardmaestro River_WindowCenter"
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowCenter"
         },
         {
           "key" : "w",
           "label" : "Maximize Window",
-          "type" : "command",
-          "value" : "/usr/local/bin/keyboardmaestro River_WindowMaximize"
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowMaximize"
         },
         {
           "key" : "a",
           "label" : "Left Window",
-          "type" : "command",
-          "value" : "/usr/local/bin/keyboardmaestro River_WindowLeft"
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowLeft"
         },
         {
           "key" : "d",
           "label" : "Right Window",
-          "type" : "command",
-          "value" : "/usr/local/bin/keyboardmaestro River_WindowRight"
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowRight"
         }
       ],
       "key" : "w",
