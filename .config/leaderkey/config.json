@@ -112,6 +112,12 @@
           "label" : "Right Window",
           "type" : "url",
           "value" : "kmtrigger://macro=River_WindowRight"
+        },
+        {
+          "key" : "s",
+          "label" : "RiverCenter Window",
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowRiverCenter"
         }
       ],
       "key" : "w",
