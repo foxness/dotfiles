@@ -70,6 +70,7 @@
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitex\\.graphitex$" }
+        :canary { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.canary\\.canary$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
         :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
     }
@@ -233,7 +234,7 @@
 
                 ;; --- Keyboard layout switching ---
 
-                [:!WERj { :input :graphite }]
+                [:!WERj { :input :canary }]
                 ;; [:!WERk { :input :russian }]
                 ;; [:!WERl { :input :japanese }]
                 [:!WERsemicolon { :input :abc }]
@@ -247,6 +248,32 @@
                 ;; --- Other ---
 
                 [:!WERf12 [:sigkill-frontmost]]
+            ]
+        }
+
+        {
+            :des "Canary: Hyper layer"
+            :rules [
+                :canary
+
+                ;; --- Window management ---
+
+                [:!WERz :!Cq] ;; Hyper + Z -> Cmd + W
+                [:!WERx :!Cb] ;; Hyper + X -> Cmd + Q
+                [:!WERc :!Cm] ;; Hyper + C -> Cmd + H
+            ]
+        }
+
+        {
+            :des "Qwerty: Hyper layer"
+            :rules [
+                :!canary
+
+                ;; --- Window management ---
+
+                [:!WERz :!Cw] ;; Hyper + Z -> Cmd + W
+                [:!WERx :!Cq] ;; Hyper + X -> Cmd + Q
+                [:!WERc :!Ch] ;; Hyper + C -> Cmd + H
             ]
         }
 
@@ -276,8 +303,8 @@
 
                 [:!O#Sq :!Oleft_arrow] ;; word
                 [:!O#Se :!Oright_arrow]
-                [:!O#Sz :!Cleft_arrow] ;; line ;; kinda redundant because of home/end
-                [:!O#Sc :!Cright_arrow]
+                ;; [:!O#Sz :!Cleft_arrow] ;; line ;; kinda redundant because of home/end
+                ;; [:!O#Sc :!Cright_arrow]
 
                 [:!O#S1 :home]
                 [:!O#S2 :end]
@@ -294,6 +321,32 @@
                 [:!Ou :7]
                 [:!Oi :8]
                 [:!Oo :9]
+            ]
+        }
+
+        {
+            :des "Canary: Option layer"
+            :rules [
+                :canary
+
+                ;; bring some QWERTY shortcuts back
+                [:!O#CTSz :!C#TOSy] ;; cmd-Z
+                [:!O#CTSx :!C#TOSu] ;; cmd-X
+                [:!O#CTSc :!C#TOSa] ;; cmd-C
+                [:!O#CTSv :!C#TOSx] ;; cmd-V
+            ]
+        }
+
+        {
+            :des "Qwerty: Option layer"
+            :rules [
+                :!canary
+
+                ;; canary option layer parity
+                [:!O#CTSz :!C#TOSz] ;; cmd-Z
+                [:!O#CTSx :!C#TOSx] ;; cmd-X
+                [:!O#CTSc :!C#TOSc] ;; cmd-C
+                [:!O#CTSv :!C#TOSv] ;; cmd-V
             ]
         }
 
@@ -342,56 +395,22 @@
         }
 
         {
-            :des "Graphite: Extend layer"
+            :des "Canary: Extend layer"
             :rules [
-                [:condi :extend-hold :graphite]
+                [:condi :extend-hold :canary]
 
-                [:##g :!Fu] ;; fullscreen
-                [:##a :!Ck]
+                [:##g :!Fh] ;; fullscreen
+                [:##a :!Csemicolon]
             ]
         }
 
         {
             :des "Qwerty: Extend layer"
             :rules [
-                [:condi :extend-hold :!graphite]
+                [:condi :extend-hold :!canary]
 
                 [:##g :!Ff] ;; fullscreen
                 [:##a :!Ca]
-            ]
-        }
-
-        ;; ============== GRAPHITE ==============
-
-        {
-            :des "Graphite: bindings"
-            :rules [
-                :graphite
-
-                ;; bring some QWERTY shortcuts back
-                ;; [:!C#TOSq :!C#TOSb] ;; cmd-Q
-                ;; [:!C#TOSw :!C#TOSr] ;; cmd-W
-                [:!C#TOSz :!C#TOSt] ;; cmd-Z
-                [:!C#TOSx :!C#TOSz] ;; cmd-X
-
-                ;; --- Window management ---
-
-                [:!WERz :!Cr] ;; Hyper + Z -> Cmd + W
-                [:!WERx :!Cb] ;; Hyper + X -> Cmd + Q
-                [:!WERc :!Cj] ;; Hyper + C -> Cmd + H
-            ]
-        }
-
-        {
-            :des "Qwerty: bindings"
-            :rules [
-                :!graphite
-
-                ;; --- Window management ---
-
-                [:!WERz :!Cw] ;; Hyper + Z -> Cmd + W
-                [:!WERx :!Cq] ;; Hyper + X -> Cmd + Q
-                [:!WERc :!Ch] ;; Hyper + C -> Cmd + H
             ]
         }
 
@@ -400,7 +419,7 @@
         {
             :des "Qwerty: Temporary"
             :rules [
-                :!graphite
+                :!canary
 
                 ;; temporarily make cmd-q and cmd-w unusable to break muscle memory
                 [:!C#TOSq :vk_none]

@@ -34,4 +34,4 @@ alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOM
 # ============ PATH ========
 
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/opt/homebrew/share"
-export PATH="/opt/homebrew/opt/openjdk/bin:/Users/river/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:/Users/river/.local/bin:/Users/river/.cargo/bin:$PATH"
