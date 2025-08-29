@@ -324,31 +324,31 @@
             ]
         }
 
-        {
-            :des "Canary: Option layer"
-            :rules [
-                :canary
+        ;; {
+        ;;     :des "Canary: Option layer"
+        ;;     :rules [
+        ;;         :canary
 
-                ;; bring some QWERTY shortcuts back
-                [:!O#CTSz :!C#TOSy] ;; cmd-Z
-                [:!O#CTSx :!C#TOSu] ;; cmd-X
-                [:!O#CTSc :!C#TOSa] ;; cmd-C
-                [:!O#CTSv :!C#TOSx] ;; cmd-V
-            ]
-        }
+        ;;         ;; bring some QWERTY shortcuts back
+        ;;         [:!O#CTSz :!C#TOSy] ;; cmd-Z
+        ;;         [:!O#CTSx :!C#TOSu] ;; cmd-X
+        ;;         [:!O#CTSc :!C#TOSa] ;; cmd-C
+        ;;         [:!O#CTSv :!C#TOSx] ;; cmd-V
+        ;;     ]
+        ;; }
 
-        {
-            :des "Qwerty: Option layer"
-            :rules [
-                :!canary
+        ;; {
+        ;;     :des "Qwerty: Option layer"
+        ;;     :rules [
+        ;;         :!canary
 
-                ;; canary option layer parity
-                [:!O#CTSz :!C#TOSz] ;; cmd-Z
-                [:!O#CTSx :!C#TOSx] ;; cmd-X
-                [:!O#CTSc :!C#TOSc] ;; cmd-C
-                [:!O#CTSv :!C#TOSv] ;; cmd-V
-            ]
-        }
+        ;;         ;; canary option layer parity
+        ;;         [:!O#CTSz :!C#TOSz] ;; cmd-Z
+        ;;         [:!O#CTSx :!C#TOSx] ;; cmd-X
+        ;;         [:!O#CTSc :!C#TOSc] ;; cmd-C
+        ;;         [:!O#CTSv :!C#TOSv] ;; cmd-V
+        ;;     ]
+        ;; }
 
         ;; ============== EXTEND LAYER ==============
 
@@ -411,6 +411,27 @@
 
                 [:##g :!Ff] ;; fullscreen
                 [:##a :!Ca]
+            ]
+        }
+
+        ;; ============== CANARY ==============
+
+        {
+            :des "Canary: bindings"
+            :rules [
+                :canary
+
+                ;; bring some QWERTY shortcuts back
+                [:!C#TOSa :!C#TOSsemicolon] ;; cmd-A
+                [:!C#TOSz :!C#TOSy] ;; cmd-Z
+                [:!C#TOSx :!C#TOSu] ;; cmd-X
+                [:!C#TOSc :!C#TOSa] ;; cmd-C
+                [:!C#TOSv :!C#TOSx] ;; cmd-V
+
+                ;; make sure replaced shortcuts are pressable
+                [:!C#TOSy :!C#TOSz] ;; cmd-Y -> cmd-J (overshadowed by cmd-Z)
+                [:!C#TOSsemicolon :!C#TOSc] ;; cmd-; -> cmd-D (overshadowed by cmd-C)
+                [:!C#TOSu :!C#TOSv] ;; cmd-U -> cmd-G (overshadowed by cmd-V)
             ]
         }
 
