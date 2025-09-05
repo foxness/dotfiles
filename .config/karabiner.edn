@@ -244,6 +244,7 @@
                 [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
                 [:!WERescape :open-siri]
                 ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
+                [:!WERv :!TSf10] ;; quick note
 
                 ;; --- Other ---
 
