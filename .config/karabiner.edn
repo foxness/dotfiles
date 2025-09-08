@@ -230,10 +230,15 @@
         {
             :des "Hyper layer"
             :rules [
+                ;; --- Main ---
+
+                [:!WERa :delete_or_backspace]
+                [:!WERs :return_or_enter]
+
                 ;; --- Navigation ---
 
-                [:!WERa :left-desktop]
-                [:!WERs :right-desktop]
+                [:!WERz :left-desktop]
+                [:!WERx :right-desktop]
 
                 ;; --- Keyboard layout switching ---
 
@@ -244,10 +249,10 @@
 
                 ;; --- Placeholder bindings ---
 
-                [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
+                ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
                 [:!WERescape :open-siri]
                 ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
-                [:!WERv :!TSf10] ;; quick note
+                [:!WERc :!TSf10] ;; quick note
 
                 ;; --- Other ---
 
@@ -262,9 +267,9 @@
 
                 ;; --- Window management ---
 
-                [:!WERz :!Cq] ;; Hyper + Z -> Cmd + W
-                [:!WERx :!Cb] ;; Hyper + X -> Cmd + Q
-                [:!WERc :!Cm] ;; Hyper + C -> Cmd + H
+                [:!WERq :!Cm] ;; Hyper + Q -> Cmd + H
+                [:!WERw :!Cq] ;; Hyper + W -> Cmd + W
+                [:!WERe :!Cb] ;; Hyper + E -> Cmd + Q
             ]
         }
 
@@ -275,9 +280,9 @@
 
                 ;; --- Window management ---
 
-                [:!WERz :!Cw] ;; Hyper + Z -> Cmd + W
-                [:!WERx :!Cq] ;; Hyper + X -> Cmd + Q
-                [:!WERc :!Ch] ;; Hyper + C -> Cmd + H
+                [:!WERq :!Ch] ;; Hyper + Q -> Cmd + H
+                [:!WERw :!Cw] ;; Hyper + W -> Cmd + W
+                [:!WERe :!Cq] ;; Hyper + E -> Cmd + Q
             ]
         }
 
@@ -318,12 +323,12 @@
                 [:!Ov :display_brightness_decrement]
                 [:!Ob :display_brightness_increment]
 
-                [:!O#S1 :delete_or_backspace]
-                [:!O#S2 :return_or_enter]
-                [:!O#S3 :home]
-                [:!O#S4 :end]
-                [:!O#S5 :page_up]
-                [:!O#S6 :page_down]
+                ;; [:!O#S1 :delete_or_backspace]
+                ;; [:!O#S2 :return_or_enter]
+                [:!O#S1 :home]
+                [:!O#S2 :end]
+                [:!O#S3 :page_up]
+                [:!O#S4 :page_down]
 
                 [:!Oright_command :0]
                 [:!Om :1]
