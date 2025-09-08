@@ -111,6 +111,9 @@
         :app-windows { :key :!Tdown_arrow }
         :open-siri { :key :!QEf18 }
         :open-brave { :key :!QEf19 }
+
+        :fine-vol-down { :key :!SOvolume_down }
+        :fine-vol-up { :key :!SOvolume_up }
     }
 
     :main [
@@ -217,8 +220,8 @@
                 ;; idea: another extend layer on Hyper + Tab?
 
                 ;; makes Fine Volume Adjustment work
-                [:!SOf11 :!SOvolume_down]
-                [:!SOf12 :!SOvolume_up]
+                [:!SOf11 :fine-vol-down]
+                [:!SOf12 :fine-vol-up]
             ]
         }
 
@@ -307,10 +310,20 @@
                 ;; [:!O#Sz :!Cleft_arrow] ;; line ;; kinda redundant because of home/end
                 ;; [:!O#Sc :!Cright_arrow]
 
-                [:!O#S1 :home]
-                [:!O#S2 :end]
-                [:!O#S3 :page_up]
-                [:!O#S4 :page_down]
+                [:!Oz :volume_decrement]
+                [:!Ox :volume_increment]
+                [:!OSz :fine-vol-down]
+                [:!OSx :fine-vol-up]
+                [:!O#Sc :mute]
+                [:!Ov :display_brightness_decrement]
+                [:!Ob :display_brightness_increment]
+
+                [:!O#S1 :delete_or_backspace]
+                [:!O#S2 :return_or_enter]
+                [:!O#S3 :home]
+                [:!O#S4 :end]
+                [:!O#S5 :page_up]
+                [:!O#S6 :page_down]
 
                 [:!Oright_command :0]
                 [:!Om :1]
