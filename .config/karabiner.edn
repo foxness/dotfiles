@@ -244,7 +244,7 @@
                 ;; --- Placeholder bindings ---
 
                 [:!WERescape :open-siri]
-                [:!WERc :!TSf10] ;; quick note
+                [:!WERx :!TSf10] ;; quick note
                 ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
                 ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
             ]
