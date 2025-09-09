@@ -142,6 +142,8 @@
                 [:!Of2 :k]
                 [:!Of3 :l]
                 [:!Of4 :semicolon]
+
+                [:!Tspacebar :spacebar] ;; prevent spotlight search
             ]
         }
 
@@ -232,31 +234,19 @@
             :rules [
                 ;; --- Main ---
 
+                [:!WERq :left-desktop]
+                [:!WERw :right-desktop]
                 [:!WERa :delete_or_backspace]
                 [:!WERs :return_or_enter]
 
-                ;; --- Navigation ---
-
-                [:!WERz :left-desktop]
-                [:!WERx :right-desktop]
-
-                ;; --- Keyboard layout switching ---
-
-                [:!WERj { :input :canary }]
-                ;; [:!WERk { :input :russian }]
-                ;; [:!WERl { :input :japanese }]
-                [:!WERsemicolon { :input :abc }]
+                [:!WERf12 [:sigkill-frontmost]]
 
                 ;; --- Placeholder bindings ---
 
-                ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
                 [:!WERescape :open-siri]
-                ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
                 [:!WERc :!TSf10] ;; quick note
-
-                ;; --- Other ---
-
-                [:!WERf12 [:sigkill-frontmost]]
+                ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
+                ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
             ]
         }
 
@@ -267,9 +257,9 @@
 
                 ;; --- Window management ---
 
-                [:!WERq :!Cm] ;; Hyper + Q -> Cmd + H
-                [:!WERw :!Cq] ;; Hyper + W -> Cmd + W
-                [:!WERe :!Cb] ;; Hyper + E -> Cmd + Q
+                [:!WERz :!Cm] ;; Hyper + Z -> Cmd + H
+                ;; [:!WERw :!Cq] ;; Hyper + W -> Cmd + W
+                ;; [:!WERe :!Cb] ;; Hyper + E -> Cmd + Q
             ]
         }
 
@@ -280,24 +270,25 @@
 
                 ;; --- Window management ---
 
-                [:!WERq :!Ch] ;; Hyper + Q -> Cmd + H
-                [:!WERw :!Cw] ;; Hyper + W -> Cmd + W
-                [:!WERe :!Cq] ;; Hyper + E -> Cmd + Q
+                [:!WERz :!Ch] ;; Hyper + Z -> Cmd + H
+                ;; [:!WERw :!Cw] ;; Hyper + W -> Cmd + W
+                ;; [:!WERe :!Cq] ;; Hyper + E -> Cmd + Q
             ]
         }
 
         ;; ============== HYPER + COMMAND LAYER ==============
 
-        ;; {
-        ;;     :des "Hyper + Command layer"
-        ;;     :rules [
-        ;;         ;; arrow navigation
-        ;;         [:!CWERa :left_arrow]
-        ;;         [:!CWERd :right_arrow]
-        ;;         [:!CWERw :up_arrow]
-        ;;         [:!CWERs :down_arrow
-        ;;     ]
-        ;; }
+        {
+            :des "Hyper + Command layer"
+            :rules [
+                ;; --- Keyboard layout switching ---
+
+                [:!CWER1 { :input :canary }]
+                ;; [:!CWER2 { :input :russian }] ;; switching to these langs doesn't work consistensly
+                ;; [:!CWER3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro 
+                [:!CWER4 { :input :abc }]
+            ]
+        }
 
         ;; ============== OPTION LAYER ==============
 
@@ -441,6 +432,8 @@
                 :canary
 
                 ;; bring some QWERTY shortcuts back
+                [:!C#TOSq :!C#TOSb] ;; cmd-Q
+                [:!C#TOSw :!C#TOSq] ;; cmd-W
                 [:!C#TOSa :!C#TOSsemicolon] ;; cmd-A
                 [:!C#TOSz :!C#TOSy] ;; cmd-Z
                 [:!C#TOSx :!C#TOSu] ;; cmd-X
@@ -451,21 +444,22 @@
                 [:!C#TOSy :!C#TOSz] ;; cmd-Y -> cmd-J (overshadowed by cmd-Z)
                 [:!C#TOSsemicolon :!C#TOSc] ;; cmd-; -> cmd-D (overshadowed by cmd-C)
                 [:!C#TOSu :!C#TOSv] ;; cmd-U -> cmd-G (overshadowed by cmd-V)
+                [:!C#TOSb :!C#TOSl] ;; cmd-B -> cmd-L (overshadowed by cmd-W)
             ]
         }
 
         ;; ============== TEMPORARY ==============
 
-        {
-            :des "Qwerty: Temporary"
-            :rules [
-                :!canary
+        ;; {
+        ;;     :des "Qwerty: Temporary"
+        ;;     :rules [
+        ;;         :!canary
 
-                ;; temporarily make cmd-q and cmd-w unusable to break muscle memory
-                [:!C#TOSq :vk_none]
-                [:!C#TOSw :vk_none]
-            ]
-        }
+        ;;         ;; temporarily make cmd-q and cmd-w unusable to break muscle memory
+        ;;         [:!C#TOSq :vk_none]
+        ;;         [:!C#TOSw :vk_none]
+        ;;     ]
+        ;; }
 
         ;; ============== Homerow modifiers ==============
 
