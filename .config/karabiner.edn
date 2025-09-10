@@ -212,14 +212,13 @@
         {
             :des "General"
             :rules [
-                ;; --- Hyper & Semihyper ---
+                ;; --- Main ---
 
                 [:##caps_lock :!WEright_shift [:!extend-hold] { :alone :delete_or_backspace }] ;; Capslock —> Hyper
+                [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
+
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
                 [:##right_option :fn] ;; Right Option -> FN
-                ;; [:!QWERleft_command :f13] ;; Hyper + Command -> Leader key
-
-                ;; idea: another extend layer on Hyper + Tab?
 
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :fine-vol-down]
@@ -234,61 +233,35 @@
             :rules [
                 ;; --- Main ---
 
-                [:!WERq :left-desktop]
-                [:!WERw :right-desktop]
-                [:!WERa :delete_or_backspace]
-                [:!WERs :return_or_enter]
+                [:!WERz :left-desktop]
+                [:!WERx :right-desktop]
 
                 [:!WERf12 [:sigkill-frontmost]]
+
+                ;; --- Keyboard layout switching ---
+
+                [:!WERq { :input :canary }]
+                ;; [:!WERw { :input :russian }] ;; switching to these langs doesn't work consistensly
+                ;; [:!WERe { :input :japanese }] ;; so we do it the hacky way in keyboard maestro 
+                [:!WERr { :input :abc }]
 
                 ;; --- Placeholder bindings ---
 
                 [:!WERescape :open-siri]
-                [:!WERx :!TSf10] ;; quick note
+                [:!WERc :!TSf10] ;; quick note
                 ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
                 ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
             ]
         }
 
-        {
-            :des "Canary: Hyper layer"
-            :rules [
-                :canary
-
-                ;; --- Window management ---
-
-                [:!WERz :!Cm] ;; Hyper + Z -> Cmd + H
-                ;; [:!WERw :!Cq] ;; Hyper + W -> Cmd + W
-                ;; [:!WERe :!Cb] ;; Hyper + E -> Cmd + Q
-            ]
-        }
-
-        {
-            :des "Qwerty: Hyper layer"
-            :rules [
-                :!canary
-
-                ;; --- Window management ---
-
-                [:!WERz :!Ch] ;; Hyper + Z -> Cmd + H
-                ;; [:!WERw :!Cw] ;; Hyper + W -> Cmd + W
-                ;; [:!WERe :!Cq] ;; Hyper + E -> Cmd + Q
-            ]
-        }
-
         ;; ============== HYPER + COMMAND LAYER ==============
 
-        {
-            :des "Hyper + Command layer"
-            :rules [
-                ;; --- Keyboard layout switching ---
-
-                [:!CWER1 { :input :canary }]
-                ;; [:!CWER2 { :input :russian }] ;; switching to these langs doesn't work consistensly
-                ;; [:!CWER3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro 
-                [:!CWER4 { :input :abc }]
-            ]
-        }
+        ;; {
+        ;;     :des "Hyper + Command layer"
+        ;;     :rules [
+        ;;         [:!CWER1 { :input :canary }]
+        ;;     ]
+        ;; }
 
         ;; ============== OPTION LAYER ==============
 
@@ -424,16 +397,21 @@
             ]
         }
 
-        ;; ============== CANARY ==============
+        ;; ============== CANARY AND QWERTY ==============
 
         {
             :des "Canary: bindings"
             :rules [
                 :canary
 
-                ;; bring some QWERTY shortcuts back
-                [:!C#TOSq :!C#TOSb] ;; cmd-Q
-                [:!C#TOSw :!C#TOSq] ;; cmd-W
+                ;; --- Window management ---
+
+                [:!Cq :!Cb] ;; cmd-Q is itself
+                [:!Cw :!Cq] ;; cmd-W is itself
+                [:!Ce :!Cm] ;; cmd + E -> cmd + H
+
+                ;; --- Text ---
+
                 [:!C#TOSa :!C#TOSsemicolon] ;; cmd-A
                 [:!C#TOSz :!C#TOSy] ;; cmd-Z
                 [:!C#TOSx :!C#TOSu] ;; cmd-X
@@ -448,18 +426,16 @@
             ]
         }
 
-        ;; ============== TEMPORARY ==============
+        {
+            :des "Qwerty: bindings"
+            :rules [
+                :!canary
 
-        ;; {
-        ;;     :des "Qwerty: Temporary"
-        ;;     :rules [
-        ;;         :!canary
+                ;; --- Window management ---
 
-        ;;         ;; temporarily make cmd-q and cmd-w unusable to break muscle memory
-        ;;         [:!C#TOSq :vk_none]
-        ;;         [:!C#TOSw :vk_none]
-        ;;     ]
-        ;; }
+                [:!Ce :!Ch] ;; Cmd + E -> Cmd + H
+            ]
+        }
 
         ;; ============== Homerow modifiers ==============
 
