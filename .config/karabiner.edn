@@ -327,31 +327,23 @@
             ]
         }
 
-        ;; {
-        ;;     :des "Canary: Option layer"
-        ;;     :rules [
-        ;;         :canary
+        {
+            :des "Canary: Option layer"
+            :rules [
+                :canary
 
-        ;;         ;; bring some QWERTY shortcuts back
-        ;;         [:!O#CTSz :!C#TOSy] ;; cmd-Z
-        ;;         [:!O#CTSx :!C#TOSu] ;; cmd-X
-        ;;         [:!O#CTSc :!C#TOSa] ;; cmd-C
-        ;;         [:!O#CTSv :!C#TOSx] ;; cmd-V
-        ;;     ]
-        ;; }
+                [:!Of :!Fh] ;; fullscreen
+            ]
+        }
 
-        ;; {
-        ;;     :des "Qwerty: Option layer"
-        ;;     :rules [
-        ;;         :!canary
-
-        ;;         ;; canary option layer parity
-        ;;         [:!O#CTSz :!C#TOSz] ;; cmd-Z
-        ;;         [:!O#CTSx :!C#TOSx] ;; cmd-X
-        ;;         [:!O#CTSc :!C#TOSc] ;; cmd-C
-        ;;         [:!O#CTSv :!C#TOSv] ;; cmd-V
-        ;;     ]
-        ;; }
+        {
+            :des "Qwerty: Option layer"
+            :rules [
+                :!canary
+                
+                [:!Of :!Ff] ;; fullscreen
+            ]
+        }
 
         ;; ============== EXTEND LAYER ==============
 
@@ -364,22 +356,6 @@
             :des "Extend layer"
             :rules [
                 :extend-hold
-
-                ;; arrow navigation
-                [:##a :left_arrow]
-                [:##d :right_arrow]
-                [:##w :up_arrow]
-                [:##s :down_arrow]
-
-                [:##q :!Oleft_arrow] ;; word
-                [:##e :!Oright_arrow]
-                [:##z :!Cleft_arrow] ;; line
-                [:##c :!Cright_arrow]
-
-                [:##1 :home]
-                [:##2 :end]
-                [:##3 :page_up]
-                [:##4 :page_down]
                 
                 [:##j :escape]
                 [:caps_lock :escape]
@@ -397,25 +373,25 @@
             ]
         }
 
-        {
-            :des "Canary: Extend layer"
-            :rules [
-                [:condi :extend-hold :canary]
+        ;; {
+        ;;     :des "Canary: Extend layer"
+        ;;     :rules [
+        ;;         [:condi :extend-hold :canary]
 
-                [:##g :!Fh] ;; fullscreen
-                [:##a :!Csemicolon]
-            ]
-        }
+        ;;         [:##g :!Fh] ;; fullscreen
+        ;;         [:##a :!Csemicolon]
+        ;;     ]
+        ;; }
 
-        {
-            :des "Qwerty: Extend layer"
-            :rules [
-                [:condi :extend-hold :!canary]
+        ;; {
+        ;;     :des "Qwerty: Extend layer"
+        ;;     :rules [
+        ;;         [:condi :extend-hold :!canary]
 
-                [:##g :!Ff] ;; fullscreen
-                [:##a :!Ca]
-            ]
-        }
+        ;;         [:##g :!Ff] ;; fullscreen
+        ;;         [:##a :!Ca]
+        ;;     ]
+        ;; }
 
         ;; ============== CANARY AND QWERTY ==============
 
