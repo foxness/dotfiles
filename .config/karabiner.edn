@@ -252,6 +252,13 @@
                 ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
                 ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
 
+                ;; --- Window management ---
+
+                [:!WERt :!TOup_arrow] ;; maximize
+                [:!WERy :!TOdown_arrow] ;; return
+                [:!WERh :!TO2] ;; river center
+                [:!WERb :!TO1] ;; center
+
                 ;; --- Numpad ---
 
                 [:!WERright_command :0]
