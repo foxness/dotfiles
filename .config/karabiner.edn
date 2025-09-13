@@ -251,6 +251,19 @@
                 [:!WERc :!TSf10] ;; quick note
                 ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
                 ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
+
+                ;; --- Numpad ---
+
+                [:!WERright_command :0]
+                [:!WERm :1]
+                [:!WERcomma :2]
+                [:!WERperiod :3]
+                [:!WERj :4]
+                [:!WERk :5]
+                [:!WERl :6]
+                [:!WERu :7]
+                [:!WERi :8]
+                [:!WERo :9]
             ]
         }
 
