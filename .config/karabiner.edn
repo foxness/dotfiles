@@ -240,9 +240,9 @@
 
                 ;; --- Keyboard layout switching ---
 
-                [:!WERq { :input :canary }]
+                ;; [:!WERq { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 ;; [:!WERw { :input :russian }] ;; switching to these langs doesn't work consistensly
-                ;; [:!WERe { :input :japanese }] ;; so we do it the hacky way in keyboard maestro 
+                [:!WERe { :input :canary }]
                 [:!WERr { :input :abc }]
 
                 ;; --- Placeholder bindings ---
