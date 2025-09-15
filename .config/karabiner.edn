@@ -294,36 +294,29 @@
                 [:!O#Sw :up_arrow]
                 [:!O#Ss :down_arrow]
 
-                [:!O#Sq :!Oleft_arrow] ;; word
-                [:!O#Se :!Oright_arrow]
+                [:!O#Sq :delete_or_backspace]
+                [:!O#Se :return_or_enter]
                 ;; [:!O#Sz :!Cleft_arrow] ;; line ;; kinda redundant because of home/end
                 ;; [:!O#Sc :!Cright_arrow]
 
-                [:!Oz :volume_decrement]
-                [:!Ox :volume_increment]
-                [:!OSz :fine-vol-down]
-                [:!OSx :fine-vol-up]
-                [:!O#Sc :mute]
-                [:!Ov :display_brightness_decrement]
-                [:!Ob :display_brightness_increment]
+                [:!O#Sz :home]
+                [:!O#Sx :end]
+                ;; [:!OSz :fine-vol-down]
+                ;; [:!OSx :fine-vol-up]
+                ;; [:!O#Sc :mute]
+                ;; [:!Ov :display_brightness_decrement]
+                ;; [:!Ob :display_brightness_increment]
 
-                ;; [:!O#S1 :delete_or_backspace]
-                ;; [:!O#S2 :return_or_enter]
-                [:!O#S1 :home]
-                [:!O#S2 :end]
+                [:!O#S1 :!Oleft_arrow] ;; navigate word left
+                [:!O#S2 :!Oright_arrow] ;; navigate word right
                 [:!O#S3 :page_up]
                 [:!O#S4 :page_down]
 
-                [:!Oright_command :0]
-                [:!Om :1]
-                [:!Ocomma :2]
-                [:!Operiod :3]
-                [:!Oj :4]
-                [:!Ok :5]
-                [:!Ol :6]
-                [:!Ou :7]
-                [:!Oi :8]
-                [:!Oo :9]
+                [:!O#Sf1 :volume_decrement]
+                [:!O#Sf2 :volume_increment]
+                [:!O#Sf3 :display_brightness_decrement]
+                [:!O#Sf4 :display_brightness_increment]
+                [:!O#Sf5 :mute]
             ]
         }
 
