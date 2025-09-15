@@ -240,8 +240,8 @@
 
                 ;; --- Keyboard layout switching ---
 
-                ;; [:!WERq { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                ;; [:!WERw { :input :russian }] ;; switching to these langs doesn't work consistensly
+                ;; [:!WERq { :input :japanese }] ;; switching to these langs doesn't work consistensly
+                ;; [:!WERw { :input :russian }] ;; so we do it the hacky way in keyboard maestro
                 [:!WERe { :input :canary }]
                 [:!WERr { :input :abc }]
 
@@ -411,7 +411,7 @@
                 [:!C#TOSy :!C#TOSz] ;; cmd-Y -> cmd-J (overshadowed by cmd-Z)
                 [:!C#TOSsemicolon :!C#TOSc] ;; cmd-; -> cmd-D (overshadowed by cmd-C)
                 [:!C#TOSu :!C#TOSv] ;; cmd-U -> cmd-G (overshadowed by cmd-V)
-                [:!C#TOSb :!C#TOSl] ;; cmd-B -> cmd-L (overshadowed by cmd-W)
+                [:!C#TOSb :!C#TOSw] ;; cmd-B -> cmd-L (overshadowed by cmd-W)
             ]
         }
 
