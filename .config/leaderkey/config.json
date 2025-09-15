@@ -3,104 +3,58 @@
     {
       "actions" : [
         {
-          "key" : "f",
-          "type" : "folder",
-          "value" : "/Users/river/my"
-        },
-        {
           "key" : "q",
-          "type" : "folder",
-          "value" : "/Applications"
-        },
-        {
-          "key" : "z",
-          "type" : "folder",
-          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/art-reference"
-        },
-        {
-          "key" : "g",
-          "label" : "Recents",
-          "type" : "url",
-          "value" : "kmtrigger://macro=River_OpenRecents"
-        },
-        {
-          "key" : "v",
-          "type" : "folder",
-          "value" : "/Users/river/my/music"
-        }
-      ],
-      "key" : "f",
-      "label" : "Open Folder",
-      "type" : "group"
-    },
-    {
-      "actions" : [
-        {
-          "key" : "i",
           "type" : "application",
-          "value" : "/System/Applications/iPhone Mirroring.app"
+          "value" : "/System/Applications/Utilities/Activity Monitor.app"
         },
         {
-          "key" : "k",
+          "key" : "w",
+          "type" : "application",
+          "value" : "/Applications/Steam.app"
+        },
+        {
+          "key" : "e",
           "label" : "Krita",
           "type" : "application",
           "value" : "/Applications/krita.app"
         },
         {
-          "key" : "p",
+          "key" : "r",
           "type" : "application",
           "value" : "/Applications/PureRef.app"
         },
         {
-          "key" : "f",
+          "key" : "a",
           "type" : "application",
           "value" : "/Applications/Sourcetree.app"
         },
         {
           "key" : "s",
           "type" : "application",
-          "value" : "/Applications/Steam.app"
+          "value" : "/Applications/Allusion.app"
         },
         {
           "key" : "d",
           "type" : "application",
-          "value" : "/System/Applications/Utilities/Activity Monitor.app"
+          "value" : "/System/Applications/iPhone Mirroring.app"
         },
         {
-          "key" : "z",
+          "key" : "f",
           "type" : "application",
           "value" : "/Applications/Zed.app"
         },
         {
-          "key" : "q",
+          "key" : "g",
           "type" : "application",
-          "value" : "/Applications/Allusion.app"
+          "value" : "/Applications/ProtonVPN.app"
         }
       ],
-      "key" : "d",
+      "key" : "q",
       "label" : "Run App",
       "type" : "group"
     },
     {
       "actions" : [
-        {
-          "key" : "r",
-          "label" : "Return Window",
-          "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowReturn"
-        },
-        {
-          "key" : "e",
-          "label" : "Center Window",
-          "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowCenter"
-        },
-        {
-          "key" : "w",
-          "label" : "Maximize Window",
-          "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowMaximize"
-        },
         {
           "key" : "a",
           "label" : "Left Window",
@@ -114,10 +68,28 @@
           "value" : "kmtrigger://macro=River_WindowRight"
         },
         {
+          "key" : "e",
+          "label" : "Center Window",
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowCenter"
+        },
+        {
+          "key" : "r",
+          "label" : "Return Window",
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowReturn"
+        },
+        {
           "key" : "s",
           "label" : "RiverCenter Window",
           "type" : "url",
           "value" : "kmtrigger://macro=River_WindowRiverCenter"
+        },
+        {
+          "key" : "w",
+          "label" : "Maximize Window",
+          "type" : "url",
+          "value" : "kmtrigger://macro=River_WindowMaximize"
         }
       ],
       "key" : "w",
@@ -125,44 +97,77 @@
       "type" : "group"
     },
     {
-      "key" : "g",
-      "type" : "application",
-      "value" : "/Applications/ProtonVPN.app"
-    },
-    {
-      "key" : "r",
-      "type" : "folder",
-      "value" : "/Users/river"
-    },
-    {
-      "key" : "a",
-      "type" : "folder",
-      "value" : "/Users/river/my/art"
-    },
-    {
-      "key" : "s",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
-    },
-    {
       "key" : "e",
-      "type" : "folder",
-      "value" : "/Users/river/Downloads"
-    },
-    {
-      "key" : "q",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
-    },
-    {
-      "key" : "t",
       "type" : "folder",
       "value" : "/Users/river/my/tmp"
     },
     {
-      "key" : "c",
+      "key" : "r",
+      "type" : "folder",
+      "value" : "/Users/river/my/art"
+    },
+    {
+      "key" : "t",
+      "label" : "Recents",
+      "type" : "url",
+      "value" : "kmtrigger://macro=River_OpenRecents"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "q",
+          "type" : "folder",
+          "value" : "/Applications"
+        },
+        {
+          "key" : "e",
+          "type" : "folder",
+          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/art-reference"
+        },
+        {
+          "key" : "a",
+          "type" : "folder",
+          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
+        },
+        {
+          "key" : "c",
+          "type" : "folder",
+          "value" : "/Users/river/my/torrent"
+        }
+      ],
+      "key" : "a",
+      "label" : "Open Folder",
+      "type" : "group"
+    },
+    {
+      "key" : "s",
+      "type" : "folder",
+      "value" : "/Users/river/my"
+    },
+    {
+      "key" : "d",
+      "type" : "folder",
+      "value" : "/Users/river"
+    },
+    {
+      "key" : "f",
+      "type" : "folder",
+      "value" : "/Users/river/Downloads"
+    },
+    {
+      "key" : "z",
       "type" : "folder",
       "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
+    },
+    {
+      "key" : "x",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
+    },
+    {
+      "key" : "c",
+      "type" : "folder",
+      "value" : "/Users/river/my/music"
     }
   ],
   "type" : "group"
