@@ -247,8 +247,8 @@
             :rules [
                 ;; --- Main ---
 
-                [:!WERz :left-desktop]
-                [:!WERx :right-desktop]
+                [:!WERa :left-desktop]
+                [:!WERs :right-desktop]
 
                 [:!WERf12 [:sigkill-frontmost]]
 
@@ -318,16 +318,9 @@
 
                 [:!O#Sq :delete_or_backspace]
                 [:!O#Se :return_or_enter]
-                ;; [:!O#Sz :!Cleft_arrow] ;; line ;; kinda redundant because of home/end
-                ;; [:!O#Sc :!Cright_arrow]
 
                 [:!O#Sz :home]
                 [:!O#Sx :end]
-                ;; [:!OSz :fine-vol-down]
-                ;; [:!OSx :fine-vol-up]
-                ;; [:!O#Sc :mute]
-                ;; [:!Ov :display_brightness_decrement]
-                ;; [:!Ob :display_brightness_increment]
 
                 [:!O#S1 :!Oleft_arrow] ;; navigate word left
                 [:!O#S2 :!Oright_arrow] ;; navigate word right
