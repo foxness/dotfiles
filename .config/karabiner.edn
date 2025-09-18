@@ -222,6 +222,18 @@
 
                 [:##escape :!Eright_shift nil { :alone :escape }] ;; Escape is Shift-Option (Meh) when held
 
+                ;; --- Tab is Switch ---
+
+                [:!C#TOStab :!C#TOStab] ;; smoothen Cmd-Tab
+                [:!WERtab :!WERtab] ;; smoothen Hyper-Tab
+                [:!Ttab :!Ttab] ;; smoothen Ctrl-Tab
+                [:!Otab :!Otab] ;; smoothen Opt-Tab
+                [:!Stab :!Stab] ;; smoothen Opt-Tab
+
+                [:##tab :!Qright_control nil { :alone :tab }] ;;  Tab is Cmd-Ctrl (Switch) when held
+
+                ;; --- Other ---
+
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :fine-vol-down]
                 [:!SOf12 :fine-vol-up]
@@ -239,13 +251,6 @@
                 [:!WERx :right-desktop]
 
                 [:!WERf12 [:sigkill-frontmost]]
-
-                ;; --- Keyboard layout switching ---
-
-                ;; [:!WERq { :input :japanese }] ;; switching to these langs doesn't work consistensly
-                ;; [:!WERw { :input :russian }] ;; so we do it the hacky way in keyboard maestro
-                [:!WERe { :input :canary }]
-                [:!WERr { :input :abc }]
 
                 ;; --- Placeholder bindings ---
 
@@ -286,23 +291,19 @@
             ]
         }
 
-        ;; ============== HYPER + COMMAND LAYER ==============
+        ;; ============== SWITCH LAYER ==============
 
-        ;; {
-        ;;     :des "Hyper + Command layer"
-        ;;     :rules [
-        ;;         [:!CWER1 { :input :canary }]
-        ;;     ]
-        ;; }
+        {
+            :des "Switch layer"
+            :rules [
+                ;; --- Keyboard layout switching ---
 
-        ;; ============== MEH + COMMAND LAYER ==============
-
-        ;; {
-        ;;     :des "Meh + Command layer"
-        ;;     :rules [
-        ;;         [:!CERa { :input :canary }]
-        ;;     ]
-        ;; }
+                [:!QWq { :input :canary }]
+                ;; [:!QWw { :input :russian }] ;; switching to these langs doesn't work consistensly
+                ;; [:!QWe { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:!QWr { :input :abc }]
+            ]
+        }
 
         ;; ============== OPTION LAYER ==============
 
@@ -404,6 +405,24 @@
 
         ;;         [:##g :!Ff] ;; fullscreen
         ;;         [:##a :!Ca]
+        ;;     ]
+        ;; }
+
+        ;; ============== HYPER + COMMAND LAYER ==============
+
+        ;; {
+        ;;     :des "Hyper + Command layer"
+        ;;     :rules [
+        ;;         [:!CWER1 { :input :canary }]
+        ;;     ]
+        ;; }
+
+        ;; ============== MEH + COMMAND LAYER ==============
+
+        ;; {
+        ;;     :des "Meh + Command layer"
+        ;;     :rules [
+        ;;         [:!CERa { :input :canary }]
         ;;     ]
         ;; }
 
