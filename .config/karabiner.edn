@@ -254,13 +254,6 @@
                 ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
                 ;; [:!WERleft_command :!QEf17] ;; Hyper + Left Command —> Placeholder + F17 (Spotify)
 
-                ;; --- Window management ---
-
-                [:!WERt :!TOup_arrow] ;; maximize
-                [:!WERy :!TOdown_arrow] ;; return
-                [:!WERh :!TO2] ;; river center
-                [:!WERb :!TO1] ;; center
-
                 ;; --- Numpad ---
 
                 [:!WERright_command :0]
@@ -276,21 +269,29 @@
             ]
         }
 
+        ;; ============== MEH LAYER ==============
+
+        {
+            :des "Meh layer"
+            :rules [
+                ;; --- Window management ---
+
+                [:!ERgrave_accent_and_tilde :!TOdown_arrow] ;; return
+                [:!ER1 :!TOup_arrow] ;; maximize
+                [:!ER2 :!TO1] ;; center
+                [:!ER3 :!TO2] ;; river center
+
+                [:!ERq :!TOleft_arrow] ;; left
+                [:!ERw :!TOright_arrow] ;; right
+            ]
+        }
+
         ;; ============== HYPER + COMMAND LAYER ==============
 
         ;; {
         ;;     :des "Hyper + Command layer"
         ;;     :rules [
         ;;         [:!CWER1 { :input :canary }]
-        ;;     ]
-        ;; }
-
-        ;; ============== MEH LAYER ==============
-
-        ;; {
-        ;;     :des "Meh layer"
-        ;;     :rules [
-        ;;         [:!ERa { :input :canary }]
         ;;     ]
         ;; }
 
