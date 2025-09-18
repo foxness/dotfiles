@@ -220,6 +220,8 @@
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
                 [:##right_option :fn] ;; Right Option -> FN
 
+                [:##escape :!Eright_shift nil { :alone :escape }] ;; Escape is Shift-Option (Meh) when held
+
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :fine-vol-down]
                 [:!SOf12 :fine-vol-up]
@@ -280,6 +282,24 @@
         ;;     :des "Hyper + Command layer"
         ;;     :rules [
         ;;         [:!CWER1 { :input :canary }]
+        ;;     ]
+        ;; }
+
+        ;; ============== MEH LAYER ==============
+
+        ;; {
+        ;;     :des "Meh layer"
+        ;;     :rules [
+        ;;         [:!ERa { :input :canary }]
+        ;;     ]
+        ;; }
+
+        ;; ============== MEH + COMMAND LAYER ==============
+
+        ;; {
+        ;;     :des "Meh + Command layer"
+        ;;     :rules [
+        ;;         [:!CERa { :input :canary }]
         ;;     ]
         ;; }
 
