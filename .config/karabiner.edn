@@ -456,6 +456,7 @@
                 [:!C#TOSsemicolon :!C#TOSc] ;; cmd-; -> cmd-D (overshadowed by cmd-C)
                 [:!C#TOSu :!C#TOSv] ;; cmd-U -> cmd-G (overshadowed by cmd-V)
                 [:!C#TOSb :!C#TOSw] ;; cmd-B -> cmd-L (overshadowed by cmd-W)
+                [:!C#TOSm :!C#TOSe] ;; cmd-M -> cmd-Y (overshadowed by cmd-E)
             ]
         }
 
