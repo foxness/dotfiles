@@ -225,6 +225,8 @@
 
                 ;; --- Tab is Switch ---
 
+                [:!Ctab :!CTtab] ;; alttab app shortcut to prevent system cmd-tab sometimes taking priority
+
                 [:!C#TOStab :!C#TOStab] ;; smoothen Cmd-Tab
                 [:!WERtab :!WERtab] ;; smoothen Hyper-Tab
                 [:!Ttab :!Ttab] ;; smoothen Ctrl-Tab
