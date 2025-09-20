@@ -89,20 +89,20 @@
         :sigkill-frontmost "killall -9 \"$(osascript -e 'tell application \"System Events\" to (name of (first process whose frontmost is true))')\""
     }
 
-    :froms {
-        ;; :any_key { :any :key_code }
-        ;; :any_consumer { :any :consumer_key_code }
-        ;; :any_button { :any :pointing_button }
+    ;; :froms {
+    ;;     :any_key { :any :key_code }
+    ;;     :any_consumer { :any :consumer_key_code }
+    ;;     :any_button { :any :pointing_button }
 
-        ;alias
-        ;; :delete { :key :delete_or_backspace }
-        ;; :return { :key :return_or_enter }
-        ;; :btick { :key :grave_accent_and_tilde }
-        ;; :tilde { :key :grave_accent_and_tilde }
-        ;; :bslash { :key :backslash }
-        ;; :ls { :key :left_shift }
-        ;; :rs { :key :right_shift }
-    }
+    ;;     ;; alias
+    ;;     :delete { :key :delete_or_backspace }
+    ;;     :return { :key :return_or_enter }
+    ;;     :btick { :key :grave_accent_and_tilde }
+    ;;     :tilde { :key :grave_accent_and_tilde }
+    ;;     :bslash { :key :backslash }
+    ;;     :ls { :key :left_shift }
+    ;;     :rs { :key :right_shift }
+    ;; }
 
     :tos {
         :left-desktop { :key :!Tleft_arrow }
@@ -215,7 +215,7 @@
             :rules [
                 ;; --- Main ---
 
-                [:##caps_lock :!WEright_shift [:!extend-hold] { :alone :delete_or_backspace }] ;; Capslock —> Hyper
+                [:##caps_lock :!WEright_shift [:!extend-hold] { :alone :delete_or_backspace }] ;; Capslock -> Hyper
                 [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
 
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
@@ -306,11 +306,11 @@
 
                 ;; --- Spotify ---
 
-                [:!QWa :!WEf15] ;; spotify play/pause
-                [:!QWs :!WEf16] ;; spotify previous song
-                [:!QWd :!WEf17] ;; spotify next song
-                [:!QWf :!WEf14] ;; spotify like
-                [:!QWg :!WEf13] ;; spotify unlike
+                [:!QWa :!QWEf13] ;; spotify play/pause
+                [:!QWs :!QWEf14] ;; spotify previous song
+                [:!QWd :!QWEf15] ;; spotify next song
+                [:!QWf :!QWEf16] ;; spotify like
+                [:!QWg :!QWEf17] ;; spotify unlike
             ]
         }
 
