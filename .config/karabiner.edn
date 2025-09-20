@@ -441,7 +441,7 @@
 
                 [:!Cq :!Cb] ;; cmd-Q is itself
                 [:!Cw :!Cq] ;; cmd-W is itself
-                [:!Ce :!Cm] ;; cmd + E -> cmd + H
+                [:!Ce :!Cm] ;; cmd-E -> cmd-H
 
                 ;; --- Text ---
 
@@ -466,7 +466,10 @@
 
                 ;; --- Window management ---
 
-                [:!Ce :!Ch] ;; Cmd + E -> Cmd + H
+                [:!Ce :!Ch] ;; cmd-E -> cmd-H
+
+                ;; make sure replaced shortcuts are pressable
+                [:!Ch :!Ce] ;; cmd-H -> cmd-E
             ]
         }
 
