@@ -279,8 +279,9 @@
                 ;; --- Window management ---
 
                 [:!ERf1 :!QERfn] ;; move windows
-                [:!ERf2 :mission-control]
-                [:!ERf3 :app-windows]
+                [:!ERf2 :!WERfn] ;; resize windows
+                [:!ERf3 :mission-control]
+                [:!ERf4 :app-windows]
 
                 [:!ERgrave_accent_and_tilde :!TOdown_arrow] ;; return
                 [:!ER1 :!TOup_arrow] ;; maximize
