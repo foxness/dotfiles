@@ -183,11 +183,16 @@
         {
             :des "Function row"
             :rules [
-                [:f1 :play_or_pause]
-                [:f2 :rewind]
-                [:f3 :fast_forward]
-                [:f4 :mission-control]
-                [:f5 :app-windows]
+                [:f1 { :input :canary }]
+                [:f2 :!QWf16] ;; [:f2 { :input :russian }] ;; switching to these langs doesn't work consistensly
+                [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:f4 { :input :abc }]
+
+                [:f5 :display_brightness_decrement]
+                [:f6 :display_brightness_increment]
+
+                [:f7 :f15] ;; todo something better than this
+                [:f8 :f16]
 
                 ;; HOW TO NOT DO CAPSLOCK:
                 ;; dont do :##Eslash, cant type a question mark
@@ -195,11 +200,8 @@
                 ;; dont do :!Qf12 bc capslock messes up that too
                 ;; dont do :##Fright_shift, nope
                 ;; the only thing that works is choosing one key like this
-                [:##f6 :f16 nil { :held :caps_lock }] ;; F6 —> F16 [capslock when held]
+                [:f9 :f17 nil { :held :caps_lock }] ;; F9 —> F16 [capslock when held]
 
-                [:f7 :f17]
-                [:f8 :display_brightness_decrement]
-                [:f9 :display_brightness_increment]
                 [:f10 :mute]
                 [:f11 :volume_decrement]
                 [:f12 :volume_increment]
@@ -276,6 +278,10 @@
             :rules [
                 ;; --- Window management ---
 
+                [:!ERf1 :!QERfn] ;; move windows
+                [:!ERf2 :mission-control]
+                [:!ERf3 :app-windows]
+
                 [:!ERgrave_accent_and_tilde :!TOdown_arrow] ;; return
                 [:!ER1 :!TOup_arrow] ;; maximize
                 [:!ER2 :!TO1] ;; center
@@ -291,12 +297,19 @@
         {
             :des "Switch layer"
             :rules [
-                ;; --- Keyboard layout switching ---
+                ;; --- Media controls ---
 
-                [:!QWq { :input :canary }]
-                ;; [:!QWw { :input :russian }] ;; switching to these langs doesn't work consistensly
-                ;; [:!QWe { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!QWr { :input :abc }]
+                [:!QWq :play_or_pause]
+                [:!QWw :rewind]
+                [:!QWe :fast_forward]
+
+                ;; --- Spotify ---
+
+                [:!QWa :!WEf15] ;; spotify play/pause
+                [:!QWs :!WEf16] ;; spotify previous song
+                [:!QWd :!WEf17] ;; spotify next song
+                [:!QWf :!WEf14] ;; spotify like
+                [:!QWg :!WEf13] ;; spotify unlike
             ]
         }
 
