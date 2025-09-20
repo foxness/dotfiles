@@ -300,6 +300,10 @@
             :rules [
                 ;; --- Media controls ---
 
+                [:!QW1 :volume_decrement]
+                [:!QW2 :volume_increment]
+                [:!QW3 :mute]
+
                 [:!QWq :play_or_pause]
                 [:!QWw :rewind]
                 [:!QWe :fast_forward]
@@ -311,6 +315,10 @@
                 [:!QWd :!QWEf15] ;; spotify next song
                 [:!QWf :!QWEf16] ;; spotify like
                 [:!QWg :!QWEf17] ;; spotify unlike
+
+                [:!QWf1 :!Cf19] ;; spotify volume down
+                [:!QWf2 :!Cf18] ;; spotify volume up
+                [:!QWf3 :!Cf20] ;; spotify normalize volume
             ]
         }
 
@@ -325,22 +333,16 @@
                 [:!O#Sw :up_arrow]
                 [:!O#Ss :down_arrow]
 
-                [:!O#Sq :delete_or_backspace]
-                [:!O#Se :return_or_enter]
+                [:!O#Sq :!Oleft_arrow] ;; navigate word left
+                [:!O#Se :!Oright_arrow] ;; navigate word right
 
-                [:!O#Sz :home]
-                [:!O#Sx :end]
+                [:!O#Sf1 :home]
+                [:!O#Sf2 :end]
 
-                [:!O#S1 :!Oleft_arrow] ;; navigate word left
-                [:!O#S2 :!Oright_arrow] ;; navigate word right
+                [:!O#S1 :delete_or_backspace]
+                [:!O#S2 :return_or_enter]
                 [:!O#S3 :page_up]
                 [:!O#S4 :page_down]
-
-                [:!O#Sf1 :volume_decrement]
-                [:!O#Sf2 :volume_increment]
-                [:!O#Sf3 :display_brightness_decrement]
-                [:!O#Sf4 :display_brightness_increment]
-                [:!O#Sf5 :mute]
             ]
         }
 
