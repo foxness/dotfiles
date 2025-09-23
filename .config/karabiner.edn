@@ -191,7 +191,7 @@
                 [:f5 :display_brightness_decrement]
                 [:f6 :display_brightness_increment]
 
-                [:f7 :f15] ;; todo something better than this
+                [:f7 :tab] ;; todo something better than this
                 [:f8 :f16]
 
                 ;; HOW TO NOT DO CAPSLOCK:
@@ -225,13 +225,11 @@
 
                 ;; --- Tab is Switch ---
 
-                [:!Ctab :!CTtab] ;; alttab app shortcut to prevent system cmd-tab sometimes taking priority
-
                 [:!C#TOStab :!C#TOStab] ;; smoothen Cmd-Tab
                 [:!WERtab :!WERtab] ;; smoothen Hyper-Tab
                 [:!Ttab :!Ttab] ;; smoothen Ctrl-Tab
                 [:!Otab :!Otab] ;; smoothen Opt-Tab
-                [:!Stab :!Stab] ;; smoothen Opt-Tab
+                [:!Stab :!Stab] ;; smoothen Shift-Tab
 
                 [:##tab :!Qright_control nil { :alone :tab }] ;;  Tab is Cmd-Ctrl (Switch) when held
 
