@@ -203,8 +203,8 @@
                 [:f5 :display_brightness_decrement]
                 [:f6 :display_brightness_increment]
 
-                [:f7 :tab] ;; todo something better than this
-                [:f8 :f16]
+                [:f7 :!QWf12] ;; do not disturb [todo: something better than this?]
+                [:f8 :play_or_pause]
 
                 ;; HOW TO NOT DO CAPSLOCK:
                 ;; dont do :##Eslash, cant type a question mark
@@ -212,7 +212,9 @@
                 ;; dont do :!Qf12 bc capslock messes up that too
                 ;; dont do :##Fright_shift, nope
                 ;; the only thing that works is choosing one key like this
-                [:f9 :f17 nil { :held :caps_lock }] ;; F9 —> F16 [capslock when held]
+                ;; [:f9 :fast_forward nil { :held :caps_lock }] ;; F9 —> F16 [capslock when held]
+                ;; ## is crucial because it allows us to press it during caps to turn it off
+                [:##f9 :caps_lock] ;; F9 —> Capslock
 
                 [:f10 :mute]
                 [:f11 :volume_decrement]
