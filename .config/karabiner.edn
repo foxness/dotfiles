@@ -128,14 +128,26 @@
                 [:##caps_lock :left_control]
                 [:##left_command :left_option]
 
-                [:fn :m]
-
-                [:!Fgrave_accent_and_tilde :!Oi]
-
+                [:##left_option :fn]
                 [:!F1 :!Oo]
                 [:!F2 :!Op]
                 [:!F3 :!Oopen_bracket]
                 [:!F4 :!Oclose_bracket]
+                [:!F5 :!Obackslash]
+
+                [:##escape :!Qfn nil { :alone :escape }]
+                [:!QFf1 :o]
+                [:!QFf2 :p]
+                [:!QFf3 :open_bracket]
+                [:!QFf4 :close_bracket]
+                [:!QFf5 :backslash]
+                [:!QF1 :!Oo]
+                [:!QF2 :!Op]
+                [:!QF3 :!Oopen_bracket]
+                [:!QF4 :!Oclose_bracket]
+                [:!QF5 :!Obackslash]
+
+                [:fn :m]
 
                 [:!Of1 :j]
                 [:!Of2 :k]
