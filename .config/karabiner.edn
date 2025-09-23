@@ -312,6 +312,11 @@
         {
             :des "Switch layer"
             :rules [
+                ;; --- Main ---
+
+                ;; default binding shows the emoji picker
+                [:!QWspacebar :!QWf13] ;; leader key
+
                 ;; --- Media controls ---
 
                 [:!QW1 :volume_decrement]
