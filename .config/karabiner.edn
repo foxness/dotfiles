@@ -67,6 +67,10 @@
         }
     }
 
+    :devices {
+        :nuphy [{ :vendor_id 2007 }]
+    }
+
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitex\\.graphitex$" }
@@ -492,6 +496,15 @@
                 [:!Ch :!Ce] ;; cmd-H -> cmd-E
             ]
         }
+
+        ;; {
+        ;;     :des "Nuphy Override"
+        ;;     :rules [
+        ;;         :nuphy
+        ;;         [:1 :2]
+        ;;         [:2 :1]
+        ;;     ]
+        ;; }
 
         ;; ============== Homerow modifiers ==============
 
