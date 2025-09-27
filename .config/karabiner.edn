@@ -299,6 +299,7 @@
 
                 [:!WERa :left-desktop]
                 [:!WERs :right-desktop]
+                [:!WERd :mission-control]
 
                 [:!WERz :!TSf10] ;; quick note
                 ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
@@ -329,8 +330,7 @@
 
                 [:!ERf1 :!QERfn] ;; move windows
                 [:!ERf2 :!WERfn] ;; resize windows
-                [:!ERf3 :mission-control]
-                [:!ERf4 :app-windows]
+                [:!ERf3 :app-windows]
 
                 [:!ERgrave_accent_and_tilde :!TOdown_arrow] ;; return
                 [:!ER1 :!TOup_arrow] ;; maximize
