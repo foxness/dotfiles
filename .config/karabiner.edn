@@ -288,7 +288,7 @@
         ;; ============== MEH LAYER ==============
 
         {
-            :des "Meh layer"
+            :des "Meh layer (Escape key)"
             :rules [
                 ;; --- Window management ---
 
@@ -310,7 +310,7 @@
         ;; ============== SWITCH LAYER ==============
 
         {
-            :des "Switch layer"
+            :des "Switch layer (Tab key)"
             :rules [
                 ;; --- Main ---
 
