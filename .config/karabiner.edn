@@ -117,6 +117,10 @@
 
         :fine-vol-down { :key :!SOvolume_down }
         :fine-vol-up { :key :!SOvolume_up }
+
+        :spotify-normalize-volume { :key :!Cf20 }
+        :spotify-volume-down { :key :!Cf19 }
+        :spotify-volume-up { :key :!Cf18 }
     }
 
     :main [
@@ -126,7 +130,7 @@
         {
             :des "Dota"
             :rules [
-                :RiverGaming
+                [:profile :RiverGaming]
                 [:condi :dota]
 
                 [:##caps_lock :left_control]
@@ -165,7 +169,7 @@
         {
             :des "Starcraft 2"
             :rules [
-                :RiverGaming
+                [:profile :RiverGaming]
                 [:condi :starcraft]
 
                 [:##caps_lock :!Tleft_option]
@@ -176,7 +180,7 @@
         {
             :des "Terraria"
             :rules [
-                :RiverGaming
+                [:profile :RiverGaming]
                 [:condi :terraria]
 
                 [:##Cq :vk_none] ;; prevent from quitting
@@ -256,6 +260,33 @@
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :fine-vol-down]
                 [:!SOf12 :fine-vol-up]
+            ]
+        }
+
+        ;; ============== NUPHY ==============
+
+        {
+            :des "Nuphy"
+            :rules [
+                [:profile :Default :River :RiverGaming]
+                [:condi :nuphy]
+
+                ;; --- Main ---
+
+                [:f14 :!CTq] ;; lock screen
+
+                ;; --- Knob ---
+
+                [:f15 :mute] ;; knob press
+                [:f16 :volume_decrement] ;; knob counter-clockwise
+                [:f17 :volume_increment] ;; knob clockwise
+
+                [:!Sf16 :fine-vol-down]
+                [:!Sf17 :fine-vol-up]
+
+                [:!Cf15 :spotify-normalize-volume]
+                [:!Cf16 :spotify-volume-down]
+                [:!Cf17 :spotify-volume-up]
             ]
         }
 
@@ -339,9 +370,9 @@
                 [:!QWf :!QWEf16] ;; spotify like
                 [:!QWg :!QWEf17] ;; spotify unlike
 
-                [:!QWf1 :!Cf19] ;; spotify volume down
-                [:!QWf2 :!Cf18] ;; spotify volume up
-                [:!QWf3 :!Cf20] ;; spotify normalize volume
+                [:!QWf1 :spotify-volume-down]
+                [:!QWf2 :spotify-volume-up]
+                [:!QWf3 :spotify-normalize-volume]
             ]
         }
 
@@ -382,7 +413,7 @@
             :des "Qwerty: Option layer"
             :rules [
                 :!canary
-                
+
                 [:!Of :!Ff] ;; fullscreen
             ]
         }
@@ -398,7 +429,7 @@
             :des "Extend layer"
             :rules [
                 :extend-hold
-                
+
                 [:##j :escape]
                 [:caps_lock :escape]
 
@@ -496,15 +527,6 @@
                 [:!Ch :!Ce] ;; cmd-H -> cmd-E
             ]
         }
-
-        ;; {
-        ;;     :des "Nuphy Override"
-        ;;     :rules [
-        ;;         :nuphy
-        ;;         [:1 :2]
-        ;;         [:2 :1]
-        ;;     ]
-        ;; }
 
         ;; ============== Homerow modifiers ==============
 
