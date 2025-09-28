@@ -161,6 +161,7 @@
                 [:!QF5 :!Obackslash]
 
                 [:fn :m]
+                [:left_control :m] ;; nuphy
 
                 [:!Of1 :j]
                 [:!Of2 :k]
