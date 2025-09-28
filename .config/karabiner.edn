@@ -91,7 +91,7 @@
         ;; :open "open -a \"%s\""
         ;; :link "open \"%s\""
         :sigkill-frontmost "killall -9 \"$(osascript -e 'tell application \"System Events\" to (name of (first process whose frontmost is true))')\""
-        :caps-announce "/Applications/Keyboard\\ Maestro.app/Contents/MacOS/keyboardmaestro RiverKarabiner_CapsAnnounce_Sound"
+        ;; :caps-announce "/Applications/Keyboard\\ Maestro.app/Contents/MacOS/keyboardmaestro RiverKarabiner_CapsAnnounce_Sound"
     }
 
     ;; :froms {
@@ -124,7 +124,8 @@
         :spotify-volume-up { :key :!Cf18 }
 
         ;; in order for OSX to register a caps lock press, it has to be held for a little under 100ms
-        :toggle_caps { :key :caps_lock :hold_down_ms 100 }
+        ;; :toggle_caps { :key :caps_lock :hold_down_ms 100 }
+        :toggle_caps [{ :key :caps_lock :hold_down_ms 150 } { :key :vk_none }] ;; this vk_none hack makes it consistent somehow
     }
 
     :main [
@@ -226,7 +227,8 @@
                 ;; the only thing that works is choosing one key like this
                 ;; [:f9 :fast_forward nil { :held :caps_lock }] ;; F9 —> F16 [capslock when held]
                 ;; ## is crucial because it allows us to press it during caps to turn it off
-                [:##f9 [:toggle_caps [:caps-announce]]] ;; F9 —> Announcement Capslock
+                ;; [:##f9 [:toggle_caps [:caps-announce]]] ;; F9 —> Announcement Capslock
+                [:##f9 :toggle_caps] ;; F9 —> Capslock
 
                 [:f10 :mute]
                 [:f11 :volume_decrement]
