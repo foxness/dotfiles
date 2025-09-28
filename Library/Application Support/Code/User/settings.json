@@ -14,9 +14,13 @@
     "git.openRepositoryInParentFolders": "never",
 
     "editor.minimap.showSlider": "always",
-    "editor.autoIndentOnPaste": true,
     "editor.copyWithSyntaxHighlighting": false,
     "editor.cursorStyle": "block",
-    "editor.minimap.renderCharacters": true,
-    "editor.renderWhitespace": "trailing"
+    "editor.minimap.renderCharacters": false,
+    "editor.renderWhitespace": "trailing",
+    "editor.formatOnPaste": true,
+    "editor.autoIndentOnPaste": true,
+    "editor.quickSuggestions": {
+        "other": "off"
+    }
 }
