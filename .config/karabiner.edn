@@ -91,7 +91,7 @@
         ;; :open "open -a \"%s\""
         ;; :link "open \"%s\""
         :sigkill-frontmost "killall -9 \"$(osascript -e 'tell application \"System Events\" to (name of (first process whose frontmost is true))')\""
-        :caps-announce "/Applications/Keyboard\\ Maestro.app/Contents/MacOS/keyboardmaestro RiverAutomation_CapsAnnounce_Sound"
+        :caps-announce "/Applications/Keyboard\\ Maestro.app/Contents/MacOS/keyboardmaestro RiverKarabiner_CapsAnnounce_Sound"
     }
 
     ;; :froms {
