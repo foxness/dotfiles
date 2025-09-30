@@ -209,7 +209,7 @@
         {
             :des "Function row"
             :rules [
-                [:f1 { :input :canary }]
+                [:f1 { :input :graphite }]
                 [:f2 :!QWf16] ;; [:f2 { :input :russian }] ;; switching to these langs doesn't work consistensly
                 [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:f4 { :input :abc }]
@@ -417,9 +417,18 @@
         }
 
         {
+            :des "Graphite: Option layer"
+            :rules [
+                :graphite
+
+                [:!Ou :!Fh] ;; fullscreen
+            ]
+        }
+
+        {
             :des "Qwerty: Option layer"
             :rules [
-                :!canary
+                [:condi :!canary :!graphite]
 
                 [:!Of :!Ff] ;; fullscreen
             ]
@@ -466,7 +475,7 @@
         ;; {
         ;;     :des "Qwerty: Extend layer"
         ;;     :rules [
-        ;;         [:condi :extend-hold :!canary]
+        ;;         [:condi :extend-hold :!canary :!graphite]
 
         ;;         [:##g :!Ff] ;; fullscreen
         ;;         [:##a :!Ca]
@@ -491,7 +500,33 @@
         ;;     ]
         ;; }
 
-        ;; ============== CANARY AND QWERTY ==============
+        ;; ============== KEYBOARD LAYOUTS ==============
+
+        {
+            :des "Graphite: bindings"
+            :rules [
+                :graphite
+
+                ;; --- Window management ---
+
+                [:!Cq :!Cb] ;; cmd-Q is itself
+                [:!Cw :!Cr] ;; cmd-W is itself
+                [:!Ce :!Cj] ;; cmd-E -> cmd-H
+
+                ;; --- Text ---
+
+                [:!C#TOSa :!C#TOSk] ;; cmd-A
+                [:!C#TOSz :!C#TOSt] ;; cmd-Z
+                [:!C#TOSx :!C#TOSz] ;; cmd-X
+
+                ;; make sure replaced shortcuts are pressable
+                [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
+                [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
+                [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
+                [:!C#TOSj :!C#TOSa] ;; cmd-J -> cmd-N (overshadowed by cmd-A)
+                [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
+            ]
+        }
 
         {
             :des "Canary: bindings"
@@ -524,7 +559,7 @@
         {
             :des "Qwerty: bindings"
             :rules [
-                :!canary
+                [:condi :!canary :!graphite]
 
                 ;; --- Window management ---
 
