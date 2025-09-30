@@ -1,11 +1,36 @@
 {
   "actions" : [
     {
+      "key" : "space",
+      "type" : "folder",
+      "value" : "/Users/river/my/tmp"
+    },
+    {
+      "key" : "1",
+      "type" : "folder",
+      "value" : "/Users/river/my"
+    },
+    {
+      "key" : "2",
+      "type" : "folder",
+      "value" : "/Users/river"
+    },
+    {
+      "key" : "3",
+      "type" : "folder",
+      "value" : "/Users/river/my/art"
+    },
+    {
+      "key" : "4",
+      "type" : "folder",
+      "value" : "/Users/river/my/media"
+    },
+    {
       "actions" : [
         {
           "key" : "q",
           "type" : "application",
-          "value" : "/System/Applications/Utilities/Activity Monitor.app"
+          "value" : "/Applications/Zed.app"
         },
         {
           "key" : "w",
@@ -39,11 +64,6 @@
           "value" : "/System/Applications/iPhone Mirroring.app"
         },
         {
-          "key" : "f",
-          "type" : "application",
-          "value" : "/Applications/Zed.app"
-        },
-        {
           "key" : "g",
           "type" : "application",
           "value" : "/Applications/ProtonVPN.app"
@@ -52,6 +72,52 @@
       "key" : "q",
       "label" : "Run App",
       "type" : "group"
+    },
+    {
+      "key" : "w",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
+    },
+    {
+      "key" : "e",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
+    },
+    {
+      "key" : "r",
+      "label" : "Recents",
+      "type" : "url",
+      "value" : "kmtrigger://macro=River_OpenRecents"
+    },
+    {
+      "key" : "t",
+      "type" : "folder",
+      "value" : "/Users/river/my/torrent"
+    },
+    {
+      "key" : "a",
+      "type" : "folder",
+      "value" : "/Applications"
+    },
+    {
+      "key" : "s",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
+    },
+    {
+      "key" : "d",
+      "type" : "folder",
+      "value" : "/Users/river/Downloads"
+    },
+    {
+      "key" : "f",
+      "type" : "folder",
+      "value" : "/Users/river/my/music"
+    },
+    {
+      "key" : "g",
+      "type" : "folder",
+      "value" : "/Users/river/my/art-library"
     },
     {
       "actions" : [
@@ -92,82 +158,9 @@
           "value" : "kmtrigger://macro=River_WindowMaximize"
         }
       ],
-      "key" : "w",
+      "key" : "z",
       "label" : "Manage Window",
       "type" : "group"
-    },
-    {
-      "key" : "e",
-      "type" : "folder",
-      "value" : "/Users/river/my/tmp"
-    },
-    {
-      "key" : "r",
-      "type" : "folder",
-      "value" : "/Users/river/my/art"
-    },
-    {
-      "key" : "t",
-      "label" : "Recents",
-      "type" : "url",
-      "value" : "kmtrigger://macro=River_OpenRecents"
-    },
-    {
-      "actions" : [
-        {
-          "key" : "q",
-          "type" : "folder",
-          "value" : "/Applications"
-        },
-        {
-          "key" : "e",
-          "type" : "folder",
-          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/art-reference"
-        },
-        {
-          "key" : "a",
-          "type" : "folder",
-          "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
-        },
-        {
-          "key" : "c",
-          "type" : "folder",
-          "value" : "/Users/river/my/torrent"
-        }
-      ],
-      "key" : "a",
-      "label" : "Open Folder",
-      "type" : "group"
-    },
-    {
-      "key" : "s",
-      "type" : "folder",
-      "value" : "/Users/river/my"
-    },
-    {
-      "key" : "d",
-      "type" : "folder",
-      "value" : "/Users/river"
-    },
-    {
-      "key" : "f",
-      "type" : "folder",
-      "value" : "/Users/river/Downloads"
-    },
-    {
-      "key" : "z",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
-    },
-    {
-      "key" : "x",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
-    },
-    {
-      "key" : "c",
-      "type" : "folder",
-      "value" : "/Users/river/my/music"
     }
   ],
   "type" : "group"
