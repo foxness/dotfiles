@@ -357,7 +357,7 @@
                 ;; --- Main ---
 
                 ;; default binding shows the emoji picker
-                [:!QWspacebar :!QWf13] ;; leader key
+                [:!QWspacebar :!QWf20] ;; leader key
 
                 ;; --- Media controls ---
 
@@ -523,7 +523,7 @@
                 [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
                 [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
                 [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
-                [:!C#TOSj :!C#TOSa] ;; cmd-J -> cmd-N (overshadowed by cmd-A)
+                [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
                 [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
             ]
         }
