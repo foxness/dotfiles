@@ -280,7 +280,9 @@
 
                 ;; --- Main ---
 
-                [:f14 :!CTq] ;; lock screen
+                [:f14 :!CTq [:!canary :!graphite]] ;; lock screen (qwerty)
+                [:f14 :!CTb [:graphite]] ;; lock screen (graphite)
+                [:f14 :!CTb [:canary]] ;; lock screen (canary)
 
                 ;; --- Knob ---
 
@@ -509,9 +511,9 @@
 
                 ;; --- Window management ---
 
-                [:!Cq :!Cb] ;; cmd-Q is itself
-                [:!Cw :!Cr] ;; cmd-W is itself
-                [:!Ce :!Cj] ;; cmd-E -> cmd-H
+                [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
+                [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
+                [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
 
                 ;; --- Text ---
 
@@ -535,9 +537,9 @@
 
                 ;; --- Window management ---
 
-                [:!Cq :!Cb] ;; cmd-Q is itself
-                [:!Cw :!Cq] ;; cmd-W is itself
-                [:!Ce :!Cm] ;; cmd-E -> cmd-H
+                [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
+                [:!C#TOSw :!C#TOSq] ;; cmd-W is itself
+                [:!C#TOSe :!C#TOSm] ;; cmd-E -> cmd-H
 
                 ;; --- Text ---
 
