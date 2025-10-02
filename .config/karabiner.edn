@@ -119,7 +119,7 @@
         :fine-vol-down { :key :!SOvolume_down }
         :fine-vol-up { :key :!SOvolume_up }
 
-        :spotify-normalize-volume { :key :!Cf20 }
+        :spotify-normalize-volume { :key :!CTf13 }
         :spotify-volume-down { :key :!Cf19 }
         :spotify-volume-up { :key :!Cf18 }
 
