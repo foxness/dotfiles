@@ -141,6 +141,12 @@
                 [:##caps_lock :left_control]
                 [:##left_command :left_option]
 
+                [:!T1 :!Oj]
+                [:!T2 :!Ok]
+                [:!T3 :!Ol]
+                [:!T4 :!Osemicolon]
+                [:!T5 :!Oquote]
+
                 [:##left_option :fn]
                 [:!F1 :!Oo]
                 [:!F2 :!Op]
@@ -149,19 +155,21 @@
                 [:!F5 :!Obackslash]
 
                 [:##escape :!Qfn nil { :alone :escape }]
+
                 [:!QFf1 :o]
                 [:!QFf2 :p]
                 [:!QFf3 :open_bracket]
                 [:!QFf4 :close_bracket]
                 [:!QFf5 :backslash]
-                [:!QF1 :!Oo]
-                [:!QF2 :!Op]
-                [:!QF3 :!Oopen_bracket]
-                [:!QF4 :!Oclose_bracket]
-                [:!QF5 :!Obackslash]
 
-                [:fn :m]
-                [:left_control :m] ;; nuphy
+                [:!QF1 :n]
+                [:!QF2 :m]
+                [:!QF3 :comma]
+                [:!QF4 :period]
+                [:!QF5 :slash]
+
+                [:fn :f7]
+                [:left_control :f7] ;; nuphy
 
                 [:!Of1 :j]
                 [:!Of2 :k]
