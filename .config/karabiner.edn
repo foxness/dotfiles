@@ -235,9 +235,9 @@
                 ;; dont do :##Fright_shift, nope
                 ;; the only thing that works is choosing one key like this
                 ;; [:f9 :fast_forward nil { :held :caps_lock }] ;; F9 —> F16 [capslock when held]
-                ;; ## is crucial because it allows us to press it during caps to turn it off
+                ;; ## or #P is crucial because it allows us to press it during caps to turn it off
                 ;; [:##f9 [:toggle_caps [:caps-announce]]] ;; F9 —> Announcement Capslock
-                [:##f9 :toggle_caps] ;; F9 —> Capslock
+                [:#Pf9 :toggle_caps] ;; F9 —> Capslock
 
                 [:f10 :mute]
                 [:f11 :volume_decrement]

@@ -18,7 +18,7 @@
     "editor.cursorStyle": "block",
     "editor.minimap.renderCharacters": false,
     "editor.renderWhitespace": "trailing",
-    "editor.formatOnPaste": true,
+    // "editor.formatOnPaste": true,
     "editor.autoIndentOnPaste": true,
     "editor.quickSuggestions": {
         "other": "off"

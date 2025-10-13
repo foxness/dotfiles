@@ -6,6 +6,11 @@
       "value" : "/Users/river/my/tmp"
     },
     {
+      "key" : "tab",
+      "type" : "folder",
+      "value" : "/Users/river/Desktop"
+    },
+    {
       "key" : "1",
       "type" : "folder",
       "value" : "/Users/river/my"
