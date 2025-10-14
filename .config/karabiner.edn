@@ -288,6 +288,8 @@
 
                 ;; --- Main ---
 
+                [:##right_control :fn] ;; Right Control -> FN
+
                 [:f14 :!CTq [:!canary :!graphite]] ;; lock screen (qwerty)
                 [:f14 :!CTb [:graphite]] ;; lock screen (graphite)
                 [:f14 :!CTb [:canary]] ;; lock screen (canary)
