@@ -138,14 +138,16 @@
                 [:profile :RiverGaming]
                 [:condi :dota]
 
-                [:##caps_lock :left_control]
+                [:##caps_lock :left_control nil { :alone :n }]
                 [:##left_command :left_option]
 
-                [:!T1 :!Oj]
-                [:!T2 :!Ok]
-                [:!T3 :!Ol]
-                [:!T4 :!Osemicolon]
-                [:!T5 :!Oquote]
+                [:!Tn :!Tn] ;; smoothen cmd-caps
+
+                ;; [:!T1 :!Oj]
+                ;; [:!T2 :!Ok]
+                ;; [:!T3 :!Ol]
+                ;; [:!T4 :!Osemicolon]
+                ;; [:!T5 :!Oquote]
 
                 [:##left_option :fn]
                 [:!F1 :!Oo]
@@ -162,11 +164,11 @@
                 [:!QFf4 :close_bracket]
                 [:!QFf5 :backslash]
 
-                [:!QF1 :n]
-                [:!QF2 :m]
-                [:!QF3 :comma]
-                [:!QF4 :period]
-                [:!QF5 :slash]
+                [:!QF1 :m]
+                [:!QF2 :comma]
+                [:!QF3 :period]
+                [:!QF4 :slash]
+                ;; [:!QF5 :n]
 
                 [:fn :f7]
                 [:left_control :f7] ;; nuphy
