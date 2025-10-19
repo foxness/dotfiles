@@ -11,6 +11,11 @@
       "value" : "/Users/river/Desktop"
     },
     {
+      "key" : "`",
+      "type" : "folder",
+      "value" : "/Users/river"
+    },
+    {
       "key" : "1",
       "type" : "folder",
       "value" : "/Users/river/my"
@@ -18,7 +23,7 @@
     {
       "key" : "2",
       "type" : "folder",
-      "value" : "/Users/river"
+      "value" : "/Volumes/Cassiopeia"
     },
     {
       "key" : "3",
@@ -27,6 +32,11 @@
     },
     {
       "key" : "4",
+      "type" : "folder",
+      "value" : "/Volumes/Cassiopeia/media"
+    },
+    {
+      "key" : "5",
       "type" : "folder",
       "value" : "/Users/river/my/media"
     },
