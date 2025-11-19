@@ -25,9 +25,10 @@ PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_c
 
 # alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
 
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -la'
 alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
 alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOME'
+alias gs='cd ~/my/system/scripts'
 
 # alias python='python3'
 
