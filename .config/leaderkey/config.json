@@ -3,7 +3,7 @@
     {
       "key" : "space",
       "type" : "folder",
-      "value" : "/Users/river/my/tmp"
+      "value" : "/Volumes/Athena"
     },
     {
       "key" : "tab",
@@ -128,11 +128,6 @@
       "key" : "f",
       "type" : "folder",
       "value" : "/Users/river/my/music"
-    },
-    {
-      "key" : "g",
-      "type" : "folder",
-      "value" : "/Users/river/my/art-library"
     },
     {
       "actions" : [
