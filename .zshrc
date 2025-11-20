@@ -27,6 +27,7 @@ PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_c
 
 alias ls='ls --color=auto -la'
 alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
+alias oc='open .'
 alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOME'
 alias gs='cd ~/my/system/scripts'
 
