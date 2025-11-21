@@ -311,6 +311,18 @@
             ]
         }
 
+        {
+            :des "Nuphy Gaming"
+            :rules [
+                [:profile :RiverGaming]
+                [:condi :nuphy]
+
+                ;; always have a way to switch desktops
+                [:page_up :left-desktop]
+                [:page_down :right-desktop]
+            ]
+        }
+
         ;; ============== HYPER LAYER ==============
 
         {
