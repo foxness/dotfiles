@@ -343,16 +343,16 @@
 
                 ;; --- Numpad ---
 
-                [:!WERright_command :0]
-                [:!WERm :1]
-                [:!WERcomma :2]
-                [:!WERperiod :3]
-                [:!WERj :4]
-                [:!WERk :5]
-                [:!WERl :6]
-                [:!WERu :7]
-                [:!WERi :8]
-                [:!WERo :9]
+                ;; [:!WERu :1]
+                ;; [:!WERi :2]
+                ;; [:!WERo :3]
+                ;; [:!WERj :4]
+                ;; [:!WERk :5]
+                ;; [:!WERl :6]
+                ;; [:!WERm :7]
+                ;; [:!WERcomma :8]
+                ;; [:!WERperiod :9]
+                ;; [:!WERn :0]
             ]
         }
 
@@ -367,10 +367,14 @@
                 [:!ERf2 :!WERfn] ;; resize windows
                 [:!ERf3 :app-windows]
 
-                [:!ERgrave_accent_and_tilde :!TOdown_arrow] ;; return
+                [:!ERgrave_accent_and_tilde :!Ff [:!canary :!graphite]] ;; fullscreen (qwerty)
+                [:!ERgrave_accent_and_tilde :!Fu [:graphite]] ;; fullscreen (graphite)
+                [:!ERgrave_accent_and_tilde :!Fh [:canary]] ;; fullscreen (canary)
+
                 [:!ER1 :!TOup_arrow] ;; maximize
                 [:!ER2 :!TO1] ;; center
                 [:!ER3 :!TO2] ;; river center
+                [:!ER4 :!TOdown_arrow] ;; return
 
                 [:!ERq :!TOleft_arrow] ;; left
                 [:!ERw :!TOright_arrow] ;; right
@@ -433,33 +437,6 @@
                 [:!O#S2 :end]
                 [:!O#S3 :page_up]
                 [:!O#S4 :page_down]
-            ]
-        }
-
-        {
-            :des "Option layer [Canary]"
-            :rules [
-                :canary
-
-                [:!Of :!Fh] ;; fullscreen
-            ]
-        }
-
-        {
-            :des "Option layer [Graphite]"
-            :rules [
-                :graphite
-
-                [:!Of :!Fu] ;; fullscreen
-            ]
-        }
-
-        {
-            :des "Option layer [Qwerty]"
-            :rules [
-                [:condi :!canary :!graphite]
-
-                [:!Of :!Ff] ;; fullscreen
             ]
         }
 
