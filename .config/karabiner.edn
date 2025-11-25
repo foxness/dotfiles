@@ -428,6 +428,7 @@
                 [:!O#Sf1 :home]
                 [:!O#Sf2 :end]
 
+                [:!O#Sgrave_accent_and_tilde :0]
                 [:!O#S1 :delete_or_backspace]
                 [:!O#S2 :return_or_enter]
                 [:!O#S3 :page_up]
