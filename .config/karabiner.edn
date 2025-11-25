@@ -414,7 +414,7 @@
         ;; ============== OPTION LAYER ==============
 
         {
-            :des "Option layer"
+            :des "Option layer [Base]"
             :rules [
                 ;; arrow navigation
                 [:!O#Sa :left_arrow]
@@ -437,7 +437,7 @@
         }
 
         {
-            :des "Canary: Option layer"
+            :des "Option layer [Canary]"
             :rules [
                 :canary
 
@@ -446,7 +446,7 @@
         }
 
         {
-            :des "Graphite: Option layer"
+            :des "Option layer [Graphite]"
             :rules [
                 :graphite
 
@@ -455,7 +455,7 @@
         }
 
         {
-            :des "Qwerty: Option layer"
+            :des "Option layer [Qwerty]"
             :rules [
                 [:condi :!canary :!graphite]
 
@@ -532,7 +532,7 @@
         ;; ============== KEYBOARD LAYOUTS ==============
 
         {
-            :des "Graphite: bindings"
+            :des "Base Graphite"
             :rules [
                 :graphite
 
@@ -558,7 +558,7 @@
         }
 
         {
-            :des "Canary: bindings"
+            :des "Base Canary"
             :rules [
                 :canary
 
@@ -586,7 +586,7 @@
         }
 
         {
-            :des "Qwerty: bindings"
+            :des "Base Qwerty"
             :rules [
                 [:condi :!canary :!graphite]
 
