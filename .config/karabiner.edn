@@ -425,12 +425,12 @@
                 [:!O#Sq :!Oleft_arrow] ;; navigate word left
                 [:!O#Se :!Oright_arrow] ;; navigate word right
 
-                [:!O#Sf1 :home]
-                [:!O#Sf2 :end]
+                [:!O#Sf1 :delete_or_backspace]
+                [:!O#Sf2 :return_or_enter]
 
                 [:!O#Sgrave_accent_and_tilde :0]
-                [:!O#S1 :delete_or_backspace]
-                [:!O#S2 :return_or_enter]
+                [:!O#S1 :home]
+                [:!O#S2 :end]
                 [:!O#S3 :page_up]
                 [:!O#S4 :page_down]
             ]
