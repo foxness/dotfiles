@@ -110,8 +110,10 @@
     ;; }
 
     :tos {
-        :left-desktop { :key :!Tleft_arrow }
-        :right-desktop { :key :!Tright_arrow }
+        ;; :left-desktop { :key :!Tleft_arrow }
+        ;; :right-desktop { :key :!Tright_arrow }
+        :left-desktop { :key :!WERleft_arrow }
+        :right-desktop { :key :!WERright_arrow }
         :mission-control { :key :!Tup_arrow }
         :app-windows { :key :!Tdown_arrow }
         ;; :open-brave { :key :!QEf19 }

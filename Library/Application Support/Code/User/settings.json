@@ -22,5 +22,6 @@
     "editor.autoIndentOnPaste": true,
     "editor.quickSuggestions": {
         "other": "off"
-    }
+    },
+    "python.defaultInterpreterPath": "/Users/river/my/projects/python313venv"
 }
