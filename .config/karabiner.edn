@@ -450,7 +450,7 @@
             :rules [
                 :graphite
 
-                [:!Ou :!Fh] ;; fullscreen
+                [:!Of :!Fu] ;; fullscreen
             ]
         }
 
