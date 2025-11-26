@@ -456,14 +456,14 @@
                 [:!Oy :vk_none]
                 [:!Ou :hyphen] ;; [ open square bracket
                 [:!Oi :equal_sign] ;; ] close square bracket
-                [:!Oo :vk_none]
+                [:!Oo :!Sbackslash] ;; | pipe
                 [:!Op :vk_none]
                 [:!Oopen_bracket :vk_none]
                 [:!Oclose_bracket :vk_none]
 
                 [:!Of :vk_none]
                 [:!Og :vk_none]
-                [:!Oh :vk_none]
+                [:!Oh :!Speriod] ;; " double quote
                 [:!Oj :!S9] ;; ( open bracket
                 [:!Ok :!S0] ;; ) close bracket
                 [:!Ol :close_bracket] ;; = equals
@@ -472,7 +472,7 @@
 
                 [:!Ov :vk_none]
                 [:!Ob :vk_none]
-                [:!On :vk_none]
+                [:!On :!Sopen_bracket] ;; : colon
                 [:!Om :!Shyphen] ;; { open curly bracket
                 [:!Ocomma :!Sequal_sign] ;; } close curly bracket
                 [:!Operiod :vk_none]
