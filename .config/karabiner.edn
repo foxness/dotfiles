@@ -436,8 +436,9 @@
                 [:!O#Sgrave_accent_and_tilde :0]
                 [:!O#S1 :home]
                 [:!O#S2 :end]
-                [:!O#S3 :page_up]
-                [:!O#S4 :page_down]
+
+                [:!O#Sz :page_up]
+                [:!O#Sx :page_down]
             ]
         }
 
@@ -448,33 +449,33 @@
 
                 ;; --- Symbols [Graphite] ---
 
-                [:!O7 :!Sslash] ;; < open angle bracket
-                [:!O8 :!Scomma] ;; > close angle bracket
+                [:!O7 :!Shyphen] ;; { open curly bracket
+                [:!O8 :!Sequal_sign] ;; } close curly bracket
 
                 [:!Or :vk_none]
                 [:!Ot :vk_none]
                 [:!Oy :vk_none]
-                [:!Ou :hyphen] ;; [ open square bracket
-                [:!Oi :equal_sign] ;; ] close square bracket
-                [:!Oo :!Sbackslash] ;; | pipe
-                [:!Op :vk_none]
+                [:!Ou :!S9] ;; ( open bracket
+                [:!Oi :!S0] ;; ) close bracket
+                [:!Oo :!S8] ;; * asterisk
+                [:!Op :!Sbackslash] ;; | pipe
                 [:!Oopen_bracket :vk_none]
                 [:!Oclose_bracket :vk_none]
 
                 [:!Of :vk_none]
-                [:!Og :vk_none]
-                [:!Oh :!Speriod] ;; " double quote
-                [:!Oj :!S9] ;; ( open bracket
-                [:!Ok :!S0] ;; ) close bracket
-                [:!Ol :close_bracket] ;; = equals
-                [:!Osemicolon :!Sclose_bracket] ;; + plus
+                [:!Og :hyphen] ;; [ open square bracket
+                [:!Oh :equal_sign] ;; ] close square bracket
+                [:!Oj :close_bracket] ;; = equals sign
+                [:!Ok :!Speriod] ;; " double quote
+                [:!Ol :!Sclose_bracket] ;; + plus sign
+                [:!Osemicolon :!S1] ;; ! exclamation mark
                 [:!Oquote :vk_none]
 
                 [:!Ov :vk_none]
                 [:!Ob :vk_none]
                 [:!On :!Sopen_bracket] ;; : colon
-                [:!Om :!Shyphen] ;; { open curly bracket
-                [:!Ocomma :!Sequal_sign] ;; } close curly bracket
+                [:!Om :!Sslash] ;; < open angle bracket
+                [:!Ocomma :!Scomma] ;; > close angle bracket
                 [:!Operiod :vk_none]
                 [:!Oslash :vk_none]
             ]

@@ -23,5 +23,6 @@
     "editor.quickSuggestions": {
         "other": "off"
     },
-    "python.defaultInterpreterPath": "/Users/river/my/projects/python313venv"
+    "python.defaultInterpreterPath": "/Users/river/my/projects/python313venv",
+    "editor.autoClosingBrackets": "never"
 }
