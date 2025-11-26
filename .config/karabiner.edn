@@ -561,9 +561,9 @@
 
                 ;; --- Text ---
 
-                [:!C#TOSa :!C#TOSk] ;; cmd-A
-                [:!C#TOSz :!C#TOSt] ;; cmd-Z
-                [:!C#TOSx :!C#TOSz] ;; cmd-X
+                [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
+                [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
+                [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
 
                 ;; make sure replaced shortcuts are pressable
                 [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
@@ -571,6 +571,14 @@
                 [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
                 [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
                 [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
+
+                ;; --- Right hand side ---
+
+                [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
+                [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
+
+                [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
+                [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
             ]
         }
 
@@ -587,11 +595,11 @@
 
                 ;; --- Text ---
 
-                [:!C#TOSa :!C#TOSsemicolon] ;; cmd-A
-                [:!C#TOSz :!C#TOSy] ;; cmd-Z
-                [:!C#TOSx :!C#TOSu] ;; cmd-X
-                [:!C#TOSc :!C#TOSa] ;; cmd-C
-                [:!C#TOSv :!C#TOSx] ;; cmd-V
+                [:!C#TOSa :!C#TOSsemicolon] ;; cmd-A is itself
+                [:!C#TOSz :!C#TOSy] ;; cmd-Z is itself
+                [:!C#TOSx :!C#TOSu] ;; cmd-X is itself
+                [:!C#TOSc :!C#TOSa] ;; cmd-C is itself
+                [:!C#TOSv :!C#TOSx] ;; cmd-V is itself
 
                 ;; make sure replaced shortcuts are pressable
                 [:!C#TOSy :!C#TOSz] ;; cmd-Y -> cmd-J (overshadowed by cmd-Z)
