@@ -74,9 +74,10 @@
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitex\\.graphitex$" }
-        :canary { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.canaryx\\.canaryx$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
         :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
+        :graphitey { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitey\\.graphitey$" }
+        :statica { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.statica\\.statica$" }
     }
 
     :applications {
@@ -294,9 +295,8 @@
 
                 [:##right_control :fn] ;; Right Control -> FN
 
-                [:f14 :!CTq [:!canary :!graphite]] ;; lock screen (qwerty)
+                [:f14 :!CTq [:!graphite]] ;; lock screen (qwerty)
                 [:f14 :!CTb [:graphite]] ;; lock screen (graphite)
-                [:f14 :!CTb [:canary]] ;; lock screen (canary)
 
                 ;; --- Knob ---
 
@@ -367,9 +367,8 @@
                 [:!ERf2 :!WERfn] ;; resize windows
                 [:!ERf3 :app-windows]
 
-                [:!ERgrave_accent_and_tilde :!Ff [:!canary :!graphite]] ;; fullscreen (qwerty)
+                [:!ERgrave_accent_and_tilde :!Ff [:!graphite]] ;; fullscreen (qwerty)
                 [:!ERgrave_accent_and_tilde :!Fu [:graphite]] ;; fullscreen (graphite)
-                [:!ERgrave_accent_and_tilde :!Fh [:canary]] ;; fullscreen (canary)
 
                 [:!ER1 :!TOup_arrow] ;; maximize
                 [:!ER2 :!TO1] ;; center
@@ -584,37 +583,9 @@
         }
 
         {
-            :des "Base Canary"
-            :rules [
-                :canary
-
-                ;; --- Window management ---
-
-                [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
-                [:!C#TOSw :!C#TOSq] ;; cmd-W is itself
-                [:!C#TOSe :!C#TOSm] ;; cmd-E -> cmd-H
-
-                ;; --- Text ---
-
-                [:!C#TOSa :!C#TOSsemicolon] ;; cmd-A is itself
-                [:!C#TOSz :!C#TOSy] ;; cmd-Z is itself
-                [:!C#TOSx :!C#TOSu] ;; cmd-X is itself
-                [:!C#TOSc :!C#TOSa] ;; cmd-C is itself
-                [:!C#TOSv :!C#TOSx] ;; cmd-V is itself
-
-                ;; make sure replaced shortcuts are pressable
-                [:!C#TOSy :!C#TOSz] ;; cmd-Y -> cmd-J (overshadowed by cmd-Z)
-                [:!C#TOSsemicolon :!C#TOSc] ;; cmd-; -> cmd-D (overshadowed by cmd-C)
-                [:!C#TOSu :!C#TOSv] ;; cmd-U -> cmd-G (overshadowed by cmd-V)
-                [:!C#TOSb :!C#TOSw] ;; cmd-B -> cmd-L (overshadowed by cmd-W)
-                [:!C#TOSm :!C#TOSe] ;; cmd-M -> cmd-Y (overshadowed by cmd-E)
-            ]
-        }
-
-        {
             :des "Base Qwerty"
             :rules [
-                [:condi :!canary :!graphite]
+                [:condi :!graphite]
 
                 ;; --- Window management ---
 
