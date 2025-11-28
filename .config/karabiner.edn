@@ -73,7 +73,7 @@
 
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
-        :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitex\\.graphitex$" }
+        :graphitex { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitex\\.graphitex$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
         :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
         :graphitey { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitey\\.graphitey$" }
@@ -222,8 +222,8 @@
         {
             :des "Function row"
             :rules [
-                [:f1 { :input :graphite }]
-                [:f2 :!QWf16] ;; [:f2 { :input :russian }] ;; switching to these langs doesn't work consistensly
+                [:f1 { :input :graphitex }]
+                [:f2 { :input :statica }] ;; [:f2 :!QWf16] ;; [:f2 { :input :russian }] ;; switching to these langs doesn't work consistensly
                 [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:f4 { :input :abc }]
 
@@ -295,8 +295,8 @@
 
                 [:##right_control :fn] ;; Right Control -> FN
 
-                [:f14 :!CTq [:!graphite]] ;; lock screen (qwerty)
-                [:f14 :!CTb [:graphite]] ;; lock screen (graphite)
+                [:f14 :!CTq [:!graphitex]] ;; lock screen (qwerty)
+                [:f14 :!CTb [:graphitex]] ;; lock screen (graphitex)
 
                 ;; --- Knob ---
 
@@ -367,8 +367,8 @@
                 [:!ERf2 :!WERfn] ;; resize windows
                 [:!ERf3 :app-windows]
 
-                [:!ERgrave_accent_and_tilde :!Ff [:!graphite]] ;; fullscreen (qwerty)
-                [:!ERgrave_accent_and_tilde :!Fu [:graphite]] ;; fullscreen (graphite)
+                [:!ERgrave_accent_and_tilde :!Ff [:!graphitex]] ;; fullscreen (qwerty)
+                [:!ERgrave_accent_and_tilde :!Fu [:graphitex]] ;; fullscreen (graphitex)
 
                 [:!ER1 :!TOup_arrow] ;; maximize
                 [:!ER2 :!TO1] ;; center
@@ -442,11 +442,11 @@
         }
 
         {
-            :des "Option layer [Graphite]"
+            :des "Option layer [GraphiteX]"
             :rules [
-                :graphite
+                :graphitex
 
-                ;; --- Symbols [Graphite] ---
+                ;; --- Symbols [GraphiteX] ---
 
                 [:!O7 :!Shyphen] ;; { open curly bracket
                 [:!O8 :!Sequal_sign] ;; } close curly bracket
@@ -549,9 +549,9 @@
         ;; ============== KEYBOARD LAYOUTS ==============
 
         {
-            :des "Base Graphite"
+            :des "Base GraphiteX"
             :rules [
-                :graphite
+                :graphitex
 
                 ;; --- Window management ---
 
@@ -585,7 +585,7 @@
         {
             :des "Base Qwerty"
             :rules [
-                [:condi :!graphite]
+                [:condi :!graphitex]
 
                 ;; --- Window management ---
 
