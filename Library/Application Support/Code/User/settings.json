@@ -12,11 +12,8 @@
 
     "workbench.colorTheme": "FireFly Pro",
     "git.openRepositoryInParentFolders": "never",
-
-    "editor.minimap.showSlider": "always",
     "editor.copyWithSyntaxHighlighting": false,
     "editor.cursorStyle": "block",
-    "editor.minimap.renderCharacters": false,
     "editor.renderWhitespace": "trailing",
     // "editor.formatOnPaste": true,
     "editor.autoIndentOnPaste": true,
@@ -25,5 +22,7 @@
     },
     "python.defaultInterpreterPath": "/Users/river/my/projects/python313venv",
     "editor.autoClosingBrackets": "never",
-    "editor.dragAndDrop": false
+    "editor.dragAndDrop": false,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.size": "fill"
 }

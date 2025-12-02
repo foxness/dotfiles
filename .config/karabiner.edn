@@ -65,8 +65,8 @@
     :templates {
         ;; :open "open -a \"%s\""
         ;; :link "open \"%s\""
+        :keyboard-maestro "/Applications/Keyboard\\ Maestro.app/Contents/MacOS/keyboardmaestro \"%s\""
         :sigkill-frontmost "killall -9 \"$(osascript -e 'tell application \"System Events\" to (name of (first process whose frontmost is true))')\""
-        ;; :caps-announce "/Applications/Keyboard\\ Maestro.app/Contents/MacOS/keyboardmaestro RiverKarabiner_CapsAnnounce_Sound"
     }
 
     ;; :froms {
@@ -104,7 +104,7 @@
         ;; :toggle_caps [{ :key :caps_lock :hold_down_ms 150 } { :key :vk_none }] ;; this vk_none hack makes it consistent somehow
         :toggle_caps [
             { :key :caps_lock :hold_down_ms 80 }
-            { :shell "/Applications/Keyboard\\ Maestro.app/Contents/MacOS/keyboardmaestro RiverKarabiner_CapsAnnounce_Sound" }
+            { :shell [:keyboard-maestro "RiverKarabiner_CapsAnnounce_Sound"] }
         ]
     }
 
@@ -732,6 +732,8 @@
 ;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
 ;; https://github.com/nikitavoloboev/config/blob/master/karabiner/karabiner.edn
 ;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
+;; https://johnlindquist.com/customize-karabiner-with-goku/
+;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
 
 ;; good configs
 ;; https://pastebin.com/iDuXrnwu
@@ -739,9 +741,9 @@
 ;; https://pastebin.com/w8EV0Ybe
 ;; https://pastebin.com/amNdELk8
 ;; https://pastebin.com/2q8sNDLX
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/in-the-wild.md
 
-;; https://johnlindquist.com/customize-karabiner-with-goku/
-;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org
 
 ;; tap  [ once                -> type "["
 ;; hold [ and tap ] key once -> type "{"
