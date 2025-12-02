@@ -24,5 +24,6 @@
         "other": "off"
     },
     "python.defaultInterpreterPath": "/Users/river/my/projects/python313venv",
-    "editor.autoClosingBrackets": "never"
+    "editor.autoClosingBrackets": "never",
+    "editor.dragAndDrop": false
 }

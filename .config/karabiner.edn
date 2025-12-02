@@ -109,6 +109,8 @@
         :spotify-volume-down { :key :!Cf19 }
         :spotify-volume-up { :key :!Cf18 }
 
+        :nope { :key :vk_none }
+
         ;; in order for OSX to register a caps lock press, it has to be held for a little under 100ms
         ;; :toggle_caps { :key :caps_lock :hold_down_ms 100 }
         ;; :toggle_caps [{ :key :caps_lock :hold_down_ms 150 } { :key :vk_none }] ;; this vk_none hack makes it consistent somehow
@@ -244,7 +246,7 @@
             :rules [
                 ;; --- Main ---
 
-                [:##caps_lock :!WEright_shift [:!extend-hold] { :alone :delete_or_backspace }] ;; Capslock -> Hyper
+                [:##caps_lock :!WEright_shift nil { :alone :delete_or_backspace }] ;; Capslock -> Hyper
                 [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
 
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
@@ -470,7 +472,10 @@
 
         {
             :des "Extend layer activation"
-            :rules [[:##right_command ["extend-hold" 1] nil { :afterup ["extend-hold" 0] }]]
+            :rules [
+                ;; [:##right_command ["extend-hold" 1] nil { :afterup ["extend-hold" 0] }]
+                [:##right_command ["extend-hold" 1] nil { :afterup ["extend-hold" 0] :alone :delete_or_backspace }]
+            ]
         }
 
         {
@@ -478,19 +483,57 @@
             :rules [
                 :extend-hold
 
-                [:##j :escape]
-                [:caps_lock :escape]
+                ;; --- Neo symbols ---
 
-                [:##k :delete_or_backspace] ;; delete character
-                [:##l :!Odelete_or_backspace] ;; delete word
-                [:##semicolon :!Cdelete_or_backspace] ;; delete line
+                [:q :vk_none]
+                [:w :vk_none]
+                [:e :!Shyphen]                  ;; { open curly bracket
+                [:r :!Sequal_sign]              ;; } close curly bracket
+                [:t :!S6]                       ;; ^ caret
+                [:y :!S1]                       ;; ! exclamation mark
+                [:u :!Sslash]                   ;; < open angle bracket
+                [:i :!Scomma]                   ;; > close angle bracket
+                [:o :close_bracket]             ;; = equals sign
+                [:p :!S7]                       ;; & ampersand
+                [:open_bracket :vk_none]
+                [:close_bracket :vk_none]
 
-                [:##i :!Fdelete_or_backspace] ;; forward delete character
-                [:##o :!FOdelete_or_backspace] ;; forward delete word
-                [:##p :!FCdelete_or_backspace] ;; forward delete line
-                ;; [:##e [:!Send :delete_or_backspace]] ;; forward delete line
+                [:a :backslash]                 ;; \ backslash
+                [:s :slash]                     ;; / forward slash
+                [:d :hyphen]                    ;; [ open square bracket
+                [:f :equal_sign]                ;; ] close square bracket
+                [:g :!S8]                       ;; * asterisk
+                [:h :!Squote]                   ;; ? question mark
+                [:j :!S9]                       ;; ( open bracket
+                [:k :!S0]                       ;; ) close bracket
+                [:l :period]                    ;; - minus
+                [:semicolon :!Sopen_bracket]    ;; : colon
+                [:quote :!S2]                   ;; @ at
 
-                [:##delete_or_backspace :!Odelete_or_backspace] ;; delete word
+                [:z :!S3]                       ;; # hashtag
+                [:x :!S4]                       ;; $ dollar
+                [:c :!Sbackslash]               ;; | pipe
+                [:v [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+                [:b :grave_accent_and_tilde]    ;; ` backtick
+                [:n :!Sclose_bracket]           ;; + plus sign
+                [:m :!S5]                       ;; % percent
+                [:comma :!Speriod]              ;; " double quote
+                [:period :y]                    ;; ' quote
+                [:slash :open_bracket]          ;; ; semicolon
+
+                ;; [:##j :escape]
+                ;; [:caps_lock :escape]
+
+                ;; [:##k :delete_or_backspace] ;; delete character
+                ;; [:##l :!Odelete_or_backspace] ;; delete word
+                ;; [:##semicolon :!Cdelete_or_backspace] ;; delete line
+
+                ;; [:##i :!Fdelete_or_backspace] ;; forward delete character
+                ;; [:##o :!FOdelete_or_backspace] ;; forward delete word
+                ;; [:##p :!FCdelete_or_backspace] ;; forward delete line
+                ;; ;; [:##e [:!Send :delete_or_backspace]] ;; forward delete line
+
+                ;; [:##delete_or_backspace :!Odelete_or_backspace] ;; delete word
             ]
         }
 
@@ -581,28 +624,6 @@
                 [:!Ch :!Ce] ;; cmd-H -> cmd-E
             ]
         }
-
-        ;; ============== Homerow modifiers ==============
-
-        ;; this implementation should be better:
-        ;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
-
-        ;; {
-        ;;     :des "Homerow modifiers"
-        ;;     :rules [
-        ;;         ;; the downside is these keys are now typed on KEY UP not DOWN
-
-        ;;         [:a nil nil { :held :left_control :alone :a :params { :alone 100 :held 200 } }]
-        ;;         [:s nil nil { :held :left_option  :alone :s :params { :alone 100 :held 200 } }]
-        ;;         [:d nil nil { :held :left_shift   :alone :d :params { :alone 100 :held 200 } }]
-        ;;         [:f nil nil { :held :left_command :alone :f :params { :alone 100 :held 200 } }]
-
-        ;;         [:j nil nil { :held :right_command :alone :j :params { :alone 100 :held 200 } }]
-        ;;         [:k nil nil { :held :right_shift   :alone :k :params { :alone 100 :held 200 } }]
-        ;;         [:l nil nil { :held :right_option  :alone :l :params { :alone 100 :held 200 } }]
-        ;;         [:semicolon nil nil { :held :right_control :alone :semicolon :params { :alone 100 :held 200 } }]
-        ;;     ]
-        ;; }
     ]
 }
 
@@ -634,3 +655,35 @@
 
 ;; no repeat
 ;; { :key :a :repeat false }
+
+;; ============== IDEAS ==============
+;; interesting ideas to toy with from other configs
+
+;; Homerow modifiers
+;; this implementation should be better:
+;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
+
+;; {
+;;     :des "Homerow modifiers"
+;;     :rules [
+;;         ;; the downside is these keys are now typed on KEY UP not DOWN
+
+;;         [:a nil nil { :held :left_control :alone :a :params { :alone 100 :held 200 } }]
+;;         [:s nil nil { :held :left_option  :alone :s :params { :alone 100 :held 200 } }]
+;;         [:d nil nil { :held :left_shift   :alone :d :params { :alone 100 :held 200 } }]
+;;         [:f nil nil { :held :left_command :alone :f :params { :alone 100 :held 200 } }]
+
+;;         [:j nil nil { :held :right_command :alone :j :params { :alone 100 :held 200 } }]
+;;         [:k nil nil { :held :right_shift   :alone :k :params { :alone 100 :held 200 } }]
+;;         [:l nil nil { :held :right_option  :alone :l :params { :alone 100 :held 200 } }]
+;;         [:semicolon nil nil { :held :right_control :alone :semicolon :params { :alone 100 :held 200 } }]
+;;     ]
+;; }
+
+;; simlayers are basically "hyper" keys
+;; layers works too, but only recommended for non-typing keys like . or tab
+;; to use more regular typing keys, use simlayers
+;; :simlayers {
+;;   :j-mode {:key :j}
+;;   :f-mode {:key :f}
+;; }
