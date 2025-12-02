@@ -687,3 +687,53 @@
 ;;   :j-mode {:key :j}
 ;;   :f-mode {:key :f}
 ;; }
+
+;;   ;; Quick Mouse handles
+;;   [:!Wdown_arrow {:mkey {:y 1536}}     ]
+;;   [:!Wup_arrow {:mkey {:y -1536}}      ]
+;;   [:!Wleft_arrow {:mkey {:x -1536}}    ]
+;;   [:!Wright_arrow {:mkey {:x 1536}}    ]
+;;   [:!Wreturn_or_enter {:pkey :button1} ]
+;;   [:!CWreturn_or_enter {:pkey :button2}]
+
+;; easier reach to modifier keys
+;;[:##slash :right_command  nil {:alone :slash}]
+;; [:##z     :left_control   nil {:alone :z}]
+
+;; -----------------------------------------
+;; f-mode (special characters)
+;; -----------------------------------------
+;;   {:des "F => f alone, else f-mode"
+;;       :rules [
+
+;;         ;;  u i o
+;;         ;;  ^ & *
+
+;;         [:u   :!S7      :f-mode]
+;;         [:i   :!S8      :f-mode]
+
+;;         ;; [:#Sp        :#Sequal_sign     :f-mode] ;; doesn't work well
+
+;; -----------------------------------------
+;; j-mode (deletion related shortcuts)
+;; -----------------------------------------
+ 
+;;   {:des "j-mode"
+;;    :rules [:j-mode
+
+;;       ;; deletion related shortcuts
+;;       ;;  s d f  ||| line word char
+
+;;       ;; delete line
+;;       [:s :!Tu                    :terminals]
+;;       [:s :!Cdelete_or_backspace  :!terminals]
+
+;; easier key launches
+;;[[:f :j] :!Ospacebar] ;; alfred
+
+;; "close application by pressing command-w twice"
+;; [:!C#Pw [:!Cw ["command-w" 0] [:noti :cmdw]] ["command-w" 1]]
+;; [:!C#Pw [[:noti :cmdw "Press Again to CLOSE"] ["command-w" 1]] nil {:delayed {:invoked [["command-w" 0] [:noti :cmdw]] :canceled [["command-w" 0] [:noti :cmdw]]}} ]
+
+;; clipboard from shell
+;; "shell_command": "pbpaste | tr '[:upper:]' '[:lower:]' | pbcopy"
