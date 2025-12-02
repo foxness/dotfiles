@@ -10,16 +10,13 @@
 
 ;; ============== LINKS ==============
 
-;; all keys list: https://github.com/JoshuaManuel/Karabiner-Elements-Key-List
+;; all keys list:
+;; https://github.com/JoshuaManuel/Karabiner-Elements-Key-List
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
 
 ;; goku: https://github.com/yqrashawn/GokuRakuJoudo
 ;; goku tutorial: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
 ;; karabiner: https://karabiner-elements.pqrs.org/docs
-
-;; article
-;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
-;; https://github.com/nikitavoloboev/config/blob/master/karabiner/karabiner.edn
-;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
 
 ;; good configs
 ;; https://pastebin.com/iDuXrnwu
@@ -737,3 +734,14 @@
 
 ;; clipboard from shell
 ;; "shell_command": "pbpaste | tr '[:upper:]' '[:lower:]' | pbcopy"
+
+;; articles
+;; https://kau.sh/blog/hacking-your-keyboard/
+;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
+;; https://github.com/nikitavoloboev/config/blob/master/karabiner/karabiner.edn
+;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
+
+;; tap  [ once                -> type "["
+;; hold [ and tap ] key once -> type "{"
+;; tap  ] once                -> type "]"
+;; hold ] and tap [ key once -> type "}"
