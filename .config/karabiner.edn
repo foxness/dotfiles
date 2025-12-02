@@ -18,15 +18,6 @@
 ;; goku tutorial: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
 ;; karabiner: https://karabiner-elements.pqrs.org/docs
 
-;; good configs
-;; https://pastebin.com/iDuXrnwu
-;; https://pastebin.com/TGCm21ae
-;; https://pastebin.com/w8EV0Ybe
-;; https://pastebin.com/amNdELk8
-
-;; https://johnlindquist.com/customize-karabiner-with-goku/
-;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
-
 ;; find bundleid and other stuff in karabiner-eventviewer
 
 ;; ============== PARAMS ==============
@@ -734,12 +725,23 @@
 
 ;; clipboard from shell
 ;; "shell_command": "pbpaste | tr '[:upper:]' '[:lower:]' | pbcopy"
+;; "export LC_ALL=en_US.UTF-8; pbpaste | tr '[:upper:]' '[:lower:]' | pbcopy"
 
 ;; articles
 ;; https://kau.sh/blog/hacking-your-keyboard/
 ;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
 ;; https://github.com/nikitavoloboev/config/blob/master/karabiner/karabiner.edn
 ;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
+
+;; good configs
+;; https://pastebin.com/iDuXrnwu
+;; https://pastebin.com/TGCm21ae
+;; https://pastebin.com/w8EV0Ybe
+;; https://pastebin.com/amNdELk8
+;; https://pastebin.com/2q8sNDLX
+
+;; https://johnlindquist.com/customize-karabiner-with-goku/
+;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
 
 ;; tap  [ once                -> type "["
 ;; hold [ and tap ] key once -> type "{"
