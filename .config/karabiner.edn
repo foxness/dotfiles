@@ -372,17 +372,18 @@
                 [:!QW2 :volume_increment]
                 [:!QW3 :mute]
 
-                [:!QWq :play_or_pause]
-                [:!QWw :rewind]
-                [:!QWe :fast_forward]
+                [:!QWa :play_or_pause]
+                [:!QWs :rewind]
+                [:!QWd :fast_forward]
 
                 ;; --- Spotify ---
 
-                [:!QWa :!QWEf13] ;; spotify play/pause
-                [:!QWs :!QWEf14] ;; spotify previous song
-                [:!QWd :!QWEf15] ;; spotify next song
-                [:!QWf :!QWEf16] ;; spotify like
-                [:!QWg :!QWEf17] ;; spotify unlike
+                [:!QWq :!Tf13] ;; mouse media play/pause
+                ;; [:!QWq :!QWEf13] ;; spotify play/pause
+                [:!QWw :!QWEf14] ;; spotify previous song
+                [:!QWe :!QWEf15] ;; spotify next song
+                [:!QWr :!QWEf16] ;; spotify like
+                [:!QWt :!QWEf17] ;; spotify unlike
 
                 [:!QWf1 :spotify-volume-down]
                 [:!QWf2 :spotify-volume-up]
