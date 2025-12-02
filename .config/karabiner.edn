@@ -37,12 +37,13 @@
 ;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
 
 ;; good configs
-;; https://gist.github.com/nikolai-cc/02f6b070972840323ae355ef847e91a6
-;; https://github.com/kaushikgopal/dotfiles/blob/master/.karabiner.edn
+;; https://pastebin.com/iDuXrnwu
+;; https://pastebin.com/TGCm21ae
+;; https://pastebin.com/w8EV0Ybe
+;; https://pastebin.com/amNdELk8
+
 ;; https://johnlindquist.com/customize-karabiner-with-goku/
 ;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
-;; https://github.com/kiinoda/goku/blob/main/karabiner.edn
-;; https://gist.github.com/rdavison/290abc3f5fe5db4a81f8f3e7164ac7a5
 
 ;; find bundleid and other stuff in karabiner-eventviewer
 
@@ -295,8 +296,8 @@
 
                 [:##right_control :fn] ;; Right Control -> FN
 
-                [:f14 :!CTq [:!graphitex]] ;; lock screen (qwerty)
-                [:f14 :!CTb [:graphitex]] ;; lock screen (graphitex)
+                [:f14 { :key :!CTq :repeat false } [:!graphitex]] ;; lock screen (qwerty)
+                [:f14 { :key :!CTb :repeat false } [:graphitex]] ;; lock screen (graphitex)
 
                 ;; --- Knob ---
 
@@ -619,3 +620,17 @@
         ;; }
     ]
 }
+
+;; ============== MINI TUTORIAL ==============
+
+;; profiles:
+;; :river
+;; [:profile :gaming]
+;; [:profile :river :gaming]
+
+;; conditions
+;; :dota
+;; [:condi :dota] [:condi :nuphy :dota]
+
+;; no repeat
+;; { :key :a :repeat false }
