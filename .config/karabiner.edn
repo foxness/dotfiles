@@ -16,21 +16,6 @@
 ;; goku tutorial: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
 ;; karabiner: https://karabiner-elements.pqrs.org/docs
 
-;; !  | means mandatory
-;; #  | means optional
-;; C  | left_command
-;; T  | left_control
-;; O  | left_option
-;; S  | left_shift
-;; F  | fn
-;; Q  | right_command
-;; W  | right_control
-;; E  | right_option
-;; R  | right_shift
-;; P  | caps_lock
-;; !! | mandatory command + control + optional + shift (hyper)
-;; ## | optional any
-
 ;; article
 ;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
 ;; https://github.com/nikitavoloboev/config/blob/master/karabiner/karabiner.edn
@@ -112,13 +97,10 @@
     ;; }
 
     :tos {
-        ;; :left-desktop { :key :!Tleft_arrow }
-        ;; :right-desktop { :key :!Tright_arrow }
-        :left-desktop { :key :!WERleft_arrow }
-        :right-desktop { :key :!WERright_arrow }
+        :left-desktop { :key :!WERleft_arrow } ;; :left-desktop { :key :!Tleft_arrow }
+        :right-desktop { :key :!WERright_arrow } ;; :right-desktop { :key :!Tright_arrow }
         :mission-control { :key :!Tup_arrow }
         :app-windows { :key :!Tdown_arrow }
-        ;; :open-brave { :key :!QEf19 }
 
         :fine-vol-down { :key :!SOvolume_down }
         :fine-vol-up { :key :!SOvolume_up }
@@ -129,7 +111,11 @@
 
         ;; in order for OSX to register a caps lock press, it has to be held for a little under 100ms
         ;; :toggle_caps { :key :caps_lock :hold_down_ms 100 }
-        :toggle_caps [{ :key :caps_lock :hold_down_ms 150 } { :key :vk_none }] ;; this vk_none hack makes it consistent somehow
+        ;; :toggle_caps [{ :key :caps_lock :hold_down_ms 150 } { :key :vk_none }] ;; this vk_none hack makes it consistent somehow
+        :toggle_caps [
+            { :key :caps_lock :hold_down_ms 80 }
+            { :shell "/Applications/Keyboard\\ Maestro.app/Contents/MacOS/keyboardmaestro RiverKarabiner_CapsAnnounce_Sound" }
+        ]
     }
 
     :main [
@@ -338,7 +324,6 @@
                 [:!WERd :mission-control]
 
                 [:!WERz :!TSf10] ;; quick note
-                ;; [:!WERq :open-brave] ;; needed for no annoying hyper + q sound
 
                 [:!WERf12 [:sigkill-frontmost]]
 
@@ -622,6 +607,21 @@
 }
 
 ;; ============== MINI TUTORIAL ==============
+
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
 
 ;; profiles:
 ;; :river
