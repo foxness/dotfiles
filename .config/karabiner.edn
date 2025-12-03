@@ -200,7 +200,7 @@
         {
             :des "Function row"
             :rules [
-                [:f1 { :input :graphitex }]
+                [:f1 { :input :graphiteyy }]
                 [:f2 { :input :statica }] ;; [:f2 :!QWf16] ;; [:f2 { :input :russian }] ;; switching to these langs doesn't work consistensly
                 [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:f4 { :input :abc }]
@@ -273,8 +273,8 @@
 
                 [:##right_control :fn] ;; Right Control -> FN
 
-                [:f14 { :key :!CTq :repeat false } [:!graphitex]] ;; lock screen (qwerty)
-                [:f14 { :key :!CTb :repeat false } [:graphitex]] ;; lock screen (graphitex)
+                [:f14 { :key :!CTq :repeat false } [:!graphitex :!graphiteyy]] ;; lock screen (qwerty)
+                [:f14 { :key :!CTb :repeat false } [:!abc :!russian :!japanese :!statica]] ;; lock screen (graphite)
 
                 ;; --- Knob ---
 
@@ -344,8 +344,8 @@
                 [:!ERf2 :!WERfn] ;; resize windows
                 [:!ERf3 :app-windows]
 
-                [:!ERgrave_accent_and_tilde :!Ff [:!graphitex]] ;; fullscreen (qwerty)
-                [:!ERgrave_accent_and_tilde :!Fu [:graphitex]] ;; fullscreen (graphitex)
+                [:!ERgrave_accent_and_tilde :!Ff [:!graphitex :!graphiteyy]] ;; fullscreen (qwerty)
+                [:!ERgrave_accent_and_tilde :!Fu [:!abc :!russian :!japanese :!statica]] ;; fullscreen (graphite)
 
                 [:!ER1 :!TOup_arrow] ;; maximize
                 [:!ER2 :!TO1] ;; center
@@ -420,11 +420,11 @@
         }
 
         {
-            :des "Option layer [GraphiteX]"
+            :des "Option layer [Graphite]"
             :rules [
-                :graphitex
+                [:condi :!abc :!russian :!japanese :!statica] ;; graphite
 
-                ;; --- Symbols [GraphiteX] ---
+                ;; --- Symbols ---
 
                 [:!O7 :!Shyphen] ;; { open curly bracket
                 [:!O8 :!Sequal_sign] ;; } close curly bracket
@@ -567,44 +567,44 @@
 
         ;; ============== KEYBOARD LAYOUTS ==============
 
-        ;; {
-        ;;     :des "Base GraphiteX"
-        ;;     :rules [
-        ;;         :graphitex
-
-        ;;         ;; --- Window management ---
-
-        ;;         [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
-        ;;         [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
-        ;;         [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
-
-        ;;         ;; --- Text ---
-
-        ;;         [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
-        ;;         [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
-        ;;         [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
-
-        ;;         ;; make sure replaced shortcuts are pressable
-        ;;         [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
-        ;;         [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
-        ;;         [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
-        ;;         [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
-        ;;         [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
-
-        ;;         ;; --- Right hand side ---
-
-        ;;         [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
-        ;;         [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
-
-        ;;         [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
-        ;;         [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
-        ;;     ]
-        ;; }
-
         {
-            :des "Base GraphiteX - Qwertified CMD"
+            :des "Base GraphiteX"
             :rules [
                 :graphitex
+
+                ;; --- Window management ---
+
+                [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
+                [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
+                [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
+
+                ;; --- Text ---
+
+                [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
+                [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
+                [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
+
+                ;; make sure replaced shortcuts are pressable
+                [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
+                [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
+                [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
+                [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
+                [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
+
+                ;; --- Right hand side ---
+
+                [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
+                [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
+
+                [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
+                [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
+            ]
+        }
+
+        {
+            :des "Base GraphiteYY - Qwertified CMD"
+            :rules [
+                :graphiteyy
 
                 [:!C#TOShyphen :!C#TOSperiod]
                 [:!C#TOSequal_sign :!C#TOSclose_bracket]
@@ -650,7 +650,7 @@
         {
             :des "Base Qwerty"
             :rules [
-                [:condi :!graphitex]
+                [:condi :!graphitex :!graphiteyy]
 
                 ;; --- Window management ---
 
@@ -797,3 +797,11 @@
 ;; hold [ and tap ] key once -> type "{"
 ;; tap  ] once                -> type "]"
 ;; hold ] and tap [ key once -> type "}"
+
+
+;; {:type :basic
+;;             :from
+;;             {:simultaneous [{:key_code "left_shift"} {:key_code "right_shift"}]
+;;              :modifiers    {:optional ["any"]}}
+;;             :to   [{:key_code "caps_lock"}]}
+;; https://github.com/yqrashawn/GokuRakuJoudo/issues/257
