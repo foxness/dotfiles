@@ -50,7 +50,7 @@
         :graphitex { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitex\\.graphitex$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
         :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
-        :graphitey { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitey\\.graphitey$" }
+        :graphiteyy { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphiteyy\\.graphiteyy$" }
         :statica { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.statica\\.statica$" }
     }
 
@@ -103,8 +103,9 @@
         ;; :toggle_caps { :key :caps_lock :hold_down_ms 100 }
         ;; :toggle_caps [{ :key :caps_lock :hold_down_ms 150 } { :key :vk_none }] ;; this vk_none hack makes it consistent somehow
         :toggle_caps [
-            { :key :caps_lock :hold_down_ms 80 }
+            { :key :caps_lock :hold_down_ms 150 }
             { :shell [:keyboard-maestro "RiverKarabiner_CapsAnnounce_Sound"] }
+            { :key :vk_none } ;; not necessary
         ]
     }
 
@@ -566,37 +567,83 @@
 
         ;; ============== KEYBOARD LAYOUTS ==============
 
+        ;; {
+        ;;     :des "Base GraphiteX"
+        ;;     :rules [
+        ;;         :graphitex
+
+        ;;         ;; --- Window management ---
+
+        ;;         [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
+        ;;         [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
+        ;;         [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
+
+        ;;         ;; --- Text ---
+
+        ;;         [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
+        ;;         [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
+        ;;         [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
+
+        ;;         ;; make sure replaced shortcuts are pressable
+        ;;         [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
+        ;;         [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
+        ;;         [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
+        ;;         [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
+        ;;         [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
+
+        ;;         ;; --- Right hand side ---
+
+        ;;         [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
+        ;;         [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
+
+        ;;         [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
+        ;;         [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
+        ;;     ]
+        ;; }
+
         {
-            :des "Base GraphiteX"
+            :des "Base GraphiteX - Qwertified CMD"
             :rules [
                 :graphitex
 
-                ;; --- Window management ---
+                [:!C#TOShyphen :!C#TOSperiod]
+                [:!C#TOSequal_sign :!C#TOSclose_bracket]
 
-                [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
-                [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
-                [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
+                [:!C#TOSq :!C#TOSb]
+                [:!C#TOSw :!C#TOSr]
+                [:!C#TOSe :!C#TOSl]
+                [:!C#TOSr :!C#TOSs]
+                [:!C#TOSt :!C#TOSd]
+                [:!C#TOSy :!C#TOSh]
+                [:!C#TOSu :!C#TOSo]
+                [:!C#TOSi :!C#TOSsemicolon]
+                [:!C#TOSo :!C#TOSi]
+                [:!C#TOSp :!C#TOSm]
+                [:!C#TOSopen_bracket :!C#TOShyphen]
+                [:!C#TOSclose_bracket :!C#TOSequal_sign]
 
-                ;; --- Text ---
+                [:!C#TOSa :!C#TOSk]
+                [:!C#TOSs :!C#TOSf]
+                [:!C#TOSd :!C#TOSe]
+                [:!C#TOSf :!C#TOSu]
+                ;; [:!C#TOSg :!C#TOSg]
+                [:!C#TOSh :!C#TOSj]
+                [:!C#TOSj :!C#TOSp]
+                [:!C#TOSk :!C#TOSn]
+                [:!C#TOSl :!C#TOSw]
+                [:!C#TOSsemicolon :!C#TOSopen_bracket]
+                [:!C#TOSquote :!C#TOSy]
 
-                [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
-                [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
-                [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
-
-                ;; make sure replaced shortcuts are pressable
-                [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
-                [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
-                [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
-                [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
-                [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
-
-                ;; --- Right hand side ---
-
-                [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
-                [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
-
-                [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
-                [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
+                [:!C#TOSz :!C#TOSt]
+                [:!C#TOSx :!C#TOSz]
+                ;; [:!C#TOSc :!C#TOSc]
+                ;; [:!C#TOSv :!C#TOSv]
+                [:!C#TOSb :!C#TOSq]
+                [:!C#TOSn :!C#TOSa]
+                [:!C#TOSm :!C#TOSx]
+                [:!C#TOScomma :!C#TOSquote]
+                [:!C#TOSperiod :!C#TOScomma]
+                ;; [:!C#TOSslash :!C#TOSslash]
             ]
         }
 
