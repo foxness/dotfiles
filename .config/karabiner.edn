@@ -112,12 +112,11 @@
     :main [
 
         ;; ============== APPS ==============
-        ;; these rules go first because of F keys
 
         {
             :des "Krita"
             :rules [
-                :krita
+                :krita ;; these rules go first because of F keys
                 [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
             ]
         }
@@ -138,6 +137,10 @@
                 [:f7 :!QWf12] ;; do not disturb [todo: something better than this?]
                 [:f8 :play_or_pause]
 
+                [:f9 :mute]
+                [:f10 :volume_decrement]
+                [:f11 :volume_increment]
+
                 ;; HOW TO NOT DO CAPSLOCK:
                 ;; dont do :##Eslash, cant type a question mark
                 ;; dont do [:right_option :slash] either, cuz capslock changes slash to question mark
@@ -147,11 +150,7 @@
                 ;; [:f9 :fast_forward nil { :held :caps_lock }] ;; F9 —> F16 [capslock when held]
                 ;; ## or #P is crucial because it allows us to press it during caps to turn it off
                 ;; [:##f9 [:toggle_caps [:caps-announce]]] ;; F9 —> Announcement Capslock
-                [:#Pf9 :toggle_caps] ;; F9 —> Capslock
-
-                [:f10 :mute]
-                [:f11 :volume_decrement]
-                [:f12 :volume_increment]
+                [:#Pf12 :toggle_caps] ;; F12 —> Capslock
             ]
         }
 
@@ -623,7 +622,7 @@
                 [:condi :terraria]
 
                 [:##Cq :vk_none] ;; prevent from quitting
-                [:##Cw :vk_none] ;; also prevent from quitting
+                [:##Cw :vk_none] ;; same thing
             ]
         }
 
