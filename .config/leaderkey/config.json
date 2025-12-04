@@ -171,6 +171,11 @@
       "key" : "z",
       "label" : "Manage Window",
       "type" : "group"
+    },
+    {
+      "key" : "",
+      "type" : "url",
+      "value" : "https://www.theverge.com/"
     }
   ],
   "type" : "group"

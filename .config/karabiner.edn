@@ -112,12 +112,42 @@
     :main [
 
         ;; ============== APPS ==============
+        ;; these rules go first because of F keys
 
         {
             :des "Krita"
             :rules [
-                :krita ;; these rules go first because of F keys
+                :krita
                 [:f1 :f1] [:f2 :f2] [:f3 :f3] [:f4 :f4] [:f5 :f5] [:f6 :f6]
+            ]
+        }
+
+        {
+            :des "Leader Key - Enable F keys"
+            :rules [
+                ;; enables F keys for 1 second in Leader Key
+                ;; based on
+                ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/a77cccb8e8d4e6a9fb8ef2e6bcfe49a4299e4cb2/examples.org#command-q-twice-to-quit-application
+
+                ;; these have to come before the launch key rule
+                [:f1 [:f1 ["leaderkey" 0]] [:leaderkey]]
+                [:f2 [:f2 ["leaderkey" 0]] [:leaderkey]]
+                [:f3 [:f3 ["leaderkey" 0]] [:leaderkey]]
+                [:f4 [:f4 ["leaderkey" 0]] [:leaderkey]]
+
+                [
+                    :!QWspacebar ;; tab-space (switch layer)
+                    [:!QWf20 ["leaderkey" 1]] ;; leader key activation key
+                    nil
+                    {
+                        :delayed {
+                            :invoked ["leaderkey" 0] ;; run when no other key presses after delay ms
+                            :canceled ["leaderkey" 0] ;; run when another key presses within delay ms
+                        }
+
+                        :params { :delay 1000 } ;; it can even be 5 seconds, tested
+                    }
+                ]
             ]
         }
 
@@ -390,7 +420,7 @@
                 ;; --- Main ---
 
                 ;; default binding shows the emoji picker
-                [:!QWspacebar :!QWf20] ;; leader key
+                ;; [:!QWspacebar :!QWf20] ;; leader key
 
                 ;; --- Media controls ---
 
@@ -683,17 +713,23 @@
 ;; !! | mandatory command + control + optional + shift (hyper)
 ;; ## | optional any
 
-;; profiles:
-;; :river
-;; [:profile :gaming]
-;; [:profile :river :gaming]
+;; articles
+;; https://kau.sh/blog/hacking-your-keyboard/
+;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
+;; https://github.com/nikitavoloboev/config/blob/master/karabiner/karabiner.edn
+;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
+;; https://johnlindquist.com/customize-karabiner-with-goku/
+;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
 
-;; conditions
-;; :dota
-;; [:condi :dota] [:condi :nuphy :dota]
+;; good configs
+;; https://pastebin.com/iDuXrnwu
+;; https://pastebin.com/TGCm21ae
+;; https://pastebin.com/w8EV0Ybe
+;; https://pastebin.com/amNdELk8
+;; https://pastebin.com/2q8sNDLX
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/in-the-wild.md
 
-;; no repeat
-;; { :key :a :repeat false }
+;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org
 
 ;; ============== IDEAS ==============
 ;; interesting ideas to toy with from other configs
@@ -777,24 +813,6 @@
 ;; clipboard from shell
 ;; "shell_command": "pbpaste | tr '[:upper:]' '[:lower:]' | pbcopy"
 ;; "export LC_ALL=en_US.UTF-8; pbpaste | tr '[:upper:]' '[:lower:]' | pbcopy"
-
-;; articles
-;; https://kau.sh/blog/hacking-your-keyboard/
-;; https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
-;; https://github.com/nikitavoloboev/config/blob/master/karabiner/karabiner.edn
-;; https://github.com/gabriel-gardner/modtap-karabiner/tree/main  !!! MODTAP !!!
-;; https://johnlindquist.com/customize-karabiner-with-goku/
-;; https://blog.rtwilson.com/karabiner-elements-and-goku-for-custom-keyboard-shortcuts-in-macos/
-
-;; good configs
-;; https://pastebin.com/iDuXrnwu
-;; https://pastebin.com/TGCm21ae
-;; https://pastebin.com/w8EV0Ybe
-;; https://pastebin.com/amNdELk8
-;; https://pastebin.com/2q8sNDLX
-;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/in-the-wild.md
-
-;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org
 
 ;; tap  [ once                -> type "["
 ;; hold [ and tap ] key once -> type "{"
