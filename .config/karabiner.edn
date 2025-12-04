@@ -191,7 +191,13 @@
             :rules [
                 ;; --- Main ---
 
-                [:##caps_lock :!WEright_shift nil { :alone :delete_or_backspace }] ;; Capslock -> Hyper
+                [ ;; Capslock -> Hyper
+                    :##caps_lock
+                    { :key :!WEright_shift :lazy true } ;; lazy - modifier is sent only when pressed together with another key
+                    nil
+                    { :alone :delete_or_backspace }
+                ]
+
                 [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
 
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
