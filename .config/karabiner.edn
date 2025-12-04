@@ -665,6 +665,8 @@
         {
             :des "Home row mods"
             :rules [
+                ;; todo: change? ":held :left_control" to ":held { :key :left_control :lazy true }"
+
                 ;; --- Left hand ---
 
                 [:##a nil nil { :alone { :key :a :halt true } :held :left_control   :delayed { :canceled :a } :params { :alone 500 :held 500 } }]
@@ -684,26 +686,6 @@
                 [:##semicolon nil nil { :alone { :key :semicolon :halt true } :held :left_control :delayed { :canceled :semicolon } :params { :alone 500 :held 500 } }]
             ]
         }
-
-        ;; {
-        ;;     :des "Canary: Extend layer"
-        ;;     :rules [
-        ;;         [:condi :extend-hold :canary]
-
-        ;;         [:##g :!Fh] ;; fullscreen
-        ;;         [:##a :!Csemicolon]
-        ;;     ]
-        ;; }
-
-        ;; {
-        ;;     :des "Qwerty: Extend layer"
-        ;;     :rules [
-        ;;         [:condi :extend-hold :!canary :!graphite]
-
-        ;;         [:##g :!Ff] ;; fullscreen
-        ;;         [:##a :!Ca]
-        ;;     ]
-        ;; }
 
         ;; ============== HYPER + COMMAND LAYER ==============
 
