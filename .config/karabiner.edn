@@ -609,9 +609,12 @@
                 [:!C#TOShyphen :!C#TOSperiod]
                 [:!C#TOSequal_sign :!C#TOSclose_bracket]
 
+                ;; when CMD is pressed this is standard qwerty but
+                ;; - cmd-E and cmd-H are swapped (for easy window hiding)
+
                 [:!C#TOSq :!C#TOSb]
                 [:!C#TOSw :!C#TOSr]
-                [:!C#TOSe :!C#TOSl]
+                [:!C#TOSe :!C#TOSj] ;; standard qwerty: [:!C#TOSe :!C#TOSl]
                 [:!C#TOSr :!C#TOSs]
                 [:!C#TOSt :!C#TOSd]
                 [:!C#TOSy :!C#TOSh]
@@ -626,8 +629,8 @@
                 [:!C#TOSs :!C#TOSf]
                 [:!C#TOSd :!C#TOSe]
                 [:!C#TOSf :!C#TOSu]
-                ;; [:!C#TOSg :!C#TOSg]
-                [:!C#TOSh :!C#TOSj]
+                ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
+                [:!C#TOSh :!C#TOSl] ;; standard qwerty: [:!C#TOSh :!C#TOSj]
                 [:!C#TOSj :!C#TOSp]
                 [:!C#TOSk :!C#TOSn]
                 [:!C#TOSl :!C#TOSw]
@@ -636,14 +639,14 @@
 
                 [:!C#TOSz :!C#TOSt]
                 [:!C#TOSx :!C#TOSz]
-                ;; [:!C#TOSc :!C#TOSc]
-                ;; [:!C#TOSv :!C#TOSv]
+                ;; [:!C#TOSc :!C#TOSc] ;; maps to itself
+                ;; [:!C#TOSv :!C#TOSv] ;; maps to itself
                 [:!C#TOSb :!C#TOSq]
                 [:!C#TOSn :!C#TOSa]
                 [:!C#TOSm :!C#TOSx]
                 [:!C#TOScomma :!C#TOSquote]
                 [:!C#TOSperiod :!C#TOScomma]
-                ;; [:!C#TOSslash :!C#TOSslash]
+                ;; [:!C#TOSslash :!C#TOSslash] ;; maps to itself
             ]
         }
 
