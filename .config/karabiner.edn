@@ -105,7 +105,7 @@
         :toggle_caps [
             { :key :caps_lock :hold_down_ms 150 }
             { :shell [:keyboard-maestro "RiverKarabiner_CapsAnnounce_Sound"] }
-            { :key :vk_none } ;; not necessary
+            ;; { :key :vk_none } ;; not necessary
         ]
     }
 
@@ -300,6 +300,105 @@
                 ;; always have a way to switch desktops
                 [:page_up :left-desktop]
                 [:page_down :right-desktop]
+            ]
+        }
+
+        ;; ============== KEYBOARD LAYOUTS ==============
+
+        {
+            :des "Base GraphiteX"
+            :rules [
+                :graphitex
+
+                ;; --- Window management ---
+
+                [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
+                [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
+                [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
+
+                ;; --- Text ---
+
+                [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
+                [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
+                [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
+
+                ;; make sure replaced shortcuts are pressable
+                [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
+                [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
+                [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
+                [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
+                [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
+
+                ;; --- Right hand side ---
+
+                [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
+                [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
+
+                [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
+                [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
+            ]
+        }
+
+        {
+            :des "Base GraphiteYY - Qwertified CMD"
+            :rules [
+                :graphiteyy
+
+                [:!C#TOShyphen :!C#TOSperiod]
+                [:!C#TOSequal_sign :!C#TOSclose_bracket]
+
+                ;; when CMD is pressed this is standard qwerty but
+                ;; - cmd-E and cmd-H are swapped (for easy window hiding)
+
+                [:!C#TOSq :!C#TOSb]
+                [:!C#TOSw :!C#TOSr]
+                [:!C#TOSe :!C#TOSj] ;; standard qwerty: [:!C#TOSe :!C#TOSl]
+                [:!C#TOSr :!C#TOSs]
+                [:!C#TOSt :!C#TOSd]
+                [:!C#TOSy :!C#TOSh]
+                [:!C#TOSu :!C#TOSo]
+                [:!C#TOSi :!C#TOSsemicolon]
+                [:!C#TOSo :!C#TOSi]
+                [:!C#TOSp :!C#TOSm]
+                [:!C#TOSopen_bracket :!C#TOShyphen]
+                [:!C#TOSclose_bracket :!C#TOSequal_sign]
+
+                [:!C#TOSa :!C#TOSk]
+                [:!C#TOSs :!C#TOSf]
+                [:!C#TOSd :!C#TOSe]
+                [:!C#TOSf :!C#TOSu]
+                ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
+                [:!C#TOSh :!C#TOSl] ;; standard qwerty: [:!C#TOSh :!C#TOSj]
+                [:!C#TOSj :!C#TOSp]
+                [:!C#TOSk :!C#TOSn]
+                [:!C#TOSl :!C#TOSw]
+                [:!C#TOSsemicolon :!C#TOSopen_bracket]
+                [:!C#TOSquote :!C#TOSy]
+
+                [:!C#TOSz :!C#TOSt]
+                [:!C#TOSx :!C#TOSz]
+                ;; [:!C#TOSc :!C#TOSc] ;; maps to itself
+                ;; [:!C#TOSv :!C#TOSv] ;; maps to itself
+                [:!C#TOSb :!C#TOSq]
+                [:!C#TOSn :!C#TOSa]
+                [:!C#TOSm :!C#TOSx]
+                [:!C#TOScomma :!C#TOSquote]
+                [:!C#TOSperiod :!C#TOScomma]
+                ;; [:!C#TOSslash :!C#TOSslash] ;; maps to itself
+            ]
+        }
+
+        {
+            :des "Base Qwerty"
+            :rules [
+                [:condi :!graphitex :!graphiteyy]
+
+                ;; --- Window management ---
+
+                [:!Ce :!Ch] ;; cmd-E -> cmd-H
+
+                ;; make sure replaced shortcuts are pressable
+                [:!Ch :!Ce] ;; cmd-H -> cmd-E
             ]
         }
 
@@ -564,105 +663,6 @@
         ;;         [:!CERa { :input :canary }]
         ;;     ]
         ;; }
-
-        ;; ============== KEYBOARD LAYOUTS ==============
-
-        {
-            :des "Base GraphiteX"
-            :rules [
-                :graphitex
-
-                ;; --- Window management ---
-
-                [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
-                [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
-                [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
-
-                ;; --- Text ---
-
-                [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
-                [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
-                [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
-
-                ;; make sure replaced shortcuts are pressable
-                [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
-                [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
-                [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
-                [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
-                [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
-
-                ;; --- Right hand side ---
-
-                [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
-                [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
-
-                [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
-                [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
-            ]
-        }
-
-        {
-            :des "Base GraphiteYY - Qwertified CMD"
-            :rules [
-                :graphiteyy
-
-                [:!C#TOShyphen :!C#TOSperiod]
-                [:!C#TOSequal_sign :!C#TOSclose_bracket]
-
-                ;; when CMD is pressed this is standard qwerty but
-                ;; - cmd-E and cmd-H are swapped (for easy window hiding)
-
-                [:!C#TOSq :!C#TOSb]
-                [:!C#TOSw :!C#TOSr]
-                [:!C#TOSe :!C#TOSj] ;; standard qwerty: [:!C#TOSe :!C#TOSl]
-                [:!C#TOSr :!C#TOSs]
-                [:!C#TOSt :!C#TOSd]
-                [:!C#TOSy :!C#TOSh]
-                [:!C#TOSu :!C#TOSo]
-                [:!C#TOSi :!C#TOSsemicolon]
-                [:!C#TOSo :!C#TOSi]
-                [:!C#TOSp :!C#TOSm]
-                [:!C#TOSopen_bracket :!C#TOShyphen]
-                [:!C#TOSclose_bracket :!C#TOSequal_sign]
-
-                [:!C#TOSa :!C#TOSk]
-                [:!C#TOSs :!C#TOSf]
-                [:!C#TOSd :!C#TOSe]
-                [:!C#TOSf :!C#TOSu]
-                ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
-                [:!C#TOSh :!C#TOSl] ;; standard qwerty: [:!C#TOSh :!C#TOSj]
-                [:!C#TOSj :!C#TOSp]
-                [:!C#TOSk :!C#TOSn]
-                [:!C#TOSl :!C#TOSw]
-                [:!C#TOSsemicolon :!C#TOSopen_bracket]
-                [:!C#TOSquote :!C#TOSy]
-
-                [:!C#TOSz :!C#TOSt]
-                [:!C#TOSx :!C#TOSz]
-                ;; [:!C#TOSc :!C#TOSc] ;; maps to itself
-                ;; [:!C#TOSv :!C#TOSv] ;; maps to itself
-                [:!C#TOSb :!C#TOSq]
-                [:!C#TOSn :!C#TOSa]
-                [:!C#TOSm :!C#TOSx]
-                [:!C#TOScomma :!C#TOSquote]
-                [:!C#TOSperiod :!C#TOScomma]
-                ;; [:!C#TOSslash :!C#TOSslash] ;; maps to itself
-            ]
-        }
-
-        {
-            :des "Base Qwerty"
-            :rules [
-                [:condi :!graphitex :!graphiteyy]
-
-                ;; --- Window management ---
-
-                [:!Ce :!Ch] ;; cmd-E -> cmd-H
-
-                ;; make sure replaced shortcuts are pressable
-                [:!Ch :!Ce] ;; cmd-H -> cmd-E
-            ]
-        }
     ]
 }
 
