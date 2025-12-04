@@ -111,79 +111,6 @@
 
     :main [
 
-        ;; ============== RIVERGAMING ==============
-
-        {
-            :des "Dota"
-            :rules [
-                [:profile :RiverGaming]
-                [:condi :dota]
-
-                [:##caps_lock :left_control nil { :alone :n }]
-                [:##left_command :left_option]
-
-                [:!Tn :!Tn] ;; smoothen cmd-caps
-
-                ;; [:!T1 :!Oj]
-                ;; [:!T2 :!Ok]
-                ;; [:!T3 :!Ol]
-                ;; [:!T4 :!Osemicolon]
-                ;; [:!T5 :!Oquote]
-
-                [:##left_option :fn]
-                [:!F1 :!Oo]
-                [:!F2 :!Op]
-                [:!F3 :!Oopen_bracket]
-                [:!F4 :!Oclose_bracket]
-                [:!F5 :!Obackslash]
-
-                [:##escape :!Qfn nil { :alone :escape }]
-
-                [:!QFf1 :o]
-                [:!QFf2 :p]
-                [:!QFf3 :open_bracket]
-                [:!QFf4 :close_bracket]
-                [:!QFf5 :backslash]
-
-                [:!QF1 :m]
-                [:!QF2 :comma]
-                [:!QF3 :period]
-                [:!QF4 :slash]
-                ;; [:!QF5 :n]
-
-                [:fn :f7]
-                [:left_control :f7] ;; nuphy
-
-                [:!Of1 :j]
-                [:!Of2 :k]
-                [:!Of3 :l]
-                [:!Of4 :semicolon]
-
-                [:!Tspacebar :spacebar] ;; prevent spotlight search
-            ]
-        }
-
-        {
-            :des "Starcraft 2"
-            :rules [
-                [:profile :RiverGaming]
-                [:condi :starcraft]
-
-                [:##caps_lock :!Tleft_option]
-                [:##left_command :left_control]
-            ]
-        }
-
-        {
-            :des "Terraria"
-            :rules [
-                [:profile :RiverGaming]
-                [:condi :terraria]
-
-                [:##Cq :vk_none] ;; prevent from quitting
-            ]
-        }
-
         ;; ============== APPS ==============
         ;; these rules go first because of F keys
 
@@ -623,6 +550,80 @@
                 ;; ;; [:##e [:!Send :delete_or_backspace]] ;; forward delete line
 
                 ;; [:##delete_or_backspace :!Odelete_or_backspace] ;; delete word
+            ]
+        }
+
+        ;; ============== RIVERGAMING ==============
+
+        {
+            :des "Dota"
+            :rules [
+                [:profile :RiverGaming]
+                [:condi :dota]
+
+                [:##caps_lock :left_control nil { :alone :n }]
+                [:##left_command :left_option]
+
+                [:!Tn :!Tn] ;; smoothen cmd-caps
+
+                ;; [:!T1 :!Oj]
+                ;; [:!T2 :!Ok]
+                ;; [:!T3 :!Ol]
+                ;; [:!T4 :!Osemicolon]
+                ;; [:!T5 :!Oquote]
+
+                [:##left_option :fn]
+                [:!F1 :!Oo]
+                [:!F2 :!Op]
+                [:!F3 :!Oopen_bracket]
+                [:!F4 :!Oclose_bracket]
+                [:!F5 :!Obackslash]
+
+                [:##escape :!Qfn nil { :alone :escape }]
+
+                [:!QFf1 :o]
+                [:!QFf2 :p]
+                [:!QFf3 :open_bracket]
+                [:!QFf4 :close_bracket]
+                [:!QFf5 :backslash]
+
+                [:!QF1 :m]
+                [:!QF2 :comma]
+                [:!QF3 :period]
+                [:!QF4 :slash]
+                ;; [:!QF5 :n]
+
+                [:fn :f7]
+                [:left_control :f7] ;; nuphy
+
+                [:!Of1 :j]
+                [:!Of2 :k]
+                [:!Of3 :l]
+                [:!Of4 :semicolon]
+
+                [:!Tspacebar :spacebar] ;; prevent spotlight search
+            ]
+        }
+
+        {
+            :des "Starcraft 2"
+            :rules [
+                [:profile :RiverGaming]
+                [:condi :starcraft]
+
+                [:##caps_lock :!Tleft_option]
+                [:##left_command :left_control]
+            ]
+        }
+
+        {
+            :des "Terraria"
+            :rules [
+                [:profile :RiverGaming]
+                [:condi :terraria]
+
+                [:##Cq :vk_none] ;; prevent from quitting
+                [:##Cw :vk_none] ;; also prevent from quitting
             ]
         }
 
