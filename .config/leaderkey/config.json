@@ -86,7 +86,7 @@
       "key" : "r",
       "label" : "Recents",
       "type" : "url",
-      "value" : "kmtrigger://macro=River_OpenRecents"
+      "value" : "kmtrigger://macro=Leader_OpenRecents"
     },
     {
       "key" : "t",
@@ -119,37 +119,37 @@
           "key" : "a",
           "label" : "Left Window",
           "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowLeft"
+          "value" : "kmtrigger://macro=Leader_WindowLeft"
         },
         {
           "key" : "d",
           "label" : "Right Window",
           "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowRight"
+          "value" : "kmtrigger://macro=Leader_WindowRight"
         },
         {
           "key" : "e",
           "label" : "Center Window",
           "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowCenter"
+          "value" : "kmtrigger://macro=Leader_WindowCenter"
         },
         {
           "key" : "r",
           "label" : "Return Window",
           "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowReturn"
+          "value" : "kmtrigger://macro=Leader_WindowReturn"
         },
         {
           "key" : "s",
           "label" : "RiverCenter Window",
           "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowRiverCenter"
+          "value" : "kmtrigger://macro=Leader_WindowRiverCenter"
         },
         {
           "key" : "w",
           "label" : "Maximize Window",
           "type" : "url",
-          "value" : "kmtrigger://macro=River_WindowMaximize"
+          "value" : "kmtrigger://macro=Leader_WindowMaximize"
         }
       ],
       "key" : "z",

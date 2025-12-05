@@ -104,7 +104,7 @@
         ;; :toggle_caps [{ :key :caps_lock :hold_down_ms 150 } { :key :vk_none }] ;; this vk_none hack makes it consistent somehow
         :toggle_caps [
             { :key :caps_lock :hold_down_ms 150 }
-            { :shell [:keyboard-maestro "RiverKarabiner_CapsAnnounce_Sound"] }
+            { :shell [:keyboard-maestro "Karabiner_CapsAnnounce"] }
             ;; { :key :vk_none } ;; not necessary
         ]
     }
