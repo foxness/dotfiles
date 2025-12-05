@@ -268,7 +268,18 @@
         ;; ============== KEYBOARD LAYOUTS ==============
 
         {
-            :des "Base GraphiteX"
+            :des "Base Graphite"
+            :rules [
+                [:condi :!abc :!russian :!japanese :!statica] ;; graphite
+
+                ;; swap colon and semicolon
+                [:open_bracket :!Sopen_bracket]
+                [:!Sopen_bracket :open_bracket]
+            ]
+        }
+
+        {
+            :des "Base GraphiteX - Partial qwertified CMD"
             :rules [
                 :graphitex
 
@@ -524,15 +535,14 @@
         {
             :des "Extend layer activation"
             :rules [
-                ;; [:##right_command ["extend-hold" 1] nil { :afterup ["extend-hold" 0] }]
-                [:##right_command ["extend-hold" 1] nil { :afterup ["extend-hold" 0] :alone :delete_or_backspace }]
+                [:##right_command ["extend-layer" 1] nil { :afterup ["extend-layer" 0] :alone :delete_or_backspace }]
             ]
         }
 
         {
             :des "Extend layer"
             :rules [
-                :extend-hold
+                :extend-layer
 
                 ;; --- Neo symbols ---
 
@@ -587,6 +597,69 @@
                 ;; [:##delete_or_backspace :!Odelete_or_backspace] ;; delete word
             ]
         }
+
+        ;; ============== NULL LAYER ==============
+
+        ;; {
+        ;;     :des "Null layer"
+        ;;     :rules [
+        ;;         [:!SRj :!S9] ;; ( open bracket
+        ;;         [:!SRk :!S0] ;; ) close bracket
+        ;;         [:!SRl :period] ;; - minus
+        ;;     ]
+        ;; }
+
+        ;; {
+        ;;     :des "Null layer activation"
+        ;;     :rules [
+        ;;         [:quote ["null-layer" 1] nil { :afterup ["null-layer" 0] :alone :quote }]
+        ;;     ]
+        ;; }
+
+        ;; {
+        ;;     :des "Null layer"
+        ;;     :rules [
+        ;;         :null-layer
+
+        ;;         ;; --- Neo symbols ---
+
+        ;;         [:q :vk_none]
+        ;;         [:w :vk_none]
+        ;;         [:e :!Shyphen]                  ;; { open curly bracket
+        ;;         [:r :!Sequal_sign]              ;; } close curly bracket
+        ;;         [:t :!S6]                       ;; ^ caret
+        ;;         [:y :!S1]                       ;; ! exclamation mark
+        ;;         [:u :!Sslash]                   ;; < open angle bracket
+        ;;         [:i :!Scomma]                   ;; > close angle bracket
+        ;;         [:o :close_bracket]             ;; = equals sign
+        ;;         [:p :!S7]                       ;; & ampersand
+        ;;         [:open_bracket :vk_none]
+        ;;         [:close_bracket :vk_none]
+
+        ;;         [:a :backslash]                 ;; \ backslash
+        ;;         [:s :slash]                     ;; / forward slash
+        ;;         [:d :hyphen]                    ;; [ open square bracket
+        ;;         [:f :equal_sign]                ;; ] close square bracket
+        ;;         [:g :!S8]                       ;; * asterisk
+        ;;         [:h :!Squote]                   ;; ? question mark
+        ;;         [:j :!S9]                       ;; ( open bracket
+        ;;         [:k :!S0]                       ;; ) close bracket
+        ;;         [:l :period]                    ;; - minus
+        ;;         [:semicolon :!Sopen_bracket]    ;; : colon
+        ;;         [:quote :!S2]                   ;; @ at
+
+        ;;         [:z :!S3]                       ;; # hashtag
+        ;;         [:x :!S4]                       ;; $ dollar
+        ;;         [:c :!Sbackslash]               ;; | pipe
+        ;;         [:v [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+        ;;         [:b :grave_accent_and_tilde]    ;; ` backtick
+        ;;         [:n :!Sclose_bracket]           ;; + plus sign
+        ;;         [:m :!S5]                       ;; % percent
+        ;;         [:comma :!Speriod]              ;; " double quote
+        ;;         [:period :y]                    ;; ' quote
+        ;;         [:slash :open_bracket]          ;; ; semicolon
+        ;;     ]
+        ;; }
 
         ;; ============== RIVERGAMING ==============
 
