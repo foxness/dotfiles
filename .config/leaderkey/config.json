@@ -54,34 +54,18 @@
         },
         {
           "key" : "e",
-          "label" : "Krita",
-          "type" : "application",
-          "value" : "/Applications/krita.app"
-        },
-        {
-          "key" : "r",
-          "type" : "application",
-          "value" : "/Applications/PureRef.app"
-        },
-        {
-          "key" : "a",
           "type" : "application",
           "value" : "/Applications/Sourcetree.app"
         },
         {
-          "key" : "s",
+          "key" : "r",
           "type" : "application",
           "value" : "/Applications/Allusion.app"
         },
         {
-          "key" : "d",
+          "key" : "a",
           "type" : "application",
           "value" : "/System/Applications/iPhone Mirroring.app"
-        },
-        {
-          "key" : "g",
-          "type" : "application",
-          "value" : "/Applications/ProtonVPN.app"
         }
       ],
       "key" : "q",
@@ -174,6 +158,22 @@
     },
     {
       "key" : "",
+      "type" : "application",
+      "value" : "/Applications/krita.app"
+    },
+    {
+      "key" : "",
+      "type" : "application",
+      "value" : "/Applications/PureRef.app"
+    },
+    {
+      "key" : "",
+      "type" : "application",
+      "value" : "/Applications/Keka.app"
+    },
+    {
+      "key" : "",
+      "label" : "The Verge",
       "type" : "url",
       "value" : "https://www.theverge.com/"
     }
