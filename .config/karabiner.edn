@@ -662,30 +662,30 @@
             ]
         }
 
-        {
-            :des "Home row mods"
-            :rules [
-                ;; todo: change? ":held :left_control" to ":held { :key :left_control :lazy true }"
+        ;; {
+        ;;     :des "Home row mods"
+        ;;     :rules [
+        ;;         ;; todo: change? ":held :left_control" to ":held { :key :left_control :lazy true }"
 
-                ;; --- Left hand ---
+        ;;         ;; --- Left hand ---
 
-                [:##a nil nil { :alone { :key :a :halt true } :held :left_control   :delayed { :canceled :a } :params { :alone 500 :held 500 } }]
-                [:##s nil nil { :alone { :key :s :halt true } :held :left_option    :delayed { :canceled :s } :params { :alone 500 :held 500 } }]
-                [:##d nil nil { :alone { :key :d :halt true } :held :left_command   :delayed { :canceled :d } :params { :alone 500 :held 500 } }]
-                [:##f nil nil { :alone { :key :f :halt true } :held :left_shift     :delayed { :canceled :f } :params { :alone 500 :held 500 } }]
+        ;;         [:##a nil nil { :alone { :key :a :halt true } :held :left_control   :delayed { :canceled :a } :params { :alone 250 :held 250 } }]
+        ;;         [:##s nil nil { :alone { :key :s :halt true } :held :left_option    :delayed { :canceled :s } :params { :alone 250 :held 250 } }]
+        ;;         [:##d nil nil { :alone { :key :d :halt true } :held :left_command   :delayed { :canceled :d } :params { :alone 250 :held 250 } }]
+        ;;         [:##f nil nil { :alone { :key :f :halt true } :held :left_shift     :delayed { :canceled :f } :params { :alone 250 :held 250 } }]
 
-                ;; --- Right hand ---
+        ;;         ;; --- Right hand ---
 
-                ;; the reason we want left_command and not right_command here is
-                ;; because the graphite qwertifying rules are defined through left_command.
-                ;; this applies to other modifiers and other earlier rules too.
-                ;; those earlier rules are also why this rule has to go last
-                [:##j nil nil { :alone { :key :j :halt true } :held :left_shift     :delayed { :canceled :j } :params { :alone 500 :held 500 } }]
-                [:##k nil nil { :alone { :key :k :halt true } :held :left_command   :delayed { :canceled :k } :params { :alone 500 :held 500 } }]
-                [:##l nil nil { :alone { :key :l :halt true } :held :left_option    :delayed { :canceled :l } :params { :alone 500 :held 500 } }]
-                [:##semicolon nil nil { :alone { :key :semicolon :halt true } :held :left_control :delayed { :canceled :semicolon } :params { :alone 500 :held 500 } }]
-            ]
-        }
+        ;;         ;; the reason we want left_command and not right_command here is
+        ;;         ;; because the graphite qwertifying rules are defined through left_command.
+        ;;         ;; this applies to other modifiers and other earlier rules too.
+        ;;         ;; those earlier rules are also why this rule has to go last
+        ;;         [:##j nil nil { :alone { :key :j :halt true } :held :left_shift     :delayed { :canceled :j } :params { :alone 250 :held 250 } }]
+        ;;         [:##k nil nil { :alone { :key :k :halt true } :held :left_command   :delayed { :canceled :k } :params { :alone 250 :held 250 } }]
+        ;;         [:##l nil nil { :alone { :key :l :halt true } :held :left_option    :delayed { :canceled :l } :params { :alone 250 :held 250 } }]
+        ;;         [:##semicolon nil nil { :alone { :key :semicolon :halt true } :held :left_control :delayed { :canceled :semicolon } :params { :alone 250 :held 250 } }]
+        ;;     ]
+        ;; }
 
         ;; ============== HYPER + COMMAND LAYER ==============
 
