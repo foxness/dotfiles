@@ -527,6 +527,21 @@
         ;;         [:!Ocomma :!Scomma] ;; > close angle bracket
         ;;         [:!Operiod :vk_none]
         ;;         [:!Oslash :vk_none]
+
+                ;; [:##j :escape]
+                ;; [:caps_lock :escape]
+
+                ;; [:##k :delete_or_backspace] ;; delete character
+                ;; [:##l :!Odelete_or_backspace] ;; delete word
+                ;; [:##semicolon :!Cdelete_or_backspace] ;; delete line
+
+                ;; [:##i :!Fdelete_or_backspace] ;; forward delete character
+                ;; [:##o :!FOdelete_or_backspace] ;; forward delete word
+                ;; [:##p :!FCdelete_or_backspace] ;; forward delete line
+                ;; ;; [:##e [:!Send :delete_or_backspace]] ;; forward delete line
+
+                ;; [:##delete_or_backspace :!Odelete_or_backspace] ;; delete word
+
         ;;     ]
         ;; }
 
@@ -552,57 +567,41 @@
             :rules [
                 :extend-layer
 
-                ;; --- Neo symbols ---
-
-                [:q :vk_none]
-                [:w :vk_none]
-                [:e :!Shyphen]                  ;; { open curly bracket
-                [:r :!Sequal_sign]              ;; } close curly bracket
-                [:t :!S6]                       ;; ^ caret
-                [:y :!S1]                       ;; ! exclamation mark
-                [:u :!Sslash]                   ;; < open angle bracket
-                [:i :!Scomma]                   ;; > close angle bracket
-                [:o :close_bracket]             ;; = equals sign
-                [:p :!S7]                       ;; & ampersand
-                [:open_bracket :vk_none]
+                [:q :!S7]                               ;; & ampersand
+                [:w :close_bracket]                     ;; = equals sign
+                [:e :!Sslash]                           ;; < open angle bracket
+                [:r :!Scomma]                           ;; > close angle bracket
+                [:t :!S1]                               ;; ! exclamation mark
+                [:y :!S6]                               ;; ^ caret
+                [:u :!Shyphen]                          ;; { open curly bracket
+                [:i :!Sequal_sign]                      ;; } close curly bracket
+                [:o :!S2]                               ;; @ at
+                [:p :vk_none]
                 [:close_bracket :vk_none]
+                [:open_bracket :vk_none]
 
-                [:a :backslash]                 ;; \ backslash
-                [:s :slash]                     ;; / forward slash
-                [:d :hyphen]                    ;; [ open square bracket
-                [:f :equal_sign]                ;; ] close square bracket
-                [:g :!S8]                       ;; * asterisk
-                [:h :!Squote]                   ;; ? question mark
-                [:j :!S9]                       ;; ( open bracket
-                [:k :!S0]                       ;; ) close bracket
-                [:l :period]                    ;; - minus
-                [:semicolon :!Sopen_bracket]    ;; : colon
-                [:quote :!S2]                   ;; @ at
+                [:a :!Sopen_bracket]                    ;; : colon
+                [:s :period]                            ;; - minus
+                [:d :!S9]                               ;; ( open bracket
+                [:f :!S0]                               ;; ) close bracket
+                [:g :!Squote]                           ;; ? question mark
+                [:h :!S8]                               ;; * asterisk
+                [:j :hyphen]                            ;; [ open square bracket
+                [:k :equal_sign]                        ;; ] close square bracket
+                [:l :slash]                             ;; / forward slash
+                [:semicolon :backslash]                 ;; \ backslash
+                ;; [:quote :nope]
 
-                [:z :!S3]                       ;; # hashtag
-                [:x :!S4]                       ;; $ dollar
-                [:c :!Sbackslash]               ;; | pipe
-                [:v [:!Sgrave_accent_and_tilde :nope]] ;; ~ tilde
-                [:b :grave_accent_and_tilde]    ;; ` backtick
-                [:n :!Sclose_bracket]           ;; + plus sign
-                [:m :!S5]                       ;; % percent
-                [:comma :!Speriod]              ;; " double quote
-                [:period :y]                    ;; ' quote
-                [:slash :open_bracket]          ;; ; semicolon
-
-                ;; [:##j :escape]
-                ;; [:caps_lock :escape]
-
-                ;; [:##k :delete_or_backspace] ;; delete character
-                ;; [:##l :!Odelete_or_backspace] ;; delete word
-                ;; [:##semicolon :!Cdelete_or_backspace] ;; delete line
-
-                ;; [:##i :!Fdelete_or_backspace] ;; forward delete character
-                ;; [:##o :!FOdelete_or_backspace] ;; forward delete word
-                ;; [:##p :!FCdelete_or_backspace] ;; forward delete line
-                ;; ;; [:##e [:!Send :delete_or_backspace]] ;; forward delete line
-
-                ;; [:##delete_or_backspace :!Odelete_or_backspace] ;; delete word
+                [:z :open_bracket]                      ;; ; semicolon
+                [:x :y]                                 ;; ' quote
+                [:c :!Speriod]                          ;; " double quote
+                [:v :!S5]                               ;; % percent
+                [:b :!Sclose_bracket]                   ;; + plus sign
+                [:n :grave_accent_and_tilde]            ;; ` backtick
+                [:m [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+                [:comma :!Sbackslash]                   ;; | pipe
+                [:period :!S4]                          ;; $ dollar
+                [:slash :!S3]                           ;; # hashtag
             ]
         }
 
