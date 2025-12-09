@@ -31,6 +31,9 @@ alias oc='open .'
 alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOME'
 alias gs='cd ~/my/system/scripts'
 
+alias fs-start='~/my/system/scripts/fileserver/start.sh'
+alias fs-stop='~/my/system/scripts/fileserver/stop.sh'
+
 # alias python='python3'
 
 # ============ PATH ========
