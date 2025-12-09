@@ -25,7 +25,8 @@ PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_c
 
 # alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
 
-alias ls='ls --color=auto -la'
+alias ls='ls --color=auto'
+alias lsa='ls --color=auto -la'
 alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
 alias oc='open .'
 alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOME'
@@ -36,7 +37,11 @@ alias fs-stop='~/my/system/scripts/fileserver/stop.sh'
 
 # alias python='python3'
 
-# ============ PATH ========
+# ============ PATH ============
 
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/opt/homebrew/share"
 export PATH="/opt/homebrew/opt/openjdk/bin:/Users/river/.local/bin:/Users/river/.cargo/bin:/opt/homebrew/bin:$PATH"
+
+# ============ INTEGRATION ============
+
+source <(fzf --zsh)
