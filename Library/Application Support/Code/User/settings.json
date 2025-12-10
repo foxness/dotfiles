@@ -24,5 +24,6 @@
     "editor.autoClosingBrackets": "never",
     "editor.dragAndDrop": false,
     "editor.minimap.renderCharacters": false,
-    "editor.minimap.size": "fill"
+    "editor.minimap.size": "fill",
+    "vim.smartRelativeLine": true
 }
