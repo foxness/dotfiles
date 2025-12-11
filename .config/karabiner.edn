@@ -568,23 +568,23 @@
                 :extend-layer
 
                 [:q :!S7]                               ;; & ampersand
-                [:w :close_bracket]                     ;; = equals sign
-                [:e :!Sslash]                           ;; < open angle bracket
-                [:r :!Scomma]                           ;; > close angle bracket
-                [:t :!S1]                               ;; ! exclamation mark
+                [:w :period]                            ;; - minus
+                [:e :!Shyphen]                          ;; { open curly bracket
+                [:r :!Sequal_sign]                      ;; } close curly bracket
+                [:t :!Squote]                           ;; ? question mark
                 [:y :!S5]                               ;; % percent
-                [:u :!Shyphen]                          ;; { open curly bracket
-                [:i :!Sequal_sign]                      ;; } close curly bracket
+                [:u :!Sslash]                           ;; < open angle bracket
+                [:i :!Scomma]                           ;; > close angle bracket
                 [:o :!S2]                               ;; @ at
                 [:p :vk_none]
                 [:close_bracket :vk_none]
                 [:open_bracket :vk_none]
 
                 [:a :!Sopen_bracket]                    ;; : colon
-                [:s :period]                            ;; - minus
+                [:s :close_bracket]                     ;; = equals sign
                 [:d :!S9]                               ;; ( open bracket
                 [:f :!S0]                               ;; ) close bracket
-                [:g :!Squote]                           ;; ? question mark
+                [:g :!S1]                               ;; ! exclamation mark
                 [:h :!S8]                               ;; * asterisk
                 [:j :hyphen]                            ;; [ open square bracket
                 [:k :equal_sign]                        ;; ] close square bracket
@@ -832,7 +832,7 @@
 ;; -----------------------------------------
 ;; j-mode (deletion related shortcuts)
 ;; -----------------------------------------
- 
+
 ;;   {:des "j-mode"
 ;;    :rules [:j-mode
 
