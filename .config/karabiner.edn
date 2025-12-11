@@ -572,7 +572,7 @@
                 [:e :!Sslash]                           ;; < open angle bracket
                 [:r :!Scomma]                           ;; > close angle bracket
                 [:t :!S1]                               ;; ! exclamation mark
-                [:y :!S6]                               ;; ^ caret
+                [:y :!S5]                               ;; % percent
                 [:u :!Shyphen]                          ;; { open curly bracket
                 [:i :!Sequal_sign]                      ;; } close curly bracket
                 [:o :!S2]                               ;; @ at
@@ -596,11 +596,11 @@
                 [:x :y]                                 ;; ' quote
                 [:c :!Speriod]                          ;; " double quote
                 [:v :!Sclose_bracket]                   ;; + plus sign
-                [:b :!S5]                               ;; % percent
-                [:n :grave_accent_and_tilde]            ;; ` backtick
+                [:b :!S6]                               ;; ^ caret
+                [:n :!S4]                               ;; $ dollar
                 [:m [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
                 [:comma :!Sbackslash]                   ;; | pipe
-                [:period :!S4]                          ;; $ dollar
+                [:period :grave_accent_and_tilde]       ;; ` backtick
                 [:slash :!S3]                           ;; # hashtag
             ]
         }
