@@ -11,19 +11,24 @@
     "security.workspace.trust.enabled": false,
 
     "workbench.colorTheme": "FireFly Pro",
-    "git.openRepositoryInParentFolders": "never",
+    // "git.openRepositoryInParentFolders": "never",
     "editor.copyWithSyntaxHighlighting": false,
     "editor.cursorStyle": "block",
-    "editor.renderWhitespace": "trailing",
     // "editor.formatOnPaste": true,
     "editor.autoIndentOnPaste": true,
-    "editor.quickSuggestions": {
-        "other": "off"
-    },
+    // "editor.quickSuggestions": {
+    //     "other": "off"
+    // },
     "python.defaultInterpreterPath": "/Users/river/my/projects/python313venv",
-    "editor.autoClosingBrackets": "never",
+    // "editor.autoClosingBrackets": "never",
     "editor.dragAndDrop": false,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.size": "fill",
-    "vim.smartRelativeLine": true
+    "vim.smartRelativeLine": true,
+    "vim.cursorStylePerMode.insert": "block-outline",
+    "editor.renderWhitespace": "trailing",
+    "files.trimTrailingWhitespace": true,
+    "editor.rulers": [120],
+    "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true
 }
