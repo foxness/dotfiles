@@ -61,12 +61,26 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["z", "o"],
-            "after": ["o", "<Esc>", "k"],
+            "after": ["m", "z", "o", "<Esc>", "`", "z"],
             "silent": true
         },
         {
             "before": ["z", "u"],
-            "after": ["O", "<Esc>", "j"],
+            "after": ["O", "<Esc>", "j"]
+            // the mark trick doesn't work here for some reason. bugged.
+        },
+        // {
+        //     "before": ["z", "j"],
+        //     "after": ["m", "z", "O", "<Esc>", "`", "z"],
+        // },
+        {
+            "before": ["z", "w"],
+            "after": ["m", "z", "j", "d", "d", "`", "z"],
+            "silent": true
+        },
+        {
+            "before": ["z", "d"],
+            "after": ["m", "z", "k", "d", "d", "`", "z", "k"],
             "silent": true
         },
         {
