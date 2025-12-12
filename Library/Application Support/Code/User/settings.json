@@ -30,5 +30,17 @@
     "files.trimTrailingWhitespace": true,
     "editor.rulers": [120],
     "vim.sneak": true,
-    "vim.sneakUseIgnorecaseAndSmartcase": true
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.sneakReplacesF": true,
+    "vim.statusBarColorControl": true,
+    // nice colors: #f74e37 #21A0A0 #7950f6 #37e3b2 3772ff dodgerblue ec464f ff8f40 6cbf43 af85f4 5530ff
+    "vim.statusBarColors.normal": ["#0e1421", "#787e8d"],
+    "vim.statusBarColors.insert": ["#0000ff", "#ffffff"],
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#0e1421",
+        "statusBar.noFolderBackground": "#0e1421",
+        "statusBar.debuggingBackground": "#0e1421",
+        "statusBar.foreground": "#787e8d",
+        "statusBar.debuggingForeground": "#787e8d"
+    },
 }
