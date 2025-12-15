@@ -20,6 +20,23 @@
 
 ;; find bundleid and other stuff in karabiner-eventviewer
 
+;; ============== KEYS ==============
+
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
+
 ;; ============== PARAMS ==============
 
 {
@@ -137,7 +154,7 @@
                 [:f4 [:f4 ["leaderkey" 0]] [:leaderkey]]
 
                 [
-                    :!QWspacebar ;; tab-space (switch layer)
+                    :!WRspacebar ;; tab-space (switch layer)
                     [:!QWf20 ["leaderkey" 1]] ;; leader key activation key
                     nil
                     {
@@ -158,7 +175,7 @@
             :des "Function row"
             :rules [
                 [:f1 { :input :graphitez }]
-                [:f2 { :input :statica }] ;; [:f2 :!QWf16] ;; [:f2 { :input :russian }] ;; switching to these langs doesn't work consistensly
+                [:f2 { :input :statica }] ;; switching to these langs doesn't work consistensly
                 [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:f4 { :input :abc }]
 
@@ -214,7 +231,20 @@
                 [:!Otab :!Otab] ;; smoothen Opt-Tab
                 [:!Stab :!Stab] ;; smoothen Shift-Tab
 
-                [:##tab :!Qright_control nil { :alone :tab }] ;;  Tab is Cmd-Ctrl (Switch) when held
+                [:##tab :!Wright_shift nil { :alone :tab }] ;; Tab is RCtrl-RShift (Switch) when held
+
+                ;; --- Space is space :) ---
+
+                [ ;; Space is Space (RCmd-RCtrl when held)
+                    :spacebar ;; do ":##spacebar" if you wanna use it with shift or something
+                    nil
+                    nil
+                    {
+                        :alone :spacebar
+                        :held { :key :!Qright_control :lazy true } ;; aka QW
+                        :params { :alone 150 :held 150 }
+                    }
+                ]
 
                 ;; --- Other ---
 
@@ -487,30 +517,68 @@
                 ;; --- Main ---
 
                 ;; default binding shows the emoji picker
-                ;; [:!QWspacebar :!QWf20] ;; leader key
+                ;; [:!WRspacebar :!QWf20] ;; leader key
 
                 ;; --- Media controls ---
 
-                [:!QW1 :volume_decrement]
-                [:!QW2 :volume_increment]
-                [:!QW3 :mute]
+                [:!WR1 :volume_decrement]
+                [:!WR2 :volume_increment]
+                [:!WR3 :mute]
 
-                [:!QWa :play_or_pause]
-                [:!QWs :rewind]
-                [:!QWd :fast_forward]
+                [:!WRa :play_or_pause]
+                [:!WRs :rewind]
+                [:!WRd :fast_forward]
 
                 ;; --- Spotify ---
 
-                [:!QWq :!Tf13] ;; mouse media play/pause
-                ;; [:!QWq :!QWEf13] ;; spotify play/pause
-                [:!QWw :!QWEf14] ;; spotify previous song
-                [:!QWe :!QWEf15] ;; spotify next song
-                [:!QWr :!QWEf16] ;; spotify like
-                [:!QWt :!QWEf17] ;; spotify unlike
+                [:!WRq :!Tf13] ;; mouse media play/pause
+                ;; [:!WRq :!QWEf13] ;; spotify play/pause
+                [:!WRw :!QWEf14] ;; spotify previous song
+                [:!WRe :!QWEf15] ;; spotify next song
+                [:!WRr :!QWEf16] ;; spotify like
+                [:!WRt :!QWEf17] ;; spotify unlike
 
-                [:!QWf1 :spotify-volume-down]
-                [:!QWf2 :spotify-volume-up]
-                [:!QWf3 :spotify-normalize-volume]
+                [:!WRf1 :spotify-volume-down]
+                [:!WRf2 :spotify-volume-up]
+                [:!WRf3 :spotify-normalize-volume]
+            ]
+        }
+
+        ;; ============== SPACE LAYER ==============
+
+        {
+            :des "Space layer"
+            :rules [
+                ;; --- Main ---
+
+                [:!QWb :spacebar] ;; repeat space. care this shortcut is lock screen by default
+
+                [:!QW1 :!WER1]
+                [:!QW2 :!WER2]
+                [:!QW3 :!WER3]
+                [:!QW4 :!WER4]
+
+                ;; [:!QWa :left-desktop]
+                ;; [:!QWs :right-desktop]
+                ;; [:!QWd :mission-control]
+
+                [:!QWa :left_arrow]
+                [:!QWd :right_arrow]
+                [:!QWw :up_arrow]
+                [:!QWs :down_arrow]
+
+                ;; --- Numpad ---
+
+                [:!QWu :1]
+                [:!QWi :2]
+                [:!QWo :3]
+                [:!QWj :4]
+                [:!QWk :5]
+                [:!QWl :6]
+                [:!QWm :7]
+                [:!QWcomma :8]
+                [:!QWperiod :9]
+                [:!QWn :0]
             ]
         }
 
@@ -847,21 +915,6 @@
 }
 
 ;; ============== MINI TUTORIAL ==============
-
-;; !  | means mandatory
-;; #  | means optional
-;; C  | left_command
-;; T  | left_control
-;; O  | left_option
-;; S  | left_shift
-;; F  | fn
-;; Q  | right_command
-;; W  | right_control
-;; E  | right_option
-;; R  | right_shift
-;; P  | caps_lock
-;; !! | mandatory command + control + optional + shift (hyper)
-;; ## | optional any
 
 ;; articles
 ;; https://kau.sh/blog/hacking-your-keyboard/
