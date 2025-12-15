@@ -122,9 +122,12 @@
         ;; :toggle_caps [{ :key :caps_lock :hold_down_ms 150 } { :key :vk_none }] ;; this vk_none hack makes it consistent somehow
         :toggle_caps [
             { :key :caps_lock :hold_down_ms 150 }
-            { :shell [:keyboard-maestro "Karabiner_CapsAnnounce"] }
+            { :shell [:keyboard-maestro "Karabiner_AnnounceCaps"] }
             ;; { :key :vk_none } ;; not necessary
         ]
+
+        :announce_space_on { :shell [:keyboard-maestro "Karabiner_AnnounceSpaceOn"] }
+        :announce_space_off { :shell [:keyboard-maestro "Karabiner_AnnounceSpaceOff"] }
     }
 
     :main [
@@ -232,19 +235,6 @@
                 [:!Stab :!Stab] ;; smoothen Shift-Tab
 
                 [:##tab :!Wright_shift nil { :alone :tab }] ;; Tab is RCtrl-RShift (Switch) when held
-
-                ;; --- Space is space :) ---
-
-                [ ;; Space is Space (RCmd-RCtrl when held)
-                    :spacebar ;; do ":##spacebar" if you wanna use it with shift or something
-                    nil
-                    nil
-                    {
-                        :alone :spacebar
-                        :held { :key :!Qright_control :lazy true } ;; aka QW
-                        :params { :alone 150 :held 150 }
-                    }
-                ]
 
                 ;; --- Other ---
 
@@ -549,9 +539,26 @@
         {
             :des "Space layer"
             :rules [
+
+                ;; --- Space is space :) ---
+
+                [:!Tf12 [["space-layer" 1] :announce_space_on] [:!space-layer]]
+                [:!Tf12 [["space-layer" 0] :announce_space_off] [:space-layer]]
+
+                [ ;; Space is Space (RCmd-RCtrl when held)
+                    :spacebar ;; do ":##spacebar" if you wanna use it with shift or something
+                    nil
+                    [:space-layer]
+                    {
+                        :alone :spacebar
+                        :held { :key :!Qright_control :lazy true } ;; aka QW
+                        :params { :alone 150 :held 150 }
+                    }
+                ]
+
                 ;; --- Main ---
 
-                [:!QWb :spacebar] ;; repeat space. care this shortcut is lock screen by default
+                [:!QWb :spacebar] ;; repeat space. note: this shortcut is lock screen by default
 
                 [:!QW1 :!WER1]
                 [:!QW2 :!WER2]
