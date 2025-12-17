@@ -241,6 +241,10 @@
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :fine-vol-down]
                 [:!SOf12 :fine-vol-up]
+
+                ;; tilde <-> zero
+                [:grave_accent_and_tilde :0]
+                [:0 :grave_accent_and_tilde]
             ]
         }
 
