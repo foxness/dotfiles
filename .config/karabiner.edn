@@ -372,6 +372,9 @@
             :rules [
                 :graphitez
 
+                [:b :q]
+                [:q :b]
+
                 [:!C#TOShyphen :!C#TOSperiod]
                 [:!C#TOSequal_sign :!C#TOSclose_bracket]
 
