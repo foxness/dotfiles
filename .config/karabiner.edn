@@ -212,29 +212,10 @@
             :rules [
                 ;; --- Main ---
 
-                [ ;; Capslock -> Hyper
-                    :##caps_lock
-                    { :key :!WEright_shift :lazy true } ;; lazy - modifier is sent only when pressed together with another key
-                    nil
-                    { :alone :delete_or_backspace }
-                ]
-
                 [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
 
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
                 [:##right_option :fn] ;; Right Option -> FN
-
-                [:##escape :!Eright_shift nil { :alone :escape }] ;; Escape is Shift-Option (Meh) when held
-
-                ;; --- Tab is Switch ---
-
-                [:!C#TOStab :!C#TOStab] ;; smoothen Cmd-Tab
-                [:!WERtab :!WERtab] ;; smoothen Hyper-Tab
-                [:!Ttab :!Ttab] ;; smoothen Ctrl-Tab
-                [:!Otab :!Otab] ;; smoothen Opt-Tab
-                [:!Stab :!Stab] ;; smoothen Shift-Tab
-
-                [:##tab :!Wright_shift nil { :alone :tab }] ;; Tab is RCtrl-RShift (Switch) when held
 
                 ;; --- Other ---
 
@@ -454,6 +435,15 @@
         {
             :des "Hyper layer"
             :rules [
+                ;; --- Activation ---
+
+                [ ;; Capslock -> Hyper
+                    :##caps_lock
+                    { :key :!WEright_shift :lazy true } ;; lazy - modifier is sent only when pressed together with another key
+                    nil
+                    { :alone :delete_or_backspace }
+                ]
+
                 ;; --- Main ---
 
                 [:!WERa :left-desktop]
@@ -484,6 +474,10 @@
         {
             :des "Meh layer (Escape key)"
             :rules [
+                ;; --- Activation ---
+
+                [:##escape :!Eright_shift nil { :alone :escape }] ;; Escape is Shift-Option (Meh) when held
+
                 ;; --- Window management ---
 
                 [:!ERf1 :!QERfn] ;; move windows
@@ -508,6 +502,16 @@
         {
             :des "Switch layer (Tab key)"
             :rules [
+                ;; --- Activation ---
+
+                [:!C#TOStab :!C#TOStab] ;; smoothen Cmd-Tab
+                [:!WERtab :!WERtab] ;; smoothen Hyper-Tab
+                [:!Ttab :!Ttab] ;; smoothen Ctrl-Tab
+                [:!Otab :!Otab] ;; smoothen Opt-Tab
+                [:!Stab :!Stab] ;; smoothen Shift-Tab
+
+                [:##tab :!Wright_shift nil { :alone :tab }] ;; Tab is RCtrl-RShift (Switch) when held
+
                 ;; --- Main ---
 
                 ;; default binding shows the emoji picker
