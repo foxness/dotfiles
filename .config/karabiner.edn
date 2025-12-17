@@ -372,8 +372,8 @@
             :rules [
                 :graphitez
 
-                [:b :q]
-                [:q :b]
+                [:#SRb :#SRq [:!extend-layer]]
+                [:#SRq :#SRb [:!extend-layer]]
 
                 [:!C#TOShyphen :!C#TOSperiod]
                 [:!C#TOSequal_sign :!C#TOSclose_bracket]
