@@ -563,7 +563,7 @@
                     {
                         :alone :spacebar
                         :held { :key :!Qright_control :lazy true } ;; aka QW
-                        :params { :alone 150 :held 150 }
+                        :params { :alone 170 :held 170 }
                     }
                 ]
 
