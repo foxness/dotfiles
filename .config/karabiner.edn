@@ -587,16 +587,16 @@
 
                 ;; --- Numpad ---
 
-                [:!QWu :1]
-                [:!QWi :2]
-                [:!QWo :3]
-                [:!QWj :4]
-                [:!QWk :5]
-                [:!QWl :6]
+                [:!QWu :4]
+                [:!QWi :5]
+                [:!QWo :6]
+                [:!QWh :0]
+                [:!QWj :1]
+                [:!QWk :2]
+                [:!QWl :3]
                 [:!QWm :7]
                 [:!QWcomma :8]
                 [:!QWperiod :9]
-                [:!QWn :0]
             ]
         }
 
