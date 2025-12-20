@@ -602,30 +602,30 @@
 
         ;; ============== OPTION LAYER ==============
 
-        ;; {
-        ;;     :des "Option layer [Base]"
-        ;;     :rules [
-        ;;         ;; --- Right side of keyboard ---
+        {
+            :des "Option layer [Base]"
+            :rules [
+                ;; --- Right side of keyboard ---
 
-        ;;         [:!O#Sa :left_arrow]
-        ;;         [:!O#Sd :right_arrow]
-        ;;         [:!O#Sw :up_arrow]
-        ;;         [:!O#Ss :down_arrow]
+                ;; [:!O#Sa :left_arrow]
+                ;; [:!O#Sd :right_arrow]
+                ;; [:!O#Sw :up_arrow]
+                ;; [:!O#Ss :down_arrow]
 
-        ;;         [:!O#Sq :!Oleft_arrow] ;; navigate word left
-        ;;         [:!O#Se :!Oright_arrow] ;; navigate word right
+                ;; [:!O#Sq :!Oleft_arrow] ;; navigate word left
+                ;; [:!O#Se :!Oright_arrow] ;; navigate word right
 
-        ;;         [:!O#Sf1 :delete_or_backspace]
-        ;;         [:!O#Sf2 :return_or_enter]
+                ;; [:!O#Sf1 :delete_or_backspace]
+                ;; [:!O#Sf2 :return_or_enter]
 
-        ;;         [:!O#Sgrave_accent_and_tilde :0]
-        ;;         [:!O#S1 :home]
-        ;;         [:!O#S2 :end]
+                [:!O#Sgrave_accent_and_tilde :0]
+                ;; [:!O#S1 :home]
+                ;; [:!O#S2 :end]
 
-        ;;         [:!O#Sz :page_up]
-        ;;         [:!O#Sx :page_down]
-        ;;     ]
-        ;; }
+                ;; [:!O#Sz :page_up]
+                ;; [:!O#Sx :page_down]
+            ]
+        }
 
         ;; {
         ;;     :des "Option layer [Graphite]"

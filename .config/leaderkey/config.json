@@ -43,7 +43,7 @@
     {
       "actions" : [
         {
-          "key" : "q",
+          "key" : "b",
           "type" : "application",
           "value" : "/Applications/Zed.app"
         },
@@ -68,7 +68,7 @@
           "value" : "/System/Applications/iPhone Mirroring.app"
         }
       ],
-      "key" : "q",
+      "key" : "b",
       "label" : "Run App",
       "type" : "group"
     },

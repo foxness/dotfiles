@@ -5,8 +5,6 @@
 
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontLigatures.enabled": true,
-
-    "workbench.iconTheme": "eq-material-theme-icons",
     "security.workspace.trust.untrustedFiles": "open",
     "security.workspace.trust.enabled": false,
 
@@ -102,5 +100,6 @@
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "workbench.iconTheme": "ayu"
 }
