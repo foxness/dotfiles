@@ -8,7 +8,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "security.workspace.trust.enabled": false,
 
-    "workbench.colorTheme": "FireFly Pro",
+    "workbench.colorTheme": "Monokai Pro",
     // "git.openRepositoryInParentFolders": "never",
     "editor.copyWithSyntaxHighlighting": false,
     "editor.cursorStyle": "block",
@@ -36,15 +36,15 @@
     "vim.statusBarColors.normal": ["#0e1421", "#787e8d"],
     "vim.statusBarColors.insert": ["#0000ff", "#ffffff"],
     "workbench.colorCustomizations": {
-        "statusBar.background": "#0e1421",
-        "statusBar.noFolderBackground": "#0e1421",
-        "statusBar.debuggingBackground": "#0e1421",
-        "statusBar.foreground": "#787e8d",
-        "statusBar.debuggingForeground": "#787e8d"
+        "statusBar.background": "#0000ff",
+        "statusBar.noFolderBackground": "#0000ff",
+        "statusBar.debuggingBackground": "#0000ff",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
     },
     "vim.leader": " ",
     "terminal.integrated.scrollback": 2000,
-    "editor.cursorSurroundingLines": 8,
+    "editor.cursorSurroundingLines": 10,
     "vim.highlightedyank.enable": true,
     "vim.insertModeKeyBindings": [
         {
@@ -101,5 +101,5 @@
         "vscodevim.vim": 1
     },
     "git.confirmSync": false,
-    "workbench.iconTheme": "ayu"
+    "workbench.iconTheme": "Monokai Pro Icons"
 }
