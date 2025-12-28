@@ -372,8 +372,9 @@
             :rules [
                 :graphitez
 
-                [:#SRb :#SRq [:!extend-layer]]
-                [:#SRq :#SRb [:!extend-layer]]
+                ;; swap b and q
+                ;; [:#SRb :#SRq [:!extend-layer]]
+                ;; [:#SRq :#SRb [:!extend-layer]]
 
                 [:!C#TOShyphen :!C#TOSperiod]
                 [:!C#TOSequal_sign :!C#TOSclose_bracket]
@@ -618,7 +619,8 @@
                 ;; [:!O#Sf1 :delete_or_backspace]
                 ;; [:!O#Sf2 :return_or_enter]
 
-                [:!O#Sgrave_accent_and_tilde :0]
+                ;; [:!O#Sgrave_accent_and_tilde :0]
+                [:!O#Sgrave_accent_and_tilde :grave_accent_and_tilde]
                 ;; [:!O#S1 :home]
                 ;; [:!O#S2 :end]
 
@@ -746,14 +748,14 @@
             :rules [
                 [:condi :extend-layer :graphitez]
 
-                [:q :!S7]                               ;; & ampersand
-                [:w :period]                            ;; - minus
+                [:q :!Squote]                           ;; ? question mark
+                [:w :!Sbackslash]                       ;; | pipe
                 [:e :!Shyphen]                          ;; { open curly bracket
                 [:r :!Sequal_sign]                      ;; } close curly bracket
-                [:t :!Squote]                           ;; ? question mark
-                [:y :!S5]                               ;; % percent
-                [:u :!Speriod]                          ;; < open angle bracket
-                [:i :!Sslash]                           ;; > close angle bracket
+                [:t :!S7]                               ;; & ampersand
+                [:y :grave_accent_and_tilde]            ;; ` backtick
+                [:u [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+                [:i :period]                            ;; - minus
                 [:o :!S2]                               ;; @ at
                 [:p :vk_none]
                 [:close_bracket :vk_none]
@@ -764,23 +766,23 @@
                 [:d :!S9]                               ;; ( open bracket
                 [:f :!S0]                               ;; ) close bracket
                 [:g :!S1]                               ;; ! exclamation mark
-                [:h :!S8]                               ;; * asterisk
+                [:h :backslash]                         ;; \ backslash
                 [:j :hyphen]                            ;; [ open square bracket
                 [:k :equal_sign]                        ;; ] close square bracket
-                [:l :slash]                             ;; / forward slash
-                [:semicolon :backslash]                 ;; \ backslash
+                [:l :!S3]                               ;; # hashtag
+                [:semicolon :y]                         ;; ' quote
                 ;; [:quote :nope]
 
-                [:z :open_bracket]                      ;; ; semicolon
-                [:x :y]                                 ;; ' quote
+                [:z :!S5]                               ;; % percent
+                [:x :!S8]                               ;; * asterisk
                 [:c :!Scomma]                           ;; " double quote
                 [:v :!Sclose_bracket]                   ;; + plus sign
-                [:b :!S6]                               ;; ^ caret
-                [:n :!S4]                               ;; $ dollar
-                [:m [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
-                [:comma :!Sbackslash]                   ;; | pipe
-                [:period :grave_accent_and_tilde]       ;; ` backtick
-                [:slash :!S3]                           ;; # hashtag
+                [:b :!Speriod]                          ;; < open angle bracket
+                [:n :!Sslash]                           ;; > close angle bracket
+                [:m :!S6]                               ;; ^ caret
+                [:comma :!S4]                           ;; $ dollar
+                [:period :open_bracket]                 ;; ; semicolon
+                [:slash :slash]                         ;; / forward slash
             ]
         }
 
