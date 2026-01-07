@@ -111,7 +111,7 @@
         :fine-vol-down { :key :!SOvolume_down }
         :fine-vol-up { :key :!SOvolume_up }
 
-        :spotify-normalize-volume { :key :!CTf13 }
+        :spotify-normalize-volume { :key :!Cf20 }
         :spotify-volume-down { :key :!Cf19 }
         :spotify-volume-up { :key :!Cf18 }
 
@@ -533,7 +533,7 @@
 
                 ;; --- Spotify ---
 
-                [:!WRq :!Tf13] ;; mouse media play/pause
+                [:!WRq :f20] ;; mouse media play/pause
                 ;; [:!WRq :!QWEf13] ;; spotify play/pause
                 [:!WRw :!QWEf14] ;; spotify previous song
                 [:!WRe :!QWEf15] ;; spotify next song
@@ -608,24 +608,24 @@
             :rules [
                 ;; --- Right side of keyboard ---
 
-                ;; [:!O#Sa :left_arrow]
-                ;; [:!O#Sd :right_arrow]
-                ;; [:!O#Sw :up_arrow]
-                ;; [:!O#Ss :down_arrow]
+                [:!O#Sa :left_arrow]
+                [:!O#Sd :right_arrow]
+                [:!O#Sw :up_arrow]
+                [:!O#Ss :down_arrow]
 
-                ;; [:!O#Sq :!Oleft_arrow] ;; navigate word left
-                ;; [:!O#Se :!Oright_arrow] ;; navigate word right
+                [:!O#Sq :!Oleft_arrow] ;; navigate word left
+                [:!O#Se :!Oright_arrow] ;; navigate word right
 
-                ;; [:!O#Sf1 :delete_or_backspace]
-                ;; [:!O#Sf2 :return_or_enter]
+                [:!O#Sf1 :delete_or_backspace]
+                [:!O#Sf2 :return_or_enter]
 
-                ;; [:!O#Sgrave_accent_and_tilde :0]
+                [:!O#Sgrave_accent_and_tilde :0]
                 [:!O#Sgrave_accent_and_tilde :grave_accent_and_tilde]
-                ;; [:!O#S1 :home]
-                ;; [:!O#S2 :end]
+                [:!O#S1 :home]
+                [:!O#S2 :end]
 
-                ;; [:!O#Sz :page_up]
-                ;; [:!O#Sx :page_down]
+                [:!O#Sz :page_up]
+                [:!O#Sx :page_down]
             ]
         }
 
