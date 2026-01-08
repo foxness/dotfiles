@@ -111,9 +111,9 @@
         :fine-vol-down { :key :!SOvolume_down }
         :fine-vol-up { :key :!SOvolume_up }
 
-        :spotify-normalize-volume { :key :!Cf20 }
-        :spotify-volume-down { :key :!Cf19 }
-        :spotify-volume-up { :key :!Cf18 }
+        :spotify-normalize-volume { :key :!Ckeypad_asterisk }
+        :spotify-volume-down { :key :!Ckeypad_hyphen }
+        :spotify-volume-up { :key :!Ckeypad_plus }
 
         :nope { :key :vk_none }
 
@@ -268,6 +268,9 @@
                 ;; always have a way to switch desktops
                 [:page_up :left-desktop]
                 [:page_down :right-desktop]
+
+                [:home :!WER1] ;; desktop 1
+                [:end :!WER2] ;; desktop 2
             ]
         }
 
@@ -533,7 +536,7 @@
 
                 ;; --- Spotify ---
 
-                [:!WRq :f20] ;; mouse media play/pause
+                [:!WRq :keypad_asterisk] ;; mouse media play/pause
                 ;; [:!WRq :!QWEf13] ;; spotify play/pause
                 [:!WRw :!QWEf14] ;; spotify previous song
                 [:!WRe :!QWEf15] ;; spotify next song
