@@ -400,8 +400,8 @@
                 [:!C#TOSopen_bracket :!C#TOShyphen]
                 [:!C#TOSclose_bracket :!C#TOSequal_sign]
 
-                [:!C#TOSa :!C#TOSk]
-                [:!C#TOSs :!C#TOSf]
+                [:!C#TOSa :!C#TOSc] ;; non-standard: cmd-A is cmd-C
+                [:!C#TOSs :!C#TOSv] ;; non-standard: cmd-S is cmd-V
                 [:!C#TOSd :!C#TOSe]
                 [:!C#TOSf :!C#TOSu]
                 ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
@@ -414,8 +414,8 @@
 
                 [:!C#TOSz :!C#TOSp]
                 [:!C#TOSx :!C#TOSz]
-                ;; [:!C#TOSc :!C#TOSc] ;; maps to itself
-                ;; [:!C#TOSv :!C#TOSv] ;; maps to itself
+                [:!C#TOSc :!C#TOSk] ;; non-standard: cmd-C is cmd-A
+                [:!C#TOSv :!C#TOSf] ;; non-standard: cmd-V is cmd-S
                 [:!C#TOSb :!C#TOSq]
                 [:!C#TOSn :!C#TOSa]
                 [:!C#TOSm :!C#TOSx]
