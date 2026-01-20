@@ -400,9 +400,9 @@
                 [:!C#TOSopen_bracket :!C#TOShyphen]
                 [:!C#TOSclose_bracket :!C#TOSequal_sign]
 
-                [:!C#TOSa :!C#TOSc] ;; non-standard: cmd-A is cmd-C
-                [:!C#TOSs :!C#TOSv] ;; non-standard: cmd-S is cmd-V
-                [:!C#TOSd :!C#TOSe]
+                [:!C#TOSa :!C#TOSk]
+                [:!C#TOSs :!C#TOSc] ;; non-standard: cmd-S is cmd-C
+                [:!C#TOSd :!C#TOSv] ;; non-standard: cmd-D is cmd-V
                 [:!C#TOSf :!C#TOSu]
                 ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
                 [:!C#TOSh :!C#TOSl] ;; standard qwerty: [:!C#TOSh :!C#TOSj]
@@ -414,8 +414,8 @@
 
                 [:!C#TOSz :!C#TOSp]
                 [:!C#TOSx :!C#TOSz]
-                [:!C#TOSc :!C#TOSk] ;; non-standard: cmd-C is cmd-A
-                [:!C#TOSv :!C#TOSf] ;; non-standard: cmd-V is cmd-S
+                [:!C#TOSc :!C#TOSf] ;; non-standard: cmd-C is cmd-S
+                [:!C#TOSv :!C#TOSe] ;; non-standard: cmd-V is cmd-D
                 [:!C#TOSb :!C#TOSq]
                 [:!C#TOSn :!C#TOSa]
                 [:!C#TOSm :!C#TOSx]
