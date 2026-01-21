@@ -212,6 +212,7 @@
             :rules [
                 ;; --- Main ---
 
+                [:##left_command :left_command nil { :alone :escape }]
                 [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
 
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
@@ -271,6 +272,8 @@
 
                 [:home :!WER1] ;; desktop 1
                 [:end :!WER2] ;; desktop 2
+
+                ;; todo: unbind caps / rebind to cmd
             ]
         }
 
@@ -483,6 +486,7 @@
             :rules [
                 ;; --- Activation ---
 
+                ;; todo make lazy
                 [:##escape :!Eright_shift nil { :alone :escape }] ;; Escape is Shift-Option (Meh) when held
 
                 ;; --- Window management ---
