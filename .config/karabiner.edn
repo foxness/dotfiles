@@ -212,8 +212,6 @@
             :rules [
                 ;; --- Main ---
 
-                [:##caps_lock :##left_command nil { :alone :escape }]
-
                 [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
 
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
@@ -273,8 +271,6 @@
 
                 [:home :!WER1] ;; desktop 1
                 [:end :!WER2] ;; desktop 2
-
-                ;; todo: unbind caps / rebind to cmd
             ]
         }
 
@@ -403,8 +399,8 @@
                 [:!C#TOSclose_bracket :!C#TOSequal_sign]
 
                 [:!C#TOSa :!C#TOSk]
-                [:!C#TOSs :!C#TOSc] ;; non-standard: cmd-S is cmd-C
-                [:!C#TOSd :!C#TOSv] ;; non-standard: cmd-D is cmd-V
+                [:!C#TOSs :!C#TOSf]
+                [:!C#TOSd :!C#TOSe]
                 [:!C#TOSf :!C#TOSu]
                 ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
                 [:!C#TOSh :!C#TOSl] ;; standard qwerty: [:!C#TOSh :!C#TOSj]
@@ -416,8 +412,8 @@
 
                 [:!C#TOSz :!C#TOSp]
                 [:!C#TOSx :!C#TOSz]
-                [:!C#TOSc :!C#TOSf] ;; non-standard: cmd-C is cmd-S
-                [:!C#TOSv :!C#TOSe] ;; non-standard: cmd-V is cmd-D
+                ;; [:!C#TOSc :!C#TOSc] ;; maps to itself
+                ;; [:!C#TOSv :!C#TOSv] ;; maps to itself
                 [:!C#TOSb :!C#TOSq]
                 [:!C#TOSn :!C#TOSa]
                 [:!C#TOSm :!C#TOSx]
@@ -448,8 +444,8 @@
             :rules [
                 ;; --- Activation ---
 
-                [ ;; Command -> Hyper
-                    :##left_command
+                [ ;; Capslock -> Hyper
+                    :##caps_lock
                     { :key :!WEright_shift :lazy true } ;; lazy - modifier is sent only when pressed together with another key
                     nil
                     { :alone :delete_or_backspace }
@@ -487,7 +483,6 @@
             :rules [
                 ;; --- Activation ---
 
-                ;; todo make lazy
                 [:##escape :!Eright_shift nil { :alone :escape }] ;; Escape is Shift-Option (Meh) when held
 
                 ;; --- Window management ---
