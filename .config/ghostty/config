@@ -69,4 +69,4 @@ theme = tokyonight
 background-opacity = 0.8
 background-blur-radius = 30
 
-keybind = global:opt+ctrl+shift+`=toggle_quick_terminal
+keybind = global:cmd+`=toggle_quick_terminal
