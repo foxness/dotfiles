@@ -170,7 +170,7 @@
         ;; ============== FUNCTION ROW ==============
 
         {
-            :des "[Non-split] Function row"
+            :des "[Staggered] Function row"
             :rules [
                 :!sofle
 
@@ -203,7 +203,7 @@
         }
 
         {
-            :des "[Split] Function row"
+            :des "[Sofle] Function row"
             :rules [
                 :sofle
 
@@ -227,7 +227,7 @@
         ;; ============== GENERAL ==============
 
         {
-            :des "[Non-split] General"
+            :des "[Staggered] General"
             :rules [
                 :!sofle
 
@@ -252,7 +252,7 @@
         }
 
         {
-            :des "[Split] General"
+            :des "[Sofle] General"
             :rules [
                 :sofle
 
@@ -274,7 +274,7 @@
         ;; ============== NUPHY ==============
 
         {
-            :des "Nuphy"
+            :des "[Nuphy] General"
             :rules [
                 [:profile :Default :River :RiverGaming]
                 [:condi :nuphy]
@@ -302,7 +302,7 @@
         }
 
         {
-            :des "Nuphy Gaming"
+            :des "[Nuphy] Gaming"
             :rules [
                 [:profile :RiverGaming]
                 [:condi :nuphy]
@@ -320,102 +320,8 @@
 
         ;; ============== KEYBOARD LAYOUTS ==============
 
-        ;; {
-        ;;     :des "Base Graphite"
-        ;;     :rules [
-        ;;         [:condi :!abc :!russian :!japanese :!statica] ;; graphite
-
-        ;;         ;; swap colon and semicolon
-        ;;         [:open_bracket :!Sopen_bracket]
-        ;;         [:!Sopen_bracket :open_bracket]
-        ;;     ]
-        ;; }
-
-        ;; {
-        ;;     :des "Base GraphiteX - Partial qwertified CMD"
-        ;;     :rules [
-        ;;         :graphitex
-
-        ;;         ;; --- Window management ---
-
-        ;;         [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
-        ;;         [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
-        ;;         [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
-
-        ;;         ;; --- Text ---
-
-        ;;         [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
-        ;;         [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
-        ;;         [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
-
-        ;;         ;; make sure replaced shortcuts are pressable
-        ;;         [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
-        ;;         [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
-        ;;         [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
-        ;;         [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
-        ;;         [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
-
-        ;;         ;; --- Right hand side ---
-
-        ;;         [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
-        ;;         [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
-
-        ;;         [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
-        ;;         [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
-        ;;     ]
-        ;; }
-
-        ;; {
-        ;;     :des "Base GraphiteYY - Qwertified CMD"
-        ;;     :rules [
-        ;;         :graphiteyy
-
-        ;;         [:!C#TOShyphen :!C#TOSperiod]
-        ;;         [:!C#TOSequal_sign :!C#TOSclose_bracket]
-
-        ;;         ;; when CMD is pressed this is standard qwerty but
-        ;;         ;; - cmd-E and cmd-H are swapped (for easy window hiding)
-
-        ;;         [:!C#TOSq :!C#TOSb]
-        ;;         [:!C#TOSw :!C#TOSr]
-        ;;         [:!C#TOSe :!C#TOSj] ;; standard qwerty: [:!C#TOSe :!C#TOSl]
-        ;;         [:!C#TOSr :!C#TOSs]
-        ;;         [:!C#TOSt :!C#TOSd]
-        ;;         [:!C#TOSy :!C#TOSh]
-        ;;         [:!C#TOSu :!C#TOSo]
-        ;;         [:!C#TOSi :!C#TOSsemicolon]
-        ;;         [:!C#TOSo :!C#TOSi]
-        ;;         [:!C#TOSp :!C#TOSm]
-        ;;         [:!C#TOSopen_bracket :!C#TOShyphen]
-        ;;         [:!C#TOSclose_bracket :!C#TOSequal_sign]
-
-        ;;         [:!C#TOSa :!C#TOSk]
-        ;;         [:!C#TOSs :!C#TOSf]
-        ;;         [:!C#TOSd :!C#TOSe]
-        ;;         [:!C#TOSf :!C#TOSu]
-        ;;         ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
-        ;;         [:!C#TOSh :!C#TOSl] ;; standard qwerty: [:!C#TOSh :!C#TOSj]
-        ;;         [:!C#TOSj :!C#TOSt]
-        ;;         [:!C#TOSk :!C#TOSn]
-        ;;         [:!C#TOSl :!C#TOSw]
-        ;;         [:!C#TOSsemicolon :!C#TOSopen_bracket]
-        ;;         [:!C#TOSquote :!C#TOSy]
-
-        ;;         [:!C#TOSz :!C#TOSp]
-        ;;         [:!C#TOSx :!C#TOSz]
-        ;;         ;; [:!C#TOSc :!C#TOSc] ;; maps to itself
-        ;;         ;; [:!C#TOSv :!C#TOSv] ;; maps to itself
-        ;;         [:!C#TOSb :!C#TOSq]
-        ;;         [:!C#TOSn :!C#TOSa]
-        ;;         [:!C#TOSm :!C#TOSx]
-        ;;         [:!C#TOScomma :!C#TOSquote]
-        ;;         [:!C#TOSperiod :!C#TOScomma]
-        ;;         ;; [:!C#TOSslash :!C#TOSslash] ;; maps to itself
-        ;;     ]
-        ;; }
-
         {
-            :des "[Non-split] Graphite Angle Mod"
+            :des "[Staggered] Graphite Angle Mod"
             :rules [
                 [:condi :!sofle :graphite :!extend-layer]
 
@@ -714,7 +620,7 @@
         ;; ============== OPTION LAYER ==============
 
         {
-            :des "[Non-split] Option layer [Base]"
+            :des "[Staggered] Option layer [Base]"
             :rules [
                 :!sofle
 
@@ -742,7 +648,7 @@
         }
 
         {
-            :des "[Split] Option layer [Base]"
+            :des "[Sofle] Option layer [Base]"
             :rules [
                 :sofle
 
@@ -761,48 +667,6 @@
 
                 [:!O#Sz :page_up]
                 [:!O#Sx :page_down]
-            ]
-        }
-
-        ;; {
-        ;;     :des "Option layer [Graphite]"
-        ;;     :rules [
-        ;;         [:condi :!abc :!russian :!japanese :!statica] ;; graphite
-
-        ;;         ;; --- Symbols ---
-
-        ;;         [:!O7 :!Shyphen] ;; { open curly bracket
-        ;;         [:!O8 :!Sequal_sign] ;; } close curly bracket
-
-        ;;         [:!Or :vk_none]
-        ;;         [:!Ot :vk_none]
-        ;;         [:!Oy :vk_none]
-        ;;         [:!Ou :!S9] ;; ( open bracket
-        ;;         [:!Oi :!S0] ;; ) close bracket
-        ;;         [:!Oo :!S8] ;; * asterisk
-        ;;         [:!Op :!Sbackslash] ;; | pipe
-        ;;         [:!Oopen_bracket :vk_none]
-        ;;         [:!Oclose_bracket :vk_none]
-
-        ;;         [:!Of :vk_none]
-        ;;         [:!Og :hyphen] ;; [ open square bracket
-        ;;         [:!Oh :equal_sign] ;; ] close square bracket
-        ;;         [:!Oj :close_bracket] ;; = equals sign
-        ;;         [:!Ok :!Speriod] ;; " double quote
-        ;;         [:!Ol :!Sclose_bracket] ;; + plus sign
-        ;;         [:!Osemicolon :!S1] ;; ! exclamation mark
-        ;;         [:!Oquote :vk_none]
-
-        ;;         [:!Ov :vk_none]
-        ;;         [:!Ob :vk_none]
-        ;;         [:!On :!Sopen_bracket] ;; : colon
-        ;;         [:!Om :!Sslash] ;; < open angle bracket
-        ;;         [:!Ocomma :!Scomma] ;; > close angle bracket
-        ;;         [:!Operiod :vk_none]
-        ;;         [:!Oslash :vk_none]
-
-                ;; [:##j :escape]
-                ;; [:caps_lock :escape]
 
                 ;; [:##k :delete_or_backspace] ;; delete character
                 ;; [:##l :!Odelete_or_backspace] ;; delete word
@@ -815,8 +679,8 @@
 
                 ;; [:##delete_or_backspace :!Odelete_or_backspace] ;; delete word
 
-        ;;     ]
-        ;; }
+            ]
+        }
 
         ;; ============== EXTEND LAYER ==============
 
@@ -835,51 +699,8 @@
             ]
         }
 
-        ;; {
-        ;;     :des "Extend layer [GraphiteYY]"
-        ;;     :rules [
-        ;;         [:condi :extend-layer :graphiteyy]
-
-        ;;         [:q :!S7]                               ;; & ampersand
-        ;;         [:w :period]                            ;; - minus
-        ;;         [:e :!Shyphen]                          ;; { open curly bracket
-        ;;         [:r :!Sequal_sign]                      ;; } close curly bracket
-        ;;         [:t :!Squote]                           ;; ? question mark
-        ;;         [:y :!S5]                               ;; % percent
-        ;;         [:u :!Sslash]                           ;; < open angle bracket
-        ;;         [:i :!Scomma]                           ;; > close angle bracket
-        ;;         [:o :!S2]                               ;; @ at
-        ;;         [:p :vk_none]
-        ;;         [:close_bracket :vk_none]
-        ;;         [:open_bracket :vk_none]
-
-        ;;         [:a :!Sopen_bracket]                    ;; : colon
-        ;;         [:s :close_bracket]                     ;; = equals sign
-        ;;         [:d :!S9]                               ;; ( open bracket
-        ;;         [:f :!S0]                               ;; ) close bracket
-        ;;         [:g :!S1]                               ;; ! exclamation mark
-        ;;         [:h :!S8]                               ;; * asterisk
-        ;;         [:j :hyphen]                            ;; [ open square bracket
-        ;;         [:k :equal_sign]                        ;; ] close square bracket
-        ;;         [:l :slash]                             ;; / forward slash
-        ;;         [:semicolon :backslash]                 ;; \ backslash
-        ;;         ;; [:quote :nope]
-
-        ;;         [:z :open_bracket]                      ;; ; semicolon
-        ;;         [:x :y]                                 ;; ' quote
-        ;;         [:c :!Speriod]                          ;; " double quote
-        ;;         [:v :!Sclose_bracket]                   ;; + plus sign
-        ;;         [:b :!S6]                               ;; ^ caret
-        ;;         [:n :!S4]                               ;; $ dollar
-        ;;         [:m [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
-        ;;         [:comma :!Sbackslash]                   ;; | pipe
-        ;;         [:period :grave_accent_and_tilde]       ;; ` backtick
-        ;;         [:slash :!S3]                           ;; # hashtag
-        ;;     ]
-        ;; }
-
         {
-            :des "[Non-split] Extend layer [Graphite]"
+            :des "[Staggered] Extend layer [Graphite]"
             :rules [
                 [:condi :extend-layer :graphite]
 
@@ -921,7 +742,7 @@
             ]
         }
         {
-            :des "[Split] Extend layer [Graphite]"
+            :des "[Sofle] Extend layer [Graphite]"
             :rules [
                 [:condi :sofle :graphite]
 
@@ -964,7 +785,7 @@
         }
 
         {
-            :des "[Non-split] Extend layer [GraphiteZ]"
+            :des "[Staggered] Extend layer [GraphiteZ]"
             :rules [
                 [:condi :extend-layer :graphitez]
 
@@ -1007,15 +828,6 @@
         }
 
         ;; ============== NULL LAYER ==============
-
-        ;; {
-        ;;     :des "Null layer"
-        ;;     :rules [
-        ;;         [:!SRj :!S9] ;; ( open bracket
-        ;;         [:!SRk :!S0] ;; ) close bracket
-        ;;         [:!SRl :period] ;; - minus
-        ;;     ]
-        ;; }
 
         ;; {
         ;;     :des "Null layer activation"
