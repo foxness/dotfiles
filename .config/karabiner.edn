@@ -95,11 +95,6 @@
     ;;     ;; alias
     ;;     :delete { :key :delete_or_backspace }
     ;;     :return { :key :return_or_enter }
-    ;;     :btick { :key :grave_accent_and_tilde }
-    ;;     :tilde { :key :grave_accent_and_tilde }
-    ;;     :bslash { :key :backslash }
-    ;;     :ls { :key :left_shift }
-    ;;     :rs { :key :right_shift }
     ;; }
 
     :tos {
@@ -884,7 +879,7 @@
         ;; }
 
         {
-            :des "Extend layer [Graphite]"
+            :des "[Non-split] Extend layer [Graphite]"
             :rules [
                 [:condi :extend-layer :graphite]
 
@@ -925,9 +920,51 @@
                 [:slash :slash]                         ;; / forward slash
             ]
         }
+        {
+            :des "[Split] Extend layer [Graphite]"
+            :rules [
+                [:condi :sofle :graphite]
+
+                [:!Wq :!Squote]                           ;; ? question mark
+                [:!Ww :!Sbackslash]                       ;; | pipe
+                [:!We :!Shyphen]                          ;; { open curly bracket
+                [:!Wr :!Sequal_sign]                      ;; } close curly bracket
+                [:!Wt :!S7]                               ;; & ampersand
+                [:!Wy :grave_accent_and_tilde]            ;; ` backtick
+                [:!Wu [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+                [:!Wi :period]                            ;; - minus
+                [:!Wo :!S2]                               ;; @ at
+                [:!Wp :vk_none]
+                [:!Wclose_bracket :vk_none]
+                [:!Wopen_bracket :vk_none]
+
+                [:!Wa :!Sopen_bracket]                    ;; : colon
+                [:!Ws :close_bracket]                     ;; = equals sign
+                [:!Wd :!S9]                               ;; ( open bracket
+                [:!Wf :!S0]                               ;; ) close bracket
+                [:!Wg :!S1]                               ;; ! exclamation mark
+                [:!Wh :backslash]                         ;; \ backslash
+                [:!Wj :hyphen]                            ;; [ open square bracket
+                [:!Wk :equal_sign]                        ;; ] close square bracket
+                [:!Wl :!S3]                               ;; # hashtag
+                [:!Wsemicolon :y]                         ;; ' quote
+                ;; [:!Wquote :nope]
+
+                [:!Wz :!Sclose_bracket]                   ;; + plus sign
+                [:!Wx :!S5]                               ;; % percent
+                [:!Wc :!S8]                               ;; * asterisk
+                [:!Wv :!Scomma]                           ;; " double quote
+                [:!Wb :!Speriod]                          ;; < open angle bracket
+                [:!Wn :!Sslash]                           ;; > close angle bracket
+                [:!Wm :!S6]                               ;; ^ caret
+                [:!Wcomma :!S4]                           ;; $ dollar
+                [:!Wperiod :open_bracket]                 ;; ; semicolon
+                [:!Wslash :slash]                         ;; / forward slash
+            ]
+        }
 
         {
-            :des "Extend layer [GraphiteZ]"
+            :des "[Non-split] Extend layer [GraphiteZ]"
             :rules [
                 [:condi :extend-layer :graphitez]
 
