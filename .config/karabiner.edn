@@ -175,8 +175,10 @@
         ;; ============== FUNCTION ROW ==============
 
         {
-            :des "Function row"
+            :des "[Non-split] Function row"
             :rules [
+                :!sofle
+
                 [:f1 { :input :graphite }]
                 [:f2 { :input :statica }] ;; switching to these langs doesn't work consistensly
                 [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
@@ -205,11 +207,35 @@
             ]
         }
 
+        {
+            :des "[Split] Function row"
+            :rules [
+                :sofle
+
+                [:f1 { :input :graphite }]
+                [:f2 { :input :statica }] ;; switching to these langs doesn't work consistensly
+                [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:f4 { :input :abc }]
+
+                [:f5 :display_brightness_decrement]
+                [:f6 :display_brightness_increment]
+
+                [:f7 :!QWf12] ;; do not disturb [todo: something better than this?]
+                [:f8 :play_or_pause]
+
+                [:f9 :mute]
+                [:f10 :volume_decrement]
+                [:f11 :volume_increment]
+            ]
+        }
+
         ;; ============== GENERAL ==============
 
         {
-            :des "General"
+            :des "[Non-split] General"
             :rules [
+                :!sofle
+
                 ;; --- Main ---
 
                 [:##left_command :left_command nil { :alone :escape }]
@@ -227,6 +253,26 @@
                 ;; tilde <-> zero
                 [:grave_accent_and_tilde :0]
                 [:0 :grave_accent_and_tilde]
+            ]
+        }
+
+        {
+            :des "[Split] General"
+            :rules [
+                :sofle
+
+                ;; --- Main ---
+
+                [:##left_command :left_command nil { :alone :escape }]
+                [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
+
+                ;; [:##right_option :fn] ;; Right Option -> FN
+
+                ;; --- Other ---
+
+                ;; makes Fine Volume Adjustment work
+                [:!SOf11 :fine-vol-down]
+                [:!SOf12 :fine-vol-up]
             ]
         }
 
@@ -374,6 +420,19 @@
         ;; }
 
         {
+            :des "[Non-split] Graphite Angle Mod"
+            :rules [
+                [:condi :!sofle :graphite :!extend-layer]
+
+                [:#SRz :#SRx]
+                [:#SRx :#SRc]
+                [:#SRc :#SRv]
+                [:#SRv :#SRb]
+                [:#SRb :#SRz]
+            ]
+        }
+
+        {
             :des "Base Graphite - Qwertified CMD"
             :rules [
                 :graphite
@@ -499,7 +558,7 @@
                 [ ;; Capslock -> Hyper
                     :##caps_lock
                     { :key :!WEright_shift :lazy true } ;; lazy - modifier is sent only when pressed together with another key
-                    nil
+                    [:!sofle]
                     { :alone :delete_or_backspace }
                 ]
 
@@ -660,8 +719,10 @@
         ;; ============== OPTION LAYER ==============
 
         {
-            :des "Option layer [Base]"
+            :des "[Non-split] Option layer [Base]"
             :rules [
+                :!sofle
+
                 ;; --- Right side of keyboard ---
 
                 [:!O#Sa :left_arrow]
@@ -677,6 +738,29 @@
 
                 [:!O#Sgrave_accent_and_tilde :0]
                 [:!O#Sgrave_accent_and_tilde :grave_accent_and_tilde]
+                [:!O#S1 :home]
+                [:!O#S2 :end]
+
+                [:!O#Sz :page_up]
+                [:!O#Sx :page_down]
+            ]
+        }
+
+        {
+            :des "[Split] Option layer [Base]"
+            :rules [
+                :sofle
+
+                ;; --- Right side of keyboard ---
+
+                [:!O#Ss :left_arrow]
+                [:!O#Sf :right_arrow]
+                [:!O#Se :up_arrow]
+                [:!O#Sd :down_arrow]
+
+                [:!O#Sw :!Oleft_arrow] ;; navigate word left
+                [:!O#Sr :!Oright_arrow] ;; navigate word right
+
                 [:!O#S1 :home]
                 [:!O#S2 :end]
 
