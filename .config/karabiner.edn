@@ -64,10 +64,9 @@
 
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
-        :graphitex { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitex\\.graphitex$" }
+        :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphite\\.graphite$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
         :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
-        :graphiteyy { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphiteyy\\.graphiteyy$" }
         :statica { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.statica\\.statica$" }
         :graphitez { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphitez\\.graphitez$" }
     }
@@ -177,7 +176,7 @@
         {
             :des "Function row"
             :rules [
-                [:f1 { :input :graphitez }]
+                [:f1 { :input :graphite }]
                 [:f2 { :input :statica }] ;; switching to these langs doesn't work consistensly
                 [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:f4 { :input :abc }]
@@ -242,7 +241,7 @@
 
                 [:##right_control :fn] ;; Right Control -> FN
 
-                [:f14 { :key :!CTq :repeat false } [:!graphitex :!graphiteyy :!graphitez]] ;; lock screen (qwerty)
+                [:f14 { :key :!CTq :repeat false } [:!graphite :!graphitez]] ;; lock screen (qwerty)
                 [:f14 { :key :!CTb :repeat false } [:!abc :!russian :!japanese :!statica]] ;; lock screen (graphite)
 
                 ;; --- Knob ---
@@ -290,44 +289,93 @@
         ;;     ]
         ;; }
 
+        ;; {
+        ;;     :des "Base GraphiteX - Partial qwertified CMD"
+        ;;     :rules [
+        ;;         :graphitex
+
+        ;;         ;; --- Window management ---
+
+        ;;         [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
+        ;;         [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
+        ;;         [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
+
+        ;;         ;; --- Text ---
+
+        ;;         [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
+        ;;         [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
+        ;;         [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
+
+        ;;         ;; make sure replaced shortcuts are pressable
+        ;;         [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
+        ;;         [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
+        ;;         [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
+        ;;         [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
+        ;;         [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
+
+        ;;         ;; --- Right hand side ---
+
+        ;;         [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
+        ;;         [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
+
+        ;;         [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
+        ;;         [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
+        ;;     ]
+        ;; }
+
+        ;; {
+        ;;     :des "Base GraphiteYY - Qwertified CMD"
+        ;;     :rules [
+        ;;         :graphiteyy
+
+        ;;         [:!C#TOShyphen :!C#TOSperiod]
+        ;;         [:!C#TOSequal_sign :!C#TOSclose_bracket]
+
+        ;;         ;; when CMD is pressed this is standard qwerty but
+        ;;         ;; - cmd-E and cmd-H are swapped (for easy window hiding)
+
+        ;;         [:!C#TOSq :!C#TOSb]
+        ;;         [:!C#TOSw :!C#TOSr]
+        ;;         [:!C#TOSe :!C#TOSj] ;; standard qwerty: [:!C#TOSe :!C#TOSl]
+        ;;         [:!C#TOSr :!C#TOSs]
+        ;;         [:!C#TOSt :!C#TOSd]
+        ;;         [:!C#TOSy :!C#TOSh]
+        ;;         [:!C#TOSu :!C#TOSo]
+        ;;         [:!C#TOSi :!C#TOSsemicolon]
+        ;;         [:!C#TOSo :!C#TOSi]
+        ;;         [:!C#TOSp :!C#TOSm]
+        ;;         [:!C#TOSopen_bracket :!C#TOShyphen]
+        ;;         [:!C#TOSclose_bracket :!C#TOSequal_sign]
+
+        ;;         [:!C#TOSa :!C#TOSk]
+        ;;         [:!C#TOSs :!C#TOSf]
+        ;;         [:!C#TOSd :!C#TOSe]
+        ;;         [:!C#TOSf :!C#TOSu]
+        ;;         ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
+        ;;         [:!C#TOSh :!C#TOSl] ;; standard qwerty: [:!C#TOSh :!C#TOSj]
+        ;;         [:!C#TOSj :!C#TOSt]
+        ;;         [:!C#TOSk :!C#TOSn]
+        ;;         [:!C#TOSl :!C#TOSw]
+        ;;         [:!C#TOSsemicolon :!C#TOSopen_bracket]
+        ;;         [:!C#TOSquote :!C#TOSy]
+
+        ;;         [:!C#TOSz :!C#TOSp]
+        ;;         [:!C#TOSx :!C#TOSz]
+        ;;         ;; [:!C#TOSc :!C#TOSc] ;; maps to itself
+        ;;         ;; [:!C#TOSv :!C#TOSv] ;; maps to itself
+        ;;         [:!C#TOSb :!C#TOSq]
+        ;;         [:!C#TOSn :!C#TOSa]
+        ;;         [:!C#TOSm :!C#TOSx]
+        ;;         [:!C#TOScomma :!C#TOSquote]
+        ;;         [:!C#TOSperiod :!C#TOScomma]
+        ;;         ;; [:!C#TOSslash :!C#TOSslash] ;; maps to itself
+        ;;     ]
+        ;; }
+
         {
-            :des "Base GraphiteX - Partial qwertified CMD"
+            :des "Base Graphite - Qwertified CMD"
             :rules [
-                :graphitex
-
-                ;; --- Window management ---
-
-                [:!C#TOSq :!C#TOSb] ;; cmd-Q is itself
-                [:!C#TOSw :!C#TOSr] ;; cmd-W is itself
-                [:!C#TOSe :!C#TOSj] ;; cmd-E -> cmd-H
-
-                ;; --- Text ---
-
-                [:!C#TOSa :!C#TOSk] ;; cmd-A is itself
-                [:!C#TOSz :!C#TOSt] ;; cmd-Z is itself
-                [:!C#TOSx :!C#TOSz] ;; cmd-X is itself
-
-                ;; make sure replaced shortcuts are pressable
-                [:!C#TOSb :!C#TOSq] ;; cmd-B -> cmd-B (overshadowed by cmd-Q)
-                [:!C#TOSr :!C#TOSw] ;; cmd-R -> cmd-L (overshadowed by cmd-W)
-                [:!C#TOSj :!C#TOSe] ;; cmd-J -> cmd-D (overshadowed by cmd-E)
-                [:!C#TOSk :!C#TOSa] ;; cmd-K -> cmd-N (overshadowed by cmd-A)
-                [:!C#TOSt :!C#TOSx] ;; cmd-T -> cmd-M (overshadowed by cmd-X)
-
-                ;; --- Right hand side ---
-
-                [:!C#TOShyphen :!C#TOSperiod] ;; cmd-Minus is itself
-                [:!C#TOSequal_sign :!C#TOSclose_bracket] ;; cmd-Plus is itself
-
-                [:!C#TOSopen_bracket :!C#TOShyphen] ;; cmd-[ is itself
-                [:!C#TOSclose_bracket :!C#TOSequal_sign] ;; cmd-] is itself
-            ]
-        }
-
-        {
-            :des "Base GraphiteYY - Qwertified CMD"
-            :rules [
-                :graphiteyy
+                :graphite
 
                 [:!C#TOShyphen :!C#TOSperiod]
                 [:!C#TOSequal_sign :!C#TOSclose_bracket]
@@ -335,7 +383,7 @@
                 ;; when CMD is pressed this is standard qwerty but
                 ;; - cmd-E and cmd-H are swapped (for easy window hiding)
 
-                [:!C#TOSq :!C#TOSb]
+                [:!C#TOSq :!C#TOSz]
                 [:!C#TOSw :!C#TOSr]
                 [:!C#TOSe :!C#TOSj] ;; standard qwerty: [:!C#TOSe :!C#TOSl]
                 [:!C#TOSr :!C#TOSs]
@@ -361,12 +409,12 @@
                 [:!C#TOSquote :!C#TOSy]
 
                 [:!C#TOSz :!C#TOSp]
-                [:!C#TOSx :!C#TOSz]
-                ;; [:!C#TOSc :!C#TOSc] ;; maps to itself
-                ;; [:!C#TOSv :!C#TOSv] ;; maps to itself
+                ;; [:!C#TOSx :!C#TOSx] ;; maps to itself
+                [:!C#TOSc :!C#TOSv]
+                [:!C#TOSv :!C#TOSb]
                 [:!C#TOSb :!C#TOSq]
                 [:!C#TOSn :!C#TOSa]
-                [:!C#TOSm :!C#TOSx]
+                [:!C#TOSm :!C#TOSc]
                 [:!C#TOScomma :!C#TOSquote]
                 [:!C#TOSperiod :!C#TOScomma]
                 ;; [:!C#TOSslash :!C#TOSslash] ;; maps to itself
@@ -429,7 +477,7 @@
         {
             :des "Base Qwerty"
             :rules [
-                [:condi :!graphitex :!graphiteyy :!graphitez]
+                [:condi :!graphite :!graphitez]
 
                 ;; --- Window management ---
 
@@ -495,7 +543,7 @@
                 [:!ERf2 :!WERfn] ;; resize windows
                 [:!ERf3 :app-windows]
 
-                [:!ERgrave_accent_and_tilde :!Ff [:!graphitex :!graphiteyy :!graphitez]] ;; fullscreen (qwerty)
+                [:!ERgrave_accent_and_tilde :!Ff [:!graphite :!graphitez]] ;; fullscreen (qwerty)
                 [:!ERgrave_accent_and_tilde :!Fu [:!abc :!russian :!japanese :!statica]] ;; fullscreen (graphite)
 
                 [:!ER1 :!TOup_arrow] ;; maximize
@@ -707,19 +755,62 @@
             ]
         }
 
-        {
-            :des "Extend layer [GraphiteYY]"
-            :rules [
-                [:condi :extend-layer :graphiteyy]
+        ;; {
+        ;;     :des "Extend layer [GraphiteYY]"
+        ;;     :rules [
+        ;;         [:condi :extend-layer :graphiteyy]
 
-                [:q :!S7]                               ;; & ampersand
-                [:w :period]                            ;; - minus
+        ;;         [:q :!S7]                               ;; & ampersand
+        ;;         [:w :period]                            ;; - minus
+        ;;         [:e :!Shyphen]                          ;; { open curly bracket
+        ;;         [:r :!Sequal_sign]                      ;; } close curly bracket
+        ;;         [:t :!Squote]                           ;; ? question mark
+        ;;         [:y :!S5]                               ;; % percent
+        ;;         [:u :!Sslash]                           ;; < open angle bracket
+        ;;         [:i :!Scomma]                           ;; > close angle bracket
+        ;;         [:o :!S2]                               ;; @ at
+        ;;         [:p :vk_none]
+        ;;         [:close_bracket :vk_none]
+        ;;         [:open_bracket :vk_none]
+
+        ;;         [:a :!Sopen_bracket]                    ;; : colon
+        ;;         [:s :close_bracket]                     ;; = equals sign
+        ;;         [:d :!S9]                               ;; ( open bracket
+        ;;         [:f :!S0]                               ;; ) close bracket
+        ;;         [:g :!S1]                               ;; ! exclamation mark
+        ;;         [:h :!S8]                               ;; * asterisk
+        ;;         [:j :hyphen]                            ;; [ open square bracket
+        ;;         [:k :equal_sign]                        ;; ] close square bracket
+        ;;         [:l :slash]                             ;; / forward slash
+        ;;         [:semicolon :backslash]                 ;; \ backslash
+        ;;         ;; [:quote :nope]
+
+        ;;         [:z :open_bracket]                      ;; ; semicolon
+        ;;         [:x :y]                                 ;; ' quote
+        ;;         [:c :!Speriod]                          ;; " double quote
+        ;;         [:v :!Sclose_bracket]                   ;; + plus sign
+        ;;         [:b :!S6]                               ;; ^ caret
+        ;;         [:n :!S4]                               ;; $ dollar
+        ;;         [:m [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+        ;;         [:comma :!Sbackslash]                   ;; | pipe
+        ;;         [:period :grave_accent_and_tilde]       ;; ` backtick
+        ;;         [:slash :!S3]                           ;; # hashtag
+        ;;     ]
+        ;; }
+
+        {
+            :des "Extend layer [Graphite]"
+            :rules [
+                [:condi :extend-layer :graphite]
+
+                [:q :!Squote]                           ;; ? question mark
+                [:w :!Sbackslash]                       ;; | pipe
                 [:e :!Shyphen]                          ;; { open curly bracket
                 [:r :!Sequal_sign]                      ;; } close curly bracket
-                [:t :!Squote]                           ;; ? question mark
-                [:y :!S5]                               ;; % percent
-                [:u :!Sslash]                           ;; < open angle bracket
-                [:i :!Scomma]                           ;; > close angle bracket
+                [:t :!S7]                               ;; & ampersand
+                [:y :grave_accent_and_tilde]            ;; ` backtick
+                [:u [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+                [:i :period]                            ;; - minus
                 [:o :!S2]                               ;; @ at
                 [:p :vk_none]
                 [:close_bracket :vk_none]
@@ -730,23 +821,23 @@
                 [:d :!S9]                               ;; ( open bracket
                 [:f :!S0]                               ;; ) close bracket
                 [:g :!S1]                               ;; ! exclamation mark
-                [:h :!S8]                               ;; * asterisk
+                [:h :backslash]                         ;; \ backslash
                 [:j :hyphen]                            ;; [ open square bracket
                 [:k :equal_sign]                        ;; ] close square bracket
-                [:l :slash]                             ;; / forward slash
-                [:semicolon :backslash]                 ;; \ backslash
+                [:l :!S3]                               ;; # hashtag
+                [:semicolon :y]                         ;; ' quote
                 ;; [:quote :nope]
 
-                [:z :open_bracket]                      ;; ; semicolon
-                [:x :y]                                 ;; ' quote
-                [:c :!Speriod]                          ;; " double quote
+                [:z :!S5]                               ;; % percent
+                [:x :!S8]                               ;; * asterisk
+                [:c :!Scomma]                           ;; " double quote
                 [:v :!Sclose_bracket]                   ;; + plus sign
-                [:b :!S6]                               ;; ^ caret
-                [:n :!S4]                               ;; $ dollar
-                [:m [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
-                [:comma :!Sbackslash]                   ;; | pipe
-                [:period :grave_accent_and_tilde]       ;; ` backtick
-                [:slash :!S3]                           ;; # hashtag
+                [:b :!Speriod]                          ;; < open angle bracket
+                [:n :!Sslash]                           ;; > close angle bracket
+                [:m :!S6]                               ;; ^ caret
+                [:comma :!S4]                           ;; $ dollar
+                [:period :open_bracket]                 ;; ; semicolon
+                [:slash :slash]                         ;; / forward slash
             ]
         }
 
