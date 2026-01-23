@@ -305,6 +305,44 @@
             ]
         }
 
+        ;; ============== SOFLE ==============
+
+        {
+            :des "[Sofle] Navigation Layer"
+            :rules [
+                [:condi :sofle]
+
+                ;; --- Main ---
+
+                ;; [:f14 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
+                ;; [:f14 { :key :!CTb :repeat false } [:!abc :!russian :!japanese :!statica]] ;; lock screen (graphite)
+
+                [:!E1 :!WER1]
+                [:!E2 :!WER2]
+                [:!E3 :!WER3]
+                [:!E4 :!WER4]
+                [:!E5 :!WER5]
+
+                [:!Eq :!QWERe] ;; things
+                [:!Ew :!QWERw] ;; notes
+                [:!Ee :!WERc] ;; anki
+                [:!Er :!WERf] ;; finder
+                [:!Et :!WERq] ;; brave
+
+                [:!Ea :!WERb] ;; activity monitor
+                [:!Es :!WERt] ;; telegram
+                [:!Ed :!WERg] ;; ghostty
+                [:!Ef :mission-control] ;; mission control
+                [:!Eg :!WERw] ;; discord
+
+                [:!Ez :!QWERq] ;; bitwarden
+                [:!Ex :!QWERa] ;; vscode
+                [:!Ec :!WERv] ;; eagle
+                [:!Ev :!WERr] ;; firefox
+                [:!Eb :!WERe] ;; spotify
+            ]
+        }
+
         ;; ============== KEYBOARD LAYOUTS ==============
 
         {
