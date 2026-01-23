@@ -201,28 +201,6 @@
             ]
         }
 
-        {
-            :des "[Sofle] Function row"
-            :rules [
-                :sofle
-
-                [:f1 { :input :graphite }]
-                [:f2 { :input :statica }] ;; switching to these langs doesn't work consistensly
-                [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:f4 { :input :abc }]
-
-                [:f5 :display_brightness_decrement]
-                [:f6 :display_brightness_increment]
-
-                [:f7 :!QWf12] ;; do not disturb [todo: something better than this?]
-                [:f8 :play_or_pause]
-
-                [:f9 :mute]
-                [:f10 :volume_decrement]
-                [:f11 :volume_increment]
-            ]
-        }
-
         ;; ============== GENERAL ==============
 
         {
@@ -257,14 +235,8 @@
 
                 ;; --- Main ---
 
-                [:!Cescape :!Cgrave_accent_and_tilde]
-
-                ;; --- Languages ---
-
-                [:!Oescape { :input :graphite }]
-                [:!O1 { :input :statica }] ;; switching to these langs doesn't work consistensly
-                [:!O2 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!O3 { :input :abc }]
+                [:!Cescape :!Ctab] ;; app switcher
+                [:!Ctab :!Cgrave_accent_and_tilde] ;; terminal
 
                 ;; [:##right_option :fn] ;; Right Option -> FN
 
@@ -273,6 +245,16 @@
                 ;; makes Fine Volume Adjustment work
                 [:!SOf11 :fine-vol-down]
                 [:!SOf12 :fine-vol-up]
+
+                ;; [:f5 :display_brightness_decrement]
+                ;; [:f6 :display_brightness_increment]
+
+                ;; [:f7 :!QWf12] ;; do not disturb [todo: something better than this?]
+                ;; [:f8 :play_or_pause]
+
+                ;; [:f9 :mute]
+                ;; [:f10 :volume_decrement]
+                ;; [:f11 :volume_increment]
             ]
         }
 
@@ -604,21 +586,28 @@
             :rules [
                 :sofle
 
+                ;; --- Languages ---
+
+                [:!Oescape { :input :graphite }]
+                [:!O1 { :input :statica }] ;; switching to these langs doesn't work consistensly
+                [:!O2 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:!O3 { :input :abc }]
+
                 ;; --- Right side of keyboard ---
 
-                [:!O#Ss :left_arrow]
-                [:!O#Sf :right_arrow]
-                [:!O#Se :up_arrow]
-                [:!O#Sd :down_arrow]
+                [:!O#Sa :left_arrow]
+                [:!O#Sd :right_arrow]
+                [:!O#Sw :up_arrow]
+                [:!O#Ss :down_arrow]
 
-                [:!O#Sw :!Oleft_arrow] ;; navigate word left
-                [:!O#Sr :!Oright_arrow] ;; navigate word right
+                [:!O#Sq :!Oleft_arrow] ;; navigate word left
+                [:!O#Se :!Oright_arrow] ;; navigate word right
 
-                [:!O#S1 :home]
-                [:!O#S2 :end]
+                [:!O#Sz :home]
+                [:!O#Sx :end]
 
-                [:!O#Sz :page_up]
-                [:!O#Sx :page_down]
+                [:!O#Sr :page_up]
+                [:!O#Sf :page_down]
 
                 ;; [:##k :delete_or_backspace] ;; delete character
                 ;; [:##l :!Odelete_or_backspace] ;; delete word
