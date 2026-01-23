@@ -257,8 +257,14 @@
 
                 ;; --- Main ---
 
-                [:##left_command :left_command nil { :alone :escape }]
-                [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
+                [:!Cescape :!Cgrave_accent_and_tilde]
+
+                ;; --- Languages ---
+
+                [:!Oescape { :input :graphite }]
+                [:!O1 { :input :statica }] ;; switching to these langs doesn't work consistensly
+                [:!O2 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:!O3 { :input :abc }]
 
                 ;; [:##right_option :fn] ;; Right Option -> FN
 
@@ -441,8 +447,8 @@
             :rules [
                 ;; --- Activation ---
 
-                ;; todo make lazy
-                [:##escape :!Eright_shift nil { :alone :escape }] ;; Escape is Shift-Option (Meh) when held
+                ;; Escape is Shift-Option (Meh) when held
+                [:##escape { :key :!Eright_shift :lazy true } nil { :alone :escape }]
 
                 ;; --- Window management ---
 
