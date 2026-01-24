@@ -123,7 +123,7 @@
         :announce_space_on { :shell [:keyboard-maestro "Karabiner_AnnounceSpaceOn"] }
         :announce_space_off { :shell [:keyboard-maestro "Karabiner_AnnounceSpaceOff"] }
 
-        ;; --- Applications ---
+        ;; --- Keyboard Maestro Applications ---
 
         :open-notes { :key :!QWERw }
         :open-anki { :key :!WERc }
@@ -141,8 +141,13 @@
         :open-telegram { :key :!WERt }
         :open-eagle { :key :!WERv }
         :open-things { :key :!QWERe }
+
+        ;; --- General ---
+
         :open-quick-note { :key :!TSf10 }
         :open-things-add { :key :!TOSx }
+        :open-quick-terminal { :key :!Cgrave_accent_and_tilde }
+        :open-alfred { :key :!WERspacebar }
     }
 
     :main [
@@ -263,8 +268,8 @@
 
                 ;; --- Main ---
 
-                [:!Cescape :!Cgrave_accent_and_tilde] ;; terminal
-                ;; [:!Cescape :!Ctab] ;; app switcher
+                [:!Cescape :open-quick-terminal]
+                [:!Cspacebar :open-alfred]
 
                 ;; [:##right_option :fn] ;; Right Option -> FN
 
@@ -286,53 +291,6 @@
                 ;; [:f9 :mute]
                 ;; [:f10 :volume_decrement]
                 ;; [:f11 :volume_increment]
-            ]
-        }
-
-        ;; ============== NUPHY ==============
-
-        {
-            :des "[Nuphy] General"
-            :rules [
-                [:profile :Default :River :RiverGaming]
-                [:condi :nuphy]
-
-                ;; --- Main ---
-
-                [:##right_control :fn] ;; Right Control -> FN
-
-                [:f14 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
-                [:f14 { :key :!CTz :repeat false } [:graphite]] ;; lock screen (graphite)
-
-                ;; --- Knob ---
-
-                [:f15 :mute] ;; knob press
-                [:f16 :volume_decrement] ;; knob counter-clockwise
-                [:f17 :volume_increment] ;; knob clockwise
-
-                [:!Sf16 :fine-vol-down]
-                [:!Sf17 :fine-vol-up]
-
-                [:!Cf15 :spotify-normalize-volume]
-                [:!Cf16 :spotify-volume-down]
-                [:!Cf17 :spotify-volume-up]
-            ]
-        }
-
-        {
-            :des "[Nuphy] Gaming"
-            :rules [
-                [:profile :RiverGaming]
-                [:condi :nuphy]
-
-                ;; always have a way to switch desktops
-                [:page_up :left-desktop]
-                [:page_down :right-desktop]
-
-                [:home :!WER1] ;; desktop 1
-                [:end :!WER2] ;; desktop 2
-
-                ;; todo: unbind caps / rebind to cmd
             ]
         }
 
@@ -388,6 +346,53 @@
                 ;; [:!TEc :!WERq]
                 [:!TEv :open-things-add]
                 [:!TEb :open-quick-note]
+            ]
+        }
+
+        ;; ============== NUPHY ==============
+
+        {
+            :des "[Nuphy] General"
+            :rules [
+                [:profile :Default :River :RiverGaming]
+                [:condi :nuphy]
+
+                ;; --- Main ---
+
+                [:##right_control :fn] ;; Right Control -> FN
+
+                [:f14 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
+                [:f14 { :key :!CTz :repeat false } [:graphite]] ;; lock screen (graphite)
+
+                ;; --- Knob ---
+
+                [:f15 :mute] ;; knob press
+                [:f16 :volume_decrement] ;; knob counter-clockwise
+                [:f17 :volume_increment] ;; knob clockwise
+
+                [:!Sf16 :fine-vol-down]
+                [:!Sf17 :fine-vol-up]
+
+                [:!Cf15 :spotify-normalize-volume]
+                [:!Cf16 :spotify-volume-down]
+                [:!Cf17 :spotify-volume-up]
+            ]
+        }
+
+        {
+            :des "[Nuphy] Gaming"
+            :rules [
+                [:profile :RiverGaming]
+                [:condi :nuphy]
+
+                ;; always have a way to switch desktops
+                [:page_up :left-desktop]
+                [:page_down :right-desktop]
+
+                [:home :!WER1] ;; desktop 1
+                [:end :!WER2] ;; desktop 2
+
+                ;; todo: unbind caps / rebind to cmd
             ]
         }
 
