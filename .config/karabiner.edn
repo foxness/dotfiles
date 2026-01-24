@@ -97,6 +97,8 @@
     ;; }
 
     :tos {
+        ;; --- General ---
+
         :left-desktop { :key :!WERleft_arrow }
         :right-desktop { :key :!WERright_arrow }
         :mission-control { :key :!Tup_arrow }
@@ -108,6 +110,9 @@
         :spotify-normalize-volume { :key :!Ckeypad_asterisk }
         :spotify-volume-down { :key :!Ckeypad_hyphen }
         :spotify-volume-up { :key :!Ckeypad_plus }
+
+        :qwerty-lockscreen { :key :!CTq :repeat false }
+        :graphite-lockscreen { :key :!CTz :repeat false }
 
         :nope { :key :vk_none }
 
@@ -123,7 +128,7 @@
         :announce_space_on { :shell [:keyboard-maestro "Karabiner_AnnounceSpaceOn"] }
         :announce_space_off { :shell [:keyboard-maestro "Karabiner_AnnounceSpaceOff"] }
 
-        ;; --- Keyboard Maestro Applications ---
+        ;; --- Applications: Keyboard Maestro ---
 
         :open-notes { :key :!QWERw }
         :open-anki { :key :!WERc }
@@ -142,7 +147,7 @@
         :open-eagle { :key :!WERv }
         :open-things { :key :!QWERe }
 
-        ;; --- General ---
+        ;; --- Applications: General ---
 
         :open-quick-note { :key :!TSf10 }
         :open-things-add { :key :!TOSx }
@@ -273,8 +278,8 @@
 
                 ;; [:##right_option :fn] ;; Right Option -> FN
 
-                [:keypad_1 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
-                [:keypad_1 { :key :!CTz :repeat false } [:graphite]] ;; lock screen (graphite)
+                [:keypad_1 :qwerty-lockscreen [:!graphite]]
+                [:keypad_1 :graphite-lockscreen [:graphite]]
 
                 ;; --- Other ---
 
@@ -361,8 +366,8 @@
 
                 [:##right_control :fn] ;; Right Control -> FN
 
-                [:f14 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
-                [:f14 { :key :!CTz :repeat false } [:graphite]] ;; lock screen (graphite)
+                [:f14 :qwerty-lockscreen [:!graphite]]
+                [:f14 :graphite-lockscreen [:graphite]]
 
                 ;; --- Knob ---
 
