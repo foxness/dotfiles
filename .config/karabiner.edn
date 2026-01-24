@@ -322,29 +322,51 @@
             :rules [
                 [:condi :sofle]
 
-                [:!E1 :!WER1]
-                [:!E2 :!WER2]
+                ;; --- Left Thumb 1 (LT1) ---
+
+                [:!E1 :!WER5]
+                [:!E2 :!WER4]
                 [:!E3 :!WER3]
-                [:!E4 :!WER4]
-                [:!E5 :!WER5]
+                [:!E4 :!WER2]
+                [:!E5 :!WER1]
 
-                [:!Eq :!QWERe] ;; things
-                [:!Ew :!QWERw] ;; notes
-                [:!Ee :!WERc] ;; anki
-                [:!Er :!WERf] ;; finder
-                [:!Et :!WERq] ;; brave
+                [:!Eq :!QWERw] ;; notes
+                [:!Ew :!WERc] ;; anki
+                [:!Ee :!WERr] ;; firefox
+                [:!Er :!WERe] ;; spotify
+                [:!Et :!WERw] ;; discord
 
-                [:!Ea :!WERb] ;; activity monitor
-                [:!Es :!WERt] ;; telegram
-                [:!Ed :!WERg] ;; ghostty
-                [:!Ef :mission-control] ;; mission control
-                [:!Eg :!WERw] ;; discord
+                [:!Ea :!QWERa] ;; vscode
+                [:!Es :!WERg] ;; ghostty
+                [:!Ed :!WERf] ;; finder
+                [:!Ef :mission-control]
+                [:!Eg :!WERq] ;; brave
 
                 [:!Ez :!QWERq] ;; bitwarden
-                [:!Ex :!QWERa] ;; vscode
-                [:!Ec :!WERv] ;; eagle
-                [:!Ev :!WERr] ;; firefox
-                [:!Eb :!WERe] ;; spotify
+                [:!Ex :!WERb] ;; activity monitor
+                [:!Ec :!WERt] ;; telegram
+                [:!Ev :left-desktop]
+                [:!Eb :right-desktop]
+
+                ;; --- Left Thumb 1 (LT1) + LT5 ---
+
+                ;; [:!TEq :!WERq]
+                ;; [:!TEw :!WERq]
+                ;; [:!TEe :!WERq]
+                ;; [:!TEr :!WERq]
+                ;; [:!TEt :!WERq]
+
+                ;; [:!TEa :!WERq]
+                ;; [:!TEs :!WERq]
+                [:!TEd :!WERv] ;; eagle
+                [:!TEf :!QWERe] ;; things
+                ;; [:!TEg :!WERq]
+
+                ;; [:!TEz :!WERq]
+                ;; [:!TEx :!WERq]
+                ;; [:!TEc :!WERq]
+                ;; [:!TEv :!WERq]
+                ;; [:!TEb :!WERq]
             ]
         }
 
