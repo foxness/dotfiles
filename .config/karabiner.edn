@@ -141,6 +141,8 @@
         :open-telegram { :key :!WERt }
         :open-eagle { :key :!WERv }
         :open-things { :key :!QWERe }
+        :open-quick-note { :key :!TSf10 }
+        :open-things-add { :key :!TOSx }
     }
 
     :main [
@@ -384,8 +386,8 @@
                 ;; [:!TEz :!WERq]
                 ;; [:!TEx :!WERq]
                 ;; [:!TEc :!WERq]
-                ;; [:!TEv :!WERq]
-                ;; [:!TEb :!WERq]
+                [:!TEv :open-things-add]
+                [:!TEb :open-quick-note]
             ]
         }
 
@@ -487,7 +489,7 @@
                 [:!WERs :right-desktop]
                 [:!WERd :mission-control]
 
-                [:!WERz :!TSf10] ;; quick note
+                [:!WERz :open-quick-note]
 
                 [:!WERf12 [:sigkill-frontmost]]
 
