@@ -233,12 +233,22 @@
             :rules [
                 :sofle
 
+                ;; --- Languages ---
+
+                [:!Oescape { :input :graphite }]
+                [:!O1 { :input :statica }] ;; switching to these langs doesn't work consistensly
+                [:!O2 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:!O3 { :input :abc }]
+
                 ;; --- Main ---
 
                 [:!Cescape :!Ctab] ;; app switcher
                 [:!Ctab :!Cgrave_accent_and_tilde] ;; terminal
 
                 ;; [:##right_option :fn] ;; Right Option -> FN
+
+                ;; [:f14 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
+                ;; [:f14 { :key :!CTb :repeat false } [:!abc :!russian :!japanese :!statica]] ;; lock screen (graphite)
 
                 ;; --- Other ---
 
@@ -311,11 +321,6 @@
             :des "[Sofle] Navigation Layer"
             :rules [
                 [:condi :sofle]
-
-                ;; --- Main ---
-
-                ;; [:f14 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
-                ;; [:f14 { :key :!CTb :repeat false } [:!abc :!russian :!japanese :!statica]] ;; lock screen (graphite)
 
                 [:!E1 :!WER1]
                 [:!E2 :!WER2]
@@ -623,13 +628,6 @@
             :des "[Sofle] Option layer [Base]"
             :rules [
                 :sofle
-
-                ;; --- Languages ---
-
-                [:!Oescape { :input :graphite }]
-                [:!O1 { :input :statica }] ;; switching to these langs doesn't work consistensly
-                [:!O2 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!O3 { :input :abc }]
 
                 ;; --- Right side of keyboard ---
 
