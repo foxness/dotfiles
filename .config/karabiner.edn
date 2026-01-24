@@ -242,13 +242,13 @@
 
                 ;; --- Main ---
 
-                [:!Cescape :!Ctab] ;; app switcher
-                [:!Ctab :!Cgrave_accent_and_tilde] ;; terminal
+                [:!Cescape :!Cgrave_accent_and_tilde] ;; terminal
+                ;; [:!Cescape :!Ctab] ;; app switcher
 
                 ;; [:##right_option :fn] ;; Right Option -> FN
 
-                ;; [:f14 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
-                ;; [:f14 { :key :!CTb :repeat false } [:!abc :!russian :!japanese :!statica]] ;; lock screen (graphite)
+                [:keypad_2 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
+                [:keypad_2 { :key :!CTz :repeat false } [:graphite]] ;; lock screen (graphite)
 
                 ;; --- Other ---
 
@@ -281,7 +281,7 @@
                 [:##right_control :fn] ;; Right Control -> FN
 
                 [:f14 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
-                [:f14 { :key :!CTb :repeat false } [:!abc :!russian :!japanese :!statica]] ;; lock screen (graphite)
+                [:f14 { :key :!CTz :repeat false } [:graphite]] ;; lock screen (graphite)
 
                 ;; --- Knob ---
 
