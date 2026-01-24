@@ -97,8 +97,8 @@
     ;; }
 
     :tos {
-        :left-desktop { :key :!WERleft_arrow } ;; :left-desktop { :key :!Tleft_arrow }
-        :right-desktop { :key :!WERright_arrow } ;; :right-desktop { :key :!Tright_arrow }
+        :left-desktop { :key :!WERleft_arrow }
+        :right-desktop { :key :!WERright_arrow }
         :mission-control { :key :!Tup_arrow }
         :app-windows { :key :!Tdown_arrow }
 
@@ -122,6 +122,25 @@
 
         :announce_space_on { :shell [:keyboard-maestro "Karabiner_AnnounceSpaceOn"] }
         :announce_space_off { :shell [:keyboard-maestro "Karabiner_AnnounceSpaceOff"] }
+
+        ;; --- Applications ---
+
+        :open-notes { :key :!QWERw }
+        :open-anki { :key :!WERc }
+        :open-firefox { :key :!WERr }
+        :open-spotify { :key :!WERe }
+        :open-discord { :key :!WERw }
+
+        :open-vscode { :key :!QWERa }
+        :open-ghostty { :key :!WERg }
+        :open-finder { :key :!WERf }
+        :open-brave { :key :!WERq }
+        :open-bitwarden { :key :!QWERq }
+
+        :open-activity-monitor { :key :!WERb }
+        :open-telegram { :key :!WERt }
+        :open-eagle { :key :!WERv }
+        :open-things { :key :!QWERe }
     }
 
     :main [
@@ -330,21 +349,21 @@
                 [:!E4 :!WER2]
                 [:!E5 :!WER1]
 
-                [:!Eq :!QWERw] ;; notes
-                [:!Ew :!WERc] ;; anki
-                [:!Ee :!WERr] ;; firefox
-                [:!Er :!WERe] ;; spotify
-                [:!Et :!WERw] ;; discord
+                [:!Eq :open-notes]
+                [:!Ew :open-anki]
+                [:!Ee :open-firefox]
+                [:!Er :open-spotify]
+                [:!Et :open-discord]
 
-                [:!Ea :!QWERa] ;; vscode
-                [:!Es :!WERg] ;; ghostty
-                [:!Ed :!WERf] ;; finder
+                [:!Ea :open-vscode]
+                [:!Es :open-ghostty]
+                [:!Ed :open-finder]
                 [:!Ef :mission-control]
-                [:!Eg :!WERq] ;; brave
+                [:!Eg :open-brave]
 
-                [:!Ez :!QWERq] ;; bitwarden
-                [:!Ex :!WERb] ;; activity monitor
-                [:!Ec :!WERt] ;; telegram
+                [:!Ez :open-bitwarden]
+                [:!Ex :open-activity-monitor]
+                [:!Ec :open-telegram]
                 [:!Ev :left-desktop]
                 [:!Eb :right-desktop]
 
@@ -358,8 +377,8 @@
 
                 ;; [:!TEa :!WERq]
                 ;; [:!TEs :!WERq]
-                [:!TEd :!WERv] ;; eagle
-                [:!TEf :!QWERe] ;; things
+                [:!TEd :open-eagle]
+                [:!TEf :open-things]
                 ;; [:!TEg :!WERq]
 
                 ;; [:!TEz :!WERq]
