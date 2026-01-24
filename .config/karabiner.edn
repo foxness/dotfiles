@@ -247,8 +247,8 @@
 
                 ;; [:##right_option :fn] ;; Right Option -> FN
 
-                [:keypad_2 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
-                [:keypad_2 { :key :!CTz :repeat false } [:graphite]] ;; lock screen (graphite)
+                [:keypad_1 { :key :!CTq :repeat false } [:!graphite]] ;; lock screen (qwerty)
+                [:keypad_1 { :key :!CTz :repeat false } [:graphite]] ;; lock screen (graphite)
 
                 ;; --- Other ---
 
