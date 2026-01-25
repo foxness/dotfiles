@@ -259,6 +259,8 @@
             ]
         }
 
+        ;; ============== SOFLE ==============
+
         {
             :des "[Sofle] General"
             :rules [
@@ -275,8 +277,6 @@
 
                 [:!Cescape :open-quick-terminal]
                 [:!Cspacebar :open-alfred]
-
-                ;; [:##right_option :fn] ;; Right Option -> FN
 
                 [:keypad_1 :qwerty-lockscreen [:!graphite]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
@@ -296,61 +296,6 @@
                 ;; [:f9 :mute]
                 ;; [:f10 :volume_decrement]
                 ;; [:f11 :volume_increment]
-            ]
-        }
-
-        ;; ============== SOFLE ==============
-
-        {
-            :des "[Sofle] Navigation Layer"
-            :rules [
-                [:condi :sofle]
-
-                ;; --- Left Thumb 1 (LT1) ---
-
-                [:!E1 :!WER5]
-                [:!E2 :!WER4]
-                [:!E3 :!WER3]
-                [:!E4 :!WER2]
-                [:!E5 :!WER1]
-
-                [:!Eq :open-notes]
-                [:!Ew :open-anki]
-                [:!Ee :open-firefox]
-                [:!Er :open-spotify]
-                [:!Et :open-discord]
-
-                [:!Ea :open-vscode]
-                [:!Es :open-ghostty]
-                [:!Ed :open-finder]
-                [:!Ef :mission-control]
-                [:!Eg :open-brave]
-
-                [:!Ez :open-bitwarden]
-                [:!Ex :open-activity-monitor]
-                [:!Ec :open-telegram]
-                [:!Ev :left-desktop]
-                [:!Eb :right-desktop]
-
-                ;; --- Left Thumb 1 (LT1) + LT5 ---
-
-                ;; [:!TEq :!WERq]
-                ;; [:!TEw :!WERq]
-                ;; [:!TEe :!WERq]
-                ;; [:!TEr :!WERq]
-                ;; [:!TEt :!WERq]
-
-                ;; [:!TEa :!WERq]
-                ;; [:!TEs :!WERq]
-                [:!TEd :open-eagle]
-                [:!TEf :open-things]
-                ;; [:!TEg :!WERq]
-
-                ;; [:!TEz :!WERq]
-                ;; [:!TEx :!WERq]
-                ;; [:!TEc :!WERq]
-                [:!TEv :open-things-add]
-                [:!TEb :open-quick-note]
             ]
         }
 
@@ -406,13 +351,31 @@
         {
             :des "[Staggered] Graphite Angle Mod"
             :rules [
-                [:condi :!sofle :graphite :!extend-layer]
+                [:condi :!sofle :graphite :!square-layer]
 
                 [:#SRz :#SRx]
                 [:#SRx :#SRc]
                 [:#SRc :#SRv]
                 [:#SRv :#SRb]
                 [:#SRb :#SRz]
+            ]
+        }
+
+        {
+            :des "[Sofle] Statica UnAngle Mod"
+            :rules [
+                [:condi :sofle :statica :!square-layer]
+
+                [:#SRz :#SRclose_bracket]
+                [:#SRx :#SRz]
+                [:#SRc :#SRx]
+                [:#SRv :#SRc]
+                [:#SRb :#SRv]
+
+                [:!O#SRu :#SRopen_bracket] ;; sch na Alt+I
+                [:!O#SRi :#SRb] ;; tochka na Alt+I
+                [:!O#SRo :!O#SRj] ;; tverdy znak na Alt+O
+                [:!O#SRh :#SRgrave_accent_and_tilde] ;; yo na Alt+H
             ]
         }
 
@@ -479,17 +442,19 @@
             ]
         }
 
-        ;; ============== HYPER LAYER ==============
+        ;; ============== TRIANGLE LAYER ==============
 
         {
-            :des "Hyper layer"
+            :des "[Staggered] Triangle layer"
             :rules [
+                :!sofle
+
                 ;; --- Activation ---
 
-                [ ;; Capslock -> Hyper
+                [ ;; Capslock -> Triangle
                     :##caps_lock
                     { :key :!WEright_shift :lazy true } ;; lazy - modifier is sent only when pressed together with another key
-                    [:!sofle]
+                    nil
                     { :alone :delete_or_backspace }
                 ]
 
@@ -515,6 +480,163 @@
                 ;; [:!WERcomma :8]
                 ;; [:!WERperiod :9]
                 ;; [:!WERn :0]
+            ]
+        }
+
+        {
+            :des "[Sofle] Triangle Layer"
+            :rules [
+                :sofle
+
+                ;; --- Left Thumb 1 (LT1) ---
+
+                [:!E1 :!WER5]
+                [:!E2 :!WER4]
+                [:!E3 :!WER3]
+                [:!E4 :!WER2]
+                [:!E5 :!WER1]
+
+                [:!Eq :open-notes]
+                [:!Ew :open-anki]
+                [:!Ee :open-firefox]
+                [:!Er :open-spotify]
+                [:!Et :open-discord]
+
+                [:!Ea :open-vscode]
+                [:!Es :open-ghostty]
+                [:!Ed :open-finder]
+                [:!Ef :mission-control]
+                [:!Eg :open-brave]
+
+                [:!Ez :open-bitwarden]
+                [:!Ex :open-activity-monitor]
+                [:!Ec :open-telegram]
+                [:!Ev :left-desktop]
+                [:!Eb :right-desktop]
+
+                ;; --- Left Thumb 1 (LT1) + LT5 ---
+
+                ;; [:!TEq :!WERq]
+                ;; [:!TEw :!WERq]
+                ;; [:!TEe :!WERq]
+                ;; [:!TEr :!WERq]
+                ;; [:!TEt :!WERq]
+
+                ;; [:!TEa :!WERq]
+                ;; [:!TEs :!WERq]
+                [:!TEd :open-eagle]
+                [:!TEf :open-things]
+                ;; [:!TEg :!WERq]
+
+                ;; [:!TEz :!WERq]
+                ;; [:!TEx :!WERq]
+                ;; [:!TEc :!WERq]
+                [:!TEv :open-things-add]
+                [:!TEb :open-quick-note]
+            ]
+        }
+
+        ;; ============== SQUARE LAYER ==============
+
+        {
+            :des "[Staggered] Square layer activation"
+            :rules [
+                [:condi :!sofle]
+
+                [
+                    :##right_command
+                    ["square-layer" 1]
+                    nil
+                    {
+                        :afterup ["square-layer" 0]
+                        ;; :alone :delete_or_backspace
+                    }
+                ]
+            ]
+        }
+
+        {
+            :des "[Staggered] Square layer - Graphite"
+            :rules [
+                [:condi :!sofle :square-layer :graphite]
+
+                [:q :!Squote]                           ;; ? question mark
+                [:w :!Sbackslash]                       ;; | pipe
+                [:e :!Shyphen]                          ;; { open curly bracket
+                [:r :!Sequal_sign]                      ;; } close curly bracket
+                [:t :!S7]                               ;; & ampersand
+                [:y :grave_accent_and_tilde]            ;; ` backtick
+                [:u [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+                [:i :period]                            ;; - minus
+                [:o :!S2]                               ;; @ at
+                [:p :vk_none]
+                [:close_bracket :vk_none]
+                [:open_bracket :vk_none]
+
+                [:a :!Sopen_bracket]                    ;; : colon
+                [:s :close_bracket]                     ;; = equals sign
+                [:d :!S9]                               ;; ( open bracket
+                [:f :!S0]                               ;; ) close bracket
+                [:g :!S1]                               ;; ! exclamation mark
+                [:h :backslash]                         ;; \ backslash
+                [:j :hyphen]                            ;; [ open square bracket
+                [:k :equal_sign]                        ;; ] close square bracket
+                [:l :!S3]                               ;; # hashtag
+                [:semicolon :y]                         ;; ' quote
+                ;; [:quote :nope]
+
+                [:z :!S5]                               ;; % percent
+                [:x :!S8]                               ;; * asterisk
+                [:c :!Scomma]                           ;; " double quote
+                [:v :!Sclose_bracket]                   ;; + plus sign
+                [:b :!Speriod]                          ;; < open angle bracket
+                [:n :!Sslash]                           ;; > close angle bracket
+                [:m :!S6]                               ;; ^ caret
+                [:comma :!S4]                           ;; $ dollar
+                [:period :open_bracket]                 ;; ; semicolon
+                [:slash :slash]                         ;; / forward slash
+            ]
+        }
+        {
+            :des "[Sofle] Square layer - Graphite"
+            :rules [
+                [:condi :sofle :graphite]
+
+                [:!Wq :!Squote]                           ;; ? question mark
+                [:!Ww :!Sbackslash]                       ;; | pipe
+                [:!We :!Shyphen]                          ;; { open curly bracket
+                [:!Wr :!Sequal_sign]                      ;; } close curly bracket
+                [:!Wt :!S7]                               ;; & ampersand
+                [:!Wy :grave_accent_and_tilde]            ;; ` backtick
+                [:!Wu [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
+                [:!Wi :period]                            ;; - minus
+                [:!Wo :!S2]                               ;; @ at
+                [:!Wp :vk_none]
+                [:!Wclose_bracket :vk_none]
+                [:!Wopen_bracket :vk_none]
+
+                [:!Wa :!Sopen_bracket]                    ;; : colon
+                [:!Ws :close_bracket]                     ;; = equals sign
+                [:!Wd :!S9]                               ;; ( open bracket
+                [:!Wf :!S0]                               ;; ) close bracket
+                [:!Wg :!S1]                               ;; ! exclamation mark
+                [:!Wh :backslash]                         ;; \ backslash
+                [:!Wj :hyphen]                            ;; [ open square bracket
+                [:!Wk :equal_sign]                        ;; ] close square bracket
+                [:!Wl :!S3]                               ;; # hashtag
+                [:!Wsemicolon :y]                         ;; ' quote
+                ;; [:!Wquote :nope]
+
+                [:!Wz :!Sclose_bracket]                   ;; + plus sign
+                [:!Wx :!S5]                               ;; % percent
+                [:!Wc :!S8]                               ;; * asterisk
+                [:!Wv :!Scomma]                           ;; " double quote
+                [:!Wb :!Speriod]                          ;; < open angle bracket
+                [:!Wn :!Sslash]                           ;; > close angle bracket
+                [:!Wm :!S6]                               ;; ^ caret
+                [:!Wcomma :!S4]                           ;; $ dollar
+                [:!Wperiod :open_bracket]                 ;; ; semicolon
+                [:!Wslash :slash]                         ;; / forward slash
             ]
         }
 
@@ -555,7 +677,7 @@
                 ;; --- Activation ---
 
                 [:!C#TOStab :!C#TOStab] ;; smoothen Cmd-Tab
-                [:!WERtab :!WERtab] ;; smoothen Hyper-Tab
+                [:!WERtab :!WERtab] ;; smoothen Triangle-Tab
                 [:!Ttab :!Ttab] ;; smoothen Ctrl-Tab
                 [:!Otab :!Otab] ;; smoothen Opt-Tab
                 [:!Stab :!Stab] ;; smoothen Shift-Tab
@@ -712,108 +834,6 @@
             ]
         }
 
-        ;; ============== EXTEND LAYER ==============
-
-        {
-            :des "Extend layer activation"
-            :rules [
-                [
-                    :##right_command
-                    ["extend-layer" 1]
-                    nil
-                    {
-                        :afterup ["extend-layer" 0]
-                        ;; :alone :delete_or_backspace
-                    }
-                ]
-            ]
-        }
-
-        {
-            :des "[Staggered] Extend layer [Graphite]"
-            :rules [
-                [:condi :extend-layer :graphite]
-
-                [:q :!Squote]                           ;; ? question mark
-                [:w :!Sbackslash]                       ;; | pipe
-                [:e :!Shyphen]                          ;; { open curly bracket
-                [:r :!Sequal_sign]                      ;; } close curly bracket
-                [:t :!S7]                               ;; & ampersand
-                [:y :grave_accent_and_tilde]            ;; ` backtick
-                [:u [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
-                [:i :period]                            ;; - minus
-                [:o :!S2]                               ;; @ at
-                [:p :vk_none]
-                [:close_bracket :vk_none]
-                [:open_bracket :vk_none]
-
-                [:a :!Sopen_bracket]                    ;; : colon
-                [:s :close_bracket]                     ;; = equals sign
-                [:d :!S9]                               ;; ( open bracket
-                [:f :!S0]                               ;; ) close bracket
-                [:g :!S1]                               ;; ! exclamation mark
-                [:h :backslash]                         ;; \ backslash
-                [:j :hyphen]                            ;; [ open square bracket
-                [:k :equal_sign]                        ;; ] close square bracket
-                [:l :!S3]                               ;; # hashtag
-                [:semicolon :y]                         ;; ' quote
-                ;; [:quote :nope]
-
-                [:z :!S5]                               ;; % percent
-                [:x :!S8]                               ;; * asterisk
-                [:c :!Scomma]                           ;; " double quote
-                [:v :!Sclose_bracket]                   ;; + plus sign
-                [:b :!Speriod]                          ;; < open angle bracket
-                [:n :!Sslash]                           ;; > close angle bracket
-                [:m :!S6]                               ;; ^ caret
-                [:comma :!S4]                           ;; $ dollar
-                [:period :open_bracket]                 ;; ; semicolon
-                [:slash :slash]                         ;; / forward slash
-            ]
-        }
-        {
-            :des "[Sofle] Extend layer [Graphite]"
-            :rules [
-                [:condi :sofle :graphite]
-
-                [:!Wq :!Squote]                           ;; ? question mark
-                [:!Ww :!Sbackslash]                       ;; | pipe
-                [:!We :!Shyphen]                          ;; { open curly bracket
-                [:!Wr :!Sequal_sign]                      ;; } close curly bracket
-                [:!Wt :!S7]                               ;; & ampersand
-                [:!Wy :grave_accent_and_tilde]            ;; ` backtick
-                [:!Wu [:!Sgrave_accent_and_tilde :nope]]  ;; ~ tilde
-                [:!Wi :period]                            ;; - minus
-                [:!Wo :!S2]                               ;; @ at
-                [:!Wp :vk_none]
-                [:!Wclose_bracket :vk_none]
-                [:!Wopen_bracket :vk_none]
-
-                [:!Wa :!Sopen_bracket]                    ;; : colon
-                [:!Ws :close_bracket]                     ;; = equals sign
-                [:!Wd :!S9]                               ;; ( open bracket
-                [:!Wf :!S0]                               ;; ) close bracket
-                [:!Wg :!S1]                               ;; ! exclamation mark
-                [:!Wh :backslash]                         ;; \ backslash
-                [:!Wj :hyphen]                            ;; [ open square bracket
-                [:!Wk :equal_sign]                        ;; ] close square bracket
-                [:!Wl :!S3]                               ;; # hashtag
-                [:!Wsemicolon :y]                         ;; ' quote
-                ;; [:!Wquote :nope]
-
-                [:!Wz :!Sclose_bracket]                   ;; + plus sign
-                [:!Wx :!S5]                               ;; % percent
-                [:!Wc :!S8]                               ;; * asterisk
-                [:!Wv :!Scomma]                           ;; " double quote
-                [:!Wb :!Speriod]                          ;; < open angle bracket
-                [:!Wn :!Sslash]                           ;; > close angle bracket
-                [:!Wm :!S6]                               ;; ^ caret
-                [:!Wcomma :!S4]                           ;; $ dollar
-                [:!Wperiod :open_bracket]                 ;; ; semicolon
-                [:!Wslash :slash]                         ;; / forward slash
-            ]
-        }
-
         ;; ============== NULL LAYER ==============
 
         ;; {
@@ -933,10 +953,10 @@
         ;;     ]
         ;; }
 
-        ;; ============== HYPER + COMMAND LAYER ==============
+        ;; ============== HYPER LAYER (Triangle + Cmd) ==============
 
         ;; {
-        ;;     :des "Hyper + Command layer"
+        ;;     :des "Hyper layer"
         ;;     :rules [
         ;;         [:!CWER1 { :input :canary }]
         ;;     ]
