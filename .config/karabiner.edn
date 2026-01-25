@@ -268,10 +268,10 @@
 
                 ;; --- Languages ---
 
-                [:!Oescape { :input :graphite }]
-                [:!O1 { :input :statica }] ;; switching to these langs doesn't work consistensly
-                [:!O2 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!O3 { :input :abc }]
+                [:!Oj { :input :graphite }]
+                [:!Ok { :input :statica }] ;; switching to these langs doesn't work consistensly
+                [:!Ol :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:!Osemicolon { :input :abc }]
 
                 ;; --- Main ---
 
