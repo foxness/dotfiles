@@ -271,7 +271,7 @@
                 [:!Oj { :input :graphite }]
                 [:!Ok { :input :statica }] ;; switching to these langs doesn't work consistensly
                 [:!Ol :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!Osemicolon { :input :abc }]
+                [:!Oi { :input :abc }]
 
                 ;; --- Main ---
 
