@@ -271,15 +271,15 @@
                 [:!Oj { :input :graphite }]
                 [:!Ok { :input :statica }] ;; switching to these langs doesn't work consistensly
                 [:!Ol :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!Oi { :input :abc }]
+                [:!Osemicolon { :input :abc }]
 
                 ;; --- Main ---
 
                 [:!Cescape :open-quick-terminal]
                 [:!Cspacebar :open-alfred]
 
-                [:keypad_1 :qwerty-lockscreen [:!graphite]]
-                [:keypad_1 :graphite-lockscreen [:graphite]]
+                [:keypad_3 :qwerty-lockscreen [:!graphite]]
+                [:keypad_3 :graphite-lockscreen [:graphite]]
 
                 ;; --- Other ---
 
@@ -717,8 +717,9 @@
         ;; ============== SPACE LAYER ==============
 
         {
-            :des "Space layer"
+            :des "[Staggered] Space layer"
             :rules [
+                :!sofle
 
                 ;; --- Space is space :) ---
 
