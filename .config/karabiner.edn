@@ -108,8 +108,8 @@
         :fine-vol-up { :key :!SOvolume_up }
 
         :spotify-normalize-volume { :key :!Ckeypad_asterisk }
-        :spotify-volume-down { :key :!Ckeypad_hyphen }
-        :spotify-volume-up { :key :!Ckeypad_plus }
+        :spotify-volume-down { :key :keypad_hyphen }
+        :spotify-volume-up { :key :keypad_plus }
 
         :qwerty-lockscreen { :key :!CTq :repeat false }
         :graphite-lockscreen { :key :!CTz :repeat false }
@@ -648,7 +648,6 @@
             :des "[Staggered] Meh layer (Esc)"
             :rules [
                 :!sofle
-
                 ;; --- Activation ---
 
                 ;; Escape is Shift-Option (Meh) when held
@@ -676,7 +675,6 @@
             :des "[Sofle] Meh layer"
             :rules [
                 :sofle
-
                 ;; --- Window management ---
 
                 [:!ER1 :!TOup_arrow] ;; maximize
@@ -698,8 +696,9 @@
         ;; ============== SWITCH LAYER ==============
 
         {
-            :des "Switch layer (Tab key)"
+            :des "[Staggered] Switch layer (Tab)"
             :rules [
+                :!sofle
                 ;; --- Activation ---
 
                 [:!C#TOStab :!C#TOStab] ;; smoothen Cmd-Tab
@@ -737,6 +736,35 @@
                 [:!WRf1 :spotify-volume-down]
                 [:!WRf2 :spotify-volume-up]
                 [:!WRf3 :spotify-normalize-volume]
+            ]
+        }
+
+        {
+            :des "[Sofle] Switch layer"
+            :rules [
+                :sofle
+                ;; --- Media controls ---
+
+                [:!WR1 :volume_decrement]
+                [:!WR2 :volume_increment]
+                [:!WR3 :mute]
+
+                [:!WRa :play_or_pause]
+                [:!WRs :rewind]
+                [:!WRd :fast_forward]
+
+                ;; --- Spotify ---
+
+                [:!WRq :keypad_asterisk] ;; mouse media play/pause
+                ;; [:!WRq :!QWEf13] ;; spotify play/pause
+                [:!WRw :!QWEf14] ;; spotify previous song
+                [:!WRe :!QWEf15] ;; spotify next song
+                [:!WRr :!QWEf16] ;; spotify like
+                [:!WRt :!QWEf17] ;; spotify unlike
+
+                [:!OWR1 :spotify-volume-down]
+                [:!OWR2 :spotify-volume-up]
+                [:!OWR3 :spotify-normalize-volume]
             ]
         }
 
