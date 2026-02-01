@@ -645,31 +645,27 @@
         ;; ============== MEH LAYER ==============
 
         {
-            :des "Meh layer (Escape) Activation"
-            :rules [
-                ;; Escape is Shift-Option (Meh) when held
-                [:##escape { :key :!Eright_shift :lazy true } nil { :alone :escape }]
-            ]
-        }
-
-        {
-            :des "[Staggered] Meh layer"
+            :des "[Staggered] Meh layer (Esc)"
             :rules [
                 :!sofle
 
+                ;; --- Activation ---
+
+                ;; Escape is Shift-Option (Meh) when held
+                [:##escape { :key :!Eright_shift :lazy true } nil { :alone :escape }]
+
                 ;; --- Window management ---
 
-                [:!ERf1 :!QERfn] ;; move windows
-                [:!ERf2 :!WERfn] ;; resize windows
-                [:!ERf3 :app-windows]
+                [:!ERf1 :!TOup_arrow] ;; maximize
+                [:!ERf2 :!TO1] ;; center
+                [:!ERf3 :!TO2] ;; river center
+                [:!ERf4 :!TOdown_arrow] ;; return
 
-                [:!ERgrave_accent_and_tilde :!Ff [:!graphite]] ;; fullscreen (qwerty)
-                [:!ERgrave_accent_and_tilde :!Fu [:graphite]] ;; fullscreen (graphite)
-
-                [:!ER1 :!TOup_arrow] ;; maximize
-                [:!ER2 :!TO1] ;; center
-                [:!ER3 :!TO2] ;; river center
-                [:!ER4 :!TOdown_arrow] ;; return
+                [:!ER1 :!QERfn] ;; move windows
+                [:!ER2 :!WERfn] ;; resize windows
+                [:!ER3 :!Ff [:!graphite]] ;; fullscreen (qwerty)
+                [:!ER3 :!Fu [:graphite]] ;; fullscreen (graphite)
+                [:!ER4 :app-windows]
 
                 [:!ERq :!TOleft_arrow] ;; left
                 [:!ERw :!TOright_arrow] ;; right
@@ -683,16 +679,16 @@
 
                 ;; --- Window management ---
 
-                [:!ER1 :!QERfn] ;; move windows
-                [:!ER2 :!WERfn] ;; resize windows
-                [:!ER3 :!Ff [:!graphite]] ;; fullscreen (qwerty)
-                [:!ER3 :!Fu [:graphite]] ;; fullscreen (graphite)
-                [:!ER4 :app-windows]
+                [:!ER1 :!TOup_arrow] ;; maximize
+                [:!ER2 :!TO1] ;; center
+                [:!ER3 :!TO2] ;; river center
+                [:!ER4 :!TOdown_arrow] ;; return
 
-                [:!ERq :!TOup_arrow] ;; maximize
-                [:!ERw :!TO1] ;; center
-                [:!ERe :!TO2] ;; river center
-                [:!ERr :!TOdown_arrow] ;; return
+                [:!ERq :!QERfn] ;; move windows
+                [:!ERw :!WERfn] ;; resize windows
+                [:!ERe :!Ff [:!graphite]] ;; fullscreen (qwerty)
+                [:!ERe :!Fu [:graphite]] ;; fullscreen (graphite)
+                [:!ERr :app-windows]
 
                 [:!ERa :!TOleft_arrow] ;; left
                 [:!ERs :!TOright_arrow] ;; right
