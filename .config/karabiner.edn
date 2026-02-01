@@ -169,8 +169,10 @@
         }
 
         {
-            :des "Leader Key - Enable F keys"
+            :des "[Staggered] Leader Key - Enable F keys"
             :rules [
+                :!sofle
+
                 ;; enables F keys for 1 second in Leader Key
                 ;; based on
                 ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/a77cccb8e8d4e6a9fb8ef2e6bcfe49a4299e4cb2/examples.org#command-q-twice-to-quit-application
@@ -643,12 +645,17 @@
         ;; ============== MEH LAYER ==============
 
         {
-            :des "Meh layer (Escape key)"
+            :des "Meh layer (Escape) Activation"
             :rules [
-                ;; --- Activation ---
-
                 ;; Escape is Shift-Option (Meh) when held
                 [:##escape { :key :!Eright_shift :lazy true } nil { :alone :escape }]
+            ]
+        }
+
+        {
+            :des "[Staggered] Meh layer"
+            :rules [
+                :!sofle
 
                 ;; --- Window management ---
 
@@ -657,7 +664,7 @@
                 [:!ERf3 :app-windows]
 
                 [:!ERgrave_accent_and_tilde :!Ff [:!graphite]] ;; fullscreen (qwerty)
-                [:!ERgrave_accent_and_tilde :!Fu [:!abc :!russian :!japanese :!statica]] ;; fullscreen (graphite)
+                [:!ERgrave_accent_and_tilde :!Fu [:graphite]] ;; fullscreen (graphite)
 
                 [:!ER1 :!TOup_arrow] ;; maximize
                 [:!ER2 :!TO1] ;; center
@@ -666,6 +673,29 @@
 
                 [:!ERq :!TOleft_arrow] ;; left
                 [:!ERw :!TOright_arrow] ;; right
+            ]
+        }
+
+        {
+            :des "[Sofle] Meh layer"
+            :rules [
+                :sofle
+
+                ;; --- Window management ---
+
+                [:!ER1 :!QERfn] ;; move windows
+                [:!ER2 :!WERfn] ;; resize windows
+                [:!ER3 :!Ff [:!graphite]] ;; fullscreen (qwerty)
+                [:!ER3 :!Fu [:graphite]] ;; fullscreen (graphite)
+                [:!ER4 :app-windows]
+
+                [:!ERq :!TOup_arrow] ;; maximize
+                [:!ERw :!TO1] ;; center
+                [:!ERe :!TO2] ;; river center
+                [:!ERr :!TOdown_arrow] ;; return
+
+                [:!ERa :!TOleft_arrow] ;; left
+                [:!ERs :!TOright_arrow] ;; right
             ]
         }
 
