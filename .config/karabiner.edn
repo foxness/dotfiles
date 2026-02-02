@@ -153,6 +153,7 @@
         :open-things-add { :key :!TOSx }
         :open-quick-terminal { :key :!Cgrave_accent_and_tilde }
         :open-alfred { :key :!WERspacebar }
+        :open-leaderkey { :key :!QWf20 }
     }
 
     :main [
@@ -169,7 +170,7 @@
         }
 
         {
-            :des "[Staggered] Leader Key - Enable F keys"
+            :des "[Staggered] Leader Key Activation - Enable F keys"
             :rules [
                 :!sofle
 
@@ -185,7 +186,7 @@
 
                 [
                     :!WRspacebar ;; tab-space (switch layer)
-                    [:!QWf20 ["leaderkey" 1]] ;; leader key activation key
+                    [:open-leaderkey ["leaderkey" 1]] ;; leader key activation key
                     nil
                     {
                         :delayed {
@@ -196,6 +197,15 @@
                         :params { :delay 1000 } ;; it can even be 5 seconds, tested
                     }
                 ]
+            ]
+        }
+
+        {
+            :des "[Sofle] Leader Key Activation"
+            :rules [
+                :sofle
+
+                [:!WRspacebar :open-leaderkey]
             ]
         }
 
