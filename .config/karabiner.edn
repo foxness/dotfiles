@@ -280,10 +280,11 @@
 
                 ;; --- Languages ---
 
-                [:!Oj { :input :graphite }]
-                [:!Ok { :input :statica }] ;; switching to these langs doesn't work consistensly
-                [:!Ol :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!Osemicolon { :input :abc }]
+                ;; triangle layer
+                [:!Ej { :input :graphite }]
+                [:!Ek { :input :statica }] ;; switching to these langs doesn't work consistensly
+                [:!El :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:!Ei { :input :abc }]
 
                 ;; --- Main ---
 
@@ -545,6 +546,12 @@
                 ;; [:!TEc :!WERq]
                 [:!TEv :open-things-add]
                 [:!TEb :open-quick-note]
+
+                ;; --- Right Thumb ---
+
+                ;; [:!Ej :!WERq]
+                ;; [:!Ek :!WERq]
+                ;; [:!El :!WERq]
             ]
         }
 
@@ -780,59 +787,59 @@
 
         ;; ============== SPACE LAYER ==============
 
-        {
-            :des "[Staggered] Space layer"
-            :rules [
-                :!sofle
+        ;; {
+        ;;     :des "[Staggered] Space layer"
+        ;;     :rules [
+        ;;         :!sofle
 
-                ;; --- Space is space :) ---
+        ;;         ;; --- Space is space :) ---
 
-                [:!Tf12 [["space-layer" 1] :announce_space_on] [:!space-layer]]
-                [:!Tf12 [["space-layer" 0] :announce_space_off] [:space-layer]]
+        ;;         [:!Tf12 [["space-layer" 1] :announce_space_on] [:!space-layer]]
+        ;;         [:!Tf12 [["space-layer" 0] :announce_space_off] [:space-layer]]
 
-                [ ;; Space is Space (RCmd-RCtrl when held)
-                    :spacebar ;; do ":##spacebar" if you wanna use it with shift or something
-                    nil
-                    [:space-layer]
-                    {
-                        :alone :spacebar
-                        :held { :key :!Qright_control :lazy true } ;; aka QW
-                        :params { :alone 170 :held 170 }
-                    }
-                ]
+        ;;         [ ;; Space is Space (RCmd-RCtrl when held)
+        ;;             :spacebar ;; do ":##spacebar" if you wanna use it with shift or something
+        ;;             nil
+        ;;             [:space-layer]
+        ;;             {
+        ;;                 :alone :spacebar
+        ;;                 :held { :key :!Qright_control :lazy true } ;; aka QW
+        ;;                 :params { :alone 170 :held 170 }
+        ;;             }
+        ;;         ]
 
-                ;; --- Main ---
+        ;;         ;; --- Main ---
 
-                [:!QWb :spacebar] ;; repeat space. note: this shortcut is lock screen by default
+        ;;         [:!QWb :spacebar] ;; repeat space. note: this shortcut is lock screen by default
 
-                [:!QW1 :!WER1]
-                [:!QW2 :!WER2]
-                [:!QW3 :!WER3]
-                [:!QW4 :!WER4]
+        ;;         [:!QW1 :!WER1]
+        ;;         [:!QW2 :!WER2]
+        ;;         [:!QW3 :!WER3]
+        ;;         [:!QW4 :!WER4]
 
-                ;; [:!QWa :left-desktop]
-                ;; [:!QWs :right-desktop]
-                ;; [:!QWd :mission-control]
+        ;;         ;; [:!QWa :left-desktop]
+        ;;         ;; [:!QWs :right-desktop]
+        ;;         ;; [:!QWd :mission-control]
 
-                [:!QWa :left_arrow]
-                [:!QWd :right_arrow]
-                [:!QWw :up_arrow]
-                [:!QWs :down_arrow]
+        ;;         [:!QWa :left_arrow]
+        ;;         [:!QWd :right_arrow]
+        ;;         [:!QWw :up_arrow]
+        ;;         [:!QWs :down_arrow]
 
-                ;; --- Numpad ---
+        ;;         ;; --- Numpad ---
 
-                [:!QWu :4]
-                [:!QWi :5]
-                [:!QWo :6]
-                [:!QWh :0]
-                [:!QWj :1]
-                [:!QWk :2]
-                [:!QWl :3]
-                [:!QWm :7]
-                [:!QWcomma :8]
-                [:!QWperiod :9]
-            ]
-        }
+        ;;         [:!QWu :4]
+        ;;         [:!QWi :5]
+        ;;         [:!QWo :6]
+        ;;         [:!QWh :0]
+        ;;         [:!QWj :1]
+        ;;         [:!QWk :2]
+        ;;         [:!QWl :3]
+        ;;         [:!QWm :7]
+        ;;         [:!QWcomma :8]
+        ;;         [:!QWperiod :9]
+        ;;     ]
+        ;; }
 
         ;; ============== OPTION LAYER ==============
 
