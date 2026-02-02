@@ -396,47 +396,47 @@
             :rules [
                 :graphite
 
-                [:!C#TOShyphen :!C#TOSperiod]
-                [:!C#TOSequal_sign :!C#TOSclose_bracket]
+                [:!C#TOSRhyphen :!C#TOSRperiod]
+                [:!C#TOSRequal_sign :!C#TOSRclose_bracket]
 
                 ;; when CMD is pressed this is standard qwerty but
                 ;; - cmd-E and cmd-H are swapped (for easy window hiding)
 
-                [:!C#TOSq :!C#TOSz]
-                [:!C#TOSw :!C#TOSr]
-                [:!C#TOSe :!C#TOSj] ;; standard qwerty: [:!C#TOSe :!C#TOSl]
-                [:!C#TOSr :!C#TOSs]
-                [:!C#TOSt :!C#TOSd]
-                [:!C#TOSy :!C#TOSh]
-                [:!C#TOSu :!C#TOSo]
-                [:!C#TOSi :!C#TOSsemicolon]
-                [:!C#TOSo :!C#TOSi]
-                [:!C#TOSp :!C#TOSm]
-                [:!C#TOSopen_bracket :!C#TOShyphen]
-                [:!C#TOSclose_bracket :!C#TOSequal_sign]
+                [:!C#TOSRq :!C#TOSRz]
+                [:!C#TOSRw :!C#TOSRr]
+                [:!C#TOSRe :!C#TOSRj] ;; standard qwerty: [:!C#TOSRe :!C#TOSRl]
+                [:!C#TOSRr :!C#TOSRs]
+                [:!C#TOSRt :!C#TOSRd]
+                [:!C#TOSRy :!C#TOSRh]
+                [:!C#TOSRu :!C#TOSRo]
+                [:!C#TOSRi :!C#TOSRsemicolon]
+                [:!C#TOSRo :!C#TOSRi]
+                [:!C#TOSRp :!C#TOSRm]
+                [:!C#TOSRopen_bracket :!C#TOSRhyphen]
+                [:!C#TOSRclose_bracket :!C#TOSRequal_sign]
 
-                [:!C#TOSa :!C#TOSk]
-                [:!C#TOSs :!C#TOSf]
-                [:!C#TOSd :!C#TOSe]
-                [:!C#TOSf :!C#TOSu]
-                ;; [:!C#TOSg :!C#TOSg] ;; maps to itself
-                [:!C#TOSh :!C#TOSl] ;; standard qwerty: [:!C#TOSh :!C#TOSj]
-                [:!C#TOSj :!C#TOSt]
-                [:!C#TOSk :!C#TOSn]
-                [:!C#TOSl :!C#TOSw]
-                [:!C#TOSsemicolon :!C#TOSopen_bracket]
-                [:!C#TOSquote :!C#TOSy]
+                [:!C#TOSRa :!C#TOSRk]
+                [:!C#TOSRs :!C#TOSRf]
+                [:!C#TOSRd :!C#TOSRe]
+                [:!C#TOSRf :!C#TOSRu]
+                ;; [:!C#TOSRg :!C#TOSRg] ;; maps to itself
+                [:!C#TOSRh :!C#TOSRl] ;; standard qwerty: [:!C#TOSRh :!C#TOSRj]
+                [:!C#TOSRj :!C#TOSRt]
+                [:!C#TOSRk :!C#TOSRn]
+                [:!C#TOSRl :!C#TOSRw]
+                [:!C#TOSRsemicolon :!C#TOSRopen_bracket]
+                [:!C#TOSRquote :!C#TOSRy]
 
-                [:!C#TOSz :!C#TOSp]
-                ;; [:!C#TOSx :!C#TOSx] ;; maps to itself
-                [:!C#TOSc :!C#TOSv]
-                [:!C#TOSv :!C#TOSb]
-                [:!C#TOSb :!C#TOSq]
-                [:!C#TOSn :!C#TOSa]
-                [:!C#TOSm :!C#TOSc]
-                [:!C#TOScomma :!C#TOSquote]
-                [:!C#TOSperiod :!C#TOScomma]
-                ;; [:!C#TOSslash :!C#TOSslash] ;; maps to itself
+                [:!C#TOSRz :!C#TOSRp]
+                ;; [:!C#TOSRx :!C#TOSRx] ;; maps to itself
+                [:!C#TOSRc :!C#TOSRv]
+                [:!C#TOSRv :!C#TOSRb]
+                [:!C#TOSRb :!C#TOSRq]
+                [:!C#TOSRn :!C#TOSRa]
+                [:!C#TOSRm :!C#TOSRc]
+                [:!C#TOSRcomma :!C#TOSRquote]
+                [:!C#TOSRperiod :!C#TOSRcomma]
+                ;; [:!C#TOSRslash :!C#TOSRslash] ;; maps to itself
             ]
         }
 
