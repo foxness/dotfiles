@@ -148,6 +148,8 @@
         :open-things { :key :!QWERe }
         :open-obsidian { :key :!QWER1 }
 
+        :open-safari { :key :!QWERs }
+
         :toggle-amphetamine { :key :!WERslash }
         :toggle-ice { :key :!WERquote }
         :toggle-horo { :key :!WERperiod }
@@ -506,7 +508,7 @@
             :rules [
                 :sofle
 
-                ;; --- Left Thumb 1 (LT1) ---
+                ;; --- Left Hand ---
 
                 [:!E1 :!WER1]
                 [:!E2 :!WER2]
@@ -520,37 +522,24 @@
                 [:!Er :open-firefox]
                 [:!Et :open-finder]
 
-                [:!Ea :open-vscode]
+                [:!Ea :open-things]
                 [:!Es :open-ghostty]
                 [:!Ed :open-discord]
                 [:!Ef :open-brave]
                 [:!Eg :mission-control]
 
-                [:!Ez :open-bitwarden]
-                [:!Ex :open-activity-monitor]
-                [:!Ec :open-telegram]
+                [:!Ez :open-telegram]
+                [:!Ex :open-vscode]
+                [:!Ec :open-eagle]
                 [:!Ev :left-desktop]
                 [:!Eb :right-desktop]
 
-                ;; --- Left Thumb 1 (LT1) + LT5 ---
+                [:!Eescape :open-activity-monitor]
 
-                ;; [:!TEq :!WERq]
-                ;; [:!TEw :!WERq]
-                ;; [:!TEe :!WERq]
-                ;; [:!TEr :!WERq]
-                ;; [:!TEt :!WERq]
+                ;; --- Left Hand Extra ---
 
-                ;; [:!TEa :!WERq]
-                ;; [:!TEs :!WERq]
-                [:!TEd :open-eagle]
-                [:!TEf :open-things]
-                ;; [:!TEg :!WERq]
-
-                ;; [:!TEz :!WERq]
-                ;; [:!TEx :!WERq]
-                ;; [:!TEc :!WERq]
-                [:!TEv :open-things-add]
-                [:!TEb :open-quick-note]
+                [:!OEq :open-bitwarden]
+                [:!OEw :open-safari]
 
                 ;; --- Right Hand ---
 
@@ -559,6 +548,8 @@
                 [:!E8 :toggle-horo]
 
                 [:!Eu :open-obsidian]
+                [:!Em :open-quick-note]
+                [:!Ecomma :open-things-add]
             ]
         }
 
