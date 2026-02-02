@@ -502,11 +502,11 @@
 
                 ;; --- Left Thumb 1 (LT1) ---
 
-                [:!E1 :!WER5]
-                [:!E2 :!WER4]
+                [:!E1 :!WER1]
+                [:!E2 :!WER2]
                 [:!E3 :!WER3]
-                [:!E4 :!WER2]
-                [:!E5 :!WER1]
+                [:!E4 :!WER4]
+                [:!E5 :!WER5]
 
                 [:!Eq :open-notes]
                 [:!Ew :open-anki]
