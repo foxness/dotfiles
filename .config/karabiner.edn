@@ -146,6 +146,11 @@
         :open-telegram { :key :!WERt }
         :open-eagle { :key :!WERv }
         :open-things { :key :!QWERe }
+        :open-obsidian { :key :!QWER1 }
+
+        :toggle-amphetamine { :key :!WERslash }
+        :toggle-ice { :key :!WERquote }
+        :toggle-horo { :key :!WERperiod }
 
         ;; --- Applications: General ---
 
@@ -511,15 +516,15 @@
 
                 [:!Eq :open-notes]
                 [:!Ew :open-anki]
-                [:!Ee :open-firefox]
-                [:!Er :open-spotify]
-                [:!Et :open-discord]
+                [:!Ee :open-spotify]
+                [:!Er :open-firefox]
+                [:!Et :open-finder]
 
                 [:!Ea :open-vscode]
                 [:!Es :open-ghostty]
-                [:!Ed :open-finder]
-                [:!Ef :mission-control]
-                [:!Eg :open-brave]
+                [:!Ed :open-discord]
+                [:!Ef :open-brave]
+                [:!Eg :mission-control]
 
                 [:!Ez :open-bitwarden]
                 [:!Ex :open-activity-monitor]
@@ -547,11 +552,13 @@
                 [:!TEv :open-things-add]
                 [:!TEb :open-quick-note]
 
-                ;; --- Right Thumb ---
+                ;; --- Right Hand ---
 
-                ;; [:!Ej :!WERq]
-                ;; [:!Ek :!WERq]
-                ;; [:!El :!WERq]
+                [:!E6 :toggle-amphetamine]
+                [:!E7 :toggle-ice]
+                [:!E8 :toggle-horo]
+
+                [:!Eu :open-obsidian]
             ]
         }
 
