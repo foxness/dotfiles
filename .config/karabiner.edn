@@ -922,10 +922,10 @@
         ;; ============== RIVERGAMING ==============
 
         {
-            :des "Dota"
+            :des "[Staggered] Dota"
             :rules [
                 [:profile :RiverGaming]
-                [:condi :dota]
+                [:condi :dota :!sofle]
 
                 [:##caps_lock :left_control nil { :alone :n }]
                 [:##left_command :left_option]
@@ -972,10 +972,10 @@
         }
 
         {
-            :des "Starcraft 2"
+            :des "[Staggered] Starcraft 2"
             :rules [
                 [:profile :RiverGaming]
-                [:condi :starcraft]
+                [:condi :starcraft :!sofle]
 
                 [:##caps_lock :!Tleft_option]
                 [:##left_command :left_control]
@@ -983,10 +983,10 @@
         }
 
         {
-            :des "Terraria"
+            :des "[Staggered] Terraria"
             :rules [
                 [:profile :RiverGaming]
-                [:condi :terraria]
+                [:condi :terraria :!sofle]
 
                 [:##Cq :vk_none] ;; prevent from quitting
                 [:##Cw :vk_none] ;; same thing
