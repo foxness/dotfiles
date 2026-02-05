@@ -298,8 +298,8 @@
                 [:!Cescape :open-quick-terminal]
                 [:!Cspacebar :open-alfred]
 
-                [:keypad_3 :qwerty-lockscreen [:!graphite]]
-                [:keypad_3 :graphite-lockscreen [:graphite]]
+                [:keypad_2 :qwerty-lockscreen [:!graphite]]
+                [:keypad_2 :graphite-lockscreen [:graphite]]
 
                 ;; --- Other ---
 
