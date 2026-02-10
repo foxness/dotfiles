@@ -572,8 +572,8 @@
 
                 ;; --- Left Hand Extra ---
 
-                [:!OEq :open-bitwarden]
-                [:!OEw :open-safari]
+                [:!TEq :open-bitwarden]
+                [:!TEw :open-safari]
 
                 ;; --- Right Hand ---
 
