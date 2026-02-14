@@ -59,7 +59,7 @@
     }
 
     :devices {
-        :nuphy [{ :vendor_id 2007 }]
+        :nuphy [{ :vendor_id 6645 :product_id 4136 }]
         :sofle [{ :vendor_id 7504 :product_id 24926 }]
     }
 
