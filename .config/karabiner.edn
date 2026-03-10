@@ -259,7 +259,8 @@
                 :!sofle
 
                 [:f1 { :input :graphite }]
-                [:f2 { :input :statica }] ;; switching to these langs doesn't work consistensly
+                ;; [:f2 { :input :statica }] ;; switching to these langs doesn't work consistensly
+                [:f2 :!QWf16] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:f3 :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:f4 { :input :abc }]
 
@@ -324,7 +325,8 @@
 
                 ;; triangle layer
                 [:!Ej { :input :graphite }]
-                [:!Ek { :input :statica }] ;; switching to these langs doesn't work consistensly
+                ;; [:!Ek { :input :statica }] ;; switching to these langs doesn't work consistensly
+                [:!Ek :!QWf16] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:!El :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
                 [:!Ei { :input :abc }]
 
@@ -338,19 +340,12 @@
 
                 ;; --- Other ---
 
-                ;; makes Fine Volume Adjustment work
-                [:!SOf11 :fine-vol-down]
-                [:!SOf12 :fine-vol-up]
+                [:!Ekeypad_3 :display_brightness_decrement]
+                [:!Ekeypad_1 :display_brightness_increment]
 
-                ;; [:f5 :display_brightness_decrement]
-                ;; [:f6 :display_brightness_increment]
-
-                ;; [:f7 :!QWf12] ;; do not disturb [todo: something better than this?]
-                ;; [:f8 :play_or_pause]
-
-                ;; [:f9 :mute]
-                ;; [:f10 :volume_decrement]
-                ;; [:f11 :volume_increment]
+                [:!Ekeypad_0 :mute]
+                [:!Ekeypad_4 :volume_decrement]
+                [:!Ekeypad_2 :volume_increment]
             ]
         }
 
