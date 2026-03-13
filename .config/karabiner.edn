@@ -550,10 +550,10 @@
                 [:!Ew :open-anki]
                 [:!Ee :open-spotify]
                 [:!Er :open-firefox]
-                [:!Et :open-finder]
+                [:!Et :open-ghostty]
 
                 [:!Ea :open-things]
-                [:!Es :open-ghostty]
+                [:!Es :open-finder]
                 [:!Ed :open-discord]
                 [:!Ef :open-brave]
                 [:!Eg :mission-control]
@@ -568,8 +568,8 @@
 
                 ;; --- Left Hand Extra ---
 
-                [:!TEq :open-bitwarden]
-                [:!TEw :open-safari]
+                [:!SEq :open-bitwarden]
+                [:!SEw :open-safari]
 
                 ;; --- Right Hand ---
 
