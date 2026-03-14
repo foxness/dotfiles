@@ -115,6 +115,10 @@
         :qwerty-lockscreen { :key :!CTq :repeat false }
         :graphite-lockscreen { :key :!CTz :repeat false }
 
+        :screenshot-area { :key :!CS2 }
+        :screenshot { :key :!CS3 }
+        :screenshot-menu { :key :!CS5 }
+
         :nope { :key :vk_none }
 
         ;; in order for OSX to register a caps lock press, it has to be held for a little under 100ms
@@ -714,6 +718,12 @@
 
                 [:!ERq :!TOleft_arrow] ;; left
                 [:!ERw :!TOright_arrow] ;; right
+
+                ;; --- Meh + Cmd ---
+
+                [:!CER1 :screenshot-area]
+                [:!CER2 :screenshot]
+                [:!CER3 :screenshot-menu]
             ]
         }
 
@@ -736,6 +746,12 @@
 
                 [:!ERa :!TOleft_arrow] ;; left
                 [:!ERs :!TOright_arrow] ;; right
+
+                ;; --- Meh + Cmd ---
+
+                [:!CER1 :screenshot-area]
+                [:!CER2 :screenshot]
+                [:!CER3 :screenshot-menu]
             ]
         }
 
