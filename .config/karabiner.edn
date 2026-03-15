@@ -231,7 +231,7 @@
                 [:f4 [:f4 ["leaderkey" 0]] [:leaderkey]]
 
                 [
-                    :!WRspacebar ;; tab-space (switch layer)
+                    :!WRq ;; tab-q (switch layer)
                     [:open-leaderkey ["leaderkey" 1]] ;; leader key activation key
                     nil
                     {
@@ -251,7 +251,7 @@
             :rules [
                 :sofle
 
-                [:!WRspacebar :open-leaderkey]
+                [:!WRq :open-leaderkey]
             ]
         }
 
@@ -339,8 +339,8 @@
                 [:!Cescape :open-quick-terminal]
                 [:!Cspacebar :open-alfred]
 
-                [:keypad_2 :qwerty-lockscreen [:!graphite]]
-                [:keypad_2 :graphite-lockscreen [:graphite]]
+                [:keypad_1 :qwerty-lockscreen [:!graphite]]
+                [:keypad_1 :graphite-lockscreen [:graphite]]
 
                 ;; --- Other ---
 
@@ -788,12 +788,12 @@
 
                 ;; --- Spotify ---
 
-                [:!WRq :keypad_asterisk] ;; mouse media play/pause
+                [:!WRw :keypad_asterisk] ;; mouse media play/pause
                 ;; [:!WRq :!QWEf13] ;; spotify play/pause
-                [:!WRw :!QWEf14] ;; spotify previous song
-                [:!WRe :!QWEf15] ;; spotify next song
-                [:!WRr :!QWEf16] ;; spotify like
-                [:!WRt :!QWEf17] ;; spotify unlike
+                [:!WRe :!QWEf14] ;; spotify previous song
+                [:!WRr :!QWEf15] ;; spotify next song
+                [:!WRt :!QWEf16] ;; spotify like
+                [:!WRy :!QWEf17] ;; spotify unlike
 
                 [:!WRf1 :spotify-volume-down]
                 [:!WRf2 :spotify-volume-up]
@@ -817,12 +817,12 @@
 
                 ;; --- Spotify ---
 
-                [:!WRq :keypad_asterisk] ;; mouse media play/pause
+                [:!WRw :keypad_asterisk] ;; mouse media play/pause
                 ;; [:!WRq :!QWEf13] ;; spotify play/pause
-                [:!WRw :!QWEf14] ;; spotify previous song
-                [:!WRe :!QWEf15] ;; spotify next song
-                [:!WRr :!QWEf16] ;; spotify like
-                [:!WRt :!QWEf17] ;; spotify unlike
+                [:!WRe :!QWEf14] ;; spotify previous song
+                [:!WRr :!QWEf15] ;; spotify next song
+                [:!WRt :!QWEf16] ;; spotify like
+                [:!WRy :!QWEf17] ;; spotify unlike
 
                 [:!OWR1 :spotify-volume-down]
                 [:!OWR2 :spotify-volume-up]
