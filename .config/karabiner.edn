@@ -231,7 +231,7 @@
                 [:f4 [:f4 ["leaderkey" 0]] [:leaderkey]]
 
                 [
-                    :!WRq ;; tab-q (switch layer)
+                    :!WRspacebar ;; tab-q (switch layer)
                     [:open-leaderkey ["leaderkey" 1]] ;; leader key activation key
                     nil
                     {
@@ -251,7 +251,7 @@
             :rules [
                 :sofle
 
-                [:!WRq :open-leaderkey]
+                [:!Cescape :open-leaderkey]
             ]
         }
 
@@ -337,8 +337,8 @@
 
                 ;; --- Main ---
 
-                [:!Cescape :open-quick-terminal]
-                [:!Cspacebar :open-alfred]
+                [:!WEf14 :open-alfred]
+                [:!WEf15 :open-quick-terminal]
 
                 [:keypad_1 :qwerty-lockscreen [:!graphite]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
