@@ -323,7 +323,8 @@
         {
             :des "[Sofle] General"
             :rules [
-                :sofle
+                [:profile :Default :River :RiverGaming]
+                [:condi :sofle]
 
                 ;; --- Languages ---
 
