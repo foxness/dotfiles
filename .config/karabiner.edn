@@ -792,12 +792,12 @@
 
                 ;; --- Spotify ---
 
-                [:!WRw :keypad_asterisk] ;; mouse media play/pause
+                [:!WRq :keypad_asterisk] ;; mouse media play/pause
                 ;; [:!WRq :!QWEf13] ;; spotify play/pause
-                [:!WRe :!QWEf14] ;; spotify previous song
-                [:!WRr :!QWEf15] ;; spotify next song
-                [:!WRt :!QWEf16] ;; spotify like
-                [:!WRy :!QWEf17] ;; spotify unlike
+                [:!WRw :!QWEf14] ;; spotify previous song
+                [:!WRe :!QWEf15] ;; spotify next song
+                [:!WRr :!QWEf16] ;; spotify like
+                [:!WRt :!QWEf17] ;; spotify unlike
 
                 [:!WRf1 :spotify-volume-down]
                 [:!WRf2 :spotify-volume-up]
@@ -821,12 +821,12 @@
 
                 ;; --- Spotify ---
 
-                [:!WRw :keypad_asterisk] ;; mouse media play/pause
+                [:!WRq :keypad_asterisk] ;; mouse media play/pause
                 ;; [:!WRq :!QWEf13] ;; spotify play/pause
-                [:!WRe :!QWEf14] ;; spotify previous song
-                [:!WRr :!QWEf15] ;; spotify next song
-                [:!WRt :!QWEf16] ;; spotify like
-                [:!WRy :!QWEf17] ;; spotify unlike
+                [:!WRw :!QWEf14] ;; spotify previous song
+                [:!WRe :!QWEf15] ;; spotify next song
+                [:!WRr :!QWEf16] ;; spotify like
+                [:!WRt :!QWEf17] ;; spotify unlike
 
                 [:!OWR1 :spotify-volume-down]
                 [:!OWR2 :spotify-volume-up]
