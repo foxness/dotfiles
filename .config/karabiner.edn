@@ -366,6 +366,9 @@
 
                 [:##right_control :fn] ;; Right Control -> FN
 
+                ;; temporarily make switch-profile button work until I change the hardware config
+                [:f13 :!Tf13]
+
                 [:f14 :qwerty-lockscreen [:!graphite]]
                 [:f14 :graphite-lockscreen [:graphite]]
 
