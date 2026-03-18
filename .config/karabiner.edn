@@ -163,7 +163,7 @@
 
         :open-quick-note { :key :!TSf10 }
         :open-things-add { :key :!TOSx }
-        :open-quick-terminal { :key :!Cgrave_accent_and_tilde }
+        :open-quick-terminal { :key :!Cf20 }
         :open-alfred { :key :!WERspacebar }
         :open-leaderkey { :key :!QWf20 }
 
@@ -251,7 +251,7 @@
             :rules [
                 :sofle
 
-                [:!Cescape :open-leaderkey]
+                [:!Cgrave_accent_and_tilde :open-leaderkey]
             ]
         }
 
@@ -337,8 +337,8 @@
 
                 ;; --- Main ---
 
-                [:!WEf14 :open-alfred]
-                [:!WEf15 :open-quick-terminal]
+                [:!QEf14 :open-alfred]
+                [:!QEf15 :open-quick-terminal]
 
                 [:keypad_1 :qwerty-lockscreen [:!graphite]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
