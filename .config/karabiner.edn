@@ -331,11 +331,11 @@
                 ;; --- Languages ---
 
                 ;; triangle layer
-                [:!Ej { :input :graphite }]
+                [:!Eb { :input :graphite }]
                 ;; [:!Ek { :input :statica }] ;; switching to these langs doesn't work consistensly
-                [:!Ek :!QWf16] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!El :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!Ei { :input :abc }]
+                [:!Ev :!QWf16] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:!Ec :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
+                [:!Ex { :input :abc }]
 
                 ;; --- Main ---
 
@@ -550,46 +550,53 @@
 
                 ;; --- Left Hand ---
 
+                [:!Eescape :open-activity-monitor]
                 [:!E1 :!WER1]
                 [:!E2 :!WER2]
                 [:!E3 :!WER3]
                 [:!E4 :!WER4]
                 [:!E5 :!WER5]
 
-                [:!Eq :open-notes]
+                [:!Etab :left-desktop]
+                [:!Eq :right-desktop]
                 [:!Ew :open-anki]
                 [:!Ee :open-spotify]
                 [:!Er :open-firefox]
                 [:!Et :open-ghostty]
 
-                [:!Ea :open-things]
+                [:!Ea :open-vscode]
                 [:!Es :open-finder]
                 [:!Ed :open-discord]
                 [:!Ef :open-brave]
                 [:!Eg :mission-control]
 
-                [:!Ez :open-telegram]
-                [:!Ex :open-vscode]
-                [:!Ec :open-eagle]
-                [:!Ev :left-desktop]
-                [:!Eb :right-desktop]
-
-                [:!Eescape :open-activity-monitor]
+                [:!Ez :open-notes]
+                ;; [:!Ex :open-notes]
+                ;; [:!Ec :open-things]
+                ;; [:!Ev :open-quick-note]
+                ;; [:!Eb :open-things-add]
 
                 ;; --- Left Hand Extra ---
 
-                [:!SEq :open-bitwarden]
-                [:!SEw :open-safari]
+                ;; square + shift
+                [:!SE1 :open-bitwarden]
+
+                [:!SEq :open-notes]
+                [:!SEw :open-things]
+                [:!SEe :open-obsidian]
+                [:!SEr :open-telegram]
+                [:!SEa :open-eagle]
+                [:!SEs :open-safari]
+
+                ;; square + ctrl
+                [:!TEq :open-quick-note]
+                [:!TEw :open-things-add]
 
                 ;; --- Right Hand ---
 
                 [:!E6 :toggle-amphetamine]
                 [:!E7 :toggle-ice]
                 [:!E8 :toggle-horo]
-
-                [:!Eu :open-obsidian]
-                [:!Em :open-quick-note]
-                [:!Ecomma :open-things-add]
             ]
         }
 
