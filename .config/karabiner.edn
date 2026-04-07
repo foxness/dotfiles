@@ -597,6 +597,17 @@
                 [:!E6 :toggle-amphetamine]
                 [:!E7 :toggle-ice]
                 [:!E8 :toggle-horo]
+
+                [:!Eu :4]
+                [:!Ei :5]
+                [:!Eo :6]
+                [:!Ej :1]
+                [:!Ek :2]
+                [:!El :3]
+                [:!Esemicolon :0]
+                [:!Em :7]
+                [:!Ecomma :8]
+                [:!Eperiod :9]
             ]
         }
 
