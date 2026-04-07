@@ -353,6 +353,24 @@
                 [:!Ekeypad_0 :mute]
                 [:!Ekeypad_4 :volume_decrement]
                 [:!Ekeypad_2 :volume_increment]
+
+                ;; --- Triangle numpad ---
+
+                [:!Eu :4]
+                [:!Ei :5]
+                [:!Eo :6]
+
+                [:!Eh :0]
+                [:!Ej :1]
+                [:!Ek :2]
+                [:!El :3]
+                [:!Esemicolon :0]
+
+                [:!Em :7]
+                [:!Ecomma :8]
+                [:!Eperiod :9]
+
+                [:!QEf13 :0]
             ]
         }
 
@@ -597,17 +615,6 @@
                 [:!E6 :toggle-amphetamine]
                 [:!E7 :toggle-ice]
                 [:!E8 :toggle-horo]
-
-                [:!Eu :4]
-                [:!Ei :5]
-                [:!Eo :6]
-                [:!Ej :1]
-                [:!Ek :2]
-                [:!El :3]
-                [:!Esemicolon :0]
-                [:!Em :7]
-                [:!Ecomma :8]
-                [:!Eperiod :9]
             ]
         }
 
