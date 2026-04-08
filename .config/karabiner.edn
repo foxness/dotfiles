@@ -330,12 +330,10 @@
 
                 ;; --- Languages ---
 
-                ;; triangle layer
-                [:!Eb { :input :graphite }]
-                ;; [:!Ek { :input :statica }] ;; switching to these langs doesn't work consistensly
-                [:!Ev :!QWf16] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!Ec :!QWf17] ;; [:f3 { :input :japanese }] ;; so we do it the hacky way in keyboard maestro
-                [:!Ex { :input :abc }]
+                [:!Eb { :input :graphite }] ;; graphite, triangle
+                [:!Wm :!QWf16] ;; russian, square
+                [:!Wcomma :!QWf17] ;; japanese, square
+                [:!Wperiod { :input :abc }] ;; qwerty, square
 
                 ;; --- Main ---
 
@@ -582,17 +580,19 @@
                 [:!Er :open-firefox]
                 [:!Et :open-ghostty]
 
+                [:!Egrave_accent_and_tilde :open-eagle]
                 [:!Ea :open-vscode]
                 [:!Es :open-finder]
                 [:!Ed :open-discord]
                 [:!Ef :open-brave]
                 [:!Eg :mission-control]
 
+                [:!Ereturn_or_enter :open-safari]
                 [:!Ez :open-notes]
-                ;; [:!Ex :open-notes]
-                ;; [:!Ec :open-things]
-                ;; [:!Ev :open-quick-note]
-                ;; [:!Eb :open-things-add]
+                [:!Ex :open-things]
+                [:!Ec :open-things-add]
+                [:!Ev :open-quick-note]
+                ;; [:!Eb :open-notes]
 
                 ;; --- Left Hand Extra ---
 
@@ -603,12 +603,10 @@
                 [:!SEw :open-things]
                 [:!SEe :open-obsidian]
                 [:!SEr :open-telegram]
-                [:!SEa :open-eagle]
-                [:!SEs :open-safari]
 
                 ;; square + ctrl
-                [:!TEq :open-quick-note]
-                [:!TEw :open-things-add]
+                ;; [:!TEq :open-quick-note]
+                ;; [:!TEw :open-things-add]
 
                 ;; --- Right Hand ---
 
@@ -716,9 +714,9 @@
                 [:!Wv :g-doublequote]
                 [:!Wb :g-angleopen]
                 [:!Wn :g-angleclose]
-                [:!Wm :g-caret]
-                [:!Wcomma :g-dollar]
-                [:!Wperiod :g-semicolon]
+                ;; [:!Wm :g-caret]
+                ;; [:!Wcomma :g-dollar]
+                ;; [:!Wperiod :g-semicolon]
                 [:!Wslash :g-slash]
             ]
         }
