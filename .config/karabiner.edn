@@ -67,6 +67,7 @@
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphite\\.graphite$" }
+        :night { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.night\\.night$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
         :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
         :statica { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.statica\\.statica$" }
@@ -343,15 +344,6 @@
                 [:keypad_1 :qwerty-lockscreen [:!graphite]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
 
-                ;; --- Other ---
-
-                [:!Ekeypad_3 :display_brightness_decrement]
-                [:!Ekeypad_1 :display_brightness_increment]
-
-                [:!Ekeypad_0 :mute]
-                [:!Ekeypad_4 :volume_decrement]
-                [:!Ekeypad_2 :volume_increment]
-
                 ;; --- Triangle numpad ---
 
                 [:!Eu :4]
@@ -369,6 +361,36 @@
                 [:!Eperiod :9]
 
                 ;; [:!QEf13 :0]
+
+                ;; --- Other ---
+
+                [:!Ekeypad_3 :display_brightness_decrement]
+                [:!Ekeypad_1 :display_brightness_increment]
+
+                [:!Ekeypad_0 :mute]
+                [:!Ekeypad_4 :volume_decrement]
+                [:!Ekeypad_2 :volume_increment]
+            ]
+        }
+
+        {
+            :des "[Sofle] Night1"
+            :rules [
+                [:profile :Default :River :RiverGaming]
+                [:condi :sofle :!night]
+
+                [:#RSkeypad_period :nope]
+            ]
+        }
+
+        {
+            :des "[Sofle] Night2"
+            :rules [
+                [:profile :Default :River :RiverGaming]
+                [:condi :sofle :night]
+
+                [:#RSkeypad_period :quote] ;; quote is R in night
+                [:#RSquote :open_bracket]
             ]
         }
 
