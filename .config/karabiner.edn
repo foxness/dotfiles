@@ -67,7 +67,7 @@
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphite\\.graphite$" }
-        :night { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.night\\.night$" }
+        :raze { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.raze\\.raze$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
         :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
         :statica { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.statica\\.statica$" }
@@ -338,59 +338,42 @@
 
                 ;; --- Main ---
 
-                [:!QEf14 :open-alfred]
-                [:!QEf15 :open-quick-terminal]
+                [:!Ekeypad_2 :open-alfred]
+                [:!Ekeypad_3 :open-quick-terminal]
 
                 [:keypad_1 :qwerty-lockscreen [:!graphite]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
 
-                ;; --- Triangle numpad ---
+                ;; --- Joystick ---
 
-                [:!Eu :4]
-                [:!Ei :5]
-                [:!Eo :6]
+                [:!Rkeypad_3 :display_brightness_decrement]
+                [:!Rkeypad_1 :display_brightness_increment]
 
-                [:!Eh [:0 :0]]
-                [:!Ej :0]
-                [:!Ek :1]
-                [:!El :2]
-                [:!Esemicolon :3]
-
-                [:!Em :7]
-                [:!Ecomma :8]
-                [:!Eperiod :9]
-
-                ;; [:!QEf13 :0]
-
-                ;; --- Other ---
-
-                [:!Ekeypad_3 :display_brightness_decrement]
-                [:!Ekeypad_1 :display_brightness_increment]
-
-                [:!Ekeypad_0 :mute]
-                [:!Ekeypad_4 :volume_decrement]
-                [:!Ekeypad_2 :volume_increment]
+                [:!Rkeypad_0 :mute]
+                [:!Rkeypad_4 :volume_decrement]
+                [:!Rkeypad_2 :volume_increment]
             ]
         }
 
         {
-            :des "[Sofle] Night1"
+            :des "[Sofle] Raze1"
             :rules [
                 [:profile :Default :River :RiverGaming]
-                [:condi :sofle :!night]
+                [:condi :sofle :!raze]
 
                 [:#RSkeypad_period :nope]
             ]
         }
 
         {
-            :des "[Sofle] Night2"
+            :des "[Sofle] Raze2"
             :rules [
                 [:profile :Default :River :RiverGaming]
-                [:condi :sofle :night]
+                [:condi :sofle :raze]
 
-                [:#RSkeypad_period :quote] ;; quote is R in night
+                [:#RSkeypad_period :quote] ;; quote is R in raze
                 [:#RSquote :open_bracket]
+                [:#RSopen_bracket :backslash]
             ]
         }
 
