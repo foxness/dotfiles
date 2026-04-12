@@ -115,6 +115,7 @@
 
         :qwerty-lockscreen { :key :!CTq :repeat false }
         :graphite-lockscreen { :key :!CTz :repeat false }
+        :raze-lockscreen { :key :!CTx :repeat false }
 
         :screenshot-area { :key :!CS2 }
         :screenshot { :key :!CS3 }
@@ -333,16 +334,18 @@
 
                 [:!Eb { :input :graphite }] ;; graphite, triangle
                 [:!Wm :!QWf16] ;; russian, square
-                [:!Wcomma :!QWf17] ;; japanese, square
-                [:!Wperiod { :input :abc }] ;; qwerty, square
+                [:!Wcomma :!QWf17] ;; japanese
+                [:!Wperiod { :input :raze }] ;; raze
+                [:!Wslash { :input :abc }] ;; qwerty
 
                 ;; --- Main ---
 
                 [:!Ekeypad_2 :open-alfred]
                 [:!Ekeypad_3 :open-quick-terminal]
 
-                [:keypad_1 :qwerty-lockscreen [:!graphite]]
+                [:keypad_1 :qwerty-lockscreen [:!graphite :!raze]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
+                [:keypad_1 :raze-lockscreen [:raze]]
 
                 ;; --- Joystick ---
 
@@ -392,8 +395,9 @@
                 ;; temporarily make switch-profile button work until I change the hardware config
                 [:f13 :!Tf13]
 
-                [:f14 :qwerty-lockscreen [:!graphite]]
+                [:f14 :qwerty-lockscreen [:!graphite :!raze]]
                 [:f14 :graphite-lockscreen [:graphite]]
+                [:f14 :raze-lockscreen [:raze]]
 
                 ;; --- Knob ---
 
