@@ -510,6 +510,55 @@
         }
 
         {
+            :des "Base Raze - Qwertified CMD"
+            :rules [
+                :raze
+
+                [:!C#TOSRhyphen :!C#TOSRperiod]
+                [:!C#TOSRequal_sign :!C#TOSRclose_bracket]
+
+                ;; when CMD is pressed this is standard qwerty but
+                ;; - cmd-E and cmd-H are swapped (for easy window hiding)
+
+                [:!C#TOSRq :!C#TOSRx]
+                [:!C#TOSRw :!C#TOSRm]
+                [:!C#TOSRe :!C#TOSRd] ;; standard qwerty: [:!C#TOSRe :!C#TOSRl]
+                [:!C#TOSRr :!C#TOSRquote]
+                [:!C#TOSRt :!C#TOSRf]
+                [:!C#TOSRy :!C#TOSRh]
+                [:!C#TOSRu :!C#TOSRo]
+                [:!C#TOSRi :!C#TOSRsemicolon]
+                [:!C#TOSRo :!C#TOSRi]
+                [:!C#TOSRp :!C#TOSRg]
+                [:!C#TOSRopen_bracket :!C#TOSRhyphen]
+                [:!C#TOSRclose_bracket :!C#TOSRequal_sign]
+
+                [:!C#TOSRa :!C#TOSRk]
+                ;; [:!C#TOSRs :!C#TOSRs] ;; maps to itself
+                [:!C#TOSRd :!C#TOSRr]
+                [:!C#TOSRf :!C#TOSRw]
+                [:!C#TOSRg :!C#TOSRu]
+                [:!C#TOSRh :!C#TOSRl] ;; standard qwerty: [:!C#TOSRh :!C#TOSRd]
+                [:!C#TOSRj :!C#TOSRy]
+                [:!C#TOSRk :!C#TOSRv]
+                [:!C#TOSRl :!C#TOSRe]
+                [:!C#TOSRsemicolon :!C#TOSRopen_bracket]
+                [:!C#TOSRquote :!C#TOSRn]
+
+                [:!C#TOSRz :!C#TOSRq]
+                [:!C#TOSRx :!C#TOSRz]
+                [:!C#TOSRc :!C#TOSRj]
+                [:!C#TOSRv :!C#TOSRb]
+                [:!C#TOSRb :!C#TOSRt]
+                [:!C#TOSRn :!C#TOSRa]
+                [:!C#TOSRm :!C#TOSRc]
+                [:!C#TOSRcomma :!C#TOSRp]
+                [:!C#TOSRperiod :!C#TOSRcomma]
+                ;; [:!C#TOSRslash :!C#TOSRslash] ;; maps to itself
+            ]
+        }
+
+        {
             :des "Base Qwerty"
             :rules [
                 [:condi :!graphite]
