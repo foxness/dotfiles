@@ -161,6 +161,13 @@
         :toggle-ice { :key :!WERquote }
         :toggle-horo { :key :!WERperiod }
 
+        ;; --- Applications: Rectangle ---
+
+        :rectangle-maximize { :key :!TOreturn_or_enter }
+        :rectangle-center { :key :!TO1 }
+        :rectangle-almostmax { :key :!TO2 }
+        :rectangle-restore { :key :!TOdelete_or_backspace }
+
         ;; --- Applications: General ---
 
         :open-quick-note { :key :!TSf10 }
@@ -792,10 +799,10 @@
 
                 ;; --- Window management ---
 
-                [:!ERf1 :!TOup_arrow] ;; maximize
-                [:!ERf2 :!TO1] ;; center
-                [:!ERf3 :!TO2] ;; river center
-                [:!ERf4 :!TOdown_arrow] ;; return
+                [:!ERf1 :rectangle-maximize]
+                [:!ERf2 :rectangle-center]
+                [:!ERf3 :rectangle-almostmax]
+                [:!ERf4 :rectangle-restore]
 
                 [:!ER1 :!QERfn] ;; move windows
                 [:!ER2 :!WERfn] ;; resize windows
@@ -820,10 +827,10 @@
                 :sofle
                 ;; --- Window management ---
 
-                [:!ER1 :!TOup_arrow] ;; maximize
-                [:!ER2 :!TO1] ;; center
-                [:!ER3 :!TO2] ;; river center
-                [:!ER4 :!TOdown_arrow] ;; return
+                [:!ER1 :rectangle-maximize]
+                [:!ER2 :rectangle-center]
+                [:!ER3 :rectangle-almostmax]
+                [:!ER4 :rectangle-restore]
 
                 [:!ERq :!QERfn] ;; move windows
                 [:!ERw :!WERfn] ;; resize windows
