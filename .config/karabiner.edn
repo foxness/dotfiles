@@ -117,9 +117,10 @@
         :graphite-lockscreen { :key :!CTz :repeat false }
         :raze-lockscreen { :key :!CTx :repeat false }
 
-        :screenshot-area { :key :!CS2 }
-        :screenshot { :key :!CS3 }
-        :screenshot-menu { :key :!CS5 }
+        :screenshot-area { :key :!CS1 }
+        :screenshot { :key :!CS2 }
+        :screenshot-menu { :key :!CSescape }
+        :owl-ocr { :key :!CS3 }
 
         :nope { :key :vk_none }
 
@@ -165,8 +166,19 @@
 
         :rectangle-maximize { :key :!TOreturn_or_enter }
         :rectangle-center { :key :!TO1 }
-        :rectangle-almostmax { :key :!TO2 }
+        :rectangle-smallgap { :key :!TO3 }
+        :rectangle-largegap { :key :!TO4 }
+        :rectangle-almostmax { :key :!TO5 }
+        ;; :rectangle-almostmax { :key :!TO2 }
         :rectangle-restore { :key :!TOdelete_or_backspace }
+
+        :rectangle-moveleft { :key :!TO7 }
+        :rectangle-moveright { :key :!TO6 }
+
+        :rectangle-up { :key :!TOup_arrow }
+        :rectangle-down { :key :!TOdown_arrow }
+        :rectangle-left { :key :!TOleft_arrow }
+        :rectangle-right { :key :!TOright_arrow }
 
         :rectangle-move { :key :!QERfn }
         :rectangle-resize { :key :!WERfn }
@@ -802,10 +814,15 @@
 
                 ;; --- Window management ---
 
-                [:!ERf1 :rectangle-maximize]
-                [:!ERf2 :rectangle-center]
-                [:!ERf3 :rectangle-almostmax]
+                [:!ERf1 :rectangle-center]
+                [:!ERf2 :rectangle-moveleft]
+                [:!ERf3 :rectangle-moveright]
                 [:!ERf4 :rectangle-restore]
+
+                [:!ERi :rectangle-up]
+                [:!ERj :rectangle-left]
+                [:!ERk :rectangle-down]
+                [:!ERl :rectangle-right]
 
                 [:!ER1 :rectangle-move]
                 [:!ER2 :rectangle-resize]
@@ -813,14 +830,12 @@
                 [:!ER3 :!Fu [:graphite]] ;; fullscreen (graphite)
                 [:!ER4 :app-windows]
 
-                [:!ERq :!TOleft_arrow] ;; left
-                [:!ERw :!TOright_arrow] ;; right
-
                 ;; --- Meh + Cmd ---
 
-                [:!CER1 :screenshot-area]
-                [:!CER2 :screenshot]
-                [:!CER3 :screenshot-menu]
+                [:!CER1 :rectangle-maximize]
+                [:!CER2 :rectangle-smallgap]
+                [:!CER3 :rectangle-largegap]
+                [:!CER4 :rectangle-almostmax]
             ]
         }
 
@@ -830,10 +845,15 @@
                 :sofle
                 ;; --- Window management ---
 
-                [:!ER1 :rectangle-maximize]
-                [:!ER2 :rectangle-center]
-                [:!ER3 :rectangle-almostmax]
+                [:!ER1 :rectangle-center]
+                [:!ER2 :rectangle-moveleft]
+                [:!ER3 :rectangle-moveright]
                 [:!ER4 :rectangle-restore]
+
+                [:!ERi :rectangle-up]
+                [:!ERj :rectangle-left]
+                [:!ERk :rectangle-down]
+                [:!ERl :rectangle-right]
 
                 [:!ERq :rectangle-move]
                 [:!ERw :rectangle-resize]
@@ -841,14 +861,12 @@
                 [:!ERe :!Fu [:graphite]] ;; fullscreen (graphite)
                 [:!ERr :app-windows]
 
-                [:!ERa :!TOleft_arrow] ;; left
-                [:!ERs :!TOright_arrow] ;; right
-
                 ;; --- Meh + Cmd ---
 
-                [:!CER1 :screenshot-area]
-                [:!CER2 :screenshot]
-                [:!CER3 :screenshot-menu]
+                [:!CER1 :rectangle-maximize]
+                [:!CER2 :rectangle-smallgap]
+                [:!CER3 :rectangle-largegap]
+                [:!CER4 :rectangle-almostmax]
             ]
         }
 
