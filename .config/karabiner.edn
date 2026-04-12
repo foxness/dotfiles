@@ -168,6 +168,9 @@
         :rectangle-almostmax { :key :!TO2 }
         :rectangle-restore { :key :!TOdelete_or_backspace }
 
+        :rectangle-move { :key :!QERfn }
+        :rectangle-resize { :key :!WERfn }
+
         ;; --- Applications: General ---
 
         :open-quick-note { :key :!TSf10 }
@@ -804,8 +807,8 @@
                 [:!ERf3 :rectangle-almostmax]
                 [:!ERf4 :rectangle-restore]
 
-                [:!ER1 :!QERfn] ;; move windows
-                [:!ER2 :!WERfn] ;; resize windows
+                [:!ER1 :rectangle-move]
+                [:!ER2 :rectangle-resize]
                 [:!ER3 :!Ff [:!graphite]] ;; fullscreen (qwerty)
                 [:!ER3 :!Fu [:graphite]] ;; fullscreen (graphite)
                 [:!ER4 :app-windows]
@@ -832,8 +835,8 @@
                 [:!ER3 :rectangle-almostmax]
                 [:!ER4 :rectangle-restore]
 
-                [:!ERq :!QERfn] ;; move windows
-                [:!ERw :!WERfn] ;; resize windows
+                [:!ERq :rectangle-move]
+                [:!ERw :rectangle-resize]
                 [:!ERe :!Ff [:!graphite]] ;; fullscreen (qwerty)
                 [:!ERe :!Fu [:graphite]] ;; fullscreen (graphite)
                 [:!ERr :app-windows]
