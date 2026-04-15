@@ -115,7 +115,7 @@
 
         :qwerty-lockscreen { :key :!CTq :repeat false }
         :graphite-lockscreen { :key :!CTz :repeat false }
-        :raze-lockscreen { :key :!CTx :repeat false }
+        :raze-lockscreen { :key :!CTb :repeat false }
 
         :screenshot-area { :key :!CS1 }
         :screenshot { :key :!CS2 }
@@ -546,7 +546,7 @@
                 ;; when CMD is pressed this is standard qwerty but
                 ;; - cmd-E and cmd-H are swapped (for easy window hiding)
 
-                [:!C#TOSRq :!C#TOSRx]
+                [:!C#TOSRq :!C#TOSRb]
                 [:!C#TOSRw :!C#TOSRm]
                 [:!C#TOSRe :!C#TOSRd] ;; standard qwerty: [:!C#TOSRe :!C#TOSRl]
                 [:!C#TOSRr :!C#TOSRquote]
@@ -555,7 +555,7 @@
                 [:!C#TOSRu :!C#TOSRo]
                 [:!C#TOSRi :!C#TOSRsemicolon]
                 [:!C#TOSRo :!C#TOSRi]
-                [:!C#TOSRp :!C#TOSRg]
+                [:!C#TOSRp :!C#TOSRv]
                 [:!C#TOSRopen_bracket :!C#TOSRhyphen]
                 [:!C#TOSRclose_bracket :!C#TOSRequal_sign]
 
@@ -566,7 +566,7 @@
                 [:!C#TOSRg :!C#TOSRu]
                 [:!C#TOSRh :!C#TOSRl] ;; standard qwerty: [:!C#TOSRh :!C#TOSRd]
                 [:!C#TOSRj :!C#TOSRy]
-                [:!C#TOSRk :!C#TOSRv]
+                [:!C#TOSRk :!C#TOSRg]
                 [:!C#TOSRl :!C#TOSRe]
                 [:!C#TOSRsemicolon :!C#TOSRopen_bracket]
                 [:!C#TOSRquote :!C#TOSRn]
@@ -574,7 +574,7 @@
                 [:!C#TOSRz :!C#TOSRq]
                 [:!C#TOSRx :!C#TOSRz]
                 [:!C#TOSRc :!C#TOSRj]
-                [:!C#TOSRv :!C#TOSRb]
+                [:!C#TOSRv :!C#TOSRx]
                 [:!C#TOSRb :!C#TOSRt]
                 [:!C#TOSRn :!C#TOSRa]
                 [:!C#TOSRm :!C#TOSRc]
