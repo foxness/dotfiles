@@ -224,6 +224,40 @@
         :g-dollar { :key :!S4 }
         :g-semicolon { :key :open_bracket }
         :g-slash { :key :slash }
+
+        ;; --- Raze Symbols ---
+
+        :r-question { :key :!Sp }
+        :r-pipe { :key :!Sbackslash }
+        :r-curlyopen { :key :!Shyphen }
+        :r-curlyclose { :key :!Sequal_sign }
+        :r-ampersand { :key :!S7 }
+        :r-backtick { :key :grave_accent_and_tilde }
+        :r-tilde { :key :!Sgrave_accent_and_tilde }
+        :r-minus { :key :period }
+        :r-at { :key :!S2 }
+
+        :r-colon { :key :!Sopen_bracket }
+        :r-equals { :key :close_bracket }
+        :r-bracketopen { :key :!S9 }
+        :r-bracketclose { :key :!S0 }
+        :r-exclamation { :key :!S1 }
+        :r-backslash { :key :backslash }
+        :r-squareopen { :key :hyphen }
+        :r-squareclose { :key :equal_sign }
+        :r-hashtag { :key :!S3 }
+        :r-quote { :key :n }
+
+        :r-plus { :key :!Sclose_bracket }
+        :r-percent { :key :!S5 }
+        :r-asterisk { :key :!S8 }
+        :r-doublequote { :key :!Scomma }
+        :r-angleopen { :key :!Speriod }
+        :r-angleclose { :key :!Sslash }
+        :r-caret { :key :!S6 }
+        :r-dollar { :key :!S4 }
+        :r-semicolon { :key :open_bracket }
+        :r-slash { :key :slash }
     }
 
     :main [
@@ -798,6 +832,49 @@
                 ;; [:!Wcomma :g-dollar]
                 ;; [:!Wperiod :g-semicolon]
                 [:!Wslash :g-slash]
+            ]
+        }
+
+        {
+            :des "[Sofle] Square layer - Raze"
+            :rules [
+                [:condi :sofle :raze]
+
+                [:!Wq :r-question]
+                [:!Ww :r-pipe]
+                [:!We :r-curlyopen]
+                [:!Wr :r-curlyclose]
+                [:!Wt :r-ampersand]
+                [:!Wy :r-backtick]
+                [:!Wu :r-tilde]
+                [:!Wi :r-minus]
+                [:!Wo :r-at]
+                [:!Wp :vk_none]
+                [:!Wclose_bracket :vk_none]
+                [:!Wopen_bracket :vk_none]
+
+                [:!Wa :r-colon]
+                [:!Ws :r-equals]
+                [:!Wd :r-bracketopen]
+                [:!Wf :r-bracketclose]
+                [:!Wg :r-exclamation]
+                [:!Wh :r-backslash]
+                [:!Wj :r-squareopen]
+                [:!Wk :r-squareclose]
+                [:!Wl :r-hashtag]
+                [:!Wsemicolon :r-quote]
+                ;; [:quote :nope]
+
+                [:!Wz :r-doublequote]
+                [:!Wx :r-percent]
+                [:!Wc :r-asterisk]
+                [:!Wv :r-plus]
+                [:!Wb :r-angleopen]
+                [:!Wn :r-angleclose]
+                ;; [:!Wm :r-caret]
+                ;; [:!Wcomma :r-dollar]
+                ;; [:!Wperiod :r-semicolon]
+                [:!Wslash :r-slash]
             ]
         }
 
