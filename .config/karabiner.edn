@@ -1226,16 +1226,16 @@
             ]
         }
 
-        {
-            :des "[Staggered] Terraria"
-            :rules [
-                [:profile :RiverGaming]
-                [:condi :terraria :!sofle]
+        ;; {
+        ;;     :des "[Staggered] Terraria"
+        ;;     :rules [
+        ;;         [:profile :RiverGaming]
+        ;;         [:condi :terraria :!sofle]
 
-                [:##Cq :vk_none] ;; prevent from quitting
-                [:##Cw :vk_none] ;; same thing
-            ]
-        }
+        ;;         [:##Cq :vk_none] ;; prevent from quitting
+        ;;         [:##Cw :vk_none] ;; same thing
+        ;;     ]
+        ;; }
 
         ;; {
         ;;     :des "Home row mods"
