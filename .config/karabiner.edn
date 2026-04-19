@@ -414,15 +414,15 @@
             ]
         }
 
-        {
-            :des "[Sofle] Raze1"
-            :rules [
-                [:profile :Default :River :RiverGaming]
-                [:condi :sofle :!raze]
+        ;; {
+        ;;     :des "[Sofle] Raze1"
+        ;;     :rules [
+        ;;         [:profile :Default :River :RiverGaming]
+        ;;         [:condi :sofle :!raze]
 
-                [:#RSkeypad_period :nope]
-            ]
-        }
+        ;;         [:#RSkeypad_period :nope]
+        ;;     ]
+        ;; }
 
         {
             :des "[Sofle] Raze2"
