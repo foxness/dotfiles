@@ -695,7 +695,7 @@
                 [:!Et :open-ghostty]
 
                 [:!Egrave_accent_and_tilde :open-eagle]
-                [:!Ea :open-vscode]
+                [:!Ea :open-leaderkey]
                 [:!Es :open-finder]
                 [:!Ed :open-discord]
                 [:!Ef :open-brave]
@@ -703,7 +703,7 @@
 
                 [:!Ereturn_or_enter :open-safari]
                 [:!Ez :open-notes]
-                [:!Ex :open-things]
+                [:!Ex :open-vscode]
                 [:!Ec :open-things-add]
                 [:!Ev :open-quick-note]
                 ;; [:!Eb :open-notes]
@@ -892,9 +892,9 @@
                 ;; --- Window management ---
 
                 [:!ERf1 :rectangle-center]
-                [:!ERf2 :rectangle-moveleft]
-                [:!ERf3 :rectangle-moveright]
-                [:!ERf4 :rectangle-restore]
+                [:!ERf2 :rectangle-maximize]
+                [:!ERf3 :rectangle-moveleft]
+                [:!ERf4 :rectangle-moveright]
 
                 [:!ERi :rectangle-up]
                 [:!ERj :rectangle-left]
@@ -909,7 +909,7 @@
 
                 ;; --- Meh + Cmd ---
 
-                [:!CER1 :rectangle-maximize]
+                [:!CER1 :rectangle-restore]
                 [:!CER2 :rectangle-smallgap]
                 [:!CER3 :rectangle-largegap]
                 [:!CER4 :rectangle-almostmax]
@@ -923,9 +923,9 @@
                 ;; --- Window management ---
 
                 [:!ER1 :rectangle-center]
-                [:!ER2 :rectangle-moveleft]
-                [:!ER3 :rectangle-moveright]
-                [:!ER4 :rectangle-restore]
+                [:!ER2 :rectangle-maximize]
+                [:!ER3 :rectangle-moveleft]
+                [:!ER4 :rectangle-moveright]
 
                 [:!ERi :rectangle-up]
                 [:!ERj :rectangle-left]
@@ -940,7 +940,7 @@
 
                 ;; --- Meh + Cmd ---
 
-                [:!CER1 :rectangle-maximize]
+                [:!CER1 :rectangle-restore]
                 [:!CER2 :rectangle-smallgap]
                 [:!CER3 :rectangle-largegap]
                 [:!CER4 :rectangle-almostmax]
@@ -1226,16 +1226,16 @@
             ]
         }
 
-        ;; {
-        ;;     :des "[Staggered] Terraria"
-        ;;     :rules [
-        ;;         [:profile :RiverGaming]
-        ;;         [:condi :terraria :!sofle]
+        {
+            :des "Terraria"
+            :rules [
+                [:profile :RiverGaming]
+                [:condi :terraria]
 
-        ;;         [:##Cq :vk_none] ;; prevent from quitting
-        ;;         [:##Cw :vk_none] ;; same thing
-        ;;     ]
-        ;; }
+                [:##Cq :vk_none] ;; prevent from quitting
+                [:##Cw :vk_none] ;; same thing
+            ]
+        }
 
         ;; {
         ;;     :des "Home row mods"
