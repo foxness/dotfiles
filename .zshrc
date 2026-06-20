@@ -35,6 +35,11 @@ alias gs='cd ~/my/system/scripts'
 alias fs-start='~/my/system/scripts/fileserver/start.sh'
 alias fs-stop='~/my/system/scripts/fileserver/stop.sh'
 
+alias mcs-open='cd ~/my/other/minecraftServer'
+alias mcs-start='~/my/other/minecraftServer/start.sh'
+alias mcs-backup='~/my/system/scripts/minecraft-server-backup/backup.sh'
+alias mcs-list='~/my/system/scripts/minecraft-server-backup/list.sh'
+
 # alias python='python3'
 
 # ============ PATH ============
