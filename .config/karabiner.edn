@@ -1169,7 +1169,7 @@
             :des "[Staggered] Gaming"
             :rules [
                 [:profile :RiverGaming]
-                [:condi :!sofle]
+                [:condi :!sofle :!dota]
 
                 [:##caps_lock :backslash]
             ]
