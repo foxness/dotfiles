@@ -1166,6 +1166,16 @@
         ;; ============== RIVERGAMING ==============
 
         {
+            :des "[Staggered] Gaming"
+            :rules [
+                [:profile :RiverGaming]
+                [:condi :!sofle]
+
+                [:##caps_lock :backslash]
+            ]
+        }
+
+        {
             :des "[Staggered] Dota"
             :rules [
                 [:profile :RiverGaming]
