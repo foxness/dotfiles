@@ -40,6 +40,18 @@ alias mcs-start='~/my/other/minecraftServer/start.sh'
 alias mcs-backup='~/my/system/scripts/minecraft-server-backup/backup.sh'
 alias mcs-list='~/my/system/scripts/minecraft-server-backup/list.sh'
 
+alias rain-backup='~/my/system/scripts/rainworld-backup/backup.sh'
+alias rain-list='~/my/system/scripts/rainworld-backup/list.sh'
+alias rain-prune='~/my/system/scripts/rainworld-backup/prune.sh'
+alias rain-forget-dryrun='~/my/system/scripts/rainworld-backup/forget.sh'
+alias rain-forget-for-real='~/my/system/scripts/rainworld-backup/forget-for-real.sh'
+
+alias mclient-backup='~/my/system/scripts/mclient-backup/backup.sh'
+alias mclient-list='~/my/system/scripts/mclient-backup/list.sh'
+alias mclient-prune='~/my/system/scripts/mclient-backup/prune.sh'
+alias mclient-forget-dryrun='~/my/system/scripts/mclient-backup/forget.sh'
+alias mclient-forget-for-real='~/my/system/scripts/mclient-backup/forget-for-real.sh'
+
 # alias python='python3'
 
 # ============ PATH ============
