@@ -13,6 +13,7 @@
 
 {
   // "vim_mode": false,
+  "on_last_window_closed": "quit_app",
   "project_panel": {
     "dock": "left"
   },
@@ -51,7 +52,7 @@
     "dark": "Catppuccin Mocha (Blur)"
   },
   "buffer_font_family": "JetBrains Mono", // default: Zed Plex Mono
-  "buffer_font_size": 16,
+  "buffer_font_size": 16.0,
   "cursor_shape": "block",
   "tab_size": 4,
   "relative_line_numbers": "enabled"
