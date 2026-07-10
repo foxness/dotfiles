@@ -106,5 +106,6 @@
         "vscodevim.vim": 1
     },
     "git.confirmSync": false,
-    "workbench.iconTheme": "FireFly Pro Icons"
+    "workbench.iconTheme": "FireFly Pro Icons",
+    "chat.titleBar.signIn.enabled": false
 }

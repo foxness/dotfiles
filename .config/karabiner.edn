@@ -224,6 +224,9 @@
         :g-dollar { :key :!S4 }
         :g-semicolon { :key :open_bracket }
         :g-slash { :key :slash }
+        :g-period { :key :comma }
+        :g-comma { :key :quote }
+        :g-underscore { :key :!Sy }
 
         ;; --- Raze Symbols ---
 
@@ -797,15 +800,26 @@
             :rules [
                 [:condi :sofle :graphite]
 
-                [:!Wq :g-question]
+                [:!W1 :g-backtick]
+                [:!W2 :g-at]
+                [:!W3 :g-hashtag]
+                [:!W4 :g-dollar]
+                [:!W5 :g-percent]
+                [:!W6 :g-period]
+                [:!W7 :g-comma]
+                [:!W8 :g-underscore]
+                ;; [:!W9 :g-dollar]
+                ;; [:!W0 :g-percent]
+
+                [:!Wq :g-backslash]
                 [:!Ww :g-pipe]
                 [:!We :g-curlyopen]
                 [:!Wr :g-curlyclose]
-                [:!Wt :g-ampersand]
-                [:!Wy :g-backtick]
-                [:!Wu :g-tilde]
-                [:!Wi :g-minus]
-                [:!Wo :g-at]
+                [:!Wt :g-plus]
+                [:!Wy :g-doublequote]
+                [:!Wu :g-minus]
+                [:!Wi :g-quote]
+                [:!Wo :g-question]
                 [:!Wp :vk_none]
                 [:!Wclose_bracket :vk_none]
                 [:!Wopen_bracket :vk_none]
@@ -815,19 +829,19 @@
                 [:!Wd :g-bracketopen]
                 [:!Wf :g-bracketclose]
                 [:!Wg :g-exclamation]
-                [:!Wh :g-backslash]
-                [:!Wj :g-squareopen]
-                [:!Wk :g-squareclose]
-                [:!Wl :g-hashtag]
-                [:!Wsemicolon :g-quote]
+                [:!Wh :g-slash]
+                [:!Wj :g-angleopen]
+                [:!Wk :g-angleclose]
+                [:!Wl :g-tilde]
+                [:!Wsemicolon :vk_none]
                 ;; [:quote :nope]
 
-                [:!Wz :g-plus]
-                [:!Wx :g-percent]
-                [:!Wc :g-asterisk]
-                [:!Wv :g-doublequote]
-                [:!Wb :g-angleopen]
-                [:!Wn :g-angleclose]
+                [:!Wz :g-semicolon]
+                [:!Wx :g-asterisk]
+                [:!Wc :g-squareopen]
+                [:!Wv :g-squareclose]
+                [:!Wb :g-ampersand]
+                [:!Wn :g-caret]
                 ;; [:!Wm :g-caret]
                 ;; [:!Wcomma :g-dollar]
                 ;; [:!Wperiod :g-semicolon]
