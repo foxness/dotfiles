@@ -67,7 +67,6 @@
     :input-sources {
         :abc { :input_source_id "^com\\.apple\\.keylayout\\.ABC$" }
         :graphite { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.graphite\\.graphite$" }
-        :raze { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.raze\\.raze$" }
         :russian { :input_source_id "^com\\.apple\\.keylayout\\.RussianWin$" } ;; replaceable with { :language "ru" }
         :japanese { :input_source_id "^com\\.apple\\.inputmethod\\.Kotoeri\\.RomajiTyping\\.Japanese$" } ;; replaceable with { :language "ja" }
         :statica { :input_source_id "^org\\.sil\\.ukelele\\.keyboardlayout\\.statica\\.statica$" }
@@ -115,7 +114,6 @@
 
         :qwerty-lockscreen { :key :!CTq :repeat false }
         :graphite-lockscreen { :key :!CTz :repeat false }
-        :raze-lockscreen { :key :!CTb :repeat false }
 
         :screenshot-area { :key :!CS1 }
         :screenshot { :key :!CS2 }
@@ -227,40 +225,6 @@
         :g-period { :key :comma }
         :g-comma { :key :quote }
         :g-underscore { :key :!Sy }
-
-        ;; --- Raze Symbols ---
-
-        :r-question { :key :!Sp }
-        :r-pipe { :key :!Sbackslash }
-        :r-curlyopen { :key :!Shyphen }
-        :r-curlyclose { :key :!Sequal_sign }
-        :r-ampersand { :key :!S7 }
-        :r-backtick { :key :grave_accent_and_tilde }
-        :r-tilde { :key :!Sgrave_accent_and_tilde }
-        :r-minus { :key :period }
-        :r-at { :key :!S2 }
-
-        :r-colon { :key :!Sopen_bracket }
-        :r-equals { :key :close_bracket }
-        :r-bracketopen { :key :!S9 }
-        :r-bracketclose { :key :!S0 }
-        :r-exclamation { :key :!S1 }
-        :r-backslash { :key :backslash }
-        :r-squareopen { :key :hyphen }
-        :r-squareclose { :key :equal_sign }
-        :r-hashtag { :key :!S3 }
-        :r-quote { :key :n }
-
-        :r-plus { :key :!Sclose_bracket }
-        :r-percent { :key :!S5 }
-        :r-asterisk { :key :!S8 }
-        :r-doublequote { :key :!Scomma }
-        :r-angleopen { :key :!Speriod }
-        :r-angleclose { :key :!Sslash }
-        :r-caret { :key :!S6 }
-        :r-dollar { :key :!S4 }
-        :r-semicolon { :key :open_bracket }
-        :r-slash { :key :slash }
     }
 
     :main [
@@ -394,17 +358,15 @@
                 [:!Eb { :input :graphite }] ;; graphite, triangle
                 [:!Wm :!QWf16] ;; russian, square
                 [:!Wcomma :!QWf17] ;; japanese
-                [:!Wperiod { :input :raze }] ;; raze
-                [:!Wslash { :input :abc }] ;; qwerty
+                [:!Wperiod { :input :abc }] ;; qwerty
 
                 ;; --- Main ---
 
                 [:!Ekeypad_2 :open-alfred]
                 [:!Ekeypad_3 :open-quick-terminal]
 
-                [:keypad_1 :qwerty-lockscreen [:!graphite :!raze]]
+                [:keypad_1 :qwerty-lockscreen [:!graphite]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
-                [:keypad_1 :raze-lockscreen [:raze]]
 
                 ;; --- Joystick ---
 
@@ -414,28 +376,6 @@
                 [:!Rkeypad_0 :mute]
                 [:!Rkeypad_4 :volume_decrement]
                 [:!Rkeypad_2 :volume_increment]
-            ]
-        }
-
-        ;; {
-        ;;     :des "[Sofle] Raze1"
-        ;;     :rules [
-        ;;         [:profile :Default :River :RiverGaming]
-        ;;         [:condi :sofle :!raze]
-
-        ;;         [:#RSkeypad_period :nope]
-        ;;     ]
-        ;; }
-
-        {
-            :des "[Sofle] Raze2"
-            :rules [
-                [:profile :Default :River :RiverGaming]
-                [:condi :sofle :raze]
-
-                [:#RSkeypad_period :quote] ;; quote is R in raze
-                [:#RSquote :open_bracket]
-                [:#RSopen_bracket :backslash]
             ]
         }
 
@@ -454,9 +394,8 @@
                 ;; temporarily make switch-profile button work until I change the hardware config
                 [:f13 :!Tf13]
 
-                [:f14 :qwerty-lockscreen [:!graphite :!raze]]
+                [:f14 :qwerty-lockscreen [:!graphite]]
                 [:f14 :graphite-lockscreen [:graphite]]
-                [:f14 :raze-lockscreen [:raze]]
 
                 ;; --- Knob ---
 
@@ -567,55 +506,6 @@
                 [:!C#TOSRn :!C#TOSRa]
                 [:!C#TOSRm :!C#TOSRc]
                 [:!C#TOSRcomma :!C#TOSRquote]
-                [:!C#TOSRperiod :!C#TOSRcomma]
-                ;; [:!C#TOSRslash :!C#TOSRslash] ;; maps to itself
-            ]
-        }
-
-        {
-            :des "Base Raze - Qwertified CMD"
-            :rules [
-                :raze
-
-                [:!C#TOSRhyphen :!C#TOSRperiod]
-                [:!C#TOSRequal_sign :!C#TOSRclose_bracket]
-
-                ;; when CMD is pressed this is standard qwerty but
-                ;; - cmd-E and cmd-H are swapped (for easy window hiding)
-
-                [:!C#TOSRq :!C#TOSRb]
-                [:!C#TOSRw :!C#TOSRm]
-                [:!C#TOSRe :!C#TOSRd] ;; standard qwerty: [:!C#TOSRe :!C#TOSRl]
-                [:!C#TOSRr :!C#TOSRquote]
-                [:!C#TOSRt :!C#TOSRf]
-                [:!C#TOSRy :!C#TOSRh]
-                [:!C#TOSRu :!C#TOSRo]
-                [:!C#TOSRi :!C#TOSRsemicolon]
-                [:!C#TOSRo :!C#TOSRi]
-                [:!C#TOSRp :!C#TOSRv]
-                [:!C#TOSRopen_bracket :!C#TOSRhyphen]
-                [:!C#TOSRclose_bracket :!C#TOSRequal_sign]
-
-                [:!C#TOSRa :!C#TOSRk]
-                ;; [:!C#TOSRs :!C#TOSRs] ;; maps to itself
-                [:!C#TOSRd :!C#TOSRr]
-                [:!C#TOSRf :!C#TOSRw]
-                [:!C#TOSRg :!C#TOSRu]
-                [:!C#TOSRh :!C#TOSRl] ;; standard qwerty: [:!C#TOSRh :!C#TOSRd]
-                [:!C#TOSRj :!C#TOSRy]
-                [:!C#TOSRk :!C#TOSRg]
-                [:!C#TOSRl :!C#TOSRe]
-                [:!C#TOSRsemicolon :!C#TOSRopen_bracket]
-                [:!C#TOSRquote :!C#TOSRn]
-
-                [:!C#TOSRz :!C#TOSRq]
-                [:!C#TOSRx :!C#TOSRz]
-                [:!C#TOSRc :!C#TOSRj]
-                [:!C#TOSRv :!C#TOSRx]
-                [:!C#TOSRb :!C#TOSRt]
-                [:!C#TOSRn :!C#TOSRa]
-                [:!C#TOSRm :!C#TOSRc]
-                [:!C#TOSRcomma :!C#TOSRp]
                 [:!C#TOSRperiod :!C#TOSRcomma]
                 ;; [:!C#TOSRslash :!C#TOSRslash] ;; maps to itself
             ]
@@ -846,49 +736,6 @@
                 ;; [:!Wcomma :g-dollar]
                 ;; [:!Wperiod :g-semicolon]
                 [:!Wslash :g-slash]
-            ]
-        }
-
-        {
-            :des "[Sofle] Square layer - Raze"
-            :rules [
-                [:condi :sofle :raze]
-
-                [:!Wq :r-question]
-                [:!Ww :r-pipe]
-                [:!We :r-curlyopen]
-                [:!Wr :r-curlyclose]
-                [:!Wt :r-ampersand]
-                [:!Wy :r-backtick]
-                [:!Wu :r-tilde]
-                [:!Wi :r-minus]
-                [:!Wo :r-at]
-                [:!Wp :vk_none]
-                [:!Wclose_bracket :vk_none]
-                [:!Wopen_bracket :vk_none]
-
-                [:!Wa :r-colon]
-                [:!Ws :r-equals]
-                [:!Wd :r-bracketopen]
-                [:!Wf :r-bracketclose]
-                [:!Wg :r-exclamation]
-                [:!Wh :r-backslash]
-                [:!Wj :r-squareopen]
-                [:!Wk :r-squareclose]
-                [:!Wl :r-hashtag]
-                [:!Wsemicolon :r-quote]
-                ;; [:quote :nope]
-
-                [:!Wz :r-doublequote]
-                [:!Wx :r-percent]
-                [:!Wc :r-asterisk]
-                [:!Wv :r-plus]
-                [:!Wb :r-angleopen]
-                [:!Wn :r-angleclose]
-                ;; [:!Wm :r-caret]
-                ;; [:!Wcomma :r-dollar]
-                ;; [:!Wperiod :r-semicolon]
-                [:!Wslash :r-slash]
             ]
         }
 
