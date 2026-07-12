@@ -1,44 +1,80 @@
 {
   "actions" : [
     {
-      "key" : "space",
-      "type" : "folder",
-      "value" : "/Volumes/Athena"
-    },
-    {
-      "key" : "tab",
+      "key" : "1",
       "type" : "folder",
       "value" : "/Users/river/Desktop"
     },
     {
-      "key" : "`",
-      "type" : "folder",
-      "value" : "/Users/river"
-    },
-    {
-      "key" : "1",
-      "type" : "folder",
-      "value" : "/Users/river/my"
-    },
-    {
       "key" : "2",
-      "type" : "folder",
-      "value" : "/Volumes/Cassiopeia"
-    },
-    {
-      "key" : "3",
-      "type" : "folder",
-      "value" : "/Users/river/my/art"
-    },
-    {
-      "key" : "4",
       "type" : "folder",
       "value" : "/Volumes/Cassiopeia/media"
     },
     {
+      "key" : "3",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
+    },
+    {
       "key" : "5",
       "type" : "folder",
-      "value" : "/Users/river/my/media"
+      "value" : "/Applications"
+    },
+    {
+      "key" : "a",
+      "type" : "folder",
+      "value" : "/Volumes/Athena"
+    },
+    {
+      "key" : "s",
+      "type" : "folder",
+      "value" : "/Users/river/my"
+    },
+    {
+      "key" : "d",
+      "type" : "folder",
+      "value" : "/Volumes/Cassiopeia"
+    },
+    {
+      "key" : "f",
+      "type" : "folder",
+      "value" : "/Users/river"
+    },
+    {
+      "key" : "g",
+      "type" : "folder",
+      "value" : "/Volumes/Cassiopeia/downloads"
+    },
+    {
+      "key" : "w",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
+    },
+    {
+      "key" : "e",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
+    },
+    {
+      "key" : "r",
+      "type" : "folder",
+      "value" : "/Users/river/my/art"
+    },
+    {
+      "key" : "t",
+      "type" : "folder",
+      "value" : "/Volumes/Cassiopeia/torrent"
+    },
+    {
+      "key" : "x",
+      "label" : "Recents",
+      "type" : "url",
+      "value" : "kmtrigger://macro=Leader_OpenRecents"
+    },
+    {
+      "key" : "c",
+      "type" : "folder",
+      "value" : "/Users/river/my/music"
     },
     {
       "actions" : [
@@ -58,11 +94,6 @@
           "value" : "/Applications/Sourcetree.app"
         },
         {
-          "key" : "r",
-          "type" : "application",
-          "value" : "/Applications/Allusion.app"
-        },
-        {
           "key" : "a",
           "type" : "application",
           "value" : "/System/Applications/iPhone Mirroring.app"
@@ -71,47 +102,6 @@
       "key" : "q",
       "label" : "Run App",
       "type" : "group"
-    },
-    {
-      "key" : "w",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
-    },
-    {
-      "key" : "e",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
-    },
-    {
-      "key" : "r",
-      "label" : "Recents",
-      "type" : "url",
-      "value" : "kmtrigger://macro=Leader_OpenRecents"
-    },
-    {
-      "key" : "t",
-      "type" : "folder",
-      "value" : "/Volumes/Cassiopeia/torrent"
-    },
-    {
-      "key" : "a",
-      "type" : "folder",
-      "value" : "/Applications"
-    },
-    {
-      "key" : "s",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
-    },
-    {
-      "key" : "d",
-      "type" : "folder",
-      "value" : "/Volumes/Cassiopeia/downloads"
-    },
-    {
-      "key" : "f",
-      "type" : "folder",
-      "value" : "/Users/river/my/music"
     },
     {
       "actions" : [
