@@ -143,6 +143,7 @@
         :open-discord { :key :!WERw }
 
         :open-vscode { :key :!QWERa }
+        :open-xcode { :key :!QWERh }
         :open-ghostty { :key :!WERg }
         :open-finder { :key :!WERf }
         :open-brave { :key :!WERq }
@@ -595,8 +596,8 @@
                 [:!Eg :mission-control]
 
                 [:!Ereturn_or_enter :open-safari]
-                [:!Ez :open-notes]
-                [:!Ex :open-vscode]
+                [:!Ez :open-vscode]
+                [:!Ex :open-xcode]
                 [:!Ec :open-things-add]
                 [:!Ev :open-quick-note]
                 ;; [:!Eb :open-notes]
