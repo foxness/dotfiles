@@ -31,6 +31,7 @@ vim.opt.isfname:append('@-@')
 
 vim.o.guicursor = ''
 vim.o.scrolloff = 10
+vim.o.sidescrolloff = 36
 -- vim.o.colorcolumn = 0
 
 -- vim.o.termguicolors = true

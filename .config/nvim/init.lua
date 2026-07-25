@@ -11,6 +11,7 @@ vim.pack.add({
     { src = 'https://github.com/stevearc/oil.nvim' },
     { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/neovim/nvim-lspconfig' },
+    { src = "https://github.com/Isrothy/neominimap.nvim" },
 
     -- themes
     { src = 'https://github.com/bluz71/vim-moonfly-colors', name = 'moonfly' },
@@ -27,6 +28,21 @@ require('vague').setup({
 require('nord').setup({
     transparent = true,
 })
+
+vim.g.neominimap = {
+    auto_enable = true,
+    float = {
+        minimap_width = 20,
+
+        margin = {
+            right = 1,
+            top = 0,
+            bottom = 0,
+        },
+
+        window_border = 'none',
+    },
+}
 
 -- misc
 vim.cmd('set completeopt+=noselect')
