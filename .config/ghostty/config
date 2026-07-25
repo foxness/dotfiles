@@ -48,6 +48,10 @@
 window-height = 28
 window-width = 90
 
+background-opacity = 0.8
+background-blur-radius = 30
+custom-shader = shaders/cursor_warp.glsl
+
 font-family = JetBrains Mono # default ghostty
 font-size = 16
 
@@ -66,14 +70,11 @@ shell-integration-features = no-cursor
 # FrontEndDelight
 theme = tokyonight
 
-background-opacity = 0.8
-background-blur-radius = 30
+macos-titlebar-style = tabs
+
+shell-integration = zsh
 
 keybind = global:cmd+f20=toggle_quick_terminal
 quick-terminal-position = center
 quick-terminal-animation-duration = 0
 quick-terminal-size = 70%,70%
-
-shell-integration = zsh
-
-custom-shader = shaders/cursor_warp.glsl
