@@ -35,3 +35,7 @@ vim.o.scrolloff = 10
 
 -- vim.o.termguicolors = true
 -- vim.o.cursorcolumn = false
+
+-- vim.o.mouse = ''
+-- vim.o.mousescroll = ''
+

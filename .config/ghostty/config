@@ -52,7 +52,7 @@ font-family = JetBrains Mono # default ghostty
 font-size = 16
 
 cursor-style = block
-cursor-style-blink = true
+# cursor-style-blink = true
 shell-integration-features = no-cursor
 
 # good themes:
@@ -70,3 +70,5 @@ background-opacity = 0.8
 background-blur-radius = 30
 
 keybind = global:cmd+f20=toggle_quick_terminal
+
+custom-shader = shaders/cursor_warp.glsl

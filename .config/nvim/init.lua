@@ -16,14 +16,14 @@ vim.pack.add({
     { src = 'https://github.com/stevearc/oil.nvim' },
     { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/neovim/nvim-lspconfig' },
+    { src = 'https://github.com/bluz71/vim-moonfly-colors', name = 'moonfly' },
 })
 
-vim.cmd('set completeopt+=noselect')
 
 require 'mini.pick'.setup()
 require 'oil'.setup()
 
-vim.cmd.colorscheme('vague')
+vim.cmd('set completeopt+=noselect')
 
 vim.lsp.config('lua_ls', {
     cmd = { 'lua-language-server' },
@@ -39,10 +39,5 @@ vim.lsp.config('lua_ls', {
 
 vim.lsp.enable({ "lua_ls" })
 
-
-
-
-
-
-
-
+vim.cmd.colorscheme('vague')
+-- vim.cmd.colorscheme('moonfly')
