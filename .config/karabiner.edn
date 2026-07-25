@@ -102,8 +102,22 @@
 
         :left-desktop { :key :!WERleft_arrow }
         :right-desktop { :key :!WERright_arrow }
+        :desktop-1 { :key :!WER1 }
+        :desktop-2 { :key :!WER2 }
+        :desktop-3 { :key :!WER3 }
+        :desktop-4 { :key :!WER4 }
+        :desktop-5 { :key :!WER5 }
+
         :mission-control { :key :!Tup_arrow }
         :app-windows { :key :!Tdown_arrow }
+
+        :left-desktop-iss { :key :!QWEleft_arrow } ;; instant space switcher
+        :right-desktop-iss { :key :!QWEright_arrow }
+        :desktop-1-iss { :key :!QWE1 }
+        :desktop-2-iss { :key :!QWE2 }
+        :desktop-3-iss { :key :!QWE3 }
+        :desktop-4-iss { :key :!QWE4 }
+        :desktop-5-iss { :key :!QWE5 }
 
         :fine-vol-down { :key :!SOvolume_down }
         :fine-vol-up { :key :!SOvolume_up }
@@ -575,14 +589,14 @@
                 ;; --- Left Hand ---
 
                 [:!Eescape :open-activity-monitor]
-                [:!E1 :!WER1]
-                [:!E2 :!WER2]
-                [:!E3 :!WER3]
-                [:!E4 :!WER4]
-                [:!E5 :!WER5]
+                [:!E1 :desktop-1-iss]
+                [:!E2 :desktop-2-iss]
+                [:!E3 :desktop-3-iss]
+                [:!E4 :desktop-4-iss]
+                [:!E5 :desktop-5-iss]
 
-                [:!Etab :left-desktop]
-                [:!Eq :right-desktop]
+                [:!Etab :left-desktop-iss]
+                [:!Eq :right-desktop-iss]
                 [:!Ew :open-anki]
                 [:!Ee :open-spotify]
                 [:!Er :open-firefox]
