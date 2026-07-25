@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 
 -- Escape
 
-map({ 'v', 'i' }, '<D-j>', '<Esc>') -- <D-j> is cmd-J
+map({ 'v', 'i', 'c', 't' }, '<D-j>', '<Esc>') -- <D-j> is cmd-J
 map('n', '<D-j>', ':nohl<CR>', { desc = 'Clear search highlighting', silent = true })
 
 -- Standard enhancements
@@ -23,6 +23,8 @@ map('v', 'K', ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" 
 map('v', '<', '<gv', { desc = 'Unindent and keep selection' })
 map('v', '>', '>gv', { desc = 'Indent and keep selection' })
 
+map('n', 'yc', 'yy<cmd>normal gcc<CR>p', { noremap = true, desc = "Duplicate line and comment original" })
+
 -- Leader
 
 map('n', '<leader>so', ':update<CR> :source<CR>')
@@ -34,12 +36,19 @@ map('n', '<leader>f', ':Pick files<CR>')
 map('n', '<leader>i', ':Pick help<CR>')
 map('n', '<leader>h', ':Oil<CR>')
 
-map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word cursor is on globally' })
+map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = 'Replace word cursor is on globally' })
 map('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'makes file executable' })
 
 map('n', '<leader>re', '<cmd>restart<cr>', { desc = 'Restart config (:eestart)' })
 
-map({ 'n', 'v' }, '<leader>d', [['_d]], { desc = 'Delete without yanking' })
+map({ 'n', 'v' }, '<leader>l', [['_d]], { desc = 'Delete without yanking' })
+
+map('n', '<leader>o', 'mzo<Esc>`z')
+map('n', '<leader>O', 'mzO<Esc>`z')
+
+map('n', '<leader>d', 'mzjdd`z')
+map('n', '<leader>D', 'mzkdd`z')
 
 -- Native  undotree
 
