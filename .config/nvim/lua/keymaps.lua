@@ -17,7 +17,7 @@ map('v', 'K', ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" 
 map('v', '<', '<gv', { desc = 'Unindent and keep selection' })
 map('v', '>', '>gv', { desc = 'Indent and keep selection' })
 
-map('n', 'yc', 'yy<cmd>normal gcc<CR>p', { noremap = true, desc = "Duplicate line and comment original" })
+map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank character' })
 
 -- Centering
 
@@ -27,7 +27,7 @@ map('n', '<C-u>', '<C-u>zz', { desc = 'move up in buffer with cursor centered' }
 map('n', 'n', 'nzzzv', { desc = 'Next search result cursor centered' })
 map('n', 'N', 'Nzzzv', { desc = 'Previous search result cursor centered' })
 
-map("n", "G", "Gzz", { noremap = true, desc = "Go to bottom and center" })
+map('n', 'G', 'Gzz', { noremap = true, desc = 'Go to bottom and center' })
 
 map('n', '*', '*zz', { noremap = true })
 map('n', '#', '#zz', { noremap = true })
@@ -59,8 +59,36 @@ map('n', '<leader>O', 'mzO<Esc>`z')
 map('n', '<leader>d', 'mzjdd`z')
 map('n', '<leader>D', 'mzkdd`z')
 
+map('n', '<leader>r', ':update<CR> :make<CR>')
+-- map('n', '<C-U>', '<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>')
+-- map('n', '<C-D>', '<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>')
 
--- Native  undotree
+-- Duplicate and comment
+
+local function duplicate_and_comment()
+    -- Exit visual mode
+    local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+    vim.api.nvim_feedkeys(esc, "x", false)
+
+    -- Get selection range
+    local start_line = vim.fn.line("'<")
+    local end_line = vim.fn.line("'>")
+
+    -- Yank and paste below
+    vim.cmd(start_line .. "," .. end_line .. "yank")
+    vim.cmd((end_line + 1) .. "put")
+
+    -- Reselect pasted block
+    vim.api.nvim_feedkeys("gv", "n", false)
+
+    -- Comment the original selection
+    vim.api.nvim_feedkeys("gc", "v", false)
+end
+
+map('n', 'yc', 'yy<cmd>normal gcc<CR>p', { noremap = true, desc = 'Duplicate line and comment original' })
+map('v', 'yc', duplicate_and_comment, { noremap = true, desc = 'Duplicate selection and comment original' })
+
+-- Native undotree
 
 map('n', '<leader>u', function()
     vim.cmd.packadd('nvim.undotree')
