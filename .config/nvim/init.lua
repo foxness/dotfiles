@@ -1,17 +1,15 @@
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.signcolumn = 'yes'
-vim.o.wrap = false
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = true
-vim.o.winborder = 'rounded'
-vim.o.swapfile = false
-vim.g.mapleader = ' '
+require('vim._core.ui2').enable({})
 
-vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
-vim.keymap.set('n', '<leader>w', ':write<CR>')
-vim.keymap.set('n', '<leader>b', '<Cmd>quit<CR>')
+require('options')
+require('keymaps')
+
+-- highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight when yanking (copying) text",
+    callback = function()
+        vim.hl.on_yank()
+    end,
+})
 
 vim.pack.add({
     { src = 'https://github.com/vague-theme/vague.nvim' },
@@ -40,13 +38,6 @@ vim.lsp.config('lua_ls', {
 })
 
 vim.lsp.enable({ "lua_ls" })
-
-vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
-vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
-vim.keymap.set('n', '<leader>i', ':Pick help<CR>')
-vim.keymap.set('n', '<leader>h', ':Oil<CR>')
-
-vim.keymap.set({ 'n', 'v', 'i' }, '<D-j>', '<Esc>') -- <D-j> is cmd-J
 
 
 
