@@ -11,12 +11,6 @@ map('n', '<D-j>', ':nohl<CR>', { desc = 'Clear search highlighting', silent = tr
 map('x', 'p', [["_dP]], { desc = 'paste over selection without losing yanked text' })
 map('n', 'J', 'mzJ`z', { desc = 'Join lines without moving cursor' })
 
-map('n', '<C-d>', '<C-d>zz', { desc = 'move down in buffer with cursor centered' })
-map('n', '<C-u>', '<C-u>zz', { desc = 'move up in buffer with cursor centered' })
-
-map('n', 'n', 'nzzzv', { desc = 'Next search result cursor centered' })
-map('n', 'N', 'Nzzzv', { desc = 'Previous search result cursor centered' })
-
 map('v', 'J', ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
 map('v', 'K', ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
 
@@ -24,6 +18,21 @@ map('v', '<', '<gv', { desc = 'Unindent and keep selection' })
 map('v', '>', '>gv', { desc = 'Indent and keep selection' })
 
 map('n', 'yc', 'yy<cmd>normal gcc<CR>p', { noremap = true, desc = "Duplicate line and comment original" })
+
+-- Centering
+
+map('n', '<C-d>', '<C-d>zz', { desc = 'move down in buffer with cursor centered' })
+map('n', '<C-u>', '<C-u>zz', { desc = 'move up in buffer with cursor centered' })
+
+map('n', 'n', 'nzzzv', { desc = 'Next search result cursor centered' })
+map('n', 'N', 'Nzzzv', { desc = 'Previous search result cursor centered' })
+
+map("n", "G", "Gzz", { noremap = true, desc = "Go to bottom and center" })
+
+map('n', '*', '*zz', { noremap = true })
+map('n', '#', '#zz', { noremap = true })
+map('n', 'g*', 'g*zz', { noremap = true })
+map('n', 'g#', 'g#zz', { noremap = true })
 
 -- Leader
 
@@ -49,6 +58,7 @@ map('n', '<leader>O', 'mzO<Esc>`z')
 
 map('n', '<leader>d', 'mzjdd`z')
 map('n', '<leader>D', 'mzkdd`z')
+
 
 -- Native  undotree
 

@@ -58,6 +58,8 @@ font-size = 16
 cursor-style = block
 # cursor-style-blink = true
 shell-integration-features = no-cursor
+macos-titlebar-style = tabs
+shell-integration = zsh
 
 # good themes:
 # Aardvark Blue
@@ -69,10 +71,6 @@ shell-integration-features = no-cursor
 # duskfox
 # FrontEndDelight
 theme = tokyonight
-
-macos-titlebar-style = tabs
-
-shell-integration = zsh
 
 keybind = global:cmd+f20=toggle_quick_terminal
 quick-terminal-position = center
