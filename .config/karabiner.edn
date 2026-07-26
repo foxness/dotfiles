@@ -635,6 +635,8 @@
                 [:!E6 :toggle-amphetamine]
                 [:!E7 :toggle-ice]
                 [:!E8 :toggle-horo]
+
+                [:keypad_period :escape]
             ]
         }
 

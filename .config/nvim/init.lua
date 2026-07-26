@@ -12,7 +12,6 @@ require('vim._core.ui2').enable({})
 vim.pack.add({
 
     -- plugins
-    { src = 'https://github.com/vague-theme/vague.nvim' },
     { src = 'https://github.com/stevearc/oil.nvim' },
     { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/neovim/nvim-lspconfig' },
@@ -28,6 +27,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
 
     -- themes
+    { src = 'https://github.com/vague-theme/vague.nvim' },
     { src = 'https://github.com/bluz71/vim-moonfly-colors',      name = 'moonfly' },
     { src = 'https://github.com/gbprod/nord.nvim' },
     { src = 'https://github.com/folke/tokyonight.nvim' },
@@ -56,14 +56,47 @@ require('nvim-treesitter').install {
     'clojure',
 }
 
-require("bufferline").setup {
-    options = {
-        show_buffer_close_icons = false,
-        numbers = 'ordinal',
-        tab_size = 24,
-        max_name_length = 24,
-    }
-}
+
+-- ========== MISC ==========
+
+vim.cmd('set completeopt+=noselect')
+
+vim.lsp.config('lua_ls', {
+    cmd = { 'lua-language-server' },
+    filetypes = { 'lua' },
+    settings = {
+        Lua = {
+            runtime = { version = 'LuaJIT' },
+            diagnostics = { globals = { 'vim' } },
+            workspace = { library = { vim.env.VIMRUNTIME } },
+        },
+    },
+})
+
+vim.lsp.enable({ "lua_ls" })
+
+-- ========== APPEARANCE ==========
+
+-- highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight when yanking (copying) text",
+    callback = function()
+        vim.hl.on_yank()
+    end,
+})
+
+require('vague').setup({
+    transparent = true,
+})
+
+require('nord').setup({
+    transparent = true,
+})
+
+require('tokyonight').setup({
+    transparent = true,
+})
+
 
 vim.g.neominimap = {
     auto_enable = true,
@@ -80,51 +113,20 @@ vim.g.neominimap = {
     },
 }
 
--- ========== MISC ==========
+vim.cmd.colorscheme('tokyonight-night')
+-- vim.cmd.colorscheme('moonfly')
 
-vim.cmd('set completeopt+=noselect')
-
--- highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    callback = function()
-        vim.hl.on_yank()
-    end,
-})
-
-vim.lsp.config('lua_ls', {
-    cmd = { 'lua-language-server' },
-    filetypes = { 'lua' },
-    settings = {
-        Lua = {
-            runtime = { version = 'LuaJIT' },
-            diagnostics = { globals = { 'vim' } },
-            workspace = { library = { vim.env.VIMRUNTIME } },
-        },
-    },
-})
-
-vim.lsp.enable({ "lua_ls" })
-
--- ========== THEME ==========
+require("bufferline").setup {
+    options = {
+        show_buffer_close_icons = false,
+        numbers = 'ordinal',
+        tab_size = 24,
+        max_name_length = 24,
+    }
+}
 
 require('lualine').setup({
     options = {
         theme = 'tokyonight'
     }
 })
-
-require('vague').setup({
-    transparent = true,
-})
-
-require('nord').setup({
-    transparent = true,
-})
-
-require('tokyonight').setup({
-    transparent = true,
-})
-
-vim.cmd.colorscheme('tokyonight-night')
--- vim.cmd.colorscheme('moonfly')
