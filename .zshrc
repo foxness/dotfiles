@@ -107,6 +107,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# ============ PATH ============
+
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/opt/homebrew/share"
+export PATH="/opt/homebrew/opt/openjdk/bin:/Users/river/.local/bin:/Users/river/.cargo/bin:/opt/homebrew/bin:$PATH"
+
+# ============ INTEGRATION ============
+
+source <(fzf --zsh)
+
 # ============ ALIASES ============
 
 # alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
@@ -153,17 +162,8 @@ alias wallpapers-forget-for-real='~/my/system/scripts/wallpapers-backup/forget-f
 
 # alias python='python3'
 
-# ============ PATH ============
-
-export XDG_DATA_DIRS="$XDG_DATA_DIRS:/opt/homebrew/share"
-export PATH="/opt/homebrew/opt/openjdk/bin:/Users/river/.local/bin:/Users/river/.cargo/bin:/opt/homebrew/bin:$PATH"
-
-# ============ INTEGRATION ============
-
-source <(fzf --zsh)
-
-
-
+alias confvim='vi ~/.config/nvim/init.lua'
+alias confkarabiner='vi ~/.config/karabiner.edn'
 
 
 

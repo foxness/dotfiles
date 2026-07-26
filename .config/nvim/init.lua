@@ -26,6 +26,10 @@ vim.pack.add({
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
 
+    { src = 'https://github.com/nvim-lua/plenary.nvim' },
+    { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
+    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
+
     -- themes
     { src = 'https://github.com/bluz71/vim-moonfly-colors',      name = 'moonfly' },
     { src = 'https://github.com/gbprod/nord.nvim' },
@@ -50,6 +54,7 @@ require('nvim-treesitter').install {
     'regex',
     'diff',
     'html',
+    'clojure',
 }
 
 require("bufferline").setup {
