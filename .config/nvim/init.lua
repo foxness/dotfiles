@@ -13,6 +13,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = "https://github.com/Isrothy/neominimap.nvim" },
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -26,6 +27,21 @@ vim.pack.add({
 
 require('mini.pick').setup()
 require('oil').setup()
+require('oil').setup()
+require('nvim-treesitter').install {
+    'lua',
+    'javascript',
+    'python',
+    'swift',
+    'json',
+    'bash',
+    'zsh',
+    'markdown',
+    'regex',
+    'typescript',
+    'diff',
+    'html',
+}
 
 vim.g.neominimap = {
     auto_enable = true,
