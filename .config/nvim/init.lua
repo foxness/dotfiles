@@ -3,7 +3,8 @@ require('vim._core.ui2').enable({})
 require('options')
 require('keymaps')
 
--- pack
+---- PLUGINS ----
+
 vim.pack.add({
 
     -- plugins
@@ -13,21 +14,18 @@ vim.pack.add({
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = "https://github.com/Isrothy/neominimap.nvim" },
 
+    { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+    { src = 'https://github.com/nvim-lualine/lualine.nvim' },
+
     -- themes
     { src = 'https://github.com/bluz71/vim-moonfly-colors', name = 'moonfly' },
     { src = 'https://github.com/gbprod/nord.nvim' },
+    { src = 'https://github.com/folke/tokyonight.nvim' },
 })
+
 
 require('mini.pick').setup()
 require('oil').setup()
-
-require('vague').setup({
-    transparent = true,
-})
-
-require('nord').setup({
-    transparent = true,
-})
 
 vim.g.neominimap = {
     auto_enable = true,
@@ -69,5 +67,46 @@ vim.lsp.config('lua_ls', {
 
 vim.lsp.enable({ "lua_ls" })
 
-vim.cmd.colorscheme('vague')
+---- THEME ----
+
+require('lualine').setup({
+    options = {
+        theme = 'tokyonight'
+    }
+})
+
+require('vague').setup({
+    transparent = true,
+})
+
+require('nord').setup({
+    transparent = true,
+})
+
+require('tokyonight').setup({
+    transparent = true,
+})
+
+vim.cmd.colorscheme('tokyonight-night')
 -- vim.cmd.colorscheme('moonfly')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -30,6 +30,7 @@ vim.opt.clipboard:append('unnamedplus')
 vim.opt.isfname:append('@-@')
 
 vim.o.guicursor = ''
+vim.o.showmode = false
 vim.o.scrolloff = 10
 vim.o.sidescrolloff = 36
 -- vim.o.colorcolumn = 0
