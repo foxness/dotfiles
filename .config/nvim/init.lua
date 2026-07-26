@@ -1,16 +1,13 @@
-----------------------------------------
+-- ========================================
 
----- river's nvim config
----- created on 2026/07/24
+-- river's nvim config
+-- created on 2026/07/24
 
-----------------------------------------
+-- ========================================
 
 require('vim._core.ui2').enable({})
 
-require('options')
-require('keymaps')
-
----- PLUGINS ----
+-- ========== PLUGINS ==========
 
 vim.pack.add({
 
@@ -37,6 +34,8 @@ vim.pack.add({
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
 })
 
+require('options')
+require('keymaps')
 
 require('mini.pick').setup()
 require('oil').setup()
@@ -81,7 +80,8 @@ vim.g.neominimap = {
     },
 }
 
--- misc
+-- ========== MISC ==========
+
 vim.cmd('set completeopt+=noselect')
 
 -- highlight on yank
@@ -106,7 +106,7 @@ vim.lsp.config('lua_ls', {
 
 vim.lsp.enable({ "lua_ls" })
 
----- THEME ----
+-- ========== THEME ==========
 
 require('lualine').setup({
     options = {
