@@ -28,7 +28,7 @@ vim.pack.add({
 
     -- themes
     { src = 'https://github.com/vague-theme/vague.nvim' },
-    { src = 'https://github.com/bluz71/vim-moonfly-colors',      name = 'moonfly' },
+    { src = 'https://github.com/bluz71/vim-moonfly-colors',               name = 'moonfly' },
     { src = 'https://github.com/gbprod/nord.nvim' },
     { src = 'https://github.com/folke/tokyonight.nvim' },
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
@@ -56,7 +56,32 @@ require('nvim-treesitter').install {
     'clojure',
 }
 
-
+require('telescope').setup({
+    -- pickers = {
+    --     find_files = {
+    --         hidden = true, -- shows dotfiles (.env, .gitignore, etc.)
+    --     },
+    -- },
+    defaults = {
+        -- configure ripgrep to search hidden files during live_grep
+        -- vimgrep_arguments = {
+        --     'rg',
+        --     '--color=never',
+        --     '--no-heading',
+        --     '--with-filename',
+        --     '--line-number',
+        --     '--column',
+        --     '--smart-case',
+        --     '--hidden', -- << this tells ripgrep to include hidden files
+        -- },
+        -- prevent telescope from cluttering your results with .git/ internals
+        file_ignore_patterns = {
+            '.git/',
+            'Library/',
+            'node_modules',
+        },
+    },
+})
 -- ========== MISC ==========
 
 vim.cmd('set completeopt+=noselect')

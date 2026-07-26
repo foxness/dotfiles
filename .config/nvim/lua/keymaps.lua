@@ -8,14 +8,12 @@ vim.g.mapleader = ' '
 -- all modes: n, i, c, v, o, t, l
 -- map({ 'i', 'c', 'v', 'o', 't', 'l' }, '<D-j>', '<Esc>')  -- <D-j> is cmd-J
 -- map('n', '<D-j>', ':nohl<CR><Esc>', { desc = 'Clear search highlighting', silent = true })
+map('n', '<Esc>', ':nohl<CR><Esc>', { desc = 'Clear search highlighting', silent = true })
 
 -- ========== Navigation ==========
 
 map('n', '<C-b>', ':bprevious<CR>', { silent = true })
 map('n', '<C-l>', ':bnext<CR>', { silent = true })
-
------ Close the current buffer without messing up your window splits
-map('n', '<leader>bd', ':bdelete<CR>', { silent = true })
 
 -- ========== Navigation centering ==========
 
@@ -56,13 +54,17 @@ map('n', '<leader>fo', ':Pick files<CR>')
 map('n', '<leader>i', ':Pick help<CR>')
 map('n', '<leader>h', ':Oil<CR>')
 
+-- close the current buffer without messing up your window splits
+map('n', '<leader>ll', ':bdelete<CR>', { silent = true })
+
 local tsbuiltin = require('telescope.builtin')
 map('n', '<leader>a', tsbuiltin.find_files, { desc = 'Telescope find files' })
+map('n', '<leader>ff', function() tsbuiltin.find_files({ hidden = true }) end, { desc = 'Telescope find hidden files' })
 map('n', '<leader>fg', tsbuiltin.live_grep, { desc = 'Telescope live grep' })
 map('n', '<leader>fb', tsbuiltin.buffers, { desc = 'Telescope buffers' })
 map('n', '<leader>fh', tsbuiltin.help_tags, { desc = 'Telescope help tags' })
 
-map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = 'Replace word cursor is on globally' })
 map('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'makes file executable' })
 
