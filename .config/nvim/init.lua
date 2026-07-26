@@ -1,3 +1,10 @@
+----------------------------------------
+
+---- river's nvim config
+---- created on 2026/07/24
+
+----------------------------------------
+
 require('vim._core.ui2').enable({})
 
 require('options')
@@ -14,14 +21,16 @@ vim.pack.add({
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = "https://github.com/Isrothy/neominimap.nvim" },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+    { src = 'https://github.com/akinsho/bufferline.nvim' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
 
     -- themes
-    { src = 'https://github.com/bluz71/vim-moonfly-colors', name = 'moonfly' },
+    { src = 'https://github.com/bluz71/vim-moonfly-colors',      name = 'moonfly' },
     { src = 'https://github.com/gbprod/nord.nvim' },
     { src = 'https://github.com/folke/tokyonight.nvim' },
+    { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
 })
 
 
@@ -31,6 +40,7 @@ require('oil').setup()
 require('nvim-treesitter').install {
     'lua',
     'javascript',
+    'typescript',
     'python',
     'swift',
     'json',
@@ -38,9 +48,17 @@ require('nvim-treesitter').install {
     'zsh',
     'markdown',
     'regex',
-    'typescript',
     'diff',
     'html',
+}
+
+require("bufferline").setup {
+    options = {
+        show_buffer_close_icons = false,
+        numbers = 'ordinal',
+        tab_size = 24,
+        max_name_length = 24,
+    }
 }
 
 vim.g.neominimap = {
@@ -105,24 +123,3 @@ require('tokyonight').setup({
 
 vim.cmd.colorscheme('tokyonight-night')
 -- vim.cmd.colorscheme('moonfly')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
