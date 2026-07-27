@@ -32,7 +32,7 @@
     "dock": "left"
   },
   "vim_mode": true,
-  "soft_wrap": "preferred_line_length",
+  "soft_wrap": "none",
   "preferred_line_length": 128,
   "telemetry": {
     "metrics": false,
@@ -49,7 +49,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Mocha (Blur)"
+    "dark": "Gruvbox Dark"
   },
   "buffer_font_family": "JetBrains Mono", // default: Zed Plex Mono
   "buffer_font_size": 16.0,
