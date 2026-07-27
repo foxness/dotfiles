@@ -120,16 +120,20 @@ source <(fzf --zsh)
 
 # alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
 
-alias ls='ls --color=auto'
-alias lsa='ls --color=auto -la'
-alias czsh='vi ~/.zshrc'
-alias sa='source ~/.zshrc;echo "ZSH aliases sourced."'
+# alias ls='ls --color=auto'
+# alias lsa='ls --color=auto -la'
+alias lsa='ls -la'
+
+alias sa='source ~/.zshrc;echo "ZSH config loaded."'
 alias oc='open .'
-alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOME'
 alias gs='cd ~/my/system/scripts'
+alias myip='curl https://icanhazip.com/'
+
 alias vim='nvim'
 alias vi='nvim'
-alias myip='curl https://icanhazip.com/'
+
+alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOME'
+alias dfs='dotfiles'
 
 alias fs-start='~/my/system/scripts/fileserver/start.sh'
 alias fs-stop='~/my/system/scripts/fileserver/stop.sh'
@@ -164,7 +168,7 @@ alias wallpapers-forget-for-real='~/my/system/scripts/wallpapers-backup/forget-f
 
 alias confvim='vi ~/.config/nvim/init.lua'
 alias confkarabiner='vi ~/.config/karabiner.edn'
-
+alias confzsh='vi ~/.zshrc'
 
 
 

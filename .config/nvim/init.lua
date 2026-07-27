@@ -18,6 +18,7 @@ vim.pack.add({
     { src = "https://github.com/Isrothy/neominimap.nvim" },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
     { src = 'https://github.com/akinsho/bufferline.nvim' },
+    { src = 'https://github.com/lukas-reineke/indent-blankline.nvim' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -139,6 +140,34 @@ vim.lsp.config('lua_ls', {
 })
 
 vim.lsp.enable({ "lua_ls" })
+
+-- ========== INDENT COLORS ==========
+
+local rainbow_colors = {
+    { name = "RainbowRed",    fg = "#E06C75" },
+    { name = "RainbowYellow", fg = "#E5C07B" },
+    { name = "RainbowBlue",   fg = "#61AFEF" },
+    { name = "RainbowOrange", fg = "#D19A66" },
+    { name = "RainbowGreen",  fg = "#98C379" },
+    { name = "RainbowViolet", fg = "#C678DD" },
+    { name = "RainbowCyan",   fg = "#56B6C2" },
+}
+
+local hooks = require("ibl.hooks")
+
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    for _, color in ipairs(rainbow_colors) do
+        vim.api.nvim_set_hl(0, color.name, { fg = color.fg })
+    end
+end)
+
+local highlight_names = vim.tbl_map(function(c) return c.name end, rainbow_colors)
+
+require("ibl").setup({ -- indent blackline
+    indent = { highlight = highlight_names },
+})
 
 -- ========== APPEARANCE ==========
 
