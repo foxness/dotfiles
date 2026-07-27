@@ -8,6 +8,10 @@
       "rev": "154eb5ff5b96d0641307113fa385eaf0d36d9796",
       "src": "https://github.com/ellisonleao/gruvbox.nvim"
     },
+    "leap.nvim": {
+      "rev": "52bc56ba61b1f54f123e29d6df7d1b7a0393eeac",
+      "src": "https://codeberg.org/andyg/leap.nvim"
+    },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
@@ -23,6 +27,10 @@
     "neominimap.nvim": {
       "rev": "0676085d898019f06044923934e38663f5efa290",
       "src": "https://github.com/Isrothy/neominimap.nvim"
+    },
+    "nightfly": {
+      "rev": "66050453bf40ac7eddc7a84dd15291db85fefc43",
+      "src": "https://github.com/bluz71/vim-nightfly-colors"
     },
     "nord.nvim": {
       "rev": "87394d4fc35c901bbe38326a78d31ab1ead826b6",
@@ -63,6 +71,10 @@
     "vague.nvim": {
       "rev": "f9060fdaf7b20f68575d6f8214da6f1cf0c72825",
       "src": "https://github.com/vague-theme/vague.nvim"
+    },
+    "vim-repeat": {
+      "rev": "65846025c15494983dafe5e3b46c8f88ab2e9635",
+      "src": "https://github.com/tpope/vim-repeat"
     }
   }
 }

@@ -54,7 +54,7 @@ custom-shader = shaders/cursor_warp.glsl
 
 # font-family = JetBrains Mono # default ghostty
 # font-family = Berkeley Mono
-font-family = TX-02
+font-family = TX-02 # this is berkeley mono official
 # font-family = Ioskeley Mono
 font-size = 16
 

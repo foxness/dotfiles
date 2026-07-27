@@ -15,6 +15,9 @@ map('n', '<Esc>', ':nohl<CR><Esc>', { desc = 'Clear search highlighting', silent
 map('n', '<C-b>', ':bprevious<CR>', { silent = true })
 map('n', '<C-l>', ':bnext<CR>', { silent = true })
 
+map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
+map('n', 'S', '<Plug>(leap-from-window)')
+
 -- ========== Navigation centering ==========
 
 map('n', '<C-h>', '<C-d>zz', { desc = 'move down in buffer with cursor centered' })

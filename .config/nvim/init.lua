@@ -26,16 +26,24 @@ vim.pack.add({
     { src = 'https://github.com/nvim-telescope/telescope-fzy-native.nvim' },
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
 
+    { src = 'https://github.com/tpope/vim-repeat' },
+    { src = 'https://codeberg.org/andyg/leap.nvim' },
+
     -- themes
     { src = 'https://github.com/vague-theme/vague.nvim' },
     { src = 'https://github.com/bluz71/vim-moonfly-colors',               name = 'moonfly' },
     { src = 'https://github.com/gbprod/nord.nvim' },
     { src = 'https://github.com/folke/tokyonight.nvim' },
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
+    { src = "https://github.com/bluz71/vim-nightfly-colors",              name = "nightfly" },
 })
+
+-- ========== IMPORT ==========
 
 require('options')
 require('keymaps')
+
+-- ========== PLUGIN CONFIG ==========
 
 -- require('mini.pick').setup()
 -- require('oil').setup()
@@ -81,6 +89,38 @@ ts.setup {
 }
 
 ts.load_extension('fzy_native')
+
+-- ========== LEAP CONFIG ==========
+
+-- Highly recommended: define a preview filter to reduce visual noise
+-- and the blinking effect after the first keypress.
+-- For example, define word boundaries as the common case, that is, skip
+-- preview for matches starting with whitespace or an alphabetic
+-- mid-word character: foobar[baaz] = quux
+--                     ^    ^^^  ^^ ^ ^  ^
+require('leap').opts.preview = function(ch0, ch1, ch2)
+    return not (
+        ch1:match('%s')
+        or (ch0:match('%a') and ch1:match('%a') and ch2:match('%a'))
+    )
+end
+
+-- Enable the traversal keys to repeat the previous search without
+-- explicitly invoking Leap (`<cr><cr>...` instead of `s<cr><cr>...`):
+do
+    local clever = require('leap.user').with_traversal_keys
+    vim.keymap.set({ 'n', 'x', 'o' }, '<cr>', function()
+        require('leap').leap {
+            ['repeat'] = true, opts = clever('<cr>', '<bs>'),
+        }
+    end)
+
+    vim.keymap.set({ 'n', 'x', 'o' }, '<bs>', function()
+        require('leap').leap {
+            ['repeat'] = true, opts = clever('<bs>', '<cr>'), backward = true,
+        }
+    end)
+end
 
 -- ========== MISC ==========
 
@@ -133,6 +173,8 @@ require('tokyonight').setup({
     transparent = true,
 })
 
+vim.g.nightflyTransparent = true
+
 vim.g.neominimap = {
     auto_enable = true,
     float = {
@@ -148,9 +190,6 @@ vim.g.neominimap = {
     },
 }
 
-vim.cmd.colorscheme('tokyonight-night')
--- vim.cmd.colorscheme('moonfly')
-
 require("bufferline").setup {
     options = {
         show_buffer_close_icons = false,
@@ -162,6 +201,9 @@ require("bufferline").setup {
 
 require('lualine').setup({
     options = {
-        theme = 'tokyonight'
+        theme = 'nightfly'
     }
 })
+
+-- vim.cmd.colorscheme('tokyonight-night')
+vim.cmd.colorscheme('nightfly')
