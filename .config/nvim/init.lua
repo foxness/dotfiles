@@ -23,7 +23,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
 
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
-    { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
+    { src = 'https://github.com/nvim-telescope/telescope-fzy-native.nvim' },
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
 
     -- themes
@@ -37,9 +37,8 @@ vim.pack.add({
 require('options')
 require('keymaps')
 
-require('mini.pick').setup()
-require('oil').setup()
-require('oil').setup()
+-- require('mini.pick').setup()
+-- require('oil').setup()
 require('nvim-treesitter').install {
     'lua',
     'javascript',
@@ -56,32 +55,33 @@ require('nvim-treesitter').install {
     'clojure',
 }
 
-require('telescope').setup({
-    -- pickers = {
-    --     find_files = {
-    --         hidden = true, -- shows dotfiles (.env, .gitignore, etc.)
-    --     },
+local ts = require('telescope')
+ts.setup {
+    -- extensions = {
+    --     fzy_native = {
+    --         override_generic_sorter = true,
+    --         override_file_sorter = true,
+    --     }
     -- },
     defaults = {
-        -- configure ripgrep to search hidden files during live_grep
-        -- vimgrep_arguments = {
-        --     'rg',
-        --     '--color=never',
-        --     '--no-heading',
-        --     '--with-filename',
-        --     '--line-number',
-        --     '--column',
-        --     '--smart-case',
-        --     '--hidden', -- << this tells ripgrep to include hidden files
-        -- },
-        -- prevent telescope from cluttering your results with .git/ internals
         file_ignore_patterns = {
             '.git/',
             'Library/',
             'node_modules',
+            'site-packages',
+            '.Trash/',
+            '.photoslibrary',
+            '.app/',
+            '.cache',
+            '.zsh-sessions',
+            'Music/',
+            'Pictures/',
         },
     },
-})
+}
+
+ts.load_extension('fzy_native')
+
 -- ========== MISC ==========
 
 vim.cmd('set completeopt+=noselect')
@@ -110,6 +110,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- vim.api.nvim_create_autocmd('TextYankPost', {
+--   desc = 'Highlight when yanking (copying) text',
+--   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+--   callback = function()
+--     vim.hl.on_yank({
+--       higroup = 'IncSearch', -- highlight group to use
+--       timeout = 200,         -- duration in milliseconds
+--     })
+--   end,
+-- })
+
 require('vague').setup({
     transparent = true,
 })
@@ -121,7 +132,6 @@ require('nord').setup({
 require('tokyonight').setup({
     transparent = true,
 })
-
 
 vim.g.neominimap = {
     auto_enable = true,

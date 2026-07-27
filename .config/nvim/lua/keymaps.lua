@@ -41,8 +41,6 @@ map('v', 'K', ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" 
 map('v', '<', '<gv', { desc = 'Unindent and keep selection' })
 map('v', '>', '>gv', { desc = 'Indent and keep selection' })
 
-map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank character' })
-
 -- ========== Leader ==========
 
 map('n', '<leader>so', ':update<CR> :source<CR>')
@@ -68,7 +66,7 @@ map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = 'Replace word cursor is on globally' })
 map('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'makes file executable' })
 
-map('n', '<leader>re', '<cmd>restart<cr>', { desc = 'Restart config (:eestart)' })
+map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:eestart)' })
 
 map({ 'n', 'v' }, '<leader>l', [['_d]], { desc = 'Delete without yanking' })
 
@@ -81,6 +79,11 @@ map('n', '<leader>D', 'mzkdd`z')
 map('n', '<leader>r', ':update<CR> :make<CR>')
 -- map('n', '<C-U>', '<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>')
 -- map('n', '<C-D>', '<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>')
+
+map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank character' })
+
+map('n', '<leader>c', '<Cmd>normal gcc<CR>', { desc = 'Comment one line' })
+map('v', '<leader>c', '<Cmd>normal gc<CR>', { desc = 'Comment selection' })
 
 -- ========== Duplicate and comment ==========
 
@@ -104,8 +107,8 @@ local function duplicate_and_comment()
     vim.api.nvim_feedkeys("gc", "v", false)
 end
 
-map('n', 'yc', 'yy<cmd>normal gcc<CR>p', { noremap = true, desc = 'Duplicate line and comment original' })
-map('v', 'yc', duplicate_and_comment, { noremap = true, desc = 'Duplicate selection and comment original' })
+map('n', '<leader>yc', 'yy<cmd>normal gcc<CR>p', { noremap = true, desc = 'Duplicate line and comment original' })
+map('v', '<leader>yc', duplicate_and_comment, { noremap = true, desc = 'Duplicate selection and comment original' })
 
 -- ========== Native undotree ==========
 

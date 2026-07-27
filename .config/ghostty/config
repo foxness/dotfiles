@@ -52,7 +52,9 @@ background-opacity = 0.8
 background-blur-radius = 30
 custom-shader = shaders/cursor_warp.glsl
 
-font-family = JetBrains Mono # default ghostty
+# font-family = JetBrains Mono # default ghostty
+font-family = Berkeley Mono
+# font-family = Ioskeley Mono
 font-size = 16
 
 cursor-style = block
