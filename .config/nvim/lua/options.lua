@@ -1,9 +1,9 @@
-
 -- vim.g.netrw_banner = 0
 
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.signcolumn = 'yes'
+vim.g.have_nerd_font = true
 
 vim.o.tabstop = 4
 -- vim.o.softtabstop = 4
@@ -12,6 +12,8 @@ vim.o.expandtab = true
 
 vim.o.wrap = false
 vim.o.smartindent = true
+vim.o.breakindent = true
+
 vim.o.inccommand = 'split'
 vim.o.incsearch = true
 
@@ -33,6 +35,14 @@ vim.o.guicursor = ''
 vim.o.showmode = false
 vim.o.scrolloff = 10
 vim.o.sidescrolloff = 36
+
+vim.o.cursorline = true
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+
+vim.o.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 -- vim.o.colorcolumn = 0
 
 -- vim.o.termguicolors = true
@@ -40,4 +50,3 @@ vim.o.sidescrolloff = 36
 
 -- vim.o.mouse = ''
 -- vim.o.mousescroll = ''
-
