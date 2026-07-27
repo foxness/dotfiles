@@ -143,14 +143,24 @@ vim.lsp.enable({ "lua_ls" })
 
 -- ========== INDENT COLORS ==========
 
+-- local rainbow_colors = {
+--     { name = "RainbowRed",    fg = "#E06C75" },
+--     { name = "RainbowYellow", fg = "#E5C07B" },
+--     { name = "RainbowBlue",   fg = "#61AFEF" },
+--     { name = "RainbowOrange", fg = "#D19A66" },
+--     { name = "RainbowGreen",  fg = "#98C379" },
+--     { name = "RainbowViolet", fg = "#C678DD" },
+--     { name = "RainbowCyan",   fg = "#56B6C2" },
+-- }
+
 local rainbow_colors = {
-    { name = "RainbowRed",    fg = "#E06C75" },
-    { name = "RainbowYellow", fg = "#E5C07B" },
-    { name = "RainbowBlue",   fg = "#61AFEF" },
-    { name = "RainbowOrange", fg = "#D19A66" },
-    { name = "RainbowGreen",  fg = "#98C379" },
-    { name = "RainbowViolet", fg = "#C678DD" },
-    { name = "RainbowCyan",   fg = "#56B6C2" },
+    { name = "RainbowBlue",   fg = "#214564" },
+    { name = "RainbowYellow", fg = "#454944" },
+    { name = "RainbowRed",    fg = "#443343" },
+    { name = "RainbowGreen",  fg = "#304A44" },
+    { name = "RainbowViolet", fg = "#3D365F" },
+    { name = "RainbowOrange", fg = "#403F3F" },
+    { name = "RainbowCyan",   fg = "#1E4758" },
 }
 
 local hooks = require("ibl.hooks")
