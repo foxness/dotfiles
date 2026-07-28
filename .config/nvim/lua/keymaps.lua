@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 -- all modes: n, i, c, v, o, t, l
 -- map({ 'i', 'c', 'v', 'o', 't', 'l' }, '<D-j>', '<Esc>')  -- <D-j> is cmd-J
 -- map('n', '<D-j>', ':nohl<CR><Esc>', { desc = 'Clear search highlighting', silent = true })
-map('n', '<Esc>', ':nohl<CR><Esc>', { desc = 'Clear search highlighting', silent = true })
+map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear search highlighting', silent = true })
 
 -- ========== Navigation ==========
 

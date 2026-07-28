@@ -10,7 +10,6 @@ require('vim._core.ui2').enable({})
 -- ========== PLUGINS ==========
 
 vim.pack.add({
-
     -- plugins
     { src = 'https://github.com/stevearc/oil.nvim' },
     { src = 'https://github.com/nvim-mini/mini.pick' },
@@ -20,6 +19,8 @@ vim.pack.add({
     { src = 'https://github.com/akinsho/bufferline.nvim' },
     { src = 'https://github.com/lukas-reineke/indent-blankline.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter-context' },
+    { src = 'https://github.com/nvim-mini/mini.ai' },
+    { src = 'https://github.com/nvim-mini/mini.surround' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -49,6 +50,21 @@ require('keymaps')
 
 -- require('mini.pick').setup()
 -- require('oil').setup()
+require('mini.ai').setup()
+require('mini.surround').setup {
+    mappings = {
+        add = 'Ha',    -- Add surrounding in Normal and Visual modes
+        delete = 'Hd', -- Delete surrounding
+        find = 'Hf',   -- Find surrounding (to the right)
+        find_left = 'HF', -- Find surrounding (to the left)
+        highlight = 'Hh', -- Highlight surrounding
+        replace = 'Hr', -- Replace surrounding
+
+        suffix_last = 'l', -- Suffix to search with "prev" method
+        suffix_next = 'n', -- Suffix to search with "next" method
+    }
+}
+
 require('nvim-treesitter').install {
     'lua',
     'javascript',
@@ -253,19 +269,19 @@ require('treesitter-context').setup {
 -- nvim-treesitter-context
 -- strip the solid background from the sticky context header
 vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    -- nuke the link explicitly
-    vim.cmd("highlight link TreesitterContext NONE")
-    vim.cmd("highlight link TreesitterContextLineNumber NONE")
+    pattern = "*",
+    callback = function()
+        -- nuke the link explicitly
+        vim.cmd("highlight link TreesitterContext NONE")
+        vim.cmd("highlight link TreesitterContextLineNumber NONE")
 
-    -- apply transparent background
-    vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "none" })
-    vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "none" })
+        -- apply transparent background
+        vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "none" })
+        vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "none" })
 
-    -- add underline
-    vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "#214564" })
-  end,
+        -- add underline
+        vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "#214564" })
+    end,
 })
 
 -- vim.cmd.colorscheme('tokyonight-night')

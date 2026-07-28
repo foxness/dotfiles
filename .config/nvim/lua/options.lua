@@ -38,7 +38,7 @@ vim.o.sidescrolloff = 36
 
 vim.o.cursorline = true
 vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 500
 
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
