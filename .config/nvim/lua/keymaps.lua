@@ -73,12 +73,6 @@ map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:eestart)' 
 
 map({ 'n', 'v' }, '<leader>l', [['_d]], { desc = 'Delete without yanking' })
 
-map('n', '<leader>o', 'mzo<Esc>`z')
-map('n', '<leader>O', 'mzO<Esc>`z')
-
-map('n', '<leader>d', 'mzjdd`z')
-map('n', '<leader>D', 'mzkdd`z')
-
 map('n', '<leader>r', ':update<CR> :make<CR>')
 -- map('n', '<C-U>', '<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>')
 -- map('n', '<C-D>', '<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>')
@@ -87,6 +81,35 @@ map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank 
 
 map('n', '<leader>c', '<Cmd>normal gcc<CR>', { desc = 'Comment one line' })
 map('v', '<leader>c', '<Cmd>normal gc<CR>', { desc = 'Comment selection' })
+
+-- ========== Line Add/Delete ==========
+
+map('n', '<leader>o', function()
+    vim.fn.append(vim.fn.line('.'), '')
+end, { desc = 'Add empty line below' })
+
+map('n', '<leader>u', function()
+    vim.fn.append(vim.fn.line('.') - 1, '')
+end, { desc = 'Add empty line above' })
+
+-- uses black hole register '_'
+map('n', '<leader>do', function()
+    local pos = vim.api.nvim_win_get_cursor(0)
+    local target = pos[1] + 1
+    if target <= vim.api.nvim_buf_line_count(0) then
+        vim.cmd(target .. 'delete _')
+        vim.api.nvim_win_set_cursor(0, pos)
+    end
+end, { desc = 'Delete line below' })
+
+map('n', '<leader>du', function()
+    local pos = vim.api.nvim_win_get_cursor(0)
+    local target = pos[1] - 1
+    if target >= 1 then
+        vim.cmd(target .. 'delete _')
+        vim.api.nvim_win_set_cursor(0, { pos[1] - 1, pos[2] })
+    end
+end, { desc = 'Delete line above' })
 
 -- ========== Duplicate and comment ==========
 
@@ -115,7 +138,7 @@ map('v', '<leader>yc', duplicate_and_comment, { noremap = true, desc = 'Duplicat
 
 -- ========== Native undotree ==========
 
-map('n', '<leader>u', function()
+map('n', '<leader>z', function()
     vim.cmd.packadd('nvim.undotree')
     require('undotree').open()
 end, { desc = 'Toggle Builtin Undotree' })
