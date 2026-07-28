@@ -19,6 +19,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
     { src = 'https://github.com/akinsho/bufferline.nvim' },
     { src = 'https://github.com/lukas-reineke/indent-blankline.nvim' },
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter-context' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -220,14 +221,13 @@ vim.g.neominimap = {
     auto_enable = true,
     float = {
         minimap_width = 20,
-
         margin = {
             right = 1,
             top = 0,
             bottom = 0,
         },
-
         window_border = 'none',
+        z_index = 3,
     },
 }
 
@@ -240,10 +240,32 @@ require("bufferline").setup {
     }
 }
 
-require('lualine').setup({
+require('lualine').setup {
     options = {
         theme = 'nightfly'
     }
+}
+
+require('treesitter-context').setup {
+    zindex = 2
+}
+
+-- nvim-treesitter-context
+-- strip the solid background from the sticky context header
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    -- nuke the link explicitly
+    vim.cmd("highlight link TreesitterContext NONE")
+    vim.cmd("highlight link TreesitterContextLineNumber NONE")
+
+    -- apply transparent background
+    vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "none" })
+    vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "none" })
+
+    -- add underline
+    vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "#214564" })
+  end,
 })
 
 -- vim.cmd.colorscheme('tokyonight-night')
