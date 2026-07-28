@@ -79,8 +79,8 @@ map('n', '<leader>r', ':update<CR> :make<CR>')
 
 map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank character' })
 
-map('n', '<leader>c', '<Cmd>normal gcc<CR>', { desc = 'Comment one line' })
-map('v', '<leader>c', '<Cmd>normal gc<CR>', { desc = 'Comment selection' })
+map('n', 'X', '<Cmd>normal gcc<CR>', { desc = 'Comment one line' })
+map('v', 'X', '<Cmd>normal gc<CR>', { desc = 'Comment selection' })
 
 -- ========== Line Add/Delete ==========
 
