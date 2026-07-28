@@ -48,7 +48,7 @@
 window-height = 28
 window-width = 90
 
-background-opacity = 0.8
+background-opacity = 0.9
 background-blur-radius = 30
 custom-shader = shaders/cursor_warp.glsl
 
