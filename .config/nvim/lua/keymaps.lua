@@ -3,22 +3,70 @@
 local map = vim.keymap.set
 vim.g.mapleader = ' '
 
--- ========== Escape ==========
+-- ========== Main ==========
 
 -- all modes: n, i, c, v, o, t, l
 -- map({ 'i', 'c', 'v', 'o', 't', 'l' }, '<D-j>', '<Esc>')  -- <D-j> is cmd-J
 -- map('n', '<D-j>', ':nohl<CR><Esc>', { desc = 'Clear search highlighting', silent = true })
+
 map('n', '<Esc>', ':nohl<CR>', { desc = 'Clear search highlighting', silent = true })
+
+map('n', '<leader>so', ':update<CR> :source<CR>')
+map('n', '<leader>w', ':write<CR>')
+map('n', '<leader>b', '<Cmd>quit<CR>')
+map('n', '<leader>r', ':update<CR> :make<CR>')
+map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:eestart)' })
 
 -- ========== Navigation ==========
 
 map('n', '<C-b>', ':bprevious<CR>', { silent = true })
 map('n', '<C-l>', ':bnext<CR>', { silent = true })
 
+-- close the current buffer without messing up your window splits
+map('n', '<leader>l', ':bdelete<CR>', { silent = true })
+
+map('n', '<leader>h', ':Pick files<CR>')
+map('n', '<leader>a', ':Pick grep_live<CR>')
+map('n', '<leader>e', ':Oil<CR>')
+map('n', '<leader>i', ':Pick help<CR>')
+
+-- local tsbuiltin = require('telescope.builtin')
+-- map('n', '<leader>a', tsbuiltin.find_files, { desc = 'Telescope find files' })
+-- map('n', '<leader>ff', function() tsbuiltin.find_files({ hidden = true }) end, { desc = 'Telescope find hidden files' })
+-- map('n', '<leader>fg', tsbuiltin.live_grep, { desc = 'Telescope live grep' })
+-- map('n', '<leader>fb', tsbuiltin.buffers, { desc = 'Telescope buffers' })
+-- map('n', '<leader>fh', tsbuiltin.help_tags, { desc = 'Telescope help tags' })
+
+-- ========== Standard enhancements ==========
+
+map('x', 'p', [["_dP]], { desc = 'paste over selection without losing yanked text' })
+map('n', 'J', 'mzJ`z', { desc = 'Join lines without moving cursor' })
+
+map('v', 'J', ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
+map('v', 'K', ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
+
+map('v', '<', '<gv', { desc = 'Unindent and keep selection' })
+map('v', '>', '>gv', { desc = 'Indent and keep selection' })
+
+map('n', 'X', '<Cmd>normal gcc<CR>', { desc = 'Comment one line' })
+map('v', 'X', '<Cmd>normal gc<CR>', { desc = 'Comment selection' })
+
+map('n', '<leader>lf', vim.lsp.buf.format)
+
+map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = 'Replace word cursor is on globally' })
+map('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'makes file executable' })
+
+map({ 'n', 'v' }, '<leader>d', [['_d]], { desc = 'Delete without yanking' })
+
+map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank character' })
+
+-- ========== Motion ==========
+
 map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
 map('n', 'S', '<Plug>(leap-from-window)')
 
--- ========== Navigation centering ==========
+-- ========== Motion centering ==========
 
 map('n', '<C-h>', '<C-d>zz', { desc = 'move down in buffer with cursor centered' })
 map('n', '<C-a>', '<C-u>zz', { desc = 'move up in buffer with cursor centered' })
@@ -32,55 +80,6 @@ map('n', '*', '*zz', { noremap = true })
 map('n', '#', '#zz', { noremap = true })
 map('n', 'g*', 'g*zz', { noremap = true })
 map('n', 'g#', 'g#zz', { noremap = true })
-
--- ========== Standard enhancements ==========
-
-map('x', 'p', [["_dP]], { desc = 'paste over selection without losing yanked text' })
-map('n', 'J', 'mzJ`z', { desc = 'Join lines without moving cursor' })
-
-map('v', 'J', ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
-map('v', 'K', ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
-
-map('v', '<', '<gv', { desc = 'Unindent and keep selection' })
-map('v', '>', '>gv', { desc = 'Indent and keep selection' })
-
--- ========== Leader ==========
-
-map('n', '<leader>so', ':update<CR> :source<CR>')
-map('n', '<leader>w', ':write<CR>')
-map('n', '<leader>b', '<Cmd>quit<CR>')
-
-map('n', '<leader>lf', vim.lsp.buf.format)
-map('n', '<leader>fo', ':Pick files<CR>')
-map('n', '<leader>i', ':Pick help<CR>')
-map('n', '<leader>h', ':Oil<CR>')
-
--- close the current buffer without messing up your window splits
-map('n', '<leader>ll', ':bdelete<CR>', { silent = true })
-
-local tsbuiltin = require('telescope.builtin')
-map('n', '<leader>a', tsbuiltin.find_files, { desc = 'Telescope find files' })
-map('n', '<leader>ff', function() tsbuiltin.find_files({ hidden = true }) end, { desc = 'Telescope find hidden files' })
-map('n', '<leader>fg', tsbuiltin.live_grep, { desc = 'Telescope live grep' })
-map('n', '<leader>fb', tsbuiltin.buffers, { desc = 'Telescope buffers' })
-map('n', '<leader>fh', tsbuiltin.help_tags, { desc = 'Telescope help tags' })
-
-map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = 'Replace word cursor is on globally' })
-map('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'makes file executable' })
-
-map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:eestart)' })
-
-map({ 'n', 'v' }, '<leader>l', [['_d]], { desc = 'Delete without yanking' })
-
-map('n', '<leader>r', ':update<CR> :make<CR>')
--- map('n', '<C-U>', '<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>')
--- map('n', '<C-D>', '<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>')
-
-map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank character' })
-
-map('n', 'X', '<Cmd>normal gcc<CR>', { desc = 'Comment one line' })
-map('v', 'X', '<Cmd>normal gc<CR>', { desc = 'Comment selection' })
 
 -- ========== Line Add/Delete ==========
 

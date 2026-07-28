@@ -166,7 +166,7 @@ alias wallpapers-forget-for-real='~/my/system/scripts/wallpapers-backup/forget-f
 
 # alias python='python3'
 
-alias confvim='vi ~/.config/nvim/init.lua'
+alias confvi='vi ~/.config/nvim/init.lua'
 alias confkarabiner='vi ~/.config/karabiner.edn'
 alias confzsh='vi ~/.zshrc'
 

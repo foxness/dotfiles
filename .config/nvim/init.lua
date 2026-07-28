@@ -26,7 +26,8 @@ vim.pack.add({
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
 
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
-    { src = 'https://github.com/nvim-telescope/telescope-fzy-native.nvim' },
+    -- { src = 'https://github.com/nvim-telescope/telescope-fzy-native.nvim' },
+    { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
 
     { src = 'https://github.com/tpope/vim-repeat' },
@@ -48,17 +49,18 @@ require('keymaps')
 
 -- ========== PLUGIN CONFIG ==========
 
--- require('mini.pick').setup()
--- require('oil').setup()
+require('oil').setup()
+
+require('mini.pick').setup()
 require('mini.ai').setup()
 require('mini.surround').setup {
     mappings = {
-        add = 'Ha',    -- Add surrounding in Normal and Visual modes
-        delete = 'Hd', -- Delete surrounding
-        find = 'Hf',   -- Find surrounding (to the right)
-        find_left = 'HF', -- Find surrounding (to the left)
-        highlight = 'Hh', -- Highlight surrounding
-        replace = 'Hr', -- Replace surrounding
+        add = 'Ha',        -- Add surrounding in Normal and Visual modes
+        delete = 'Hd',     -- Delete surrounding
+        find = 'Hf',       -- Find surrounding (to the right)
+        find_left = 'HF',  -- Find surrounding (to the left)
+        highlight = 'Hh',  -- Highlight surrounding
+        replace = 'Hr',    -- Replace surrounding
 
         suffix_last = 'l', -- Suffix to search with "prev" method
         suffix_next = 'n', -- Suffix to search with "next" method
@@ -91,22 +93,30 @@ ts.setup {
     -- },
     defaults = {
         file_ignore_patterns = {
-            '.git/',
+            '%.git/',
+            '%.app/',
+            '%.cache',
             'Library/',
+            'Music/',
+            'Pictures/',
             'node_modules',
             'site-packages',
             '.Trash/',
-            '.photoslibrary',
-            '.app/',
-            '.cache',
             '.zsh-sessions',
-            'Music/',
-            'Pictures/',
         },
+        find_command = {
+            "fd",
+            "--type", "f",
+            "--strip-cwd-prefix",
+            "--exclude", ".git",
+            "--exclude", "Library",
+            "--exclude", ".cache",
+        },
+
     },
 }
 
-ts.load_extension('fzy_native')
+ts.load_extension('fzf')
 
 -- ========== LEAP CONFIG ==========
 
