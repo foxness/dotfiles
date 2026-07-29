@@ -116,10 +116,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# ============ INTEGRATION ============
-
-source <(fzf --zsh)
-
 # ============ ALIASES ============
 
 # alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
@@ -184,9 +180,12 @@ alias confvi='vi ~/.config/nvim/init.lua'
 alias confkarabiner='vi ~/.config/karabiner.edn'
 alias confzsh='vi ~/.zshrc'
 
+# ============ ZSH ENHANCEMENTS ============
 
+source <(fzf --zsh)
 
-
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 
