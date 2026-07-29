@@ -123,10 +123,11 @@ source <(fzf --zsh)
 # alias ls='ls --color=auto'
 # alias lsa='ls --color=auto -la'
 alias lsa='ls -la'
+alias ca='bat'
 
 alias sa='source ~/.zshrc;echo "ZSH config loaded."'
 alias oc='open .'
-alias gs='cd ~/my/system/scripts'
+alias gos='cd ~/my/system/scripts'
 alias myip='curl https://icanhazip.com/'
 
 alias vim='nvim'
@@ -134,6 +135,17 @@ alias vi='nvim'
 
 alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOME'
 alias dfs='dotfiles'
+alias dfss='dfs status -s'
+alias dfsd='dfs diff'
+alias dfsa='dfs add -u'
+alias dfsc='dfs commit -m'
+alias dfsp='dfs push'
+
+alias gs='git status -s'
+alias gdi='git diff'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
 
 alias fs-start='~/my/system/scripts/fileserver/start.sh'
 alias fs-stop='~/my/system/scripts/fileserver/stop.sh'
@@ -163,8 +175,6 @@ alias wallpapers-list='~/my/system/scripts/wallpapers-backup/list.sh'
 alias wallpapers-prune='~/my/system/scripts/wallpapers-backup/prune.sh'
 alias wallpapers-forget-dryrun='~/my/system/scripts/wallpapers-backup/forget-dryrun.sh'
 alias wallpapers-forget-for-real='~/my/system/scripts/wallpapers-backup/forget-for-real.sh'
-
-# alias python='python3'
 
 alias confvi='vi ~/.config/nvim/init.lua'
 alias confkarabiner='vi ~/.config/karabiner.edn'

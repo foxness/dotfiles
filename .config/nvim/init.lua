@@ -253,7 +253,7 @@ vim.g.neominimap = {
             bottom = 0,
         },
         window_border = 'none',
-        z_index = 3,
+        z_index = 3, -- so that it is above treesitter context
     },
 }
 
@@ -273,7 +273,7 @@ require('lualine').setup {
 }
 
 require('treesitter-context').setup {
-    zindex = 2
+    zindex = 2 -- so that it is below minimap
 }
 
 -- nvim-treesitter-context
