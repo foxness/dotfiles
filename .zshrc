@@ -112,8 +112,8 @@ source $ZSH/oh-my-zsh.sh
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/opt/homebrew/share"
 
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/Users/river/.cargo/bin:$PATH"
-export PATH="/Users/river/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # ============ INTEGRATION ============
@@ -124,11 +124,11 @@ source <(fzf --zsh)
 
 # alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
 
-# alias ls='ls --color=auto'
-# alias lsa='ls --color=auto -la'
-alias lsa='ls -la'
+alias ls='eza --long --color=always --icons=always --no-user --time-style long-iso --sort type'
+alias lsa='ls --all'
 alias ca='bat'
 
+# sa means source aliasse :)
 alias sa='source ~/.zshrc;echo "ZSH config loaded."'
 alias oc='open .'
 alias gos='cd ~/my/system/scripts'
