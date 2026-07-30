@@ -122,9 +122,16 @@
         :fine-vol-down { :key :!SOvolume_down }
         :fine-vol-up { :key :!SOvolume_up }
 
+        :quick-media-play-pause { :key :keypad_0 }
+
         :spotify-normalize-volume { :key :!Ckeypad_asterisk }
         :spotify-volume-down { :key :keypad_hyphen }
         :spotify-volume-up { :key :keypad_plus }
+
+        :spotify-previous-song { :key :!QWEf14 }
+        :spotify-next-song { :key :!QWEf15 }
+        :spotify-like { :key :!QWEf16 }
+        :spotify-unlike { :key :!QWEf17 }
 
         :qwerty-lockscreen { :key :!CTq :repeat false }
         :graphite-lockscreen { :key :!CTz :repeat false }
@@ -859,12 +866,12 @@
 
                 ;; --- Spotify ---
 
-                [:!WRq :keypad_0] ;; mouse media play/pause
-                ;; [:!WRq :!QWEf13] ;; spotify play/pause
-                [:!WRw :!QWEf14] ;; spotify previous song
-                [:!WRe :!QWEf15] ;; spotify next song
-                [:!WRr :!QWEf16] ;; spotify like
-                [:!WRt :!QWEf17] ;; spotify unlike
+                [:!WRq :quick-media-play-pause]
+                ;; [:!WRq :spotify-play-pause]
+                [:!WRw :spotify-previous-song]
+                [:!WRe :spotify-next-song]
+                [:!WRr :spotify-like]
+                [:!WRt :spotify-unlike]
 
                 [:!WRf1 :spotify-volume-down]
                 [:!WRf2 :spotify-volume-up]
@@ -888,12 +895,12 @@
 
                 ;; --- Spotify ---
 
-                [:!WRq :keypad_0] ;; mouse media play/pause
-                ;; [:!WRq :!QWEf13] ;; spotify play/pause
-                [:!WRw :!QWEf14] ;; spotify previous song
-                [:!WRe :!QWEf15] ;; spotify next song
-                [:!WRr :!QWEf16] ;; spotify like
-                [:!WRt :!QWEf17] ;; spotify unlike
+                [:!WRq :quick-media-play-pause]
+                ;; [:!WRq :spotify-play-pause]
+                [:!WRw :spotify-previous-song]
+                [:!WRe :spotify-next-song]
+                [:!WRr :spotify-like]
+                [:!WRt :spotify-unlike]
 
                 [:!OWR1 :spotify-volume-down]
                 [:!OWR2 :spotify-volume-up]
