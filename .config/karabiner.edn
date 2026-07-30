@@ -859,7 +859,7 @@
 
                 ;; --- Spotify ---
 
-                [:!WRq :keypad_asterisk] ;; mouse media play/pause
+                [:!WRq :keypad_0] ;; mouse media play/pause
                 ;; [:!WRq :!QWEf13] ;; spotify play/pause
                 [:!WRw :!QWEf14] ;; spotify previous song
                 [:!WRe :!QWEf15] ;; spotify next song
@@ -888,7 +888,7 @@
 
                 ;; --- Spotify ---
 
-                [:!WRq :keypad_asterisk] ;; mouse media play/pause
+                [:!WRq :keypad_0] ;; mouse media play/pause
                 ;; [:!WRq :!QWEf13] ;; spotify play/pause
                 [:!WRw :!QWEf14] ;; spotify previous song
                 [:!WRe :!QWEf15] ;; spotify next song
