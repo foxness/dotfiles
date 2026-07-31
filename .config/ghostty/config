@@ -47,6 +47,8 @@
 
 window-height = 28
 window-width = 90
+window-position-x = 600
+window-position-y = 326
 
 background-opacity = 0.9
 background-blur-radius = 30
@@ -63,6 +65,8 @@ cursor-style = block
 shell-integration-features = no-cursor
 macos-titlebar-style = tabs
 shell-integration = zsh
+mouse-hide-while-typing = true
+macos-icon = xray
 
 # good themes:
 # Aardvark Blue
