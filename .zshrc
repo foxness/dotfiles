@@ -2,23 +2,9 @@
 # river .zshrc config
 # created on 2025/02/08
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
-# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -65,9 +51,6 @@ ZSH_THEME="agnoster"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -135,20 +118,12 @@ alias vi='nvim'
 
 alias dotfiles='git --git-dir=$HOME/my/system/git/dotfiles.git/ --work-tree=$HOME'
 alias dot='dotfiles'
-alias dots='dot status -s'
-alias dotd='dot diff'
-alias dota='dot add -u'
-alias dotc='dot commit -m'
-alias dotp='dot push'
+alias dotstat='dot status -s'
 
-alias gs='git status -s'
-alias gdi='git diff'
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push'
+alias gitstat='git status -s'
 
-alias fs-start='~/my/system/scripts/fileserver/start.sh'
-alias fs-stop='~/my/system/scripts/fileserver/stop.sh'
+alias fileserver-start='~/my/system/scripts/fileserver/start.sh'
+alias fileserver-stop='~/my/system/scripts/fileserver/stop.sh'
 
 alias potato-open='cd ~/my/other/minecraftServer'
 alias potato-start='~/my/other/minecraftServer/start.sh'
