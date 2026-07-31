@@ -80,6 +80,6 @@ macos-icon = xray
 theme = tokyonight
 
 keybind = global:cmd+f20=toggle_quick_terminal
-quick-terminal-position = center
+quick-terminal-position = top
 quick-terminal-animation-duration = 0
-quick-terminal-size = 70%,70%
+quick-terminal-size = 70%,100%
