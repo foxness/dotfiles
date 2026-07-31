@@ -21,14 +21,10 @@ vim.pack.add({
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter-context' },
     { src = 'https://github.com/nvim-mini/mini.ai' },
     { src = 'https://github.com/nvim-mini/mini.surround' },
+    { src = 'https://github.com/folke/snacks.nvim' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
-
-    { src = 'https://github.com/nvim-lua/plenary.nvim' },
-    -- { src = 'https://github.com/nvim-telescope/telescope-fzy-native.nvim' },
-    { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
-    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
 
     { src = 'https://github.com/tpope/vim-repeat' },
     { src = 'https://codeberg.org/andyg/leap.nvim' },
@@ -50,6 +46,28 @@ require('keymaps')
 -- ========== PLUGIN CONFIG ==========
 
 require('oil').setup()
+require('snacks').setup {
+    bigfile = { enabled = false },
+    dashboard = { enabled = false },
+    explorer = { enabled = false },
+    indent = { enabled = false },
+    input = { enabled = false },
+    notifier = {
+      enabled = false,
+      timeout = 3000,
+    },
+    picker = { enabled = true },
+    quickfile = { enabled = false },
+    scope = { enabled = false },
+    scroll = { enabled = false },
+    statuscolumn = { enabled = false },
+    words = { enabled = false },
+    styles = {
+      notification = {
+        -- wo = { wrap = true } -- Wrap notifications
+      }
+    }
+}
 
 require('mini.pick').setup()
 require('mini.ai').setup()
@@ -82,41 +100,6 @@ require('nvim-treesitter').install {
     'html',
     'clojure',
 }
-
-local ts = require('telescope')
-ts.setup {
-    -- extensions = {
-    --     fzy_native = {
-    --         override_generic_sorter = true,
-    --         override_file_sorter = true,
-    --     }
-    -- },
-    defaults = {
-        file_ignore_patterns = {
-            '%.git/',
-            '%.app/',
-            '%.cache',
-            'Library/',
-            'Music/',
-            'Pictures/',
-            'node_modules',
-            'site-packages',
-            '.Trash/',
-            '.zsh-sessions',
-        },
-        find_command = {
-            "fd",
-            "--type", "f",
-            "--strip-cwd-prefix",
-            "--exclude", ".git",
-            "--exclude", "Library",
-            "--exclude", ".cache",
-        },
-
-    },
-}
-
-ts.load_extension('fzf')
 
 -- ========== LEAP CONFIG ==========
 

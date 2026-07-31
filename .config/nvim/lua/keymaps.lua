@@ -30,13 +30,8 @@ map('n', '<leader>a', ':Pick grep_live<CR>')
 map('n', '<leader>e', ':Oil<CR>')
 map('n', '<leader>i', ':Pick help<CR>')
 
--- local tsbuiltin = require('telescope.builtin')
--- map('n', '<leader>a', tsbuiltin.find_files, { desc = 'Telescope find files' })
--- map('n', '<leader>ff', function() tsbuiltin.find_files({ hidden = true }) end, { desc = 'Telescope find hidden files' })
--- map('n', '<leader>fg', tsbuiltin.live_grep, { desc = 'Telescope live grep' })
--- map('n', '<leader>fb', tsbuiltin.buffers, { desc = 'Telescope buffers' })
--- map('n', '<leader>fh', tsbuiltin.help_tags, { desc = 'Telescope help tags' })
-
+local Snacks = require('snacks')
+map('n', '<leader>ff', function() Snacks.picker.files() end, { desc = "Find Files" })
 -- ========== Standard enhancements ==========
 
 map('x', 'p', [["_dP]], { desc = 'paste over selection without losing yanked text' })
@@ -141,3 +136,16 @@ map('n', '<leader>z', function()
     vim.cmd.packadd('nvim.undotree')
     require('undotree').open()
 end, { desc = 'Toggle Builtin Undotree' })
+
+-- ========== Change directory ==========
+
+vim.keymap.set('n', '<leader>di', function()
+    local dir = vim.fn.expand('%:p:h')
+    if dir ~= '' and vim.fn.isdirectory(dir) == 1 then
+        vim.api.nvim_set_current_dir(dir)
+        local pretty_dir = vim.fn.fnamemodify(dir, ':~')
+        print('CWD changed to: ' .. pretty_dir)
+    else
+        print('No valid directory found for current buffer')
+    end
+end, { desc = 'Change CWD to current file directory' })

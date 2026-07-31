@@ -107,7 +107,7 @@ alias ls='eza --long --color=always --icons=always --no-user --time-style long-i
 alias lsa='ls --all'
 alias ca='bat'
 
-# sa means source aliasse :)
+# sa means source aliases :)
 alias sa='source ~/.zshrc;echo "ZSH config loaded."'
 alias oc='open .'
 alias gos='cd ~/my/system/scripts'
