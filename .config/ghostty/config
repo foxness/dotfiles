@@ -49,6 +49,7 @@ window-height = 28
 window-width = 90
 window-position-x = 600
 window-position-y = 326
+window-save-state = always
 
 background-opacity = 0.9
 background-blur-radius = 30
@@ -83,3 +84,7 @@ keybind = global:cmd+f20=toggle_quick_terminal
 quick-terminal-position = top
 quick-terminal-animation-duration = 0
 quick-terminal-size = 70%,100%
+
+keybind = cmd+s=goto_split:next
+keybind = cmd+d=new_split:right
+keybind = cmd+g=goto_split:previous
