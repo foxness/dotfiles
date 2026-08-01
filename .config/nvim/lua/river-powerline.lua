@@ -15,6 +15,13 @@ local colors = {
     gray7        = '#9e9e9e',
     gray10       = '#f0f0f0',
     pink         = '#d7005f',
+    teal         = '#00afaf',
+    blue         = '#0257d1',
+    orangebg     = '#e48457',
+    darkteal     = '#008484',
+    yellow       = '#ffde72',
+    purple       = '#cf9cff',
+    lightpulp    = '#decdff',
 }
 
 local theme = {
@@ -26,10 +33,17 @@ local theme = {
     insert = {
         a = { fg = colors.darkestcyan, bg = colors.white, gui = 'bold' },
         b = { fg = colors.darkestcyan, bg = colors.mediumcyan },
-        c = { fg = colors.mediumcyan, bg = colors.darkestblue },
+        c = { fg = colors.lightpulp, bg = colors.blue },
     },
-    visual = { a = { fg = colors.darkred, bg = colors.brightorange, gui = 'bold' } },
-    replace = { a = { fg = colors.white, bg = colors.brightred, gui = 'bold' } },
+    visual = {
+        a = { fg = colors.darkred, bg = colors.white, gui = 'bold' },
+        b = { fg = colors.darkred, bg = colors.purple, gui = 'bold' },
+        c = { fg = colors.darkred, bg = colors.orangebg, gui = 'bold' },
+    },
+    replace = {
+        a = { fg = colors.white, bg = colors.pink, gui = 'bold' },
+        c = { fg = colors.white, bg = colors.darkteal, gui = 'bold' },
+    },
     inactive = {
         a = { fg = colors.gray1, bg = colors.gray5, gui = 'bold' },
         b = { fg = colors.gray1, bg = colors.gray5 },
