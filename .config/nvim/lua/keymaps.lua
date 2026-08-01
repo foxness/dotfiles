@@ -25,10 +25,10 @@ map('n', '<C-l>', ':bnext<CR>', { silent = true })
 -- close the current buffer without messing up your window splits
 map('n', '<leader>l', ':bdelete<CR>', { silent = true })
 
-map('n', '<leader>h', ':Pick files<CR>')
-map('n', '<leader>a', ':Pick grep_live<CR>')
-map('n', '<leader>e', ':Oil<CR>')
-map('n', '<leader>i', ':Pick help<CR>')
+-- map('n', '<leader>h', ':Pick files<CR>')
+-- map('n', '<leader>a', ':Pick grep_live<CR>')
+-- map('n', '<leader>e', ':Oil<CR>')
+-- map('n', '<leader>i', ':Pick help<CR>')
 
 local Snacks = require('snacks')
 map('n', '<leader>ff', function() Snacks.picker.files() end, { desc = "Find Files" })
@@ -59,7 +59,32 @@ map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank 
 -- ========== Motion ==========
 
 map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
-map('n', 'S', '<Plug>(leap-from-window)')
+map({ 'x', 'o' }, 'x', '<Plug>(leap-next-to)')
+
+-- Enable the traversal keys to repeat the previous search without
+-- explicitly invoking Leap (`<cr><cr>...` instead of `s<cr><cr>...`):
+do
+    local clever = require('leap.user').with_traversal_keys
+    vim.keymap.set({ 'n', 'x', 'o' }, '<cr>', function()
+        require('leap').leap {
+            ['repeat'] = true, opts = clever('<cr>', '<bs>'),
+        }
+    end)
+
+    vim.keymap.set({ 'n', 'x', 'o' }, '<bs>', function()
+        require('leap').leap {
+            ['repeat'] = true, opts = clever('<bs>', '<cr>'), backward = true,
+        }
+    end)
+end
+
+map('n', '<leader>a', 'H')
+map('n', '<leader>e', 'M')
+map('n', '<leader>h', 'L')
+
+map('n', 'H', '<nop>') -- should probably add some function to these
+map('n', 'M', '<nop>')
+map('n', 'L', '<nop>')
 
 -- ========== Motion centering ==========
 
@@ -75,6 +100,8 @@ map('n', '*', '*zz', { noremap = true })
 map('n', '#', '#zz', { noremap = true })
 map('n', 'g*', 'g*zz', { noremap = true })
 map('n', 'g#', 'g#zz', { noremap = true })
+
+map('n', '<leader>i', 'zz')
 
 -- ========== Line Add/Delete ==========
 

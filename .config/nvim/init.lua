@@ -69,12 +69,12 @@ require('mini.pick').setup()
 require('mini.ai').setup()
 require('mini.surround').setup {
     mappings = {
-        add = 'Ha',        -- Add surrounding in Normal and Visual modes
-        delete = 'Hd',     -- Delete surrounding
-        find = 'Hf',       -- Find surrounding (to the right)
-        find_left = 'HF',  -- Find surrounding (to the left)
-        highlight = 'Hh',  -- Highlight surrounding
-        replace = 'Hr',    -- Replace surrounding
+        add = 'Sa',        -- Add surrounding in Normal and Visual modes
+        delete = 'Sd',     -- Delete surrounding
+        find = 'Sf',       -- Find surrounding (to the right)
+        find_left = 'SF',  -- Find surrounding (to the left)
+        highlight = 'Sh',  -- Highlight surrounding
+        replace = 'Sr',    -- Replace surrounding
 
         suffix_last = 'l', -- Suffix to search with "prev" method
         suffix_next = 'n', -- Suffix to search with "next" method
@@ -110,23 +110,6 @@ require('leap').opts.preview = function(ch0, ch1, ch2)
         ch1:match('%s')
         or (ch0:match('%a') and ch1:match('%a') and ch2:match('%a'))
     )
-end
-
--- Enable the traversal keys to repeat the previous search without
--- explicitly invoking Leap (`<cr><cr>...` instead of `s<cr><cr>...`):
-do
-    local clever = require('leap.user').with_traversal_keys
-    vim.keymap.set({ 'n', 'x', 'o' }, '<cr>', function()
-        require('leap').leap {
-            ['repeat'] = true, opts = clever('<cr>', '<bs>'),
-        }
-    end)
-
-    vim.keymap.set({ 'n', 'x', 'o' }, '<bs>', function()
-        require('leap').leap {
-            ['repeat'] = true, opts = clever('<bs>', '<cr>'), backward = true,
-        }
-    end)
 end
 
 -- ========== MISC ==========
@@ -223,8 +206,8 @@ require('tokyonight').setup {
 require('catppuccin').setup {
     transparent_background = true,
     float = {
-        transparent = false, -- enable transparent floating windows
-        solid = false, -- use solid styling for floating windows, see |winborder|
+        transparent = true, -- enable transparent floating windows
+        solid = true,      -- use solid styling for floating windows, see |winborder|
     },
 }
 
@@ -244,13 +227,29 @@ vim.g.neominimap = {
     },
 }
 
+local mocha = require("catppuccin.palettes").get_palette "mocha"
 require("bufferline").setup {
     options = {
         show_buffer_close_icons = false,
         numbers = 'ordinal',
         tab_size = 24,
         max_name_length = 24,
-    }
+    },
+    -- you only need this highlights section if you want to make the bufferline transparent in catppuccin
+    highlights = require("catppuccin.special.bufferline").get_theme {
+        styles = { "italic", "bold" },
+        custom = {
+            all = {
+                fill = { bg = "None" },
+            },
+            mocha = {
+                background = { fg = mocha.text },
+            },
+            latte = {
+                background = { fg = "#000000" },
+            },
+        },
+    },
 }
 
 require('lualine').setup {
@@ -282,9 +281,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 -- vim.cmd.colorscheme('tokyonight-night')
+-- vim.cmd.colorscheme('nightfly') -- this fixes opaque tabline
 vim.cmd.colorscheme('catppuccin')
 
 -- ========== IMPORT ==========
 
 require('options')
 require('keymaps')
+
