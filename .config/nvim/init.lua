@@ -57,12 +57,13 @@ require('snacks').setup {
     scope = { enabled = false },
     scroll = { enabled = false },
     statuscolumn = { enabled = false },
+    rename = { enabled = true },
     words = { enabled = false },
-    styles = {
-        notification = {
-            -- wo = { wrap = true } -- Wrap notifications
-        }
-    }
+    -- styles = {
+    --     notification = {
+    --         -- wo = { wrap = true } -- Wrap notifications
+    --     }
+    -- }
 }
 
 require('mini.pick').setup()

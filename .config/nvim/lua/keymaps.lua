@@ -32,6 +32,7 @@ map('n', '<leader>l', ':bdelete<CR>', { silent = true })
 
 local snacks = require('snacks')
 map('n', '<leader>ff', function() snacks.picker.files() end, { desc = "Find Files" })
+map('n', '<leader>si', snacks.rename.rename_file, { desc = "Rename file" })
 
 map("n", "<leader>dd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 map("n", "<leader>dj", function() vim.diagnostic.jump({ count = -1, float = true }) end,
