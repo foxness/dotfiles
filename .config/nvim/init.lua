@@ -286,4 +286,4 @@ vim.cmd.colorscheme('catppuccin')
 -- ========== IMPORT ==========
 
 require('options')
-require('keymaps')
+require('keybinds')

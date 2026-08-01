@@ -19,18 +19,20 @@ map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:eestart)' 
 
 -- ========== Navigation ==========
 
+local snacks = require('snacks')
+
 map('n', '<C-b>', ':bprevious<CR>', { silent = true })
 map('n', '<C-l>', ':bnext<CR>', { silent = true })
 
 -- close the current buffer without messing up your window splits
-map('n', '<leader>l', ':bdelete<CR>', { silent = true })
+-- map('n', '<leader>l', ':bdelete<CR>', { silent = true })
+map('n', '<leader>l', function() snacks.bufdelete() end, { desc = 'Delete buffer' })
 
 -- map('n', '<leader>h', ':Pick files<CR>')
 -- map('n', '<leader>a', ':Pick grep_live<CR>')
 -- map('n', '<leader>e', ':Oil<CR>')
 -- map('n', '<leader>i', ':Pick help<CR>')
 
-local snacks = require('snacks')
 map('n', '<leader>ff', function() snacks.picker.files() end, { desc = "Find Files" })
 map('n', '<leader>si', snacks.rename.rename_file, { desc = "Rename file" })
 
