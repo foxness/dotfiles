@@ -255,7 +255,7 @@ require("bufferline").setup {
 
 require('lualine').setup {
     options = {
-        theme = 'nightfly'
+        theme = 'powerline'
     }
 }
 

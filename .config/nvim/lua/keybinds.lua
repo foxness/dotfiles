@@ -3,6 +3,9 @@
 local map = vim.keymap.set
 vim.g.mapleader = ' '
 
+local snacks = require('snacks')
+local leap = require('leap')
+
 -- ========== Main ==========
 
 -- all modes: n, i, c, v, o, t, l
@@ -17,9 +20,11 @@ map('n', '<leader>b', '<Cmd>quit<CR>')
 map('n', '<leader>r', ':update<CR> :make<CR>')
 map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:eestart)' })
 
--- ========== Navigation ==========
+-- ========== Other ==========
 
-local snacks = require('snacks')
+map('n', '<leader>si', snacks.rename.rename_file, { desc = "Rename file" })
+
+-- ========== Navigation ==========
 
 map('n', '<C-b>', ':bprevious<CR>', { silent = true })
 map('n', '<C-l>', ':bnext<CR>', { silent = true })
@@ -33,8 +38,12 @@ map('n', '<leader>l', function() snacks.bufdelete() end, { desc = 'Delete buffer
 -- map('n', '<leader>e', ':Oil<CR>')
 -- map('n', '<leader>i', ':Pick help<CR>')
 
-map('n', '<leader>ff', function() snacks.picker.files() end, { desc = "Find Files" })
-map('n', '<leader>si', snacks.rename.rename_file, { desc = "Rename file" })
+map('n', '<leader>ta', function() snacks.picker.files() end, { desc = "Find Files" })
+map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.stdpath("config") } end, { desc = "Find Config File" })
+map('n', '<leader>th', ':Oil<CR>', { desc = "Open File Explorer" })
+map('n', '<leader>te', function() snacks.picker.grep() end, { desc = "Grep" })
+map({ 'n', 'x' }, '<leader>ti', function() snacks.picker.grep_word() end, { desc = "Grep word" })
+map('n', '<leader>tf', function() snacks.picker.help() end, { desc = "Find Help Pages" })
 
 map("n", "<leader>dd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 map("n", "<leader>dj", function() vim.diagnostic.jump({ count = -1, float = true }) end,
@@ -74,7 +83,6 @@ map({ 'x', 'o' }, 'x', '<Plug>(leap-next-to)')
 -- Enable the traversal keys to repeat the previous search without
 -- explicitly invoking Leap (`<cr><cr>...` instead of `s<cr><cr>...`):
 do
-    local leap = require('leap')
     local clever = require('leap.user').with_traversal_keys
 
     local function leapForward()
@@ -177,7 +185,7 @@ end, { desc = 'Toggle Builtin Undotree' })
 
 -- ========== Change directory ==========
 
-vim.keymap.set('n', '<leader>di', function()
+local function changeDirectory()
     local dir = vim.fn.expand('%:p:h')
     if dir ~= '' and vim.fn.isdirectory(dir) == 1 then
         vim.api.nvim_set_current_dir(dir)
@@ -186,4 +194,6 @@ vim.keymap.set('n', '<leader>di', function()
     else
         print('No valid directory found for current buffer')
     end
-end, { desc = 'Change CWD to current file directory' })
+end
+
+map('n', '<leader>di', changeDirectory, { desc = 'Change CWD to current file directory' })
