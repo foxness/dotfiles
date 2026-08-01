@@ -31,17 +31,13 @@ vim.pack.add({
 
     -- themes
     { src = 'https://github.com/vague-theme/vague.nvim' },
-    { src = 'https://github.com/bluz71/vim-moonfly-colors',               name = 'moonfly' },
+    { src = 'https://github.com/bluz71/vim-moonfly-colors',              name = 'moonfly' },
     { src = 'https://github.com/gbprod/nord.nvim' },
     { src = 'https://github.com/folke/tokyonight.nvim' },
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
-    { src = "https://github.com/bluz71/vim-nightfly-colors",              name = "nightfly" },
+    { src = 'https://github.com/bluz71/vim-nightfly-colors',             name = 'nightfly' },
+    { src = 'https://github.com/catppuccin/nvim',                        name = 'catppuccin' },
 })
-
--- ========== IMPORT ==========
-
-require('options')
-require('keymaps')
 
 -- ========== PLUGIN CONFIG ==========
 
@@ -53,8 +49,8 @@ require('snacks').setup {
     indent = { enabled = false },
     input = { enabled = false },
     notifier = {
-      enabled = false,
-      timeout = 3000,
+        enabled = false,
+        timeout = 3000,
     },
     picker = { enabled = true },
     quickfile = { enabled = false },
@@ -63,9 +59,9 @@ require('snacks').setup {
     statuscolumn = { enabled = false },
     words = { enabled = false },
     styles = {
-      notification = {
-        -- wo = { wrap = true } -- Wrap notifications
-      }
+        notification = {
+            -- wo = { wrap = true } -- Wrap notifications
+        }
     }
 }
 
@@ -220,9 +216,17 @@ require('nord').setup({
     transparent = true,
 })
 
-require('tokyonight').setup({
+require('tokyonight').setup {
     transparent = true,
-})
+}
+
+require('catppuccin').setup {
+    transparent_background = true,
+    float = {
+        transparent = false, -- enable transparent floating windows
+        solid = false, -- use solid styling for floating windows, see |winborder|
+    },
+}
 
 vim.g.nightflyTransparent = true
 
@@ -278,4 +282,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 -- vim.cmd.colorscheme('tokyonight-night')
-vim.cmd.colorscheme('nightfly')
+vim.cmd.colorscheme('catppuccin')
+
+-- ========== IMPORT ==========
+
+require('options')
+require('keymaps')
