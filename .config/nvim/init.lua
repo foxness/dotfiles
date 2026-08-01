@@ -253,9 +253,10 @@ require("bufferline").setup {
     },
 }
 
+local river_powerline = require('river-powerline')
 require('lualine').setup {
     options = {
-        theme = 'powerline'
+        theme = river_powerline
     }
 }
 
