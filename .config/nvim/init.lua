@@ -207,7 +207,7 @@ require('catppuccin').setup {
     transparent_background = true,
     float = {
         transparent = true, -- enable transparent floating windows
-        solid = true,      -- use solid styling for floating windows, see |winborder|
+        solid = true,       -- use solid styling for floating windows, see |winborder|
     },
 }
 
@@ -280,12 +280,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end,
 })
 
--- vim.cmd.colorscheme('tokyonight-night')
--- vim.cmd.colorscheme('nightfly') -- this fixes opaque tabline
 vim.cmd.colorscheme('catppuccin')
 
 -- ========== IMPORT ==========
 
 require('options')
 require('keymaps')
-

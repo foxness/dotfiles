@@ -30,8 +30,15 @@ map('n', '<leader>l', ':bdelete<CR>', { silent = true })
 -- map('n', '<leader>e', ':Oil<CR>')
 -- map('n', '<leader>i', ':Pick help<CR>')
 
-local Snacks = require('snacks')
-map('n', '<leader>ff', function() Snacks.picker.files() end, { desc = "Find Files" })
+local snacks = require('snacks')
+map('n', '<leader>ff', function() snacks.picker.files() end, { desc = "Find Files" })
+
+map("n", "<leader>dd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+map("n", "<leader>dj", function() vim.diagnostic.jump({ count = -1, float = true }) end,
+    { desc = "Previous diagnostic" })
+map("n", "<leader>dw", function() vim.diagnostic.jump({ count = 1, float = true }) end,
+    { desc = "Next diagnostic" })
+
 -- ========== Standard enhancements ==========
 
 map('x', 'p', [["_dP]], { desc = 'paste over selection without losing yanked text' })
@@ -46,7 +53,7 @@ map('v', '>', '>gv', { desc = 'Indent and keep selection' })
 map('n', 'X', '<Cmd>normal gcc<CR>', { desc = 'Comment one line' })
 map('v', 'X', '<Cmd>normal gc<CR>', { desc = 'Comment selection' })
 
-map('n', '<leader>lf', vim.lsp.buf.format)
+map('n', '<leader>df', vim.lsp.buf.format)
 
 map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = 'Replace word cursor is on globally' })
@@ -64,18 +71,19 @@ map({ 'x', 'o' }, 'x', '<Plug>(leap-next-to)')
 -- Enable the traversal keys to repeat the previous search without
 -- explicitly invoking Leap (`<cr><cr>...` instead of `s<cr><cr>...`):
 do
+    local leap = require('leap')
     local clever = require('leap.user').with_traversal_keys
-    vim.keymap.set({ 'n', 'x', 'o' }, '<cr>', function()
-        require('leap').leap {
-            ['repeat'] = true, opts = clever('<cr>', '<bs>'),
-        }
-    end)
 
-    vim.keymap.set({ 'n', 'x', 'o' }, '<bs>', function()
-        require('leap').leap {
-            ['repeat'] = true, opts = clever('<bs>', '<cr>'), backward = true,
-        }
-    end)
+    local function leapForward()
+        leap.leap { ['repeat'] = true, opts = clever('<cr>', '<bs>') }
+    end
+
+    local function leapBackward()
+        leap.leap { ['repeat'] = true, opts = clever('<bs>', '<cr>'), backward = true }
+    end
+
+    vim.keymap.set({ 'n', 'x', 'o' }, '<cr>', leapForward)
+    vim.keymap.set({ 'n', 'x', 'o' }, '<bs>', leapBackward)
 end
 
 map('n', '<leader>a', 'H')
