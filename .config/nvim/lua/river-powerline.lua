@@ -31,7 +31,7 @@ local theme = {
         c = { fg = colors.gray7, bg = colors.gray2 },
     },
     insert = {
-        a = { fg = colors.darkestcyan, bg = colors.white, gui = 'bold' },
+        a = { fg = colors.darkestcyan, bg = colors.lightpulp, gui = 'bold' },
         b = { fg = colors.darkestcyan, bg = colors.mediumcyan },
         c = { fg = colors.lightpulp, bg = colors.blue },
     },
