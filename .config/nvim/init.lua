@@ -42,6 +42,7 @@ vim.pack.add({
     { src = 'https://github.com/UtkarshVerma/molokai.nvim' },
     { src = 'https://github.com/rose-pine/neovim',                       name = 'rose-pine' },
     { src = 'https://github.com/sainnhe/sonokai' },
+    { src = 'https://github.com/maxmx03/solarized.nvim' },
 })
 
 -- ========== PLUGIN CONFIG ==========
@@ -233,6 +234,7 @@ require('gruvbox').setup {
 }
 
 vim.g.nightflyTransparent = true
+vim.g.moonflyTransparent = true
 vim.g.sonokai_transparent_background = true
 vim.g.sonokai_style = 'andromeda'
 
@@ -304,7 +306,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end,
 })
 
-vim.cmd.colorscheme('tokyonight-night')
+vim.cmd.colorscheme('gruvbox')
 
 -- ========== IMPORT ==========
 

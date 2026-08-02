@@ -55,9 +55,42 @@ background-opacity = 0.9
 background-blur-radius = 30
 custom-shader = shaders/cursor_warp.glsl
 
+font-size = 16
+
 # WARNING: do not put comments after the font name
-# -> =>
-# font-family = JetBrains Mono
+# -> => ${} == === != !== ++ <= >=
+font-family = JetBrains Mono
+font-variation = wght=600
+font-feature = +zero, +ss02, +ss19
+# zero is strikethrough zero
+# ss02 is more playful curlies
+# ss19 is disable ligatures for equals
+
+# font-family = Fantasque Sans Mono
+# adjust-cell-height = 10%
+# font-size = 18
+
+# font-family = Victor Mono
+# font-style = SemiBold
+# font-size = 17
+# # adjust-cell-height = -12%
+
+# font-family = Hack
+# adjust-cell-height = 14%
+
+# font-family = Cascadia Code
+# font-variation = wght=600
+# # font-style = SemiBold
+# adjust-cell-height = 14%
+
+# font-family = Dank Mono
+# adjust-cell-height = 18%
+
+# font-family = BlexMono Nerd Font Medium
+# adjust-cell-height = 0%
+
+# font-family = Fira Code Medium
+# adjust-cell-height = 9%
 
 # font-family = BerkeleyMono Nerd Font
 # adjust-cell-height = 10%
@@ -65,12 +98,9 @@ custom-shader = shaders/cursor_warp.glsl
 # font-family = Ioskeley Mono Medium
 # adjust-cell-height = 6%
 
-# font-family = Fira Code Medium
-# adjust-cell-height = 9%
-
 # TX-02 is berkeley mono official
-font-family = TX-02 Medium
-adjust-cell-height = 10%
+# font-family = TX-02 Medium
+# adjust-cell-height = 10%
 
 # font-family = Menlo
 # adjust-cell-height = 14%
@@ -78,7 +108,6 @@ adjust-cell-height = 10%
 # font-family = PT Mono
 # adjust-cell-height = 16%
 
-font-size = 16
 
 cursor-style = block
 # cursor-style-blink = true
