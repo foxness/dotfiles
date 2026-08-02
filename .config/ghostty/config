@@ -91,6 +91,15 @@ mouse-hide-while-typing = true
 macos-icon = xray
 adjust-underline-thickness = 150%
 
+keybind = global:cmd+f20=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-animation-duration = 0
+quick-terminal-size = 70%,100%
+
+keybind = cmd+s=goto_split:next
+keybind = cmd+d=new_split:right
+keybind = cmd+g=goto_split:previous
+
 # good themes:
 # Aardvark Blue
 # catppuccin-frappe
@@ -102,18 +111,27 @@ adjust-underline-thickness = 150%
 # FrontEndDelight
 # theme = gruvbox dark hard
 # theme = solarized osaka night
-theme = solarized osaka night
+theme = banana blueberry
 
-keybind = global:cmd+f20=toggle_quick_terminal
-quick-terminal-position = top
-quick-terminal-animation-duration = 0
-quick-terminal-size = 70%,100%
+# bright orange cursor
+# cursor-color = #e07d13
+# cursor-text = #ffffff
 
-keybind = cmd+s=goto_split:next
-keybind = cmd+d=new_split:right
-keybind = cmd+g=goto_split:previous
+# bright orange2 cursor
+# cursor-color = #ff8700 
+# cursor-text = #ffffff
 
+# bright green cursor
+# cursor-color = #afdf00 
+# cursor-text = #005f00 
 
+# lightpurp cursor
+# cursor-color = #decdff
+# cursor-text = #0257d1
+
+# lavender blue cursor (only for light themes)
+# cursor-color = #0257d1 
+# cursor-text = #decdff
 
 # decent ghostty themes
 #
