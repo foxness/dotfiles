@@ -154,6 +154,7 @@ alias wallpapers-forget-for-real='~/my/system/scripts/wallpapers-backup/forget-f
 alias confvi='vi ~/.config/nvim/init.lua'
 alias confkarabiner='vi ~/.config/karabiner.edn'
 alias confzsh='vi ~/.zshrc'
+alias confghostty='vi ~/.config/ghostty/config'
 
 # ============ ZSH ENHANCEMENTS ============
 

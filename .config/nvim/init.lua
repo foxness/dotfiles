@@ -37,6 +37,11 @@ vim.pack.add({
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
     { src = 'https://github.com/bluz71/vim-nightfly-colors',             name = 'nightfly' },
     { src = 'https://github.com/catppuccin/nvim',                        name = 'catppuccin' },
+    { src = 'https://github.com/rebelot/kanagawa.nvim' },
+    { src = 'https://github.com/sainnhe/everforest' },
+    { src = 'https://github.com/UtkarshVerma/molokai.nvim' },
+    { src = 'https://github.com/rose-pine/neovim',                       name = 'rose-pine' },
+    { src = 'https://github.com/sainnhe/sonokai' },
 })
 
 -- ========== PLUGIN CONFIG ==========
@@ -95,6 +100,7 @@ require('nvim-treesitter').install {
     'regex',
     'diff',
     'html',
+    'css',
     'clojure',
 }
 
@@ -212,7 +218,23 @@ require('catppuccin').setup {
     },
 }
 
+require('kanagawa').setup {
+    transparent = true,
+}
+
+require('rose-pine').setup {
+    styles = {
+        transparency = true
+    },
+}
+
+require('gruvbox').setup {
+    transparent_mode = true
+}
+
 vim.g.nightflyTransparent = true
+vim.g.sonokai_transparent_background = true
+vim.g.sonokai_style = 'andromeda'
 
 vim.g.neominimap = {
     auto_enable = true,
@@ -282,7 +304,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end,
 })
 
-vim.cmd.colorscheme('catppuccin')
+vim.cmd.colorscheme('tokyonight-night')
 
 -- ========== IMPORT ==========
 

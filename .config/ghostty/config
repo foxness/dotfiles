@@ -55,10 +55,29 @@ background-opacity = 0.9
 background-blur-radius = 30
 custom-shader = shaders/cursor_warp.glsl
 
-# font-family = JetBrains Mono # default ghostty
-# font-family = Berkeley Mono
-font-family = TX-02 # this is berkeley mono official
-# font-family = Ioskeley Mono
+# WARNING: do not put comments after the font name
+# -> =>
+# font-family = JetBrains Mono
+
+# font-family = BerkeleyMono Nerd Font
+# adjust-cell-height = 10%
+
+# font-family = Ioskeley Mono Medium
+# adjust-cell-height = 6%
+
+# font-family = Fira Code Medium
+# adjust-cell-height = 9%
+
+# TX-02 is berkeley mono official
+font-family = TX-02 Medium
+adjust-cell-height = 10%
+
+# font-family = Menlo
+# adjust-cell-height = 14%
+
+# font-family = PT Mono
+# adjust-cell-height = 16%
+
 font-size = 16
 
 cursor-style = block

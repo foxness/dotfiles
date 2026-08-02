@@ -39,7 +39,8 @@ map('n', '<leader>l', function() snacks.bufdelete() end, { desc = 'Delete buffer
 -- map('n', '<leader>i', ':Pick help<CR>')
 
 map('n', '<leader>ta', function() snacks.picker.files() end, { desc = "Find Files" })
-map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.stdpath("config") } end, { desc = "Find Config File" })
+-- map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.stdpath("config") } end, { desc = "Find Config File" })
+map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.expand('$HOME/.config') } end, { desc = "Find Config File" })
 map('n', '<leader>th', ':Oil<CR>', { desc = "Open File Explorer" })
 map('n', '<leader>te', function() snacks.picker.grep() end, { desc = "Grep" })
 map({ 'n', 'x' }, '<leader>ti', function() snacks.picker.grep_word() end, { desc = "Grep word" })
