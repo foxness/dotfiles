@@ -73,6 +73,7 @@ require('snacks').setup {
     -- }
 }
 
+local animationDuration = 30
 local animate = require('mini.animate')
 animate.setup {
     cursor = {
@@ -80,7 +81,7 @@ animate.setup {
     },
     scroll = { -- Vertical scroll
         enable = true,
-        timing = animate.gen_timing.linear { duration = 40, unit = 'total' }
+        timing = animate.gen_timing.cubic { duration = animationDuration, unit = 'total' }
     },
     resize = {
         enable = false
@@ -257,7 +258,7 @@ require("gruvbox").setup {
         -- String = { fg = palette.bright_aqua },
 
         -- tree-sitter highlight groups (what modern neovim actually renders)
-        ["@string"] = { fg = palette.bright_aqua },
+        ["@string"] = { fg = palette.bright_aqua, italic = true },
         ["@string.documentation"] = { fg = palette.neutral_aqua },
         ["@string.escape"] = { fg = palette.bright_orange },
     },
@@ -319,11 +320,12 @@ require('treesitter-context').setup {
     zindex = 2 -- so that it is below minimap
 }
 
--- nvim-treesitter-context
--- strip the solid background from the sticky context header
 vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
+        -- === make treesitter-context transparent ===
+        -- strip the solid background from the sticky context header
+
         -- nuke the link explicitly
         vim.cmd("highlight link TreesitterContext NONE")
         vim.cmd("highlight link TreesitterContextLineNumber NONE")
@@ -332,8 +334,27 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "none" })
         vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "none" })
 
-        -- add underline
-        vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "#214564" })
+        -- add underline #5b3829 #214564
+        vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "#254852" })
+
+        -- === make bufferline transparent ===
+        -- vim.schedule defers the execution until AFTER the current event loop tick.
+        -- this ensures bufferline has already finished generating its highlights
+        -- before we march in and destroy them.
+        vim.schedule(function()
+            -- 1. nuke the native tabline background (which sits under bufferline)
+            vim.api.nvim_set_hl(0, "TabLineFill", { bg = "none" })
+
+            -- 2. dynamically find every single highlight group starting with "BufferLine"
+            local groups = vim.fn.getcompletion("BufferLine", "highlight")
+
+            -- 3. iterate through them and strip the background
+            for _, group in ipairs(groups) do
+                local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+                hl.bg = "none"
+                vim.api.nvim_set_hl(0, group, hl)
+            end
+        end)
     end,
 })
 

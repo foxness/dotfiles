@@ -89,6 +89,7 @@ macos-titlebar-style = tabs
 shell-integration = zsh
 mouse-hide-while-typing = true
 macos-icon = xray
+adjust-underline-thickness = 150%
 
 # good themes:
 # Aardvark Blue
@@ -99,7 +100,9 @@ macos-icon = xray
 # AtelierSulphurpool
 # duskfox
 # FrontEndDelight
-theme = tokyonight
+# theme = gruvbox dark hard
+# theme = solarized osaka night
+theme = solarized osaka night
 
 keybind = global:cmd+f20=toggle_quick_terminal
 quick-terminal-position = top
@@ -112,7 +115,7 @@ keybind = cmd+g=goto_split:previous
 
 
 
-# good ghostty themes
+# decent ghostty themes
 #
 # catppuccin mocha
 # challenger deep
