@@ -22,6 +22,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.ai' },
     { src = 'https://github.com/nvim-mini/mini.surround' },
     { src = 'https://github.com/folke/snacks.nvim' },
+    { src = 'https://github.com/nvim-mini/mini.animate' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -70,6 +71,26 @@ require('snacks').setup {
     --         -- wo = { wrap = true } -- Wrap notifications
     --     }
     -- }
+}
+
+local animate = require('mini.animate')
+animate.setup {
+    cursor = {
+        enable = false
+    },
+    scroll = { -- Vertical scroll
+        enable = true,
+        timing = animate.gen_timing.linear { duration = 40, unit = 'total' }
+    },
+    resize = {
+        enable = false
+    },
+    open = {
+        enable = false
+    },
+    close = {
+        enable = false
+    },
 }
 
 require('mini.pick').setup()
@@ -229,7 +250,17 @@ require('rose-pine').setup {
     },
 }
 
-require('gruvbox').setup {
+local palette = require("gruvbox").palette
+require("gruvbox").setup {
+    overrides = {
+        -- legacy vim syntax
+        -- String = { fg = palette.bright_aqua },
+
+        -- tree-sitter highlight groups (what modern neovim actually renders)
+        ["@string"] = { fg = palette.bright_aqua },
+        ["@string.documentation"] = { fg = palette.neutral_aqua },
+        ["@string.escape"] = { fg = palette.bright_orange },
+    },
     transparent_mode = true
 }
 

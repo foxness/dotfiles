@@ -1,12 +1,15 @@
--- ========== Main ==========
+--
+-- =======================================
+--
 
 local map = vim.keymap.set
 vim.g.mapleader = ' '
 
 local snacks = require('snacks')
 local leap = require('leap')
+local animate = require('mini.animate')
 
--- ========== Main ==========
+-- ========== General ==========
 
 -- all modes: n, i, c, v, o, t, l
 -- map({ 'i', 'c', 'v', 'o', 't', 'l' }, '<D-j>', '<Esc>')  -- <D-j> is cmd-J
@@ -40,7 +43,8 @@ map('n', '<leader>l', function() snacks.bufdelete() end, { desc = 'Delete buffer
 
 map('n', '<leader>ta', function() snacks.picker.files() end, { desc = "Find Files" })
 -- map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.stdpath("config") } end, { desc = "Find Config File" })
-map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.expand('$HOME/.config') } end, { desc = "Find Config File" })
+map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.expand('$HOME/.config') } end,
+    { desc = "Find Config File" })
 map('n', '<leader>th', ':Oil<CR>', { desc = "Open File Explorer" })
 map('n', '<leader>te', function() snacks.picker.grep() end, { desc = "Grep" })
 map({ 'n', 'x' }, '<leader>ti', function() snacks.picker.grep_word() end, { desc = "Grep word" })
@@ -106,22 +110,62 @@ map('n', 'H', '<nop>') -- should probably add some function to these
 map('n', 'M', '<nop>')
 map('n', 'L', '<nop>')
 
--- ========== Motion centering ==========
+-- ========== Animated motion centering ==========
 
-map('n', '<C-h>', '<C-d>zz', { desc = 'move down in buffer with cursor centered' })
-map('n', '<C-a>', '<C-u>zz', { desc = 'move up in buffer with cursor centered' })
+local function animate_scroll_and_center(key)
+    return function()
+        animate.execute_after('scroll', 'normal! zvzz')
+        local termcode = vim.api.nvim_replace_termcodes(key, true, false, true)
+        -- 'm' mode ensures it respects mini.animate's keymaps
+        vim.api.nvim_feedkeys(termcode, 'm', false)
+    end
+end
 
-map('n', 'n', 'nzzzv', { desc = 'Next search result cursor centered' })
-map('n', 'N', 'Nzzzv', { desc = 'Previous search result cursor centered' })
+local function animate_motion_and_center(motion, post_keys)
+    post_keys = post_keys or 'zvzz'
+    return function()
+        -- execute the motion without triggering user keymaps
+        vim.cmd('normal! ' .. vim.api.nvim_replace_termcodes(motion, true, false, true))
+        -- queue the centering hook right after the scroll animation completes
+        animate.execute_after('scroll', 'normal! ' .. post_keys)
+    end
+end
 
-map('n', 'G', 'Gzz', { noremap = true, desc = 'Go to bottom and center' })
+map('n', '<C-h>', animate_scroll_and_center('<C-d>'), { desc = 'move down in buffer with cursor centered' })
+map('n', '<C-a>', animate_scroll_and_center('<C-u>'), { desc = 'move up in buffer with cursor centered' })
 
-map('n', '*', '*zz', { noremap = true })
-map('n', '#', '#zz', { noremap = true })
-map('n', 'g*', 'g*zz', { noremap = true })
-map('n', 'g#', 'g#zz', { noremap = true })
+-- search next/prev
+map('n', 'n', animate_motion_and_center('n'), { desc = 'Next search result cursor centered' })
+map('n', 'N', animate_motion_and_center('N'), { desc = 'Previous search result cursor centered' })
 
-map('n', '<leader>i', 'zz')
+-- go to bottom
+map('n', 'G', animate_motion_and_center('G', 'zz'), { desc = 'Go to bottom and center' })
+
+-- word under cursor searches
+map('n', '*', animate_motion_and_center('*', 'zz'), { desc = 'Search word forward and center' })
+map('n', '#', animate_motion_and_center('#', 'zz'), { desc = 'Search word backward and center' })
+map('n', 'g*', animate_motion_and_center('g*', 'zz'), { desc = 'Search exact word forward and center' })
+map('n', 'g#', animate_motion_and_center('g#', 'zz'), { desc = 'Search exact word backward and center' })
+
+-- manual center
+map('n', '<leader>i', 'zz', { desc = 'Center cursor in window' })
+
+-- ========== Unanimated motion centering ==========
+
+-- map('n', '<C-h>', '<C-d>zz', { desc = 'move down in buffer with cursor centered' })
+-- map('n', '<C-a>', '<C-u>zz', { desc = 'move up in buffer with cursor centered' })
+
+-- map('n', 'n', 'nzzzv', { desc = 'Next search result cursor centered' })
+-- map('n', 'N', 'Nzzzv', { desc = 'Previous search result cursor centered' })
+--
+-- map('n', 'G', 'Gzz', { noremap = true, desc = 'Go to bottom and center' })
+--
+-- map('n', '*', '*zz', { noremap = true })
+-- map('n', '#', '#zz', { noremap = true })
+-- map('n', 'g*', 'g*zz', { noremap = true })
+-- map('n', 'g#', 'g#zz', { noremap = true })
+--
+-- map('n', '<leader>i', 'zz')
 
 -- ========== Line Add/Delete ==========
 

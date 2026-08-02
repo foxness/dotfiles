@@ -109,3 +109,92 @@ quick-terminal-size = 70%,100%
 keybind = cmd+s=goto_split:next
 keybind = cmd+d=new_split:right
 keybind = cmd+g=goto_split:previous
+
+
+
+# good ghostty themes
+#
+# catppuccin mocha
+# challenger deep
+# 0x96f
+# adwaita dark
+# aizen dark
+# andromeda
+# argonaut
+# atelier sulphurpool
+# atom one dark
+# ayu
+# ayu mirage
+# banana blueberry !!
+# bluloco dark !
+# bright lights
+# calamity
+# carbonfox
+# cyberpunk
+# darkside
+# dimidium
+# embark
+# everblush
+# firewatch
+# flatland
+# forest blue
+# framer
+# front end delight
+# galaxy
+# galizar
+# ghostty default
+# github dark default
+# gruvbox dark
+# gruvbox dark hard
+# gruvbox material
+# gruvbox material dark
+# guezwhoz
+# hardcore
+# havn skumring
+# heeler
+# hivacruz
+# hopscotch
+# horizon
+# hybrid
+# ic orange ppl
+# iceberg dark
+# idea
+# iterm2 solarized dark
+# jubi
+# kanagawabones
+# lovelace
+# material design colors
+# mellow
+# mirage
+# monokai classic
+# monokai pro
+# monokai pro octagon/spectrum
+# monokai remastered
+# monokai soda
+# night owl
+# nightfox
+# nocturnal winter
+# overnight slumber
+# oxocarbon
+# poimandres
+# popping and locking
+# rapture
+# rebecca
+# rose pine
+# rose pine moon
+# shades of purple
+# snazzy
+# solarized dark higher contrast
+# solarized osaka night
+# sonokai
+# srcery
+# sublette
+# synthwave everything
+# tinacious design dark
+# tokyonight
+# tokyonight moon/night/storm
+# vercel
+# violet dark
+# violite
+# whimsy !!
+#

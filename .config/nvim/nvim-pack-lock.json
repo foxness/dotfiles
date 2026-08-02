@@ -36,6 +36,10 @@
       "rev": "25248c6aa002391936a6200f12d1466015987133",
       "src": "https://github.com/nvim-mini/mini.ai"
     },
+    "mini.animate": {
+      "rev": "fe1257505eaec2b988aa1f80f6471db850d99bb1",
+      "src": "https://github.com/nvim-mini/mini.animate"
+    },
     "mini.pick": {
       "rev": "04e73ab07222508361095bb6e27621b315e6b9f1",
       "src": "https://github.com/nvim-mini/mini.pick"
