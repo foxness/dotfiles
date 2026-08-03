@@ -40,6 +40,10 @@
       "rev": "fe1257505eaec2b988aa1f80f6471db850d99bb1",
       "src": "https://github.com/nvim-mini/mini.animate"
     },
+    "mini.pairs": {
+      "rev": "b1c5a726921b7a8c9321e9a7a208aa0571de5810",
+      "src": "https://github.com/nvim-mini/mini.pairs"
+    },
     "mini.pick": {
       "rev": "04e73ab07222508361095bb6e27621b315e6b9f1",
       "src": "https://github.com/nvim-mini/mini.pick"

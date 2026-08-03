@@ -23,6 +23,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.surround' },
     { src = 'https://github.com/folke/snacks.nvim' },
     { src = 'https://github.com/nvim-mini/mini.animate' },
+    { src = 'https://github.com/nvim-mini/mini.pairs' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -73,6 +74,10 @@ require('snacks').setup {
     -- }
 }
 
+require('mini.pick').setup()
+require('mini.ai').setup()
+require('mini.pairs').setup()
+
 local animationDuration = 30
 local animate = require('mini.animate')
 animate.setup {
@@ -94,8 +99,6 @@ animate.setup {
     },
 }
 
-require('mini.pick').setup()
-require('mini.ai').setup()
 require('mini.surround').setup {
     mappings = {
         add = 'Sa',        -- Add surrounding in Normal and Visual modes

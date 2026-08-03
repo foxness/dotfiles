@@ -20,8 +20,29 @@ custom-shader = shaders/cursor_warp.glsl
 
 font-size = 16
 
+# taken from https://typeof.net/Iosevka/customizer
+#
+# THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+# the quick brown fox jumps over the lazy dog
+#
+# """
+# ABC.DEF.GHI.JKL.MNO.PQRS.TUV.WXYZ abc.def.ghi.jkl.mno.pqrs.tuv.wxyz
+# !iIlL17|¦ ¢coO08BDQ $5SZ2zs ∂96µm float il1[]={1-2/3.4,5+6=7/8%90};
+# 1234567890 ,._-+= >< «¯-¬_» ~–÷+× {*}[]()<>`+-=$/#_%^@\&|~?'" !,.;:
+# g9q¶ Þẞðþſß ΓΔΛαβγδηθικλμνξπτυφχψ ЖЗКНРУЭЯавжзклмнруфчьыэя <= != ==
+# """
+#
+# """
+# -<< -< -<- <-- <--- <<- <- -> ->> --> ---> ->- >- >>-
+# =<< =< =<= <== <=== <<= <= => =>> ==> ===> =>= >= >>=
+# <-> <--> <---> <----> <=> <==> <===> <====> :: ::: __
+# <~~ </ </> /> ~~> == != /= ~= <> === !== !=== =/= =!=
+# <: := *= *+ <* <*> *> <| <|> |> <. <.> .> +* =* =: :>
+# (* *) /* */ [| |] {| |} ++ +++ \/ /\ |- -| <!-- <!---
+# """
+
 # WARNING: do not put comments after the font name
-# -> => ${} == === != !== ++ <= >= 000
+
 # font-family = JetBrains Mono
 # font-variation = wght=600
 # font-feature = +zero, +ss02, +ss19
