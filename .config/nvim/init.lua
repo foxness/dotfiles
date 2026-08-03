@@ -164,25 +164,49 @@ vim.lsp.enable({ 'lua_ls', 'pyright', 'ruff' })
 
 -- ========== INDENT COLORS ==========
 
--- local rainbow_colors = {
---     { name = "RainbowRed",    fg = "#E06C75" },
---     { name = "RainbowYellow", fg = "#E5C07B" },
---     { name = "RainbowBlue",   fg = "#61AFEF" },
---     { name = "RainbowOrange", fg = "#D19A66" },
---     { name = "RainbowGreen",  fg = "#98C379" },
---     { name = "RainbowViolet", fg = "#C678DD" },
---     { name = "RainbowCyan",   fg = "#56B6C2" },
--- }
+local function lerp(a, b, t)
+    return a + (b - a) * t
+end
 
+local function hex_to_rgb(hex)
+    hex = hex:gsub('#', '')
+    return tonumber(hex:sub(1, 2), 16),
+        tonumber(hex:sub(3, 4), 16),
+        tonumber(hex:sub(5, 6), 16)
+end
+
+--- Linearly interpolates between two hex colors.
+--- @param color_a string -- e.g., "#3D365F"
+--- @param color_b string -- e.g., "#8EC07C"
+--- @param t number      -- progress from 0.0 to 1.0
+--- @return string hex   -- interpolated hex string
+local function lerp_color(color_a, color_b, t)
+    -- Clamp t between 0 and 1
+    t = math.max(0, math.min(1, t))
+
+    local r1, g1, b1 = hex_to_rgb(color_a)
+    local r2, g2, b2 = hex_to_rgb(color_b)
+
+    local r = math.floor(lerp(r1, r2, t) + 0.5)
+    local g = math.floor(lerp(g1, g2, t) + 0.5)
+    local b = math.floor(lerp(b1, b2, t) + 0.5)
+
+    return string.format('#%02X%02X%02X', r, g, b)
+end
+
+-- original order: red, yellow, blue, orange, green, violet, cyan
 local rainbow_colors = {
-    { name = "RainbowBlue",   fg = "#214564" },
-    { name = "RainbowYellow", fg = "#454944" },
-    { name = "RainbowRed",    fg = "#443343" },
-    { name = "RainbowGreen",  fg = "#304A44" },
-    { name = "RainbowViolet", fg = "#3D365F" },
-    { name = "RainbowOrange", fg = "#403F3F" },
-    { name = "RainbowCyan",   fg = "#1E4758" },
+    { name = "RainbowBlue",   fg = "#61AFEF" },
+    { name = "RainbowYellow", fg = "#E5C07B" },
+    { name = "RainbowRed",    fg = "#E06C75" },
+    { name = "RainbowGreen",  fg = "#98C379" },
+    { name = "RainbowViolet", fg = "#C678DD" },
+    { name = "RainbowCyan",   fg = "#56B6C2" },
+    { name = "RainbowOrange", fg = "#D19A66" },
 }
+
+local bg_color = "#141B1E"
+local bg_amount = 0.6
 
 local hooks = require("ibl.hooks")
 
@@ -190,7 +214,8 @@ local hooks = require("ibl.hooks")
 -- every time the colorscheme changes
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
     for _, color in ipairs(rainbow_colors) do
-        vim.api.nvim_set_hl(0, color.name, { fg = color.fg })
+        local lerped_color = lerp_color(color.fg, bg_color, bg_amount)
+        vim.api.nvim_set_hl(0, color.name, { fg = lerped_color })
     end
 end)
 
@@ -351,7 +376,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             -- 3. iterate through them and strip the background
             for _, group in ipairs(groups) do
                 local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+                -- it's ok because nvim accepts none as a value
+                ---@diagnostic disable-next-line: assign-type-mismatch
                 hl.bg = "none"
+                ---@diagnostic disable-next-line: param-type-mismatch
                 vim.api.nvim_set_hl(0, group, hl)
             end
         end)

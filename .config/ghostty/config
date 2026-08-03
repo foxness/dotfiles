@@ -14,7 +14,7 @@ window-position-x = 600
 window-position-y = 326
 window-save-state = always
 
-background-opacity = 0.9
+background-opacity = 0.8
 background-blur-radius = 30
 custom-shader = shaders/cursor_warp.glsl
 
@@ -81,7 +81,6 @@ adjust-cell-height = 14%
 # font-family = PT Mono
 # adjust-cell-height = 16%
 
-
 cursor-style = block
 # cursor-style-blink = true
 shell-integration-features = no-cursor
@@ -89,7 +88,7 @@ macos-titlebar-style = tabs
 shell-integration = zsh
 mouse-hide-while-typing = true
 macos-icon = xray
-adjust-underline-thickness = 150%
+adjust-underline-thickness = 50%
 
 keybind = global:cmd+f20=toggle_quick_terminal
 quick-terminal-position = top
@@ -100,18 +99,25 @@ keybind = cmd+s=goto_split:next
 keybind = cmd+d=new_split:right
 keybind = cmd+g=goto_split:previous
 
-# good themes:
-# Aardvark Blue
-# catppuccin-frappe
-# catppuccin-macchiato
-# catppuccin-mocha
-# Aura
-# AtelierSulphurpool
-# duskfox
-# FrontEndDelight
-# theme = gruvbox dark hard
-# theme = solarized osaka night
-theme = banana blueberry
+# dont forget to change indent guidelines lerp color
+# when changing the theme
+theme = everblush
+
+# orange3 cursor
+# cursor-color = #fc971f
+# cursor-text = #000000
+
+# github cursor
+# cursor-color = #2f81f7
+# cursor-text = #6fc1ff
+
+# cyberpunk cursor
+# cursor-color = #21f6bc
+# cursor-text = #999999
+
+# danger cursor
+# cursor-color = #f34b00
+# cursor-text = #002831
 
 # bright orange cursor
 # cursor-color = #e07d13
@@ -126,12 +132,49 @@ theme = banana blueberry
 # cursor-text = #005f00 
 
 # lightpurp cursor
-# cursor-color = #decdff
-# cursor-text = #0257d1
+cursor-color = #decdff
+cursor-text = #0257d1
 
 # lavender blue cursor (only for light themes)
 # cursor-color = #0257d1 
 # cursor-text = #decdff
+
+# good themes:
+# Aardvark Blue
+# catppuccin-frappe
+# catppuccin-macchiato
+# catppuccin-mocha
+# Aura
+# AtelierSulphurpool
+# duskfox
+# FrontEndDelight
+
+# theme = 0x96f
+# theme = adwaita dark 
+# theme = aizen dark
+# theme =carbonfox
+# theme =daskside
+# theme =everblush # good green theme
+# theme =forest blue # deep cyan
+# theme =github dark default
+# theme =gruvbox dark hard
+# theme =gruvbox material
+# theme =havn skumring
+# theme =horizon
+# theme =kanagawabones
+# theme =lovelace
+# theme =material design colors
+# theme =mellow
+# theme =monokai pro spectrum
+# theme =monokai remastered
+# theme =monokai soda
+# theme =nocturnal winter
+
+# theme = gruvbox dark hard
+# theme = solarized osaka night
+# theme = monokai pro
+
+# last checked theme: overnight slumber
 
 # decent ghostty themes
 #
@@ -162,7 +205,7 @@ theme = banana blueberry
 # framer
 # front end delight
 # galaxy
-# galizar
+# galizur
 # ghostty default
 # github dark default
 # gruvbox dark

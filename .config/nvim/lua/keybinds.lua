@@ -109,6 +109,7 @@ map('n', '<leader>h', 'L')
 map('n', 'H', '<nop>') -- should probably add some function to these
 map('n', 'M', '<nop>')
 map('n', 'L', '<nop>')
+map('n', 'Q', '<nop>')
 
 -- ========== Animated motion centering ==========
 
