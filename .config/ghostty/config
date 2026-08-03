@@ -69,6 +69,21 @@ font-variation = wght=500
 font-feature = +ss19
 adjust-cell-height = 14%
 
+# font-family = Iosevka
+# font-style = Medium
+# # cv36=11 is single storey a
+# font-feature = cv36=11
+# adjust-cell-height = -6%
+# # adjust-cell-width = 10%
+# font-size = 18
+
+# font-family = IosevkaRiver
+# # font-family = IosevkaRiverSlab
+# font-style = Medium
+# # cv36=11 is single storey a
+# # font-feature = cv36=11
+# # adjust-cell-height = 6%
+
 # font-family = Dank Mono
 # font-style = Bold
 # adjust-cell-height = 18%
