@@ -132,8 +132,8 @@ local function animate_motion_and_center(motion, post_keys)
     end
 end
 
-map('n', '<C-h>', animate_scroll_and_center('<C-d>'), { desc = 'move down in buffer with cursor centered' })
-map('n', '<C-a>', animate_scroll_and_center('<C-u>'), { desc = 'move up in buffer with cursor centered' })
+map('n', '<PageDown>', animate_scroll_and_center('<C-d>'), { desc = 'move down in buffer with cursor centered' })
+map('n', '<PageUp>', animate_scroll_and_center('<C-u>'), { desc = 'move up in buffer with cursor centered' })
 
 -- search next/prev
 map('n', 'n', animate_motion_and_center('n'), { desc = 'Next search result cursor centered' })

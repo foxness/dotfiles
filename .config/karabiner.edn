@@ -384,7 +384,7 @@
 
                 ;; --- Main ---
 
-                [:!Ekeypad_1 :!Odelete_or_backspace]
+                [:!Ekeypad_1 :escape]
                 [:!Ekeypad_2 :open-alfred]
                 [:!Ekeypad_3 :open-quick-terminal]
 
