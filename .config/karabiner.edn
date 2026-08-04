@@ -605,10 +605,10 @@
 
                 [:!Etab :left-desktop-iss]
                 [:!Eq :right-desktop-iss]
-                [:!Ew :open-anki]
+                [:!Ew :open-ghostty]
                 [:!Ee :open-spotify]
                 [:!Er :open-firefox]
-                [:!Et :open-ghostty]
+                [:!Et :open-anki]
 
                 [:!Egrave_accent_and_tilde :open-eagle]
                 [:!Ea :open-leaderkey]
@@ -630,9 +630,11 @@
                 [:!SE1 :open-bitwarden]
 
                 [:!SEq :open-notes]
-                [:!SEw :open-things]
+                ; [:!SEw :open-things] ;; used by ghostty open folder
                 [:!SEe :open-obsidian]
                 [:!SEr :open-telegram]
+
+                [:!SEa :open-things]
 
                 ;; square + ctrl
                 ;; [:!TEq :open-quick-note]
