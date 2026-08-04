@@ -384,9 +384,9 @@
 
                 ;; --- Main ---
 
-                [:!Ekeypad_1 :escape]
+                [:!Ekeypad_1 :open-quick-terminal]
                 [:!Ekeypad_2 :open-alfred]
-                [:!Ekeypad_3 :open-quick-terminal]
+                [:!Ekeypad_3 :escape]
 
                 [:keypad_1 :qwerty-lockscreen [:!graphite]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
