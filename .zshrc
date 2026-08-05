@@ -94,12 +94,14 @@ source $ZSH/oh-my-zsh.sh
 
 # alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
 
+# sa means source aliases :)
+# alias sa='source ~/.zshrc;echo "ZSH config loaded."'
+alias sa='ZSH_RELOADED=1 exec zsh'
+
 alias ls='eza --long --color=always --icons=always --no-user --time-style long-iso --sort type'
 alias lsa='ls --all'
 alias ca='bat'
 
-# sa means source aliases :)
-alias sa='source ~/.zshrc;echo "ZSH config loaded."'
 alias oc='open .'
 alias gos='cd ~/my/system/scripts'
 alias myip='curl https://icanhazip.com/'
@@ -154,7 +156,11 @@ source <(fzf --zsh)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# ============ RELOAD PRINT ============
 
+if [[ -n "$ZSH_RELOADED" ]]; then
+    echo "ZSH reloaded."
+fi
 
 
 
