@@ -151,19 +151,7 @@ vim.cmd('set completeopt+=noselect')
 
 -- ========== LSP ==========
 
-vim.lsp.config('lua_ls', {
-    cmd = { 'lua-language-server' },
-    filetypes = { 'lua' },
-    settings = {
-        Lua = {
-            runtime = { version = 'LuaJIT' },
-            diagnostics = { globals = { 'vim' } },
-            workspace = { library = { vim.env.VIMRUNTIME } },
-        },
-    },
-})
-
-vim.lsp.enable({ 'lua_ls', 'pyright', 'ruff' })
+require('lsp')
 
 -- ========== INDENT COLORS ==========
 
