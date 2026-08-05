@@ -232,7 +232,7 @@
         :g-squareopen { :key :hyphen }
         :g-squareclose { :key :equal_sign }
         :g-hashtag { :key :!S3 }
-        :g-quote { :key :y }
+        :g-quote { :key :n }
 
         :g-plus { :key :!Sclose_bracket }
         :g-percent { :key :!S5 }
@@ -246,7 +246,7 @@
         :g-slash { :key :slash }
         :g-period { :key :comma }
         :g-comma { :key :quote }
-        :g-underscore { :key :!Sy }
+        :g-underscore { :key :!Sn }
     }
 
     :main [
@@ -516,10 +516,10 @@
                 ;; [:!C#TOSRg :!C#TOSRg] ;; maps to itself
                 [:!C#TOSRh :!C#TOSRl] ;; standard qwerty: [:!C#TOSRh :!C#TOSRj]
                 [:!C#TOSRj :!C#TOSRt]
-                [:!C#TOSRk :!C#TOSRn]
+                [:!C#TOSRk :!C#TOSRy]
                 [:!C#TOSRl :!C#TOSRw]
                 [:!C#TOSRsemicolon :!C#TOSRopen_bracket]
-                [:!C#TOSRquote :!C#TOSRy]
+                [:!C#TOSRquote :!C#TOSRn]
 
                 [:!C#TOSRz :!C#TOSRp]
                 ;; [:!C#TOSRx :!C#TOSRx] ;; maps to itself
