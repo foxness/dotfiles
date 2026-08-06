@@ -31,6 +31,10 @@ vim.pack.add({
     { src = 'https://github.com/tpope/vim-repeat' },
     { src = 'https://codeberg.org/andyg/leap.nvim' },
 
+    { src = 'https://github.com/saghen/blink.lib' },
+    { src = 'https://github.com/saghen/blink.cmp' },
+    -- { src = 'https://github.com/devswiftzone/swift.nvim' },
+
     -- themes
     { src = 'https://github.com/vague-theme/vague.nvim' },
     { src = 'https://github.com/bluz71/vim-moonfly-colors',              name = 'moonfly' },
@@ -215,6 +219,261 @@ local highlight_names = vim.tbl_map(function(c) return c.name end, rainbow_color
 require("ibl").setup({ -- indent blackline
     indent = { highlight = highlight_names },
 })
+
+-- ========== SWIFT STUFF ==========
+
+local cmp = require('blink.cmp')
+cmp.build():pwait()
+cmp.setup {
+    -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+    -- 'super-tab' for mappings similar to vscode (tab to accept)
+    -- 'enter' for enter to accept
+    -- 'none' for no mappings
+    --
+    -- All presets have the following mappings:
+    -- C-space: Open menu or open docs if already open
+    -- C-n/C-p or Up/Down: Select next/previous item
+    -- C-e: Hide menu
+    -- C-k: Toggle signature help (if signature.enabled = true)
+    --
+    -- See :h blink-cmp-config-keymap for defining your own keymap
+    keymap = { preset = 'default' },
+
+    -- (Default) Only show the documentation popup when manually triggered
+    completion = { documentation = { auto_show = false } },
+
+    -- (Default) list of enabled providers defined so that you can extend it
+    -- elsewhere in your config, without redefining it, due to `opts_extend`
+    sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+
+    -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
+    -- You may use a lua implementation instead by using `implementation = "lua"`
+    -- See the fuzzy documentation for more information
+    fuzzy = { implementation = "rust" }
+}
+
+-- local swift_config = {
+--     features = {
+--         -- LSP Configuration
+--         lsp = {
+--             enabled = false,
+--             auto_setup = true,
+--             sourcekit_path = nil, -- Auto-detect
+--             on_attach = function(client, bufnr)
+--                 -- Custom LSP keybindings
+--                 local opts = { buffer = bufnr, noremap = true, silent = true }
+--                 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+--                 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+--                 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+--                 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+--                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+--                 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+--             end,
+--         },
+--
+--         -- Formatter Configuration
+--         formatter = {
+--             enabled = true,
+--             auto_format = false,   -- Set to true for format on save
+--             tool = "swift-format", -- or "swiftformat"
+--             swift_format = {
+--                 path = nil,        -- Auto-detect
+--                 args = {},
+--                 config_file = nil, -- Auto-find .swift-format
+--             },
+--         },
+--
+--         -- Linter Configuration
+--         linter = {
+--             enabled = true,
+--             auto_lint = true,     -- Lint on save
+--             swiftlint_path = nil, -- Auto-detect
+--             config_file = nil,    -- Auto-find .swiftlint.yml
+--             severity = "warning",
+--         },
+--
+--         -- Build Runner Configuration
+--         build_runner = {
+--             enabled = true,
+--             show_output = true,
+--             output_position = "botright",
+--             output_height = 15,
+--             auto_close_on_success = false,
+--         },
+--
+--         -- Target Manager Configuration
+--         target_manager = {
+--             enabled = true,
+--             auto_select = true, -- Auto-select first executable target
+--             show_type = true,   -- Show target type
+--         },
+--
+--         -- Debugger Configuration (No nvim-dap needed!)
+--         debugger = {
+--             enabled = true,
+--             lldb_path = nil, -- Auto-detect LLDB
+--
+--             -- Visual indicators
+--             signs = {
+--                 breakpoint = "●", -- Breakpoint symbol
+--                 current_line = "➤", -- Current line symbol
+--             },
+--
+--             -- Colors (using Neovim highlight groups)
+--             colors = {
+--                 breakpoint = "DiagnosticError",  -- Red
+--                 current_line = "DiagnosticInfo", -- Blue
+--             },
+--
+--             -- Debug output window
+--             window = {
+--                 position = "bottom", -- "bottom", "right", or "float"
+--                 size = 15,           -- Height for bottom, width for right
+--             },
+--         },
+--
+--         -- Snippets Configuration
+--         snippets = {
+--             enabled = true, -- Requires LuaSnip
+--         },
+--
+--         -- Xcode Integration (macOS only)
+--         xcode = {
+--             enabled = vim.fn.has("mac") == 1,
+--             default_scheme = nil,
+--             default_simulator = nil,
+--             show_output = true,
+--             output_position = "botright",
+--             output_height = 15,
+--         },
+--
+--         -- Project Detection
+--         project_detector = {
+--             enabled = true,
+--         },
+--
+--         -- Version Validation
+--         version_validator = {
+--             enabled = true,
+--             show_warnings = true,
+--         },
+--     },
+--
+--     -- Logging
+--     log_level = "info", -- "debug", "info", "warn", "error"
+-- }
+--
+-- require('swift').setup(swift_config)
+--
+-- ============================================================================
+-- DEBUGGER KEYBINDINGS
+-- ============================================================================
+--
+-- local debugger = require("swift.features.debugger")
+--
+-- -- F keys (standard debugger keys)
+-- vim.keymap.set("n", "<F5>", debugger.continue, { desc = "Debug: Continue" })
+-- vim.keymap.set("n", "<F9>", debugger.toggle_breakpoint, { desc = "Debug: Breakpoint" })
+-- vim.keymap.set("n", "<F10>", debugger.step_over, { desc = "Debug: Step Over" })
+-- vim.keymap.set("n", "<F11>", debugger.step_into, { desc = "Debug: Step Into" })
+-- vim.keymap.set("n", "<F12>", debugger.step_out, { desc = "Debug: Step Out" })
+--
+-- -- <leader>d for debug commands
+-- vim.keymap.set("n", "<leader>db", debugger.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
+-- vim.keymap.set("n", "<leader>dB", debugger.clear_breakpoints, { desc = "Debug: Clear All" })
+-- vim.keymap.set("n", "<leader>dc", debugger.continue, { desc = "Debug: Continue" })
+-- vim.keymap.set("n", "<leader>ds", debugger.stop, { desc = "Debug: Stop" })
+-- vim.keymap.set("n", "<leader>dr", debugger.run, { desc = "Debug: Run" })
+-- vim.keymap.set("n", "<leader>dv", debugger.show_variables, { desc = "Debug: Variables" })
+-- vim.keymap.set("n", "<leader>dt", debugger.show_backtrace, { desc = "Debug: Backtrace" })
+-- vim.keymap.set("n", "<leader>du", ":SwiftDebugUI<CR>", { desc = "Debug: Toggle UI" })
+--
+-- -- ============================================================================
+-- -- BUILD KEYBINDINGS
+-- -- ============================================================================
+--
+-- vim.keymap.set("n", "<leader>nb", ":SwiftBuild<CR>", { desc = "Swift: Build" })
+-- vim.keymap.set("n", "<leader>nr", ":SwiftRun<CR>", { desc = "Swift: Run" })
+-- vim.keymap.set("n", "<leader>nt", ":SwiftTest<CR>", { desc = "Swift: Test" })
+-- vim.keymap.set("n", "<leader>nc", ":SwiftClean<CR>", { desc = "Swift: Clean" })
+--
+-- -- ============================================================================
+-- -- FORMAT & LINT KEYBINDINGS
+-- -- ============================================================================
+--
+-- vim.keymap.set("n", "<leader>sf", ":SwiftFormat<CR>", { desc = "Swift: Format" })
+-- vim.keymap.set("v", "<leader>sf", ":SwiftFormatSelection<CR>", { desc = "Swift: Format Selection" })
+-- vim.keymap.set("n", "<leader>sl", ":SwiftLint<CR>", { desc = "Swift: Lint" })
+-- vim.keymap.set("n", "<leader>sL", ":SwiftLintFix<CR>", { desc = "Swift: Lint Fix" })
+--
+-- -- ============================================================================
+-- -- TARGET KEYBINDINGS
+-- -- ============================================================================
+--
+-- vim.keymap.set("n", "<leader>st", ":SwiftTarget<CR>", { desc = "Swift: Select Target" })
+-- vim.keymap.set("n", "<leader>sT", ":SwiftTargetList<CR>", { desc = "Swift: List Targets" })
+--
+-- -- ============================================================================
+-- -- SNIPPETS KEYBINDINGS
+-- -- ============================================================================
+--
+-- vim.keymap.set("n", "<leader>ss", ":SwiftSnippets<CR>", { desc = "Swift: Snippets" })
+--
+-- -- ============================================================================
+-- -- XCODE KEYBINDINGS (macOS only)
+-- -- ============================================================================
+--
+-- if vim.fn.has("mac") == 1 then
+--   vim.keymap.set("n", "<leader>xb", ":SwiftXcodeBuild<CR>", { desc = "Xcode: Build" })
+--   vim.keymap.set("n", "<leader>xs", ":SwiftXcodeSchemes<CR>", { desc = "Xcode: Schemes" })
+--   vim.keymap.set("n", "<leader>xo", ":SwiftXcodeOpen<CR>", { desc = "Xcode: Open" })
+-- end
+--
+-- -- ============================================================================
+-- -- INFO & UTILS KEYBINDINGS
+-- -- ============================================================================
+--
+-- vim.keymap.set("n", "<leader>si", ":SwiftInfo<CR>", { desc = "Swift: Info" })
+-- vim.keymap.set("n", "<leader>sv", ":SwiftVersionInfo<CR>", { desc = "Swift: Version" })
+-- vim.keymap.set("n", "<leader>sh", ":checkhealth swift<CR>", { desc = "Swift: Health" })
+--
+-- -- ============================================================================
+-- -- AUTOCOMMANDS (Optional)
+-- -- ============================================================================
+--
+-- local augroup = vim.api.nvim_create_augroup("SwiftNvim", { clear = true })
+--
+-- -- Auto-format on save (uncomment to enable)
+-- -- vim.api.nvim_create_autocmd("BufWritePre", {
+-- --   group = augroup,
+-- --   pattern = "*.swift",
+-- --   callback = function()
+-- --     vim.cmd("SwiftFormat")
+-- --   end,
+-- --   desc = "Auto-format Swift files on save",
+-- -- })
+--
+-- -- ============================================================================
+-- -- STATUSLINE INTEGRATION (lualine example)
+-- -- ============================================================================
+--
+-- -- If you use lualine, add this to show current target:
+-- -- require('lualine').setup({
+-- --   sections = {
+-- --     lualine_x = {
+-- --       function()
+-- --         local ok, target_manager = pcall(require, "swift.features.target_manager")
+-- --         if ok then
+-- --           local target = target_manager.get_current_target()
+-- --           if target then
+-- --             return "🎯 " .. target
+-- --           end
+-- --         end
+-- --         return ""
+-- --       end,
+-- --     },
+-- --   },
+-- -- })
 
 -- ========== APPEARANCE ==========
 
