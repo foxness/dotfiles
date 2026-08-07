@@ -495,6 +495,7 @@
 
                 ;; when CMD is pressed this is standard qwerty but
                 ;; - cmd-E and cmd-H are swapped (for easy window hiding)
+                ;; - cmd-CV and cmd-SD are swapped (for easy copy pasting)
 
                 [:!C#TOSRq :!C#TOSRz]
                 [:!C#TOSRw :!C#TOSRr]
@@ -510,8 +511,8 @@
                 [:!C#TOSRclose_bracket :!C#TOSRequal_sign]
 
                 [:!C#TOSRa :!C#TOSRk]
-                [:!C#TOSRs :!C#TOSRf]
-                [:!C#TOSRd :!C#TOSRe]
+                [:!C#TOSRs :!C#TOSRv] ;; standard qwerty: [:!C#TOSRs :!C#TOSRf]
+                [:!C#TOSRd :!C#TOSRb] ;; standard qwerty: [:!C#TOSRd :!C#TOSRe]
                 [:!C#TOSRf :!C#TOSRu]
                 ;; [:!C#TOSRg :!C#TOSRg] ;; maps to itself
                 [:!C#TOSRh :!C#TOSRl] ;; standard qwerty: [:!C#TOSRh :!C#TOSRj]
@@ -523,8 +524,8 @@
 
                 [:!C#TOSRz :!C#TOSRp]
                 ;; [:!C#TOSRx :!C#TOSRx] ;; maps to itself
-                [:!C#TOSRc :!C#TOSRv]
-                [:!C#TOSRv :!C#TOSRb]
+                [:!C#TOSRc :!C#TOSRf] ;; standard qwerty: [:!C#TOSRc :!C#TOSRv]
+                [:!C#TOSRv :!C#TOSRe] ;; standard qwerty: [:!C#TOSRv :!C#TOSRb]
                 [:!C#TOSRb :!C#TOSRq]
                 [:!C#TOSRn :!C#TOSRa]
                 [:!C#TOSRm :!C#TOSRc]
