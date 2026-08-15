@@ -278,7 +278,7 @@
                 [:f4 [:f4 ["leaderkey" 0]] [:leaderkey]]
 
                 [
-                    :!WRspacebar ;; tab-q (switch layer)
+                    :!WRspacebar ;; tab-space (switch layer)
                     [:open-leaderkey ["leaderkey" 1]] ;; leader key activation key
                     nil
                     {
@@ -540,12 +540,16 @@
             :rules [
                 [:condi :!graphite]
 
-                ;; --- Window management ---
-
+                ;; --- Swap cmd-E and cmd-H (hide window) ---
                 [:!Ce :!Ch] ;; cmd-E -> cmd-H
-
-                ;; make sure replaced shortcuts are pressable
                 [:!Ch :!Ce] ;; cmd-H -> cmd-E
+
+                ;; --- Swap cmd-CV and cmd-SD (copy paste) ---
+                [:!C#TOSRs :!C#TOSRc]
+                [:!C#TOSRd :!C#TOSRv]
+
+                [:!C#TOSRc :!C#TOSRs]
+                [:!C#TOSRv :!C#TOSRd]
             ]
         }
 
