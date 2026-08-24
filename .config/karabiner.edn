@@ -166,6 +166,7 @@
         :open-vscode { :key :!QWERa }
         :open-xcode { :key :!QWERh }
         :open-ghostty { :key :!WERg }
+        :open-ghostty-folder { :key :!WERy }
         :open-finder { :key :!WERf }
         :open-brave { :key :!WERq }
         :open-bitwarden { :key :!QWERq }
@@ -633,17 +634,17 @@
 
                 ;; --- Left Hand Extra ---
 
-                ;; square + shift
+                ;; triangle + shift
                 [:!SE1 :open-bitwarden]
 
                 [:!SEq :open-notes]
-                ; [:!SEw :open-things] ;; used by ghostty open folder
+                [:!SEw :open-ghostty-folder]
                 [:!SEe :open-obsidian]
                 [:!SEr :open-telegram]
 
                 [:!SEa :open-things]
 
-                ;; square + ctrl
+                ;; triangle + ctrl
                 ;; [:!TEq :open-quick-note]
                 ;; [:!TEw :open-things-add]
 
@@ -652,8 +653,6 @@
                 [:!E6 :toggle-amphetamine]
                 [:!E7 :toggle-ice]
                 [:!E8 :toggle-horo]
-
-                [:keypad_period :escape]
             ]
         }
 
