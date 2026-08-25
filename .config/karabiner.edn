@@ -394,6 +394,8 @@
                 [:keypad_1 :qwerty-lockscreen [:!graphite]]
                 [:keypad_1 :graphite-lockscreen [:graphite]]
 
+                [:!CS4 :screenshot-menu]
+
                 ;; --- Joystick ---
 
                 [:!Rkeypad_3 :display_brightness_decrement]
