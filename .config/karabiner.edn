@@ -738,8 +738,8 @@
 
                 [:!W#CSOq :g-ampersand]
                 [:!W#CSOw :g-pipe]
-                [:!W#CSOe :g-bracketopen]
-                [:!W#CSOr :g-bracketclose]
+                [:!W#CSOe :g-curlyopen]
+                [:!W#CSOr :g-curlyclose]
                 [:!W#CSOt :g-plus]
                 [:!W#CSOy :g-doublequote]
                 [:!W#CSOu :g-period]
@@ -751,8 +751,8 @@
 
                 [:!W#CSOa :g-question]
                 [:!W#CSOs :g-equals]
-                [:!W#CSOd :g-curlyopen]
-                [:!W#CSOf :g-curlyclose]
+                [:!W#CSOd :g-bracketopen]
+                [:!W#CSOf :g-bracketclose]
                 [:!W#CSOg :g-exclamation]
                 [:!W#CSOh :g-minus]
                 [:!W#CSOj :g-angleopen]
