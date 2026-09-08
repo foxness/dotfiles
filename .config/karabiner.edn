@@ -537,6 +537,16 @@
                 [:!C#TOSRcomma :!C#TOSRquote]
                 [:!C#TOSRperiod :!C#TOSRcomma]
                 ;; [:!C#TOSRslash :!C#TOSRslash] ;; maps to itself
+
+                ;; --- Unrelated to qwertifying ---
+
+                ; swap / and ?
+                [:slash :g-question]
+                [:!Squote :g-slash]
+
+                ; swap , and -
+                [:period :g-comma]
+                [:quote :g-minus]
             ]
         }
 
