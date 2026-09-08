@@ -379,9 +379,9 @@
                 ;; --- Languages ---
 
                 [:!Eb { :input :graphite }] ;; graphite, triangle
-                [:!Wm :!QWf16] ;; russian, square
-                [:!Wcomma :!QWf17] ;; japanese
-                [:!Wperiod { :input :abc }] ;; qwerty
+                [:!Wn :!QWf16] ;; russian, square
+                [:!Wm :!QWf17] ;; japanese
+                [:!Wcomma { :input :abc }] ;; qwerty
 
                 ;; --- Main ---
 
@@ -759,14 +759,14 @@
                 [:!W#CSOk :g-angleclose]
                 [:!W#CSOl :g-backslash]
                 [:!W#CSOsemicolon :g-quote]
-                [:!W#CSOquote :vk_none]
+                [:!W#CSOquote :g-tilde]
 
                 [:!W#CSOz :g-semicolon]
                 [:!W#CSOx :g-asterisk]
                 [:!W#CSOc :g-squareopen]
                 [:!W#CSOv :g-squareclose]
                 [:!W#CSOb :g-backtick]
-                [:!W#CSOn :g-tilde]
+                ; [:!W#CSOn :g-tilde]
                 ;; [:!W#CSOm :g-caret]
                 ;; [:!W#CSOcomma :g-dollar]
                 ;; [:!W#CSOperiod :g-semicolon]
