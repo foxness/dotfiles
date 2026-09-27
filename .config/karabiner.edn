@@ -538,15 +538,10 @@
                 [:!C#TOSRperiod :!C#TOSRcomma]
                 ;; [:!C#TOSRslash :!C#TOSRslash] ;; maps to itself
 
-                ;; --- Unrelated to qwertifying ---
+                ;; --- Base layer symbols (unrelated to qwertifying) ---
 
-                ; swap / and ?
-                [:slash :g-question]
-                [:!Squote :g-slash]
-
-                ; swap , and -
-                [:period :g-comma]
-                [:quote :g-minus]
+                [:n :g-underscore] ; qwerty N is _
+                [:!Sn :g-quote] ; qwerty shift-N is '
             ]
         }
 
