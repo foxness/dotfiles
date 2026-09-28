@@ -730,22 +730,22 @@
             :rules [
                 [:condi :sofle :graphite]
 
-                [:!W#CSO1 :g-backslash]
+                [:!W#CSO1 :g-tilde]
                 [:!W#CSO2 :g-at]
                 [:!W#CSO3 :g-hashtag]
-                [:!W#CSO4 :g-tilde]
-                [:!W#CSO5 :g-percent]
+                [:!W#CSO4 :g-percent]
+                [:!W#CSO5 :g-backslash]
                 ; [:!W#CSO6 :vk_none]
                 ; [:!W#CSO7 :g-comma]
                 ; [:!W#CSO8 :g-underscore]
                 ;; [:!W#CSO9 :g-dollar]
                 ;; [:!W#CSO0 :g-percent]
 
-                [:!W#CSOq :g-ampersand]
-                [:!W#CSOw :g-caret]
+                [:!W#CSOq :g-caret]
+                [:!W#CSOw :g-question]
                 [:!W#CSOe :g-curlyopen]
                 [:!W#CSOr :g-curlyclose]
-                [:!W#CSOt :g-dollar]
+                [:!W#CSOt :g-asterisk]
                 [:!W#CSOy :g-slash]
                 [:!W#CSOu :g-doublequote]
                 [:!W#CSOi :g-backtick]
@@ -754,7 +754,7 @@
                 [:!W#CSOclose_bracket :vk_none]
                 [:!W#CSOopen_bracket :vk_none]
 
-                [:!W#CSOa :g-question]
+                [:!W#CSOa :g-colon]
                 [:!W#CSOs :g-equals]
                 [:!W#CSOd :g-bracketopen]
                 [:!W#CSOf :g-bracketclose]
@@ -767,10 +767,10 @@
                 [:!W#CSOquote :g-quote]
 
                 [:!W#CSOz :g-semicolon]
-                [:!W#CSOx :g-asterisk]
+                [:!W#CSOx :g-pipe]
                 [:!W#CSOc :g-squareopen]
                 [:!W#CSOv :g-squareclose]
-                [:!W#CSOb :g-pipe]
+                [:!W#CSOb :g-ampersand]
                 ; [:!W#CSOn :g-tilde]
                 ;; [:!W#CSOm :g-caret]
                 ;; [:!W#CSOcomma :g-dollar]
@@ -779,7 +779,7 @@
 
                 ;; left thumb
                 [:!W#CSOkeypad_2 :g-exclamation]
-                [:!W#CSOkeypad_3 :g-colon]
+                [:!W#CSOkeypad_3 :g-dollar]
             ]
         }
 
