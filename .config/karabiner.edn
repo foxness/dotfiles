@@ -540,8 +540,8 @@
 
                 ;; --- Base layer symbols (unrelated to qwertifying) ---
 
-                [:n :g-underscore] ; qwerty N is _
-                [:!Sn :g-quote] ; qwerty shift-N is '
+                ; [:n :g-underscore] ; qwerty N is _
+                ; [:!Sn :g-quote] ; qwerty shift-N is '
             ]
         }
 
