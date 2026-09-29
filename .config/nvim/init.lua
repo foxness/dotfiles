@@ -643,6 +643,3 @@ vim.cmd.colorscheme('gruvbox')
 require('options')
 require('keybinds')
 
-
-
-
