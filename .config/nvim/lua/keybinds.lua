@@ -27,6 +27,22 @@ map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:eestart)' 
 
 map('n', '<leader>si', snacks.rename.rename_file, { desc = "Rename file" })
 
+-- ========== Magic typing ==========
+
+map('i', 'wg', 'br', { desc = 'INSERT MAGIC: wg is br' })
+map('i', 'jw', 'ph', { desc = 'INSERT MAGIC: jw is ph' })
+map('i', 'rj', 'rl', { desc = 'INSERT MAGIC: rj is rl' })
+map('i', 'jd', 'mb', { desc = 'INSERT MAGIC: jd is mb' })
+map('i', 'uo', 'ue', { desc = 'INSERT MAGIC: uo is ue' })
+map('i', 'uu', 'uo', { desc = 'INSERT MAGIC: uu is uo' })
+map('i', 'sd', 'sc', { desc = 'INSERT MAGIC: sd is sc' })
+map('i', 'ssd', 'sd', { desc = 'INSERT MAGIC: ssd is sd' })
+map('i', 'sr', 'bl', { desc = 'INSERT MAGIC: sr is bl' })
+map('i', 'ssr', 'sr', { desc = 'INSERT MAGIC: ssr is sr' })
+map('i', 'ih', 'ik', { desc = 'INSERT MAGIC: ih is ik' })
+map('i', 'iih', 'ih', { desc = 'INSERT MAGIC: iih is ih' })
+map('i', 'xm', 'pp', { desc = 'INSERT MAGIC: xm is pp' })
+
 -- ========== Navigation ==========
 
 map('n', '<C-b>', ':bprevious<CR>', { silent = true })
