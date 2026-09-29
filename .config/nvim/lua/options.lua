@@ -41,10 +41,7 @@ vim.o.mousescroll = 'ver:1,hor:1' -- only needed for mousescrolling with mini.an
 
 vim.o.cursorline = true
 vim.o.updatetime = 250
-
-local normal_timeout = 500
-local insert_timeout = 100
-vim.o.timeoutlen = normal_timeout
+vim.o.timeoutlen = 500
 
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
@@ -57,24 +54,4 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- vim.o.mouse = ''
 -- vim.o.mousescroll = ''
 
--- ========== Magic typing ==========
-
-local magic_group = vim.api.nvim_create_augroup('MagicTypingTimeout', { clear = true })
-
--- Drop timeout to 100ms in insert mode for magic rules
-vim.api.nvim_create_autocmd('InsertEnter', {
-    group = magic_group,
-    callback = function()
-        vim.g.normal_timeoutlen = vim.o.timeoutlen
-        vim.o.timeoutlen = insert_timeout
-    end,
-})
-
--- Restore standard timeout when leaving insert mode so normal keymaps aren't broken
-vim.api.nvim_create_autocmd('InsertLeave', {
-    group = magic_group,
-    callback = function()
-        vim.o.timeoutlen = vim.g.normal_timeoutlen or normal_timeout
-    end,
-})
 

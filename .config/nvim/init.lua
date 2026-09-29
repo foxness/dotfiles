@@ -24,6 +24,7 @@ vim.pack.add({
     { src = 'https://github.com/folke/snacks.nvim' },
     { src = 'https://github.com/nvim-mini/mini.animate' },
     { src = 'https://github.com/nvim-mini/mini.pairs' },
+    { src = 'https://github.com/L3MON4D3/LuaSnip' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -133,6 +134,42 @@ require('nvim-treesitter').install {
     'css',
     'clojure',
 }
+
+-- ========== Magic typing rules ==========
+
+local ls = require('luasnip')
+
+ls.config.set_config {
+    enable_autosnippets = true,
+}
+
+local function add_magic_rule(a, b)
+    return ls.snippet(
+        {
+            trig = a,
+            wordTrig = false,
+            snippetType = 'autosnippet',
+            desc = 'MAGIC: ' .. a .. ' -> ' .. b
+        },
+        { ls.text_node(b) }
+    )
+end
+
+ls.add_snippets('all', {
+    add_magic_rule('wg', 'br'),
+    add_magic_rule('jw', 'ph'),
+    add_magic_rule('rj', 'rl'),
+    add_magic_rule('jd', 'mb'),
+    add_magic_rule('uo', 'ue'),
+    add_magic_rule('uu', 'uo'),
+    add_magic_rule('sd', 'sc'),
+    add_magic_rule('ssd', 'sd'),
+    add_magic_rule('sr', 'bl'),
+    add_magic_rule('ssr', 'sr'),
+    add_magic_rule('ih', 'ik'),
+    add_magic_rule('iih', 'ih'),
+    add_magic_rule('xm', 'pp'),
+})
 
 -- ========== LEAP CONFIG ==========
 
@@ -642,4 +679,3 @@ vim.cmd.colorscheme('gruvbox')
 
 require('options')
 require('keybinds')
-
