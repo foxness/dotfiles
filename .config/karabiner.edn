@@ -294,14 +294,14 @@
             ]
         }
 
-        {
-            :des "[Sofle] Leader Key Activation"
-            :rules [
-                :sofle
-
-                [:!Cgrave_accent_and_tilde :open-leaderkey]
-            ]
-        }
+        ; {
+        ;     :des "[Sofle] Leader Key Activation"
+        ;     :rules [
+        ;         :sofle
+        ;
+        ;         [:!Cgrave_accent_and_tilde :open-leaderkey]
+        ;     ]
+        ; }
 
         ;; ============== FUNCTION ROW ==============
 
@@ -349,7 +349,8 @@
                 ;; --- Main ---
 
                 [:##left_command :left_command nil { :alone :escape }]
-                [:##left_shift :left_shift nil { :alone :return_or_enter }] ;; Shift is Enter when alone
+                [:##left_shift :left_shift [:!graphite] { :alone :return_or_enter }] ;; Shift is Enter when alone
+                [:##left_shift :left_shift [:graphite] { :alone :p }] ;; Shift is Z in graphite
 
                 [:##fn :!Wright_shift] ;; FN -> Semihyper
                 [:##right_option :fn] ;; Right Option -> FN
@@ -383,7 +384,17 @@
                 [:!Wm :!QWf17] ;; japanese
                 [:!Wcomma { :input :abc }] ;; qwerty
 
-                ;; --- Main ---
+                ;; --- Graphite ---
+
+                [:##f20 :p [:graphite]] ; key to the left of qwerty Z is Z in graphite
+                [:##f20 :g-backtick [:!graphite]] ; or grave when not in graphite
+
+                ;; --- Base layer symbols (unrelated to qwertifying) ---
+
+                ; [:n :g-underscore] ; qwerty N is _
+                ; [:!Sn :g-quote] ; qwerty shift-N is '
+
+                ;; --- Triangle thumb keys ---
 
                 [:!Ekeypad_1 :open-quick-terminal]
                 [:!Ekeypad_2 :open-alfred]
@@ -537,11 +548,6 @@
                 [:!C#TOSRcomma :!C#TOSRquote]
                 [:!C#TOSRperiod :!C#TOSRcomma]
                 ;; [:!C#TOSRslash :!C#TOSRslash] ;; maps to itself
-
-                ;; --- Base layer symbols (unrelated to qwertifying) ---
-
-                ; [:n :g-underscore] ; qwerty N is _
-                ; [:!Sn :g-quote] ; qwerty shift-N is '
             ]
         }
 
