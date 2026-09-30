@@ -157,7 +157,7 @@ end
 
 ls.add_snippets('all', {
     add_magic_rule('wg', 'br'),
-    add_magic_rule('jw', 'ph'),
+    add_magic_rule('jh', 'ph'),
     add_magic_rule('rj', 'rl'),
     add_magic_rule('jd', 'mb'),
     add_magic_rule('uo', 'ue'),
@@ -169,6 +169,12 @@ ls.add_snippets('all', {
     add_magic_rule('ih', 'ik'),
     add_magic_rule('iih', 'ih'),
     add_magic_rule('xm', 'pp'),
+    add_magic_rule('qi', 'zi'),
+    add_magic_rule('qe', 'ze'),
+    add_magic_rule('qy', 'zy'),
+    add_magic_rule('qo', 'zo'),
+    add_magic_rule('qa', 'za'),
+    add_magic_rule('qq', 'zz'),
 })
 
 -- ========== LEAP CONFIG ==========
