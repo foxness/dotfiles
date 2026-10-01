@@ -81,7 +81,13 @@ require('snacks').setup {
 
 require('mini.pick').setup()
 require('mini.ai').setup()
-require('mini.pairs').setup()
+
+require('mini.pairs').setup {
+    mappings = {
+        -- this is needed for the magic rule for OA to work (adds < to neigh_pattern)
+        ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = '^[^\\<]', register = { cr = false } },
+    }
+}
 
 local animationDuration = 30
 local animate = require('mini.animate')
@@ -160,21 +166,38 @@ ls.add_snippets('all', {
     add_magic_rule('jh', 'ph'),
     add_magic_rule('rj', 'rl'),
     add_magic_rule('jd', 'mb'),
+
     add_magic_rule('uo', 'ue'),
     add_magic_rule('uu', 'uo'),
+
     add_magic_rule('sd', 'sc'),
-    add_magic_rule('ssd', 'sd'),
+    add_magic_rule('sc', 'sd'),
+
     add_magic_rule('sr', 'bl'),
     add_magic_rule('ssr', 'sr'),
+
     add_magic_rule('ih', 'ik'),
     add_magic_rule('iih', 'ih'),
+
     add_magic_rule('xm', 'pp'),
+
     add_magic_rule('qi', 'zi'),
     add_magic_rule('qe', 'ze'),
     add_magic_rule('qy', 'zy'),
     add_magic_rule('qo', 'zo'),
     add_magic_rule('qa', 'za'),
     add_magic_rule('qq', 'zz'),
+
+    add_magic_rule('sw', 'sx'),
+    add_magic_rule('sx', 'sw'),
+
+    add_magic_rule('iuo', 'iou'),
+    add_magic_rule('uio', 'iou'),
+
+    add_magic_rule('eeg', 'eep'),
+
+    add_magic_rule('-.', 'oa'),
+    add_magic_rule('<"', 'OA'),
 })
 
 -- ========== LEAP CONFIG ==========
