@@ -161,44 +161,73 @@ local function add_magic_rule(a, b)
     )
 end
 
-ls.add_snippets('all', {
-    add_magic_rule('wg', 'br'),
-    add_magic_rule('jh', 'ph'),
-    add_magic_rule('rj', 'rl'),
-    add_magic_rule('jd', 'mb'),
+local function add_magic_rule_all_cases(a, b)
+    if a:match('%a') ~= nil then -- if string has letters
+        local a_lower = a:lower()
+        local b_lower = b:lower()
+        local a_upper = a:upper()
+        local b_upper = b:upper()
 
-    add_magic_rule('uo', 'ue'),
-    add_magic_rule('uu', 'uo'),
+        local lower_snip = add_magic_rule(a_lower, b_lower)
+        local upper_snip = add_magic_rule(a_upper, b_upper)
 
-    add_magic_rule('sd', 'sc'),
-    add_magic_rule('sc', 'sd'),
+        return { lower_snip, upper_snip }
+    else
+        return { add_magic_rule(a, b) }
+    end
+end
 
-    add_magic_rule('sr', 'bl'),
-    add_magic_rule('ssr', 'sr'),
+local magic_rules_packed = {
+    add_magic_rule_all_cases('wg', 'br'),
+    add_magic_rule_all_cases('jh', 'ph'),
+    add_magic_rule_all_cases('rj', 'rl'),
+    add_magic_rule_all_cases('jd', 'mb'),
 
-    add_magic_rule('ih', 'ik'),
-    add_magic_rule('iih', 'ih'),
+    add_magic_rule_all_cases('uo', 'ue'),
+    add_magic_rule_all_cases('uu', 'uo'),
 
-    add_magic_rule('xm', 'pp'),
+    add_magic_rule_all_cases('sd', 'sc'),
+    add_magic_rule_all_cases('sc', 'sd'),
 
-    add_magic_rule('qi', 'zi'),
-    add_magic_rule('qe', 'ze'),
-    add_magic_rule('qy', 'zy'),
-    add_magic_rule('qo', 'zo'),
-    add_magic_rule('qa', 'za'),
-    add_magic_rule('qq', 'zz'),
+    add_magic_rule_all_cases('sr', 'bl'),
+    add_magic_rule_all_cases('ssr', 'sr'),
 
-    add_magic_rule('sw', 'sx'),
-    add_magic_rule('sx', 'sw'),
+    add_magic_rule_all_cases('ih', 'ik'),
+    add_magic_rule_all_cases('iih', 'ih'),
 
-    add_magic_rule('iuo', 'iou'),
-    add_magic_rule('uio', 'iou'),
+    add_magic_rule_all_cases('xm', 'pp'),
 
-    add_magic_rule('eeg', 'eep'),
+    add_magic_rule_all_cases('qi', 'zi'),
+    add_magic_rule_all_cases('qe', 'ze'),
+    add_magic_rule_all_cases('qy', 'zy'),
+    add_magic_rule_all_cases('qo', 'zo'),
+    add_magic_rule_all_cases('qa', 'za'),
+    add_magic_rule_all_cases('qq', 'zz'),
 
-    add_magic_rule('-.', 'oa'),
-    add_magic_rule('<"', 'OA'),
-})
+    add_magic_rule_all_cases('sw', 'sx'),
+    add_magic_rule_all_cases('sx', 'sw'),
+
+    add_magic_rule_all_cases('iuo', 'iou'),
+    add_magic_rule_all_cases('uio', 'iou'),
+
+    add_magic_rule_all_cases('eeg', 'eep'),
+
+    add_magic_rule_all_cases('-.', 'oa'),
+    add_magic_rule_all_cases('<"', 'OA'),
+}
+
+local function flatten(arr)
+    local result = {}
+    for _, inner in ipairs(arr) do
+        for _, item in ipairs(inner) do
+            table.insert(result, item)
+        end
+    end
+    return result
+end
+
+local magic_rules = flatten(magic_rules_packed)
+ls.add_snippets('all', magic_rules)
 
 -- ========== LEAP CONFIG ==========
 
