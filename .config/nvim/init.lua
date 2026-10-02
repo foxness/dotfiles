@@ -19,7 +19,10 @@ vim.pack.add({
     { src = 'https://github.com/akinsho/bufferline.nvim' },
     { src = 'https://github.com/lukas-reineke/indent-blankline.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter-context' },
+
     { src = 'https://github.com/nvim-mini/mini.ai' },
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects' },
+
     { src = 'https://github.com/nvim-mini/mini.surround' },
     { src = 'https://github.com/folke/snacks.nvim' },
     { src = 'https://github.com/nvim-mini/mini.animate' },
@@ -80,7 +83,38 @@ require('snacks').setup {
 }
 
 require('mini.pick').setup()
-require('mini.ai').setup()
+
+local ai = require('mini.ai')
+local ts = ai.gen_spec.treesitter
+
+ai.setup {
+    custom_textobjects = {
+        -- Function definition
+        F = ts { a = '@function.outer', i = '@function.inner' },
+
+        -- Matches either conditional or loop
+        o = ts {
+            a = { '@conditional.outer', '@loop.outer' },
+            i = { '@conditional.inner', '@loop.inner' },
+        },
+
+        -- Classes (explicit override to ensure treesitter handles it)
+        c = ts { a = '@class.outer', i = '@class.inner' },
+
+        -- Conditionals (if/else/switch blocks)
+        i = ts { a = '@conditional.outer', i = '@conditional.inner' },
+
+        -- Loops (for/while blocks)
+        h = ts { a = '@loop.outer', i = '@loop.inner' },
+
+        -- Assignments (var = value)
+        -- 'a=' grabs the whole assignment, 'i=' grabs just the right-hand side
+        ['='] = ts { a = '@assignment.outer', i = '@assignment.rhs' },
+
+        -- Return statements
+        r = ts { a = '@return.outer', i = '@return.inner' },
+    }
+}
 
 require('mini.pairs').setup {
     mappings = {
