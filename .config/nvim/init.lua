@@ -23,6 +23,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.ai' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects' },
 
+    { src = 'https://github.com/nvim-mini/mini.extra' },
     { src = 'https://github.com/nvim-mini/mini.surround' },
     { src = 'https://github.com/folke/snacks.nvim' },
     { src = 'https://github.com/nvim-mini/mini.animate' },
@@ -41,16 +42,16 @@ vim.pack.add({
 
     -- themes
     { src = 'https://github.com/vague-theme/vague.nvim' },
-    { src = 'https://github.com/bluz71/vim-moonfly-colors',              name = 'moonfly' },
+    { src = 'https://github.com/bluz71/vim-moonfly-colors',                  name = 'moonfly' },
     { src = 'https://github.com/gbprod/nord.nvim' },
     { src = 'https://github.com/folke/tokyonight.nvim' },
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
-    { src = 'https://github.com/bluz71/vim-nightfly-colors',             name = 'nightfly' },
-    { src = 'https://github.com/catppuccin/nvim',                        name = 'catppuccin' },
+    { src = 'https://github.com/bluz71/vim-nightfly-colors',                 name = 'nightfly' },
+    { src = 'https://github.com/catppuccin/nvim',                            name = 'catppuccin' },
     { src = 'https://github.com/rebelot/kanagawa.nvim' },
     { src = 'https://github.com/sainnhe/everforest' },
     { src = 'https://github.com/UtkarshVerma/molokai.nvim' },
-    { src = 'https://github.com/rose-pine/neovim',                       name = 'rose-pine' },
+    { src = 'https://github.com/rose-pine/neovim',                           name = 'rose-pine' },
     { src = 'https://github.com/sainnhe/sonokai' },
     { src = 'https://github.com/maxmx03/solarized.nvim' },
 })
@@ -87,6 +88,8 @@ require('mini.pick').setup()
 local ai = require('mini.ai')
 local ts = ai.gen_spec.treesitter
 
+local gen_ai_spec = require('mini.extra').gen_ai_spec
+
 ai.setup {
     custom_textobjects = {
         -- Function definition
@@ -113,6 +116,12 @@ ai.setup {
 
         -- Return statements
         r = ts { a = '@return.outer', i = '@return.inner' },
+
+        B = gen_ai_spec.buffer(),
+        D = gen_ai_spec.diagnostic(),
+        I = gen_ai_spec.indent(),
+        L = gen_ai_spec.line(),
+        N = gen_ai_spec.number(),
     }
 }
 
