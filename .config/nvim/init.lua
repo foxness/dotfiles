@@ -221,7 +221,7 @@ local function add_magic_rule_all_cases(a, b)
 end
 
 local magic_rules_packed = {
-    add_magic_rule_all_cases('wg', 'br'),
+    add_magic_rule_all_cases('wg', 'pp'),
     add_magic_rule_all_cases('jh', 'ph'),
     add_magic_rule_all_cases('rj', 'rl'),
     add_magic_rule_all_cases('jd', 'mb'),
@@ -235,17 +235,28 @@ local magic_rules_packed = {
     add_magic_rule_all_cases('sr', 'bl'),
     add_magic_rule_all_cases('ssr', 'sr'),
 
-    add_magic_rule_all_cases('ih', 'ik'),
+    add_magic_rule_all_cases('ih', 'oa'),
     add_magic_rule_all_cases('iih', 'ih'),
 
-    add_magic_rule_all_cases('xm', 'pp'),
+    add_magic_rule_all_cases('xm', 'br'),
 
     add_magic_rule_all_cases('qi', 'zi'),
+    add_magic_rule_all_cases('zi', 'qi'),
+
     add_magic_rule_all_cases('qe', 'ze'),
+    add_magic_rule_all_cases('ze', 'qe'),
+
     add_magic_rule_all_cases('qy', 'zy'),
+    add_magic_rule_all_cases('zy', 'qy'),
+
     add_magic_rule_all_cases('qo', 'zo'),
+    add_magic_rule_all_cases('zo', 'qo'),
+
     add_magic_rule_all_cases('qa', 'za'),
+    add_magic_rule_all_cases('za', 'qa'),
+
     add_magic_rule_all_cases('qq', 'zz'),
+    add_magic_rule_all_cases('zz', 'qq'),
 
     add_magic_rule_all_cases('sw', 'sx'),
     add_magic_rule_all_cases('sx', 'sw'),
@@ -254,9 +265,6 @@ local magic_rules_packed = {
     add_magic_rule_all_cases('uio', 'iou'),
 
     add_magic_rule_all_cases('eeg', 'eep'),
-
-    add_magic_rule_all_cases('-.', 'oa'),
-    add_magic_rule_all_cases('<"', 'OA'),
 }
 
 local function flatten(arr)
