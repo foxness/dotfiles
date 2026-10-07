@@ -131,9 +131,9 @@ quick-terminal-position = top
 quick-terminal-animation-duration = 0
 quick-terminal-size = 70%,100%
 
-keybind = cmd+s=goto_split:next
-keybind = cmd+d=new_split:right
-keybind = cmd+g=goto_split:previous
+keybind = cmd+r=new_split:right
+keybind = cmd+d=goto_split:next
+keybind = cmd+s=goto_split:previous
 
 # dont forget to change indent guidelines lerp color
 # when changing the theme
@@ -160,19 +160,19 @@ theme = everblush
 # cursor-text = #ffffff
 
 # bright orange2 cursor
-# cursor-color = #ff8700 
+# cursor-color = #ff8700
 # cursor-text = #ffffff
 
 # bright green cursor
-# cursor-color = #afdf00 
-# cursor-text = #005f00 
+# cursor-color = #afdf00
+# cursor-text = #005f00
 
 # lightpurp cursor
 cursor-color = #decdff
 cursor-text = #0257d1
 
 # lavender blue cursor (only for light themes)
-# cursor-color = #0257d1 
+# cursor-color = #0257d1
 # cursor-text = #decdff
 
 # good themes:
@@ -186,7 +186,7 @@ cursor-text = #0257d1
 # FrontEndDelight
 
 # theme = 0x96f
-# theme = adwaita dark 
+# theme = adwaita dark
 # theme = aizen dark
 # theme =carbonfox
 # theme =daskside
