@@ -132,7 +132,7 @@ require('mini.pairs').setup {
     }
 }
 
-local animationDuration = 30
+local animationDuration = 20
 local animate = require('mini.animate')
 animate.setup {
     cursor = {
