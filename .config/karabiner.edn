@@ -111,8 +111,8 @@
         :mission-control { :key :!Tup_arrow }
         :app-windows { :key :!Tdown_arrow }
 
-        :left-desktop-iss { :key :!QWEleft_arrow } ;; instant space switcher
-        :right-desktop-iss { :key :!QWEright_arrow }
+        :left-desktop-iss { :key :!QWERleft_arrow } ;; iss = instant space switcher
+        :right-desktop-iss { :key :!QWERright_arrow }
         :desktop-1-iss { :key :!QWE1 }
         :desktop-2-iss { :key :!QWE2 }
         :desktop-3-iss { :key :!QWE3 }
