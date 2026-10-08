@@ -180,7 +180,7 @@
         :open-safari { :key :!QWERs }
 
         :toggle-amphetamine { :key :!WERslash }
-        :toggle-ice { :key :!WERquote }
+        :toggle-bartender { :key :!WERquote }
         :toggle-horo { :key :!WERperiod }
 
         ;; --- Applications: Rectangle ---
@@ -660,15 +660,17 @@
 
                 [:!SEa :open-things]
 
-                ;; triangle + ctrl
-                ;; [:!TEq :open-quick-note]
-                ;; [:!TEw :open-things-add]
+                ;; --- Triangle + Ctrl ---
+
+                [:!TEq :toggle-amphetamine]
+                [:!TEw :toggle-bartender]
+                [:!TEe :toggle-horo]
 
                 ;; --- Right Hand ---
 
-                [:!E6 :toggle-amphetamine]
-                [:!E7 :toggle-ice]
-                [:!E8 :toggle-horo]
+                ; [:!E6 :toggle-amphetamine]
+                ; [:!E7 :toggle-ice]
+                ; [:!E8 :toggle-horo]
             ]
         }
 
@@ -832,7 +834,7 @@
         }
 
         {
-            :des "[Sofle] Meh layer"
+            :des "[Sofle] Meh layer (Esc)"
             :rules [
                 :sofle
                 ;; --- Window management ---
@@ -909,7 +911,7 @@
         }
 
         {
-            :des "[Sofle] Switch layer"
+            :des "[Sofle] Switch layer (Tab)"
             :rules [
                 :sofle
                 ;; --- Media controls ---
