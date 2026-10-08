@@ -179,6 +179,10 @@
 
         :open-safari { :key :!QWERs }
 
+        :open-krita { :key :!QWERy }
+        :open-clipstudio { :key :!QWERu }
+        :open-pureref { :key :!QWERi }
+
         :toggle-amphetamine { :key :!WERslash }
         :toggle-bartender { :key :!WERquote }
         :toggle-horo { :key :!WERperiod }
@@ -634,14 +638,14 @@
                 [:!Er :open-firefox]
                 [:!Et :open-anki]
 
-                [:!Egrave_accent_and_tilde :open-eagle]
+                [:!Egrave_accent_and_tilde :open-notes]
                 [:!Ea :open-leaderkey]
                 [:!Es :open-finder]
                 [:!Ed :open-discord]
                 [:!Ef :open-brave]
                 [:!Eg :mission-control]
 
-                [:!Ereturn_or_enter :open-safari]
+                [:!Ereturn_or_enter :open-things]
                 [:!Ez :open-vscode]
                 [:!Ex :open-xcode]
                 [:!Ec :open-things-add]
@@ -653,18 +657,22 @@
                 ;; triangle + shift
                 [:!SE1 :open-bitwarden]
 
-                [:!SEq :open-notes]
+                [:!SEq :open-eagle]
                 [:!SEw :open-ghostty-folder]
                 [:!SEe :open-obsidian]
                 [:!SEr :open-telegram]
 
-                [:!SEa :open-things]
+                [:!SEa :open-safari]
 
                 ;; --- Triangle + Ctrl ---
 
-                [:!TEq :toggle-amphetamine]
-                [:!TEw :toggle-bartender]
-                [:!TEe :toggle-horo]
+                [:!TE1 :toggle-amphetamine]
+                [:!TE2 :toggle-bartender]
+                [:!TE3 :toggle-horo]
+
+                [:!TEq :open-krita]
+                [:!TEw :open-clipstudio]
+                [:!TEe :open-pureref]
 
                 ;; --- Right Hand ---
 
