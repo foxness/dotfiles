@@ -922,7 +922,9 @@
 
                 [:!WR1 :volume_decrement]
                 [:!WR2 :volume_increment]
-                [:!WR3 :mute]
+                [:!WR3 :display_brightness_decrement]
+                [:!WR4 :display_brightness_increment]
+                [:!WR5 :mute]
 
                 [:!WRa :play_or_pause]
                 [:!WRs :rewind]
