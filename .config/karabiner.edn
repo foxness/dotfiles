@@ -928,6 +928,9 @@
                 [:!WRs :rewind]
                 [:!WRd :fast_forward]
 
+                [:!CWR1 :fine-vol-down]
+                [:!CWR2 :fine-vol-up]
+
                 ;; --- Spotify ---
 
                 [:!WRq :quick-media-play-pause]
