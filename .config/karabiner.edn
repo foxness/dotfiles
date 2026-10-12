@@ -948,6 +948,76 @@
             ]
         }
 
+        ;; ============== CAPS LAYER ==============
+
+        {
+            :des "[Sofle] Graphite-Caps layer activation"
+            :rules [
+                [:condi :sofle :graphite :!graphitecaps-layer]
+
+                [:!Wf20 ["graphitecaps-layer" 1]]
+            ]
+        }
+
+        {
+            :des "[Sofle] Graphite-Caps layer"
+            :rules [
+                [:condi :graphitecaps-layer]
+
+                ; --- Layer deactivation ---
+
+                [:!Wf20 ["graphitecaps-layer" 0]]
+
+                [:spacebar [:spacebar ["graphitecaps-layer" 0]]]
+                [:escape [:escape ["graphitecaps-layer" 0]]]
+
+                [:quote [:quote ["graphitecaps-layer" 0]]]
+                [:comma [:comma ["graphitecaps-layer" 0]]]
+                [:slash [:slash ["graphitecaps-layer" 0]]]
+
+                ; shifted _ is '
+                [:!Sn :n]
+
+                ; --- Alphas ---
+
+                [:q :!Sq]
+                [:w :!Sw]
+                [:e :!Se]
+                [:r :!Sr]
+                [:t :!St]
+                [:y :!Sy]
+                [:u :!Su]
+                [:i :!Si]
+                [:o :!So]
+                [:p :!Sp]
+                ; [:close_bracket :!Sclose_bracket]
+                ; [:open_bracket :!Sopen_bracket]
+
+                [:a :!Sa]
+                [:s :!Ss]
+                [:d :!Sd]
+                [:f :!Sf]
+                [:g :!Sg]
+                [:h :!Sh]
+                [:j :!Sj]
+                [:k :!Sk]
+                [:l :!Sl]
+                [:semicolon :!Ssemicolon]
+                ; [:quote :!Squote]
+
+                [:z :!Sz]
+                [:x :!Sx]
+                [:c :!Sc]
+                [:v :!Sv]
+                [:b :!Sb]
+                [:n :!Sn]
+                [:m :!Sm]
+                ; [:comma :!Scomma]
+                ; [:period :!Speriod]
+                ; [:slash :!Sslash]
+            ]
+        }
+
         ;; ============== SPACE LAYER ==============
 
         ;; {
