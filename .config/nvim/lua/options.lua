@@ -35,7 +35,7 @@ vim.opt.isfname:append('@-@')
 
 vim.o.guicursor = ''
 vim.o.showmode = false
-vim.o.scrolloff = 10
+vim.o.scrolloff = 12
 vim.o.sidescrolloff = 36
 vim.o.mousescroll = 'ver:1,hor:1' -- only needed for mousescrolling with mini.animate
 
