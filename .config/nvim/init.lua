@@ -221,8 +221,14 @@ local function add_magic_rule_all_cases(a, b)
 end
 
 local magic_rules_packed = {
+    add_magic_rule_all_cases('iuo', 'iou'), -- has to go before 'ou' rule to take precedence over it
+    add_magic_rule_all_cases('uio', 'iou'),
+
     add_magic_rule_all_cases('wg', 'pp'),
-    add_magic_rule_all_cases('jh', 'ph'),
+
+    add_magic_rule_all_cases('lh', 'ph'),
+    add_magic_rule_all_cases('llh', 'lh'),
+
     add_magic_rule_all_cases('rj', 'rl'),
     add_magic_rule_all_cases('jd', 'mb'),
 
@@ -261,10 +267,10 @@ local magic_rules_packed = {
     add_magic_rule_all_cases('sw', 'sx'),
     add_magic_rule_all_cases('sx', 'sw'),
 
-    add_magic_rule_all_cases('iuo', 'iou'),
-    add_magic_rule_all_cases('uio', 'iou'),
-
     add_magic_rule_all_cases('eeg', 'eep'),
+
+    add_magic_rule_all_cases('wj', 'ws'),
+    add_magic_rule_all_cases('ws', 'wj'),
 }
 
 local function flatten(arr)
