@@ -220,58 +220,17 @@ local function add_magic_rule_all_cases(a, b)
     end
 end
 
-local magic_rules_packed = {
-    add_magic_rule_all_cases('iuo', 'iou'), -- has to go before 'ou' rule to take precedence over it
-    add_magic_rule_all_cases('uio', 'iou'),
+local function convert_to_magic_snippets(rules)
+    local result = {}
+    for _, rule in ipairs(rules) do
+        local before = rule[1]
+        local after = rule[2]
 
-    add_magic_rule_all_cases('wg', 'pp'),
-
-    add_magic_rule_all_cases('lh', 'ph'),
-    add_magic_rule_all_cases('llh', 'lh'),
-
-    add_magic_rule_all_cases('rj', 'rl'),
-    add_magic_rule_all_cases('jd', 'mb'),
-
-    add_magic_rule_all_cases('uo', 'ue'),
-    add_magic_rule_all_cases('uu', 'uo'),
-
-    add_magic_rule_all_cases('sd', 'sc'),
-    add_magic_rule_all_cases('sc', 'sd'),
-
-    add_magic_rule_all_cases('sr', 'bl'),
-    add_magic_rule_all_cases('ssr', 'sr'),
-
-    add_magic_rule_all_cases('ih', 'oa'),
-    add_magic_rule_all_cases('iih', 'ih'),
-
-    add_magic_rule_all_cases('xm', 'br'),
-
-    add_magic_rule_all_cases('qi', 'zi'),
-    add_magic_rule_all_cases('zi', 'qi'),
-
-    add_magic_rule_all_cases('qe', 'ze'),
-    add_magic_rule_all_cases('ze', 'qe'),
-
-    add_magic_rule_all_cases('qy', 'zy'),
-    add_magic_rule_all_cases('zy', 'qy'),
-
-    add_magic_rule_all_cases('qo', 'zo'),
-    add_magic_rule_all_cases('zo', 'qo'),
-
-    add_magic_rule_all_cases('qa', 'za'),
-    add_magic_rule_all_cases('za', 'qa'),
-
-    add_magic_rule_all_cases('qq', 'zz'),
-    add_magic_rule_all_cases('zz', 'qq'),
-
-    add_magic_rule_all_cases('sw', 'sx'),
-    add_magic_rule_all_cases('sx', 'sw'),
-
-    add_magic_rule_all_cases('eeg', 'eep'),
-
-    add_magic_rule_all_cases('wj', 'ws'),
-    add_magic_rule_all_cases('ws', 'wj'),
-}
+        local snippet_array = add_magic_rule_all_cases(before, after)
+        table.insert(result, snippet_array)
+    end
+    return result
+end
 
 local function flatten(arr)
     local result = {}
@@ -283,8 +242,64 @@ local function flatten(arr)
     return result
 end
 
-local magic_rules = flatten(magic_rules_packed)
-ls.add_snippets('all', magic_rules)
+local magic_rules = {
+    -- { 'before', 'after' }
+    { 'iuo', 'iou' }, -- has to go before 'ou' rule to take precedence over it
+    { 'uio', 'iou' },
+
+    { 'wg',  'pp' },
+
+    { 'lh',  'ph' },
+    { 'llh', 'lh' },
+
+    { 'rj',  'rl' },
+    { 'jd',  'mb' },
+
+    { 'uo',  'ue' },
+    { 'uu',  'uo' },
+
+    { 'sd',  'sc' },
+    { 'sc',  'sd' },
+
+    { 'sr',  'bl' },
+    { 'ssr', 'sr' },
+
+    { 'ih',  'oa' },
+    { 'iih', 'ih' },
+
+    { 'xm',  'br' },
+
+    { 'qi',  'zi' },
+    { 'zi',  'qi' },
+
+    { 'qe',  'ze' },
+    { 'ze',  'qe' },
+
+    { 'qy',  'zy' },
+    { 'zy',  'qy' },
+
+    { 'qo',  'zo' },
+    { 'zo',  'qo' },
+
+    { 'qa',  'za' },
+    { 'za',  'qa' },
+
+    { 'qq',  'zz' },
+    { 'zz',  'qq' },
+
+    { 'sw',  'sx' },
+    { 'sx',  'sw' },
+
+    { 'eeg', 'eep' },
+
+    { 'wj',  'ws' },
+    { 'ws',  'wj' },
+}
+
+local magic_rule_snippets = convert_to_magic_snippets(magic_rules)
+local magic_rules_flat = flatten(magic_rule_snippets)
+
+ls.add_snippets('all', magic_rules_flat)
 
 -- ========== LEAP CONFIG ==========
 

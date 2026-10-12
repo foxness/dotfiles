@@ -21,7 +21,7 @@ map('n', '<leader>so', ':update<CR> :source<CR>')
 map('n', '<leader>w', ':write<CR>')
 map('n', '<leader>b', '<Cmd>quit<CR>')
 map('n', '<leader>r', ':update<CR> :make<CR>')
-map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:eestart)' })
+map('n', '<leader>re', '<cmd>restart<CR>', { desc = 'Restart config (:restart)' })
 
 -- ========== Other ==========
 
