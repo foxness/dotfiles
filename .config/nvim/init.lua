@@ -126,7 +126,7 @@ ai.setup {
 }
 
 require('mini.pairs').setup {
-    mappings = {
+    mappings = { -- todo: remove
         -- this is needed for the magic rule for OA to work (adds < to neigh_pattern)
         ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = '^[^\\<]', register = { cr = false } },
     }
@@ -249,8 +249,8 @@ local magic_rules = {
 
     { 'wg',  'pp' },
 
-    { 'lh',  'ph' },
-    { 'llh', 'lh' },
+    { 'jh',  'ph' },
+    { 'jjh', 'jh' },
 
     { 'rj',  'rl' },
     { 'jd',  'mb' },
