@@ -959,8 +959,16 @@
 
                 [
                     :graphite-capsword
-                    ["graphitecapsword-layer" 1]
-                    nil
+
+                    [
+                        ["graphitecapsword-layer" 1]
+
+                        ; deactivates the layer after 10 seconds no matter what
+                        { :shell [:keyboard-maestro "Karabiner_DelayedCapswordDeactivation"] }
+                    ]
+
+                    nil ; no conditions
+
                     {
                         :delayed {
                             :invoked ["graphitecapsword-layer" 0] ;; run when no other key presses after delay ms
