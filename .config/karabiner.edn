@@ -96,7 +96,7 @@
         ; :delete { :key :delete_or_backspace }
         ; :return { :key :return_or_enter }
 
-        :graphite-capsword { :key :!Wf20 }
+        :graphite-capsword { :key :f20 }
     }
 
     :tos {
