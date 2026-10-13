@@ -87,15 +87,17 @@
         :sigkill-frontmost "killall -9 \"$(osascript -e 'tell application \"System Events\" to (name of (first process whose frontmost is true))')\""
     }
 
-    ;; :froms {
-    ;;     :any_key { :any :key_code }
-    ;;     :any_consumer { :any :consumer_key_code }
-    ;;     :any_button { :any :pointing_button }
+    :froms {
+        :any_key { :any :key_code }
+        ; :any_consumer { :any :consumer_key_code }
+        ; :any_button { :any :pointing_button }
 
-    ;;     ;; alias
-    ;;     :delete { :key :delete_or_backspace }
-    ;;     :return { :key :return_or_enter }
-    ;; }
+        ;; alias
+        ; :delete { :key :delete_or_backspace }
+        ; :return { :key :return_or_enter }
+
+        :graphite-capsword { :key :!Wf20 }
+    }
 
     :tos {
         ;; --- General ---
@@ -948,35 +950,46 @@
             ]
         }
 
-        ;; ============== CAPS LAYER ==============
+        ;; ============== CAPS WORD LAYER ==============
 
         {
-            :des "[Sofle] Graphite-Caps layer activation"
+            :des "[Sofle] Graphite-Capsword layer activation"
             :rules [
-                [:condi :sofle :graphite :!graphitecaps-layer]
+                [:condi :sofle :graphite :!graphitecapsword-layer]
 
-                [:!Wf20 ["graphitecaps-layer" 1]]
+                [
+                    :graphite-capsword
+                    ["graphitecapsword-layer" 1]
+                    nil
+                    {
+                        :delayed {
+                            :invoked ["graphitecapsword-layer" 0] ;; run when no other key presses after delay ms
+                            ; :canceled ["graphitecapsword-layer" 0] ;; run when another key presses within delay ms
+                        }
+
+                        :params { :delay 5000 } ;; it can even be 5 seconds, tested
+                    }
+                ]
             ]
         }
 
         {
-            :des "[Sofle] Graphite-Caps layer"
+            :des "[Sofle] Graphite-Capsword layer"
             :rules [
-                [:condi :graphitecaps-layer]
+                [:condi :graphitecapsword-layer]
 
                 ; --- Layer deactivation ---
 
-                [:!Wf20 ["graphitecaps-layer" 0]]
+                [:graphite-capsword ["graphitecapsword-layer" 0]]
 
-                [:spacebar [:spacebar ["graphitecaps-layer" 0]]]
-                [:escape [:escape ["graphitecaps-layer" 0]]]
+                [:spacebar [:spacebar ["graphitecapsword-layer" 0]]]
+                [:escape [:escape ["graphitecapsword-layer" 0]]]
 
-                [:quote [:quote ["graphitecaps-layer" 0]]]
-                [:comma [:comma ["graphitecaps-layer" 0]]]
-                [:slash [:slash ["graphitecaps-layer" 0]]]
+                [:quote [:quote ["graphitecapsword-layer" 0]]]
+                [:comma [:comma ["graphitecapsword-layer" 0]]]
+                [:slash [:slash ["graphitecapsword-layer" 0]]]
 
-                ; shifted _ is '
-                [:!Sn :n]
+                ; [:any_key [["graphitecapsword-layer" 0] { :from_event true }]]
 
                 ; --- Alphas ---
 
@@ -1015,6 +1028,12 @@
                 ; [:comma :!Scomma]
                 ; [:period :!Speriod]
                 ; [:slash :!Sslash]
+
+                ; --- Misc ---
+
+                ; shifted _ is '
+                [:!Sn :n]
+
             ]
         }
 
