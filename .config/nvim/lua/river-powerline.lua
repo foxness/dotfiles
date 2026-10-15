@@ -45,10 +45,10 @@ local theme = {
         b = { fg = colors.darkred, bg = colors.purple, gui = 'bold' },
         c = { fg = colors.darkred, bg = colors.orangebg, gui = 'bold' },
     },
-    replace = { -- todo: make colors different from command mode
-        a = { fg = colors.white, bg = colors.pink, gui = 'bold' },
-        b = { fg = colors.darkestcyan, bg = colors.mediumcyan },
-        c = { fg = colors.white, bg = colors.darkteal, gui = 'bold' },
+    replace = {
+        a = { fg = colors.gray1, bg = colors.yellow, gui = 'bold' },
+        b = { fg = colors.gray10, bg = colors.gray4 },
+        c = { fg = colors.yellow, bg = colors.gray2 },
     },
     inactive = {
         a = { fg = colors.gray1, bg = colors.gray5, gui = 'bold' },
