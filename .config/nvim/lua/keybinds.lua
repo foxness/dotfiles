@@ -111,6 +111,9 @@ map('n', 'M', '<nop>')
 map('n', 'L', '<nop>')
 map('n', 'Q', '<nop>')
 
+map({ 'n', 'v' }, '<PageDown>', '12j', { desc = 'move down in buffer' })
+map({ 'n', 'v' }, '<PageUp>', '12k', { desc = 'move up in buffer' })
+
 -- ========== Animated motion centering ==========
 
 local function animate_scroll_and_center(key)
@@ -131,9 +134,6 @@ local function animate_motion_and_center(motion, post_keys)
         animate.execute_after('scroll', 'normal! ' .. post_keys)
     end
 end
-
-map({ 'n', 'v' }, '<PageDown>', '12j', { desc = 'move down in buffer' })
-map({ 'n', 'v' }, '<PageUp>', '12k', { desc = 'move up in buffer' })
 
 -- When Ghostty sees physical Alt+Left and Alt+Right, it converts them directly
 -- into ESC b and ESC f behind the scenes to preserve standard Unix CLI
