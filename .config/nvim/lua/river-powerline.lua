@@ -35,13 +35,19 @@ local theme = {
         b = { fg = colors.darkestcyan, bg = colors.mediumcyan },
         c = { fg = colors.lightpulp, bg = colors.blue },
     },
+    command = {
+        a = { fg = colors.white, bg = colors.pink, gui = 'bold' },
+        b = { fg = colors.darkestcyan, bg = colors.mediumcyan },
+        c = { fg = colors.white, bg = colors.darkteal, gui = 'bold' },
+    },
     visual = {
         a = { fg = colors.darkred, bg = colors.white, gui = 'bold' },
         b = { fg = colors.darkred, bg = colors.purple, gui = 'bold' },
         c = { fg = colors.darkred, bg = colors.orangebg, gui = 'bold' },
     },
-    replace = {
+    replace = { -- todo: make colors different from command mode
         a = { fg = colors.white, bg = colors.pink, gui = 'bold' },
+        b = { fg = colors.darkestcyan, bg = colors.mediumcyan },
         c = { fg = colors.white, bg = colors.darkteal, gui = 'bold' },
     },
     inactive = {
