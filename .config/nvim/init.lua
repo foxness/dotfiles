@@ -5,7 +5,7 @@
 
 -- ========================================
 
-require('vim._core.ui2').enable({})
+require('vim._core.ui2').enable({}) -- enable new UI
 
 -- ========== PLUGINS ==========
 
@@ -56,9 +56,12 @@ vim.pack.add({
     { src = 'https://github.com/maxmx03/solarized.nvim' },
 })
 
--- ========== PLUGIN CONFIG ==========
+-- ========== PLUGIN: oil ==========
 
 require('oil').setup()
+
+-- ========== PLUGIN: snacks ==========
+
 require('snacks').setup {
     bigfile = { enabled = false },
     dashboard = { enabled = false },
@@ -83,7 +86,11 @@ require('snacks').setup {
     -- }
 }
 
+-- ========== PLUGIN: mini.pick ==========
+
 require('mini.pick').setup()
+
+-- ========== PLUGIN: mini.ai ==========
 
 local ai = require('mini.ai')
 local ts = ai.gen_spec.treesitter
@@ -125,12 +132,16 @@ ai.setup {
     }
 }
 
+-- ========== PLUGIN: mini.pairs ==========
+
 require('mini.pairs').setup {
     mappings = { -- todo: remove
         -- this is needed for the magic rule for OA to work (adds < to neigh_pattern)
         ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = '^[^\\<]', register = { cr = false } },
     }
 }
+
+-- ========== PLUGIN: mini.animate ==========
 
 local animationDuration = 20
 local animate = require('mini.animate')
@@ -153,6 +164,8 @@ animate.setup {
     },
 }
 
+-- ========== PLUGIN: mini.surround ==========
+
 require('mini.surround').setup {
     mappings = {
         add = 'Sa',        -- Add surrounding in Normal and Visual modes
@@ -166,6 +179,8 @@ require('mini.surround').setup {
         suffix_next = 'n', -- Suffix to search with "next" method
     }
 }
+
+-- ========== TREESITTER LANGUAGES ==========
 
 require('nvim-treesitter').install {
     'lua',
@@ -184,7 +199,7 @@ require('nvim-treesitter').install {
     'clojure',
 }
 
--- ========== Magic typing rules ==========
+-- ========== MAGIC TYPING RULES ==========
 
 local ls = require('luasnip')
 
@@ -387,7 +402,7 @@ require("ibl").setup({ -- indent blackline
     indent = { highlight = highlight_names },
 })
 
--- ========== SWIFT STUFF ==========
+-- ========== AUTOCOMPLETION ==========
 
 local cmp = require('blink.cmp')
 cmp.build():pwait()
@@ -418,6 +433,8 @@ cmp.setup {
     -- See the fuzzy documentation for more information
     fuzzy = { implementation = "rust" }
 }
+
+-- ========== SWIFT STUFF ==========
 
 -- local swift_config = {
 --     features = {
@@ -648,20 +665,14 @@ cmp.setup {
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
     callback = function()
-        vim.hl.on_yank()
+        vim.hl.on_yank {
+            -- higroup = 'IncSearch', -- highlight group to use
+            timeout = 160,         -- duration in milliseconds
+        }
     end,
 })
 
--- vim.api.nvim_create_autocmd('TextYankPost', {
---   desc = 'Highlight when yanking (copying) text',
---   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
---   callback = function()
---     vim.hl.on_yank({
---       higroup = 'IncSearch', -- highlight group to use
---       timeout = 200,         -- duration in milliseconds
---     })
---   end,
--- })
+-- ========== THEMES ==========
 
 require('vague').setup({
     transparent = true,
@@ -708,9 +719,13 @@ require("gruvbox").setup {
 }
 
 vim.g.nightflyTransparent = true
+
 vim.g.moonflyTransparent = true
+
 vim.g.sonokai_transparent_background = true
 vim.g.sonokai_style = 'andromeda'
+
+-- ========== MINIMAP ==========
 
 vim.g.neominimap = {
     auto_enable = true,
@@ -725,6 +740,8 @@ vim.g.neominimap = {
         z_index = 3, -- so that it is above treesitter context
     },
 }
+
+-- ========== BUFFERLINE ==========
 
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 require("bufferline").setup {
@@ -751,12 +768,16 @@ require("bufferline").setup {
     },
 }
 
+-- ========== LUALINE ==========
+
 local river_powerline = require('river-powerline')
 require('lualine').setup {
     options = {
         theme = river_powerline
     }
 }
+
+-- ========== TREESITTER ==========
 
 require('treesitter-context').setup {
     zindex = 2 -- so that it is below minimap
