@@ -209,23 +209,53 @@ end, { desc = 'Delete line above' })
 -- ========== Duplicate and comment ==========
 
 local function duplicate_and_comment()
-    -- Exit visual mode
-    local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
-    vim.api.nvim_feedkeys(esc, "x", false)
+    local cursor_pos = vim.api.nvim_win_get_cursor(0)
 
-    -- Get selection range
+    -- Drop out of visual mode to lock in marks
+    local esc = vim.api.nvim_replace_termcodes('<Esc>', true, false, true)
+    vim.api.nvim_feedkeys(esc, 'x', false)
+
     local start_line = vim.fn.line("'<")
     local end_line = vim.fn.line("'>")
 
-    -- Yank and paste below
-    vim.cmd(start_line .. "," .. end_line .. "yank")
-    vim.cmd((end_line + 1) .. "put")
+    local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
+    local is_single_line = (start_line == end_line)
+    local is_empty_last_line = (not is_single_line) and ((lines[#lines] or ""):match("^%s*$") ~= nil) and (end_line > start_line)
 
-    -- Reselect pasted block
-    vim.api.nvim_feedkeys("gv", "n", false)
+    local code_end = is_empty_last_line and (end_line - 1) or end_line
+    local block_height = code_end - start_line + 1
 
-    -- Comment the original selection
-    vim.api.nvim_feedkeys("gc", "v", false)
+    -- Yank and put
+    vim.cmd(string.format('%d,%d yank', start_line, end_line))
+    vim.cmd(string.format('%d put', end_line))
+
+    local added_blank = 0
+    if is_empty_last_line then
+        added_blank = 1
+    elseif not is_single_line then
+        -- Multi-line selections (like vip) check below and inject empty line if missing
+        -- Single-line visual selections skip blank injection entirely, matching normal mode
+        local total_lines = vim.api.nvim_buf_line_count(0)
+        local has_blank_below = false
+        if end_line < total_lines then
+            local next_line = vim.api.nvim_buf_get_lines(0, end_line, end_line + 1, false)[1]
+            has_blank_below = next_line:match("^%s*$") ~= nil
+        end
+
+        if not has_blank_below then
+            vim.api.nvim_buf_set_lines(0, end_line, end_line, false, { "" })
+            added_blank = 1
+        end
+    end
+
+    -- Comment the original code lines
+    vim.cmd(string.format('normal! %dG%dV%dG', start_line, start_line, code_end))
+    local gc_key = vim.api.nvim_replace_termcodes('gc', true, false, true)
+    vim.api.nvim_feedkeys(gc_key, 'x', false)
+
+    -- Snap cursor cleanly onto the duplicate block
+    local new_row = cursor_pos[1] + block_height + added_blank
+    vim.api.nvim_win_set_cursor(0, { new_row, cursor_pos[2] })
 end
 
 map('n', '<leader>yc', 'yy<cmd>normal gcc<CR>p', { noremap = true, desc = 'Duplicate line and comment original' })
