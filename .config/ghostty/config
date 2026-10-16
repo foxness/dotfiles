@@ -127,6 +127,7 @@ macos-icon = xray
 adjust-underline-thickness = 50%
 
 macos-option-as-alt = true
+mouse-hide-while-typing = true
 
 keybind = global:cmd+f20=toggle_quick_terminal
 quick-terminal-position = top
