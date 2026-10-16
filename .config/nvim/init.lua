@@ -30,6 +30,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.pairs' },
     { src = 'https://github.com/L3MON4D3/LuaSnip' },
     { src = 'https://github.com/m4xshen/hardtime.nvim' },
+    { src = 'https://github.com/nvim-mini/mini.operators' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -141,6 +142,10 @@ require('mini.pairs').setup {
         ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = '^[^\\<]', register = { cr = false } },
     }
 }
+
+-- ========== PLUGIN: mini.operators ==========
+
+require('mini.operators').setup()
 
 -- ========== PLUGIN: mini.animate ==========
 
@@ -341,7 +346,8 @@ require('hardtime').setup()
 
 -- ========== MISC ==========
 
-vim.cmd('set completeopt+=noselect')
+-- disables autoselection of first item in autocompletion
+-- vim.cmd('set completeopt+=noselect')
 
 -- ========== LSP ==========
 

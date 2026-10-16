@@ -60,6 +60,10 @@
       "rev": "7dcc3ee5ba638cca654125f40f6e3ffbc52e0dc4",
       "src": "https://github.com/nvim-mini/mini.extra"
     },
+    "mini.operators": {
+      "rev": "0e25aac29dd6cdbcfdbd8a6505a8e3be5064ef1a",
+      "src": "https://github.com/nvim-mini/mini.operators"
+    },
     "mini.pairs": {
       "rev": "03eb1f0062a2cee5314d1ac3939246e4bb21352e",
       "src": "https://github.com/nvim-mini/mini.pairs"
