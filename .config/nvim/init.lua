@@ -29,7 +29,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.animate' },
     { src = 'https://github.com/nvim-mini/mini.pairs' },
     { src = 'https://github.com/L3MON4D3/LuaSnip' },
-    -- { src = 'https://github.com/m4xshen/hardtime.nvim' },
+    { src = 'https://github.com/m4xshen/hardtime.nvim' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -337,7 +337,7 @@ end
 
 -- ========== PLUGIN: hardtime.nvim ==========
 
--- require('hardtime').setup()
+require('hardtime').setup()
 
 -- ========== MISC ==========
 
