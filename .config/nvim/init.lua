@@ -29,6 +29,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.animate' },
     { src = 'https://github.com/nvim-mini/mini.pairs' },
     { src = 'https://github.com/L3MON4D3/LuaSnip' },
+    -- { src = 'https://github.com/m4xshen/hardtime.nvim' },
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -316,7 +317,10 @@ local magic_rules_flat = flatten(magic_rule_snippets)
 
 ls.add_snippets('all', magic_rules_flat)
 
--- ========== LEAP CONFIG ==========
+-- ========== PLUGIN: leap.nvim ==========
+
+local leap = require('leap')
+leap.opts.safe_labels = '' -- disables autojumping
 
 -- Highly recommended: define a preview filter to reduce visual noise
 -- and the blinking effect after the first keypress.
@@ -324,12 +328,16 @@ ls.add_snippets('all', magic_rules_flat)
 -- preview for matches starting with whitespace or an alphabetic
 -- mid-word character: foobar[baaz] = quux
 --                     ^    ^^^  ^^ ^ ^  ^
-require('leap').opts.preview = function(ch0, ch1, ch2)
+leap.opts.preview = function(ch0, ch1, ch2)
     return not (
         ch1:match('%s')
         or (ch0:match('%a') and ch1:match('%a') and ch2:match('%a'))
     )
 end
+
+-- ========== PLUGIN: hardtime.nvim ==========
+
+-- require('hardtime').setup()
 
 -- ========== MISC ==========
 
@@ -605,3 +613,4 @@ vim.cmd.colorscheme('gruvbox')
 
 require('options')
 require('keybinds')
+
