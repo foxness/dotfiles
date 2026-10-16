@@ -3,7 +3,7 @@
     {
       "key" : "1",
       "type" : "folder",
-      "value" : "/Users/river/Desktop"
+      "value" : "/Volumes/Cassiopeia/downloads"
     },
     {
       "key" : "2",
@@ -13,68 +13,17 @@
     {
       "key" : "3",
       "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
+      "value" : "/Users/river/my/art"
+    },
+    {
+      "key" : "4",
+      "type" : "folder",
+      "value" : "/Volumes/Cassiopeia/torrent"
     },
     {
       "key" : "5",
       "type" : "folder",
       "value" : "/Applications"
-    },
-    {
-      "key" : "a",
-      "type" : "folder",
-      "value" : "/Volumes/Athena"
-    },
-    {
-      "key" : "s",
-      "type" : "folder",
-      "value" : "/Users/river/my"
-    },
-    {
-      "key" : "d",
-      "type" : "folder",
-      "value" : "/Volumes/Cassiopeia"
-    },
-    {
-      "key" : "f",
-      "type" : "folder",
-      "value" : "/Users/river"
-    },
-    {
-      "key" : "g",
-      "type" : "folder",
-      "value" : "/Volumes/Cassiopeia/downloads"
-    },
-    {
-      "key" : "w",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
-    },
-    {
-      "key" : "e",
-      "type" : "folder",
-      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
-    },
-    {
-      "key" : "r",
-      "type" : "folder",
-      "value" : "/Users/river/my/art"
-    },
-    {
-      "key" : "t",
-      "type" : "folder",
-      "value" : "/Volumes/Cassiopeia/torrent"
-    },
-    {
-      "key" : "x",
-      "label" : "Recents",
-      "type" : "url",
-      "value" : "kmtrigger://macro=Leader_OpenRecents"
-    },
-    {
-      "key" : "c",
-      "type" : "folder",
-      "value" : "/Users/river/my/music"
     },
     {
       "actions" : [
@@ -90,11 +39,22 @@
         },
         {
           "key" : "e",
+          "label" : "The Verge",
+          "type" : "url",
+          "value" : "https://www.theverge.com/"
+        },
+        {
+          "key" : "r",
           "type" : "application",
           "value" : "/Applications/Sourcetree.app"
         },
         {
-          "key" : "a",
+          "key" : "t",
+          "type" : "application",
+          "value" : "/Applications/Keka.app"
+        },
+        {
+          "key" : "f",
           "type" : "application",
           "value" : "/System/Applications/iPhone Mirroring.app"
         }
@@ -102,6 +62,57 @@
       "key" : "q",
       "label" : "Run App",
       "type" : "group"
+    },
+    {
+      "key" : "w",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/this-week"
+    },
+    {
+      "key" : "e",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive"
+    },
+    {
+      "key" : "r",
+      "type" : "folder",
+      "value" : "/Users/river/my"
+    },
+    {
+      "key" : "t",
+      "type" : "folder",
+      "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
+    },
+    {
+      "key" : "a",
+      "type" : "folder",
+      "value" : "/Volumes/Athena"
+    },
+    {
+      "key" : "s",
+      "type" : "folder",
+      "value" : "/Volumes/Cassiopeia"
+    },
+    {
+      "key" : "d",
+      "type" : "folder",
+      "value" : "/Users/river/Desktop"
+    },
+    {
+      "key" : "f",
+      "type" : "folder",
+      "value" : "/Users/river"
+    },
+    {
+      "key" : "g",
+      "label" : "Recents",
+      "type" : "url",
+      "value" : "kmtrigger://macro=Leader_OpenRecents"
+    },
+    {
+      "key" : "c",
+      "type" : "folder",
+      "value" : "/Users/river/my/music"
     },
     {
       "actions" : [
@@ -145,27 +156,6 @@
       "key" : "z",
       "label" : "Manage Window",
       "type" : "group"
-    },
-    {
-      "key" : "",
-      "type" : "application",
-      "value" : "/Applications/krita.app"
-    },
-    {
-      "key" : "",
-      "type" : "application",
-      "value" : "/Applications/PureRef.app"
-    },
-    {
-      "key" : "",
-      "type" : "application",
-      "value" : "/Applications/Keka.app"
-    },
-    {
-      "key" : "",
-      "label" : "The Verge",
-      "type" : "url",
-      "value" : "https://www.theverge.com/"
     }
   ],
   "type" : "group"
