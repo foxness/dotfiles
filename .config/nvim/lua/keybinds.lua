@@ -43,18 +43,15 @@ map('n', '<leader>l', function() snacks.bufdelete() end, { desc = 'Delete buffer
 
 map('n', '<leader>ta', function() snacks.picker.files() end, { desc = "Find Files" })
 -- map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.stdpath("config") } end, { desc = "Find Config File" })
-map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.expand('$HOME/.config') } end,
-    { desc = "Find Config File" })
+map('n', '<leader>tu', function() snacks.picker.files { cwd = vim.fn.expand('$HOME/.config') } end, { desc = "Find Config File" })
 map('n', '<leader>th', ':Oil<CR>', { desc = "Open File Explorer" })
 map('n', '<leader>te', function() snacks.picker.grep() end, { desc = "Grep" })
 map({ 'n', 'x' }, '<leader>ti', function() snacks.picker.grep_word() end, { desc = "Grep word" })
 map('n', '<leader>tf', function() snacks.picker.help() end, { desc = "Find Help Pages" })
 
-map("n", "<leader>dd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
-map("n", "<leader>dj", function() vim.diagnostic.jump({ count = -1, float = true }) end,
-    { desc = "Previous diagnostic" })
-map("n", "<leader>dw", function() vim.diagnostic.jump({ count = 1, float = true }) end,
-    { desc = "Next diagnostic" })
+map("n", "<leader>dh", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+map("n", "<leader>da", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "Previous diagnostic" })
+map("n", "<leader>de", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Next diagnostic" })
 
 -- ========== Standard enhancements ==========
 
@@ -72,11 +69,10 @@ map('v', 'X', '<Cmd>normal gc<CR>', { desc = 'Comment selection' })
 
 map('n', '<leader>df', vim.lsp.buf.format)
 
-map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = 'Replace word cursor is on globally' })
+map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word cursor is on globally' })
 map('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'makes file executable' })
 
-map({ 'n', 'v' }, '<leader>d', [['_d]], { desc = 'Delete without yanking' })
+map({ 'n', 'v' }, '<leader>dw', [["_d]], { desc = 'Delete without yanking' })
 
 map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank character' })
 
