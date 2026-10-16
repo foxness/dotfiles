@@ -23,7 +23,7 @@
     {
       "key" : "5",
       "type" : "folder",
-      "value" : "/Applications"
+      "value" : "/Users/river/my/music"
     },
     {
       "actions" : [
@@ -39,22 +39,16 @@
         },
         {
           "key" : "e",
-          "label" : "The Verge",
-          "type" : "url",
-          "value" : "https://www.theverge.com/"
-        },
-        {
-          "key" : "r",
           "type" : "application",
           "value" : "/Applications/Sourcetree.app"
         },
         {
-          "key" : "t",
+          "key" : "r",
           "type" : "application",
           "value" : "/Applications/Keka.app"
         },
         {
-          "key" : "f",
+          "key" : "t",
           "type" : "application",
           "value" : "/System/Applications/iPhone Mirroring.app"
         }
@@ -84,9 +78,34 @@
       "value" : "/Users/river/Library/CloudStorage/GoogleDrive-foxnezz@gmail.com/My Drive/screenshots"
     },
     {
+      "actions" : [
+        {
+          "key" : "w",
+          "label" : "Gmail",
+          "type" : "url",
+          "value" : "https://mail.google.com/mail/u/0/#inbox"
+        },
+        {
+          "key" : "e",
+          "label" : "The Verge",
+          "type" : "url",
+          "value" : "https://www.theverge.com/"
+        },
+        {
+          "key" : "r",
+          "label" : "/r/anime",
+          "type" : "url",
+          "value" : "https://www.reddit.com/r/anime/"
+        },
+        {
+          "key" : "s",
+          "label" : "YouTube",
+          "type" : "url",
+          "value" : "https://www.youtube.com/feed/subscriptions"
+        }
+      ],
       "key" : "a",
-      "type" : "folder",
-      "value" : "/Volumes/Athena"
+      "type" : "group"
     },
     {
       "key" : "s",
@@ -105,14 +124,8 @@
     },
     {
       "key" : "g",
-      "label" : "Recents",
-      "type" : "url",
-      "value" : "kmtrigger://macro=Leader_OpenRecents"
-    },
-    {
-      "key" : "c",
       "type" : "folder",
-      "value" : "/Users/river/my/music"
+      "value" : "/Volumes/Athena"
     },
     {
       "actions" : [
@@ -156,6 +169,17 @@
       "key" : "z",
       "label" : "Manage Window",
       "type" : "group"
+    },
+    {
+      "key" : "x",
+      "label" : "Recents",
+      "type" : "url",
+      "value" : "kmtrigger://macro=Leader_OpenRecents"
+    },
+    {
+      "key" : "v",
+      "type" : "folder",
+      "value" : "/Applications"
     }
   ],
   "type" : "group"
