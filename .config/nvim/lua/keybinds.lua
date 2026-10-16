@@ -78,8 +78,38 @@ map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank 
 
 -- ========== Motion ==========
 
+-- Leap
 map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
-map({ 'x', 'o' }, 'x', '<Plug>(leap-next-to)')
+map({ 'x', 'o' },      'x', '<Plug>(leap-next-to)')
+
+-- Visit (jump - operate - jump back)
+map({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-visit)')
+map({ 'x', 'o' },      'ar', '<Plug>(leap-visit-text-object)')
+map({ 'x', 'o' },      'ir', '<Plug>(leap-visit-inner-text-object)')
+
+map('o', 'rr', function()  -- "visit line" shortcut
+    return (vim.v.count == 0 and '1' or '') .. '<Plug>(leap-visit)'
+end, { expr = true })
+
+-- vim.api.nvim_create_autocmd('User', {  -- automatic paste on return
+--     pattern = 'VisitDone',
+--     group = vim.api.nvim_create_augroup('Visit', {}),
+--     callback = function(event)
+--         if
+--             (event.data.mode:match('^[vV\22]') or (vim.v.operator == 'y'))
+--             and event.data.register == '"'
+--         then
+--             vim.cmd('normal! p')
+--         end
+--     end,
+-- })
+
+-- Treeselect
+map({ 'x', 'o' }, 'an', function()
+    require('leap.treesitter').select {
+        opts = require('leap.user').with_traversal_keys('n', 'N')
+    }
+end)
 
 -- Enable the traversal keys to repeat the previous search without
 -- explicitly invoking Leap (`<cr><cr>...` instead of `s<cr><cr>...`):
@@ -94,8 +124,8 @@ do
         leap.leap { ['repeat'] = true, opts = clever('<bs>', '<cr>'), backward = true }
     end
 
-    vim.keymap.set({ 'n', 'x', 'o' }, '<cr>', leapForward)
-    vim.keymap.set({ 'n', 'x', 'o' }, '<bs>', leapBackward)
+    map({ 'n', 'x', 'o' }, '<cr>', leapForward)
+    map({ 'n', 'x', 'o' }, '<bs>', leapBackward)
 end
 
 map('n', '<leader>a', 'H')
