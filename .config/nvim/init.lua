@@ -327,6 +327,16 @@ ls.add_snippets('all', magic_rules_flat)
 local leap = require('leap')
 leap.opts.safe_labels = '' -- disables autojumping
 
+-- default is
+-- leap.opts.labels = 'sfnjklhodweimbuyvrgtaqpcxz/SFNJKLHODWEIMBUYVRGTAQPCXZ?'
+
+-- labels are based on Graphite keyboard layout and prioritize:
+-- - left hand > right hand (because typically the 2 char sequence ends on a vowel on the right hand)
+-- - home row > top row > bottom row
+-- - index > middle > ring > pinky
+-- - top row pinkies are the worst so dead last
+leap.opts.labels = 'strnwdlgjcmxvqhaeifouykpbz/STRNWDLGJCMXVQHAEIFOUYKPBZ'
+
 -- Highly recommended: define a preview filter to reduce visual noise
 -- and the blinking effect after the first keypress.
 -- For example, define word boundaries as the common case, that is, skip
