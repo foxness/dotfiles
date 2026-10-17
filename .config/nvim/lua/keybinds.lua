@@ -55,6 +55,11 @@ map("n", "<leader>de", function() vim.diagnostic.jump({ count = 1, float = true 
 
 -- ========== Standard enhancements ==========
 
+-- the reason I'm remapping only this annoying double key is because
+-- I have a hardware repeat key that is annoying to press with Y specifically (both on right hand)
+map('n', 'Y', 'yy', { desc = 'Yank line' })
+map('n', 'yy', 'y$', { desc = 'Yant to the end of the line' })
+
 map('x', 'p', [["_dP]], { desc = 'paste over selection without losing yanked text' })
 map('n', 'J', 'mzJ`z', { desc = 'Join lines without moving cursor' })
 
@@ -176,8 +181,8 @@ map('n', 'M', '<nop>')
 map('n', 'L', '<nop>')
 map('n', 'Q', '<nop>')
 
-map({ 'n', 'v' }, '<PageDown>', '12j', { desc = 'move down in buffer' })
-map({ 'n', 'v' }, '<PageUp>', '12k', { desc = 'move up in buffer' })
+map({ 'n', 'v' }, '<PageDown>', '9j', { desc = 'move down in buffer' })
+map({ 'n', 'v' }, '<PageUp>', '9k', { desc = 'move up in buffer' })
 
 -- ========== Animated motion centering ==========
 
