@@ -174,12 +174,12 @@ animate.setup {
 
 require('mini.surround').setup {
     mappings = {
-        add = 'Sa',        -- Add surrounding in Normal and Visual modes
-        delete = 'Sd',     -- Delete surrounding
-        find = 'Sf',       -- Find surrounding (to the right)
-        find_left = 'SF',  -- Find surrounding (to the left)
-        highlight = 'Sh',  -- Highlight surrounding
-        replace = 'Sr',    -- Replace surrounding
+        add = 'sa',        -- Add surrounding in Normal and Visual modes
+        delete = 'sd',     -- Delete surrounding
+        find = 'sf',       -- Find surrounding (to the right)
+        find_left = 'sF',  -- Find surrounding (to the left)
+        highlight = 'sh',  -- Highlight surrounding
+        replace = 'sr',    -- Replace surrounding
 
         suffix_last = 'l', -- Suffix to search with "prev" method
         suffix_next = 'n', -- Suffix to search with "next" method
@@ -458,6 +458,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
             -- higroup = 'IncSearch', -- highlight group to use
             timeout = 160,         -- duration in milliseconds
         }
+    end,
+})
+
+-- make Help windows appear as a vertical split on the right
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'help',
+    callback = function()
+        vim.cmd.wincmd('L')
     end,
 })
 

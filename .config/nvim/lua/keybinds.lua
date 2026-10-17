@@ -11,7 +11,7 @@ local animate = require('mini.animate')
 
 -- ========== General ==========
 
--- all modes: n, i, c, v, o, t, l
+-- all modes: n, i, v, x, c, o, R, s, t, l
 -- map({ 'i', 'c', 'v', 'o', 't', 'l' }, '<D-j>', '<Esc>')  -- <D-j> is cmd-J
 -- map('n', '<D-j>', ':nohl<CR><Esc>', { desc = 'Clear search highlighting', silent = true })
 
@@ -58,7 +58,7 @@ map("n", "<leader>de", function() vim.diagnostic.jump({ count = 1, float = true 
 -- the reason I'm remapping only this annoying double key is because
 -- I have a hardware repeat key that is annoying to press with Y specifically (both on right hand)
 map('n', 'Y', 'yy', { desc = 'Yank line' })
-map('n', 'yy', 'y$', { desc = 'Yant to the end of the line' })
+map('n', 'yy', 'y$', { desc = 'Yank to the end of the line' })
 
 map('x', 'p', [["_dP]], { desc = 'paste over selection without losing yanked text' })
 map('n', 'J', 'mzJ`z', { desc = 'Join lines without moving cursor' })
@@ -84,7 +84,7 @@ map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank 
 -- ========== Motion ==========
 
 -- Leap
-map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
+map({ 'n', 'x', 'o' }, '<BS>', '<Plug>(leap)')
 map({ 'x', 'o' },      'x', '<Plug>(leap-next-to)')
 
 -- Visit (jump - operate - jump back)
@@ -157,20 +157,20 @@ end
 
 -- Enable the traversal keys to repeat the previous search without
 -- explicitly invoking Leap (`<cr><cr>...` instead of `s<cr><cr>...`):
-do
-    local clever = require('leap.user').with_traversal_keys
-
-    local function leapForward()
-        leap.leap { ['repeat'] = true, opts = clever('<cr>', '<bs>') }
-    end
-
-    local function leapBackward()
-        leap.leap { ['repeat'] = true, opts = clever('<bs>', '<cr>'), backward = true }
-    end
-
-    map({ 'n', 'x', 'o' }, '<cr>', leapForward)
-    map({ 'n', 'x', 'o' }, '<bs>', leapBackward)
-end
+-- do
+--     local clever = require('leap.user').with_traversal_keys
+--
+--     local function leapForward()
+--         leap.leap { ['repeat'] = true, opts = clever('<cr>', '<bs>') }
+--     end
+--
+--     local function leapBackward()
+--         leap.leap { ['repeat'] = true, opts = clever('<bs>', '<cr>'), backward = true }
+--     end
+--
+--     map({ 'n', 'x', 'o' }, '<cr>', leapForward)
+--     map({ 'n', 'x', 'o' }, '<bs>', leapBackward)
+-- end
 
 map('n', '<leader>a', 'H')
 map('n', '<leader>e', 'M')
