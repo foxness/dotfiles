@@ -29,8 +29,11 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.animate' },
     { src = 'https://github.com/nvim-mini/mini.pairs' },
     { src = 'https://github.com/L3MON4D3/LuaSnip' },
-    { src = 'https://github.com/m4xshen/hardtime.nvim' },
     { src = 'https://github.com/nvim-mini/mini.operators' },
+    { src = 'https://github.com/j-hui/fidget.nvim' },
+
+    { src = 'https://github.com/m4xshen/hardtime.nvim' },
+    { src = 'https://github.com/MunifTanjim/nui.nvim' }, -- dependency of hardtime.nvim
 
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
@@ -146,6 +149,14 @@ require('mini.pairs').setup {
 -- ========== PLUGIN: mini.operators ==========
 
 require('mini.operators').setup()
+
+-- ========== PLUGIN: fidget.nvim ==========
+
+require('fidget').setup {
+    notification = {
+        override_vim_notify = true, -- directs standard vim.notify calls into fidget
+    },
+}
 
 -- ========== PLUGIN: mini.animate ==========
 
