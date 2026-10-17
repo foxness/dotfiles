@@ -77,7 +77,7 @@ map('n', '<leader>df', vim.lsp.buf.format)
 map('n', '<leader>ss', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word cursor is on globally' })
 map('n', '<leader>X', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'makes file executable' })
 
-map({ 'n', 'v' }, '<leader>dw', [["_d]], { desc = 'Delete without yanking' })
+map({ 'n', 'v' }, '<leader>j', [["_d]], { desc = 'Delete without yanking' })
 
 map('n', '<leader>v', 'vg_', { noremap = true, desc = 'Select to last non-blank character' })
 
