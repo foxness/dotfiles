@@ -325,7 +325,10 @@ ls.add_snippets('all', magic_rules_flat)
 -- ========== PLUGIN: leap.nvim ==========
 
 local leap = require('leap')
-leap.opts.safe_labels = '' -- disables autojumping
+
+ -- disables autojumping, so you always have to choose a label
+ -- but this feels much more predictable and consistent
+leap.opts.safe_labels = ''
 
 -- default is
 -- leap.opts.labels = 'sfnjklhodweimbuyvrgtaqpcxz/SFNJKLHODWEIMBUYVRGTAQPCXZ?'
@@ -343,12 +346,41 @@ leap.opts.labels = 'strnwdlgjcmxvqhaeifouykpbz/STRNWDLGJCMXVQHAEIFOUYKPBZ'
 -- preview for matches starting with whitespace or an alphabetic
 -- mid-word character: foobar[baaz] = quux
 --                     ^    ^^^  ^^ ^ ^  ^
+
+-- leap.opts.preview = function(ch0, ch1, ch2)
+--     return not (
+--         ch1:match('%s')
+--         or (ch0:match('%a') and ch1:match('%a') and ch2:match('%a'))
+--     )
+-- end
+
+-- leap.opts.preview = false
 leap.opts.preview = function(ch0, ch1, ch2)
-    return not (
-        ch1:match('%s')
-        or (ch0:match('%a') and ch1:match('%a') and ch2:match('%a'))
+    -- Skip matches starting with whitespace altogether.
+    if ch1:match('%s') then
+        return false
+    end
+
+    -- ASCII non-alpha (includes whitespace).
+    local delim = '[\1-\64\91-\96\123-\127]'
+    return (
+        -- Show matches touching a delimiter or line start/end.
+        ch0:match(delim) or ch2:match(delim) or (ch0 == '') or (ch2 == '')
+        -- To cover the edge case of a single non-whitespace delimiter
+        -- between letters (`foo:bar`).
+        or ch1:match(delim)
     )
 end
+
+-- grey out buffer during preview
+vim.api.nvim_create_autocmd('ColorScheme', {
+    group = vim.api.nvim_create_augroup('LeapBackdrop', {}),
+    callback = function()
+        if vim.g.colors_name == 'gruvbox' then
+            require('leap.user').set_backdrop_highlight('Comment')
+        end
+    end
+})
 
 -- ========== PLUGIN: hardtime.nvim ==========
 
