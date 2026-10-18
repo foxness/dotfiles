@@ -75,7 +75,7 @@ require('snacks').setup {
     indent = { enabled = false },
     input = { enabled = false },
     notifier = {
-        enabled = false,
+        enabled = true,
         timeout = 3000,
     },
     picker = { enabled = true },
@@ -155,7 +155,7 @@ require('mini.operators').setup()
 
 require('fidget').setup {
     notification = {
-        override_vim_notify = true, -- directs standard vim.notify calls into fidget
+        override_vim_notify = false, -- directs standard vim.notify calls into fidget
     },
 }
 
