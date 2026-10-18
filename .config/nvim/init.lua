@@ -31,6 +31,7 @@ vim.pack.add({
     { src = 'https://github.com/L3MON4D3/LuaSnip' },
     { src = 'https://github.com/nvim-mini/mini.operators' },
     { src = 'https://github.com/j-hui/fidget.nvim' },
+    { src = 'https://github.com/nvim-mini/mini.bracketed' },
 
     { src = 'https://github.com/m4xshen/hardtime.nvim' },
     { src = 'https://github.com/MunifTanjim/nui.nvim' }, -- dependency of hardtime.nvim
@@ -157,6 +158,10 @@ require('fidget').setup {
         override_vim_notify = true, -- directs standard vim.notify calls into fidget
     },
 }
+
+-- ========== PLUGIN: mini.bracketed ==========
+
+require('mini.bracketed').setup()
 
 -- ========== PLUGIN: mini.animate ==========
 

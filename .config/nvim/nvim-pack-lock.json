@@ -60,6 +60,10 @@
       "rev": "6cf2bc01dd074d4b2ec606b40ea3c7c9f1dc99cc",
       "src": "https://github.com/nvim-mini/mini.animate"
     },
+    "mini.bracketed": {
+      "rev": "98fe9eef0e4a89bfa1b055ac51195e74fafe3663",
+      "src": "https://github.com/nvim-mini/mini.bracketed"
+    },
     "mini.extra": {
       "rev": "7dcc3ee5ba638cca654125f40f6e3ffbc52e0dc4",
       "src": "https://github.com/nvim-mini/mini.extra"
