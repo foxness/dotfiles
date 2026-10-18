@@ -32,6 +32,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.operators' },
     { src = 'https://github.com/j-hui/fidget.nvim' },
     { src = 'https://github.com/nvim-mini/mini.bracketed' },
+    { src = 'https://github.com/lewis6991/satellite.nvim' },
 
     { src = 'https://github.com/m4xshen/hardtime.nvim' },
     { src = 'https://github.com/MunifTanjim/nui.nvim' }, -- dependency of hardtime.nvim
@@ -343,8 +344,8 @@ ls.add_snippets('all', magic_rules_flat)
 
 local leap = require('leap')
 
- -- disables autojumping, so you always have to choose a label
- -- but this feels much more predictable and consistent
+-- disables autojumping, so you always have to choose a label
+-- but this feels much more predictable and consistent
 leap.opts.safe_labels = ''
 
 -- default is
@@ -407,6 +408,27 @@ require('hardtime').setup()
 
 -- disables autoselection of first item in autocompletion
 -- vim.cmd('set completeopt+=noselect')
+
+-- make sure there is a newline at the end after formatting
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--     group = vim.api.nvim_create_augroup("UserLspNewlineEnforcer", { clear = true }),
+--     callback = function(args)
+--         local client = vim.lsp.get_client_by_id(args.data.client_id)
+--
+--         if client and client:supports_method("textDocument/formatting") then
+--             vim.api.nvim_create_autocmd("BufWritePre", {
+--                 buffer = args.buf,
+--                 group = vim.api.nvim_create_augroup("UserLspNewlineBuffer" .. args.buf, { clear = true }),
+--                 callback = function()
+--                     local last_line = vim.api.nvim_buf_get_lines(args.buf, -2, -1, false)[1]
+--                     if last_line and last_line ~= "" then
+--                         vim.api.nvim_buf_set_lines(args.buf, -1, -1, false, { "" })
+--                     end
+--                 end,
+--             })
+--         end
+--     end,
+-- })
 
 -- ========== LSP ==========
 
@@ -515,7 +537,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
         vim.hl.on_yank {
             -- higroup = 'IncSearch', -- highlight group to use
-            timeout = 160,         -- duration in milliseconds
+            timeout = 160, -- duration in milliseconds
         }
     end,
 })
@@ -640,6 +662,7 @@ require('treesitter-context').setup {
 }
 
 vim.api.nvim_create_autocmd("ColorScheme", {
+    -- group = vim.api.nvim_create_augroup("RiverColorEnhancements", { clear = true }),
     pattern = "*",
     callback = function()
         -- === make treesitter-context transparent ===
@@ -677,9 +700,23 @@ vim.api.nvim_create_autocmd("ColorScheme", {
                 vim.api.nvim_set_hl(0, group, hl)
             end
         end)
+
+        -- === change scrollbar color ===
+        vim.api.nvim_set_hl(0, "SatelliteBar", {
+            bg = "#00997c",
+            fg = "#ffffff",
+            blend = 0,  -- fix weird non-working transparency
+        })
+
+        -- vim.api.nvim_set_hl(0, "SatelliteBackground", {
+        --     bg = "#151f27",
+        --     blend = 0,  -- fix weird non-working transparency
+        -- })
     end,
 })
 
+-- don't forget to change indent guidelines lerp color
+-- when changing the theme
 vim.cmd.colorscheme('gruvbox')
 
 -- ========== IMPORT ==========

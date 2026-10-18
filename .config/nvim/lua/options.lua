@@ -46,6 +46,7 @@ vim.o.timeoutlen = 500
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+vim.opt.fixeol = true
 -- vim.o.colorcolumn = 0
 
 -- vim.o.termguicolors = true
@@ -53,5 +54,4 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- vim.o.mouse = ''
 -- vim.o.mousescroll = ''
-
 
