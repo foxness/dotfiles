@@ -138,6 +138,7 @@ require('mini.surround').setup {
         suffix_last = 'l', -- Suffix to search with "prev" method
         suffix_next = 'n', -- Suffix to search with "next" method
     },
+    n_lines = 50, -- default is 20
     search_method = 'cover_or_next',
 }
 
