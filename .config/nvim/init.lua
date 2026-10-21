@@ -9,7 +9,7 @@ require('vim._core.ui2').enable({}) -- enable new UI
 
 -- ========== PLUGINS ==========
 
-vim.pack.add({
+vim.pack.add {
     -- plugins
     { src = 'https://github.com/stevearc/oil.nvim' },
     { src = 'https://github.com/nvim-mini/mini.pick' },
@@ -25,7 +25,6 @@ vim.pack.add({
 
     { src = 'https://github.com/nvim-mini/mini.extra' },
     { src = 'https://github.com/nvim-mini/mini.surround' },
-    { src = 'https://github.com/folke/snacks.nvim' },
     { src = 'https://github.com/nvim-mini/mini.animate' },
     { src = 'https://github.com/nvim-mini/mini.pairs' },
     { src = 'https://github.com/L3MON4D3/LuaSnip' },
@@ -61,7 +60,7 @@ vim.pack.add({
     { src = 'https://github.com/rose-pine/neovim',                           name = 'rose-pine' },
     { src = 'https://github.com/sainnhe/sonokai' },
     { src = 'https://github.com/maxmx03/solarized.nvim' },
-})
+}
 
 -- ========== PLUGIN: oil ==========
 
@@ -69,29 +68,7 @@ require('oil').setup()
 
 -- ========== PLUGIN: snacks ==========
 
-require('snacks').setup {
-    bigfile = { enabled = false },
-    dashboard = { enabled = false },
-    explorer = { enabled = false },
-    indent = { enabled = false },
-    input = { enabled = false },
-    notifier = {
-        enabled = true,
-        timeout = 3000,
-    },
-    picker = { enabled = true },
-    quickfile = { enabled = false },
-    scope = { enabled = false },
-    scroll = { enabled = false },
-    statuscolumn = { enabled = false },
-    rename = { enabled = true },
-    words = { enabled = false },
-    -- styles = {
-    --     notification = {
-    --         -- wo = { wrap = true } -- Wrap notifications
-    --     }
-    -- }
-}
+require('plugin-snacks')
 
 -- ========== PLUGIN: mini.pick ==========
 

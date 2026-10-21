@@ -6,7 +6,7 @@ local map = vim.keymap.set
 vim.g.mapleader = ' '
 
 local snacks = require('snacks')
-local leap = require('leap')
+-- local leap = require('leap')
 local animate = require('mini.animate')
 
 -- ========== General ==========
