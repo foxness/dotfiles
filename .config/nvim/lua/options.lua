@@ -7,6 +7,8 @@ vim.o.relativenumber = true
 vim.o.signcolumn = 'yes'
 vim.g.have_nerd_font = true
 
+vim.o.confirm = true
+
 vim.o.tabstop = 4
 -- vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
