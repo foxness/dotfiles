@@ -64,7 +64,7 @@ require('oil').setup()
 
 -- ========== PLUGIN: snacks ==========
 
-require('plugin-snacks')
+require 'plugin-snacks'
 
 -- ========== PLUGIN: mini.pick ==========
 
@@ -72,7 +72,7 @@ require('mini.pick').setup()
 
 -- ========== PLUGIN: mini.ai ==========
 
-require('plugin-miniai')
+require 'plugin-miniai'
 
 -- ========== PLUGIN: mini.pairs ==========
 
@@ -164,11 +164,11 @@ require('nvim-treesitter').install {
 -- ========== PLUGIN: luasnip ==========
 
 -- magic typing rules
-require('plugin-luasnip')
+require 'plugin-luasnip'
 
 -- ========== PLUGIN: leap.nvim ==========
 
-require('plugin-leap')
+require 'plugin-leap'
 
 -- ========== PLUGIN: hardtime.nvim ==========
 
@@ -202,7 +202,7 @@ require('hardtime').setup()
 
 -- ========== LSP ==========
 
-require('lsp')
+require 'lsp'
 
 -- ========== INDENT COLORS ==========
 
@@ -491,6 +491,6 @@ vim.cmd.colorscheme('gruvbox')
 
 -- ========== IMPORT ==========
 
-require('options')
-require('keybinds')
+require 'options'
+require 'keybinds'
 
