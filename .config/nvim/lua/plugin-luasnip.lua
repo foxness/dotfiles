@@ -115,6 +115,12 @@ local magic_rules = {
 
     { 'wj',  'ws' },
     { 'ws',  'wj' },
+
+    { 'jjy',  'jy' },
+    { 'jy',  'py' },
+
+    { 'yyj',  'yj' },
+    { 'yj',  'yp' },
 }
 
 local magic_rule_snippets = convert_to_magic_snippets(magic_rules)
