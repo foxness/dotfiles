@@ -42,6 +42,8 @@ vim.o.sidescrolloff = 36
 vim.o.mousescroll = 'ver:1,hor:1' -- only needed for mousescrolling with mini.animate
 
 vim.o.cursorline = true
+-- vim.o.cursorlineopt = 'number'
+
 vim.o.updatetime = 250
 vim.o.timeoutlen = 500
 
