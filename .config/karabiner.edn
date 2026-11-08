@@ -113,13 +113,13 @@
         :mission-control { :key :!Tup_arrow }
         :app-windows { :key :!Tdown_arrow }
 
-        :left-desktop-iss { :key :!QWERleft_arrow } ;; iss = instant space switcher
-        :right-desktop-iss { :key :!QWERright_arrow }
-        :desktop-1-iss { :key :!QWE1 }
-        :desktop-2-iss { :key :!QWE2 }
-        :desktop-3-iss { :key :!QWE3 }
-        :desktop-4-iss { :key :!QWE4 }
-        :desktop-5-iss { :key :!QWE5 }
+        :left-desktop-iss { :key :!CTOleft_arrow } ;; iss = instant space switcher
+        :right-desktop-iss { :key :!CTOright_arrow }
+        :desktop-1-iss { :key :!CTO1 }
+        :desktop-2-iss { :key :!CTO2 }
+        :desktop-3-iss { :key :!CTO3 }
+        :desktop-4-iss { :key :!CTO4 }
+        :desktop-5-iss { :key :!CTO5 }
 
         :fine-vol-down { :key :!SOvolume_down }
         :fine-vol-up { :key :!SOvolume_up }
@@ -1414,3 +1414,4 @@
 ;;              :modifiers    {:optional ["any"]}}
 ;;             :to   [{:key_code "caps_lock"}]}
 ;; https://github.com/yqrashawn/GokuRakuJoudo/issues/257
+
