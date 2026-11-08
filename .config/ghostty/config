@@ -16,7 +16,7 @@ window-save-state = always
 
 background-opacity = 0.8
 background-blur-radius = 30
-custom-shader = shaders/cursor_warp.glsl
+custom-shader = shaders/cursor_tail.glsl
 
 font-size = 16
 
