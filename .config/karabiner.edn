@@ -759,9 +759,9 @@
                 ;; [:!W#CTSO9 :g-dollar]
                 ;; [:!W#CTSO0 :g-percent]
 
-                [:!W#CTSOq :g-caret nil { :afterup ["graphitecapsword-layer" 0] }]
+                [:!W#CTSOq :g-dollar nil { :afterup ["graphitecapsword-layer" 0] }]
                 [:!W#CTSOw :g-curlyopen nil { :afterup ["graphitecapsword-layer" 0] }]
-                [:!W#CTSOe :g-dollar nil { :afterup ["graphitecapsword-layer" 0] }]
+                [:!W#CTSOe :g-question nil { :afterup ["graphitecapsword-layer" 0] }]
                 [:!W#CTSOr :g-curlyclose nil { :afterup ["graphitecapsword-layer" 0] }]
                 [:!W#CTSOt :g-asterisk nil { :afterup ["graphitecapsword-layer" 0] }]
                 [:!W#CTSOy :g-slash nil { :afterup ["graphitecapsword-layer" 0] }]
@@ -780,7 +780,7 @@
                 [:!W#CTSOh :0 nil { :afterup ["graphitecapsword-layer" 0] }]
                 [:!W#CTSOj :spacebar nil { :afterup ["graphitecapsword-layer" 0] }]
                 ; [:!W#CTSOk :g-angleclose] ; repeat key
-                [:!W#CTSOl :g-question nil { :afterup ["graphitecapsword-layer" 0] }]
+                [:!W#CTSOl :g-grave nil { :afterup ["graphitecapsword-layer" 0] }]
                 [:!W#CTSOsemicolon :g-underscore nil { :afterup ["graphitecapsword-layer" 0] }]
                 [:!W#CTSOquote :g-quote nil { :afterup ["graphitecapsword-layer" 0] }]
 
@@ -798,7 +798,7 @@
                 ;; left thumb
                 [:!W#CTSOkeypad_1 :spacebar nil { :afterup ["graphitecapsword-layer" 0] }]
                 [:!W#CTSOkeypad_2 :g-exclamation nil { :afterup ["graphitecapsword-layer" 0] }]
-                [:!W#CTSOkeypad_3 :g-grave nil { :afterup ["graphitecapsword-layer" 0] }]
+                [:!W#CTSOkeypad_3 :g-caret nil { :afterup ["graphitecapsword-layer" 0] }]
             ]
         }
 
